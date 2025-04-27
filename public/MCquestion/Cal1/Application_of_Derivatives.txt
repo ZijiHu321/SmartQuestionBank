@@ -1,0 +1,122 @@
+---
+Question: For the curve $$y = 5x - 2x^{3}$$, if x increases at a rate of 2 units/sec, how fast is the slope of the curve changing when x = 3?
+
+Choices:
+- -49
+- -72
+- 49
+- 72
+Correct: 1
+Difficulty: 4
+Unit: Application of Derivatives
+Topics: Derivatives, Rate of Changes
+---
+Question: A balloon rises vertically at a rate of 5 m/s above a straight road, while a car drives along the road at 20 m/s. At a certain instant, the car is 100 meters from the point directly beneath the balloon, and the balloon is 80 meters high.
+How fast is the distance between the car and the balloon changing at that moment?
+
+Choices:
+- 15.00 m/s
+- 20.83 m/s
+- 18.74 m/s
+- 25.00 m/s
+Correct: 2
+Difficulty: 7
+Unit: Application of Derivatives
+Topics: Implicit Differentiation, Rate of Changes
+---
+Question: A rectangle has its lower side on the x-axis and two upper vertices on the curve $$y = 9 - x^{2}$$, what is the maximum possilbe area of the rectangle?
+
+Choices:
+- $$12\sqrt{3}$$
+- 18
+- 12
+- $$6\sqrt{3}$$
+Correct: 0
+Difficulty: 3
+Unit: Application of Derivatives
+Topics: Derivatives, Maximal Area
+---
+Question: What is the largest area of a trapzoid inscribed in a semicircle with radius 1?
+
+Choices:
+- 1
+- $$\sqrt{2}$$
+- $$\frac{1}{2}\sqrt{3}$$
+- $$\frac{3}{4}\sqrt{3}$$
+Correct: 3
+Difficulty: 4
+Unit: Application of Derivatives
+Topics: Derivatives, Maximal Area
+---
+Question: A curve $$D$$ has parametric equation $$x = a\theta - a\sin(\theta)$$, $$y = a - a \cos(\theta)$$, where $$a > 0, 0 < \theta < \pi$$. What is $$\frac{dy}{dx}$$?
+
+Choices:
+- $$\tan(\theta)$$
+- $$\cot(\theta / 2)$$
+- $$\sec(\theta / 2)$$
+- $$\tan(\theta / 2)$$
+Correct: 1
+Difficulty: 8
+Unit: Application of Derivatives
+Topics: Parametric Functions
+---
+Question: A curve $$D$$ has equation $$\frac{x^{2}}{x^{2}+1}+\frac{y^{2}}{y^{2}+1} = x^{3}y^{5}$$, What is the equation of the tangent to $$D$$ at the point $$(1,1)$$?
+
+Choices:
+- $$x + y = 2$$
+- $$3x + 5y = 8$$
+- $$5x + 9y = 14$$
+- $$6x + 17y = 23$$
+Correct: 2
+Difficulty: 10
+Unit: Application of Derivatives
+Topics: Implicit Differentiation, Tangents
+---
+Question: Given $$y = \frac{2x}{4+x^{2}} - \tan^{-1}(x/2)$$, and $$\frac{dy}{dx} = -\frac{4x}{(4+x^{2})^{2}}$$.
+Check the behaviour of fucntion $$f(x) = \frac{1}{x}\tan^{-1}(x/2)$$, when $$x > 0$$.
+
+Choices:
+- $$f$$ is monotone decreasing
+- $$f$$ is monotone increasing
+- $$f$$ is a constant function
+- $$f$$ is not a monotone function
+Correct: 0
+Difficulty: 7
+Unit: Application of Derivatives
+Topics: Derivatives
+---
+Question: Find the gradient of $$y = 3x^{2} - 2x$$ at the point $$x = 3$$.
+
+Choices:
+- 21
+- 18
+- 16
+- 12
+Correct: 2
+Difficulty: 1
+Unit: Application of Derivatives
+Topics: Derivatives
+---
+Question: The side length, $$x$$ cm, of a cube is increasing at a constant rate of 0.1 cm/s. What is the rate of change of the cube's volume when $$x = 2$$cm?
+
+Choices:
+- 1.2 cm$$^{3}$$/s
+- 12 cm$$^{3}$$/s
+- 0.8 cm$$^{3}$$/s
+- 8 cm$$^{3}$$/s
+Correct: 0
+Difficulty: 3
+Unit: Application of Derivatives
+Topics: Rate of Changes
+---
+Question: For the curve with equation $$y = 3x - \frac{1}{2}x^{2}$$, what is the gradient of the tangent at the point $$x = 5$$?
+
+Choices:
+- -2
+- 2.5
+- -0.5
+- 2
+Correct: 0
+Difficulty: 2
+Unit: Application of Derivatives
+Topics: Tangents

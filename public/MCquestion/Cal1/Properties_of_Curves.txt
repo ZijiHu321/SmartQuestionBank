@@ -1,0 +1,122 @@
+---
+Question: How many horizontal asymptotes does $$f(x) = \frac{2x + 1}{x^{3} + x^{2} + 2}$$ have?
+
+Choices:
+- 0
+- 1
+- 2
+- 3
+Correct: 1
+Difficulty: 3
+Unit: Properties of Curves
+Topics: Asymptotes, Rational Functions
+---
+Question: How many vertical asymptotes does $$f(x) = \frac{101}{x^{3} - 3x^{2}-6x+8}$$ have?
+
+Choices:
+- 0
+- 1
+- 2
+- 3
+Correct: 3
+Difficulty: 4
+Unit: Properties of Curves
+Topics: Asymptotes, Rational Functions, Factorization
+---
+Question: Choose the oblique asymptote of function $$f(x) = xe^{1/x}$$.
+
+Choices:
+- $$y = x$$
+- $$y = ex$$
+- $$y = x + 1$$
+- $$y = ex + 1$$
+Correct: 2
+Difficulty: 5
+Unit: Properties of Curves
+Topics: Asymptotes, Oblique Asymptotes
+---
+Question: $$3^{\pi}$$ ____ $$\pi ^ {3}$$?
+Hint: Consider function $$f(x) = \frac{\ln (x)}{x}$$.
+
+Choices:
+- $$<$$
+- $$=$$
+- $$>$$
+- Relationship cannot be determined by given information
+Correct: 2
+Difficulty: 8
+Unit: Properties of Curves
+Topics: Logarithmic Functions, Critical Points
+---
+Question: Where is (are) the point(s) of inflection for $$f(x) = \sec (\tan ^{-1} (\sin (\tan ^{-1} (x))))$$?
+Hint: You should try to simplify the function first.
+
+Choices:
+- $$x = 0$$
+- $$x = 1$$
+- $$x = \pi$$
+- $$x = \pm 1$$
+Correct: 0
+Difficulty: 7
+Unit: Properties of Curves
+Topics: Trigonometric Functions, Inflection Points
+---
+Question: Check the nature of the point $$x = 0$$ of $$f(x) = \begin{cases} x^{2} \sin (1/x) & \text{if } x \neq 0 \\ 0 & \text{if } x = 0 \end{cases}$$.
+
+Choices:
+- It is a critical point and a local maximum
+- It is a critical point and a local minimum
+- It is a critical point and an inflection point
+- It is a critical point but not a local maximum, local minimum nor an inflection point
+Correct: 3
+Difficulty: 5
+Unit: Properties of Curves
+Topics: Critical Points, Inflection Points
+---
+Question: On which of the following interval is $$f(x) = x^{4} - 4x^{3}$$ concave upward?
+
+Choices:
+- $$(-\infty, +\infty)$$
+- $$(0, 3)$$
+- $$(-\infty, 0) \cup (2, +\infty)$$
+- $$(-\infty, 0) \cup (3, +\infty)$$
+Correct: 2
+Difficulty: 4
+Unit: Properties of Curves
+Topics: Critical Points, Concavity
+---
+Question: On which of the following interval is $$f(x) = \frac{x^{2}}{x^{2}+1}$$ concave upward?
+
+Choices:
+- $$(-\infty, -1) \cup (1, +\infty)$$
+- $$(-1, 1)$$
+- $$(-1/\sqrt{3}, 1/\sqrt{3})$$
+- $$(-1/\sqrt{2}, 1/\sqrt{2})$$
+Correct: 2
+Difficulty: 4
+Unit: Properties of Curves
+Topics: Critical Points, Concavity
+---
+Question: Which of the following statement is false for the rational function $$f(x) = \frac{g(x)}{h(x)}$$
+
+Choices:
+- It is possible to have both vertical and horizontal asymptotes
+- It is possible to have both vertical and oblique asymptotes
+- It is possible to have a hole and a vertical asymptote
+- It is possible to have both horizontal and oblique asymptotes
+Correct: 3
+Difficulty: 6
+Unit: Properties of Curves
+Topics: Asymptotes
+---
+Question: Function $$f(x) = e^{-x^{2}}+ \cos(x) + e^{x} + e^{-x}$$ is ____, and function $$g(x) = x \ln(1+x^{2}+x^{4})$$ is ____.
+
+Choices:
+- even, even
+- odd, odd
+- even, odd
+- odd, even
+Correct: 2
+Difficulty: 4
+Unit: Properties of Curves
+Topics: Odd and Even Functions

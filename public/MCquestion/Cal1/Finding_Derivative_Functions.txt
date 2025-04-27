@@ -1,0 +1,121 @@
+---
+Question: What is the tangent of function $$f(x) = 24 x^{24}$$ at $$x = 0$$ ?
+
+Choices:
+- 0
+- 24
+- 576
+- 552
+Correct: 0
+Difficulty: 1
+Unit: Finding Derivative Functions
+Topics: Derivatives
+---
+Question: What is the derivative of function $$f(x) = e^{\sin(x) \cos(x)}$$ ?
+
+Choices:
+- $$\cos(2x) e^{\sin(x) \cos(x)}$$
+- $$\frac{1}{2} \sin(2x) e^{\sin(x) \cos(x)}$$
+- $$\frac{1}{2} \cos(2x) e^{\sin(x) \cos(x)}$$
+- $$\sin(2x) e^{\sin(x) \cos(x)}$$
+Correct: 0
+Difficulty: 3
+Unit: Finding Derivative Functions
+Topics: Derivatives
+---
+Question: Let $$f(x) = e^{-1/x}$$ and $$g(x) = e^{-1/x^{2}}$$ for $$x \neq 0$$, and $$f(0) = 0$$, $$g(0) = 0$$.
+What are the derivatives of $$f$$ and $$g$$ at $$x = 0$$ respectively?
+
+Choices:
+- 0 and 0
+- $$\infty$$ and $$\infty$$
+- Does not exist and 0
+- Does not exist and Does not exist
+Correct: 2
+Difficulty: 3
+Unit: Finding Derivative Functions
+Topics: Derivatives
+---
+Question: For $$x \in (0, \pi / 2)$$, $$\tan(x) $$ ____ $$ x + \frac{x^3}{3} + \frac{2x^5}{15}$$?
+
+Choices:
+- $$<$$
+- $$=$$
+- $$>$$
+- Relationship changes in the given interval.
+Correct: 2
+Difficulty: 4
+Unit: Finding Derivative Functions
+Topics: Derivatives, Monotonicity, Trigonometric Functions
+---
+Question: For $$x \in (0, 1)$$, $$\tan(x)$$ ____ $$x + \frac{x^3}{3} + \frac{2x^5}{5}$$?
+Hint: $$\cos(x) > 1 - x^{2}/2$$ on $$(0, \pi / 2)$$
+
+Choices:
+- $$<$$
+- $$=$$
+- $$>$$
+- Relationship changes in the given interval.
+Correct: 0
+Difficulty: 7
+Unit: Finding Derivative Functions
+Topics: Derivatives, Monotonicity, Trigonometric Functions
+---
+Question: Given the invertible function $$f(x) = e^{x^3} + 2x$$, what is $$(f^{-1})'(e + 2)$$?
+
+Choices:
+- $$e + 2$$
+- $$\frac{1}{e + 2}$$
+- $$3e + 2$$
+- $$\frac{1}{3e + 2}$$
+Correct: 3
+Difficulty: 4
+Unit: Finding Derivative Functions
+Topics: Derivatives, Inverse Functions
+---
+Question: Given the invertible function $$f(x) = e^{x^3} + 2x$$, what is $$(f^{-1})'(e + 2)$$?
+
+Choices:
+- $$e + 2$$
+- $$\frac{1}{e + 2}$$
+- $$3e + 2$$
+- $$\frac{1}{3e + 2}$$
+Correct: 3
+Difficulty: 4
+Unit: Finding Derivative Functions
+Topics: Derivatives, Inverse Functions  
+---
+Question: Find the derivative of function $$f(x) = \ln (\ln (x))$$.
+Choices:
+- $$\frac{1}{\ln (x)}$$
+- $$\frac{1}{x}$$
+- $$\frac{1}{x \ln (x)}$$
+- $$\frac{x}{\ln (x)}$$
+Correct: 2
+Difficulty: 3
+Unit: Finding Derivative Functions
+Topics: Derivatives, Logarithmic Functions, Chain Rule
+---
+Question: Find the derivative of function $$f(x) = (\frac{1 + \cos (x^2)}{1 - \sin (x^2)})^5$$.
+Choices:
+- $$f'(x) = \frac{10x \left(1 + \cos(x^2) - \sin(x^2)\right) \left(1 + \cos(x^2)\right)^4}{\left(1 - \sin(x^2)\right)^6}$$
+- $$f'(x) = 5 \left(\frac{1 + \cos(x^2)}{1 - \sin(x^2)}\right)^4 \cdot \left(\frac{-\sin(x^2) - \cos(x^2)}{(1 - \sin(x^2))^2}\right)$$
+- $$f'(x) = 5 \left(\frac{1 + \cos(x^2)}{1 - \sin(x^2)}\right)^4 \cdot \frac{(1-\sin(x^2))(-\sin(x^2)) - (1+\cos(x^2))(-\cos(x^2))}{(1-\sin(x^2))^2}$$
+- $$f'(x) = 5 \left(\frac{1 + \cos^2 x}{1 - \sin^2 x}\right)^4 \cdot \frac{-2\cos x \sin x (1-\sin^2 x) + 2\sin x \cos x (1+\cos^2 x)}{(1-\sin^2 x)^2}$$
+Correct: 0
+Difficulty: 8
+Unit: Finding Derivative Functions
+Topics: Derivatives, Chain Rule, Trigonometric Functions
+---
+Question: Find the derivative of function $$f(x) = e^{e^x}$$.
+Choices:
+- $$e^x$$
+- $$e^{e^x}$$
+- $$e^x e^{e^x}$$
+- $$x e^{e^x}$$
+Correct: 2
+Difficulty: 3
+Unit: Finding Derivative Functions
+Topics: Derivatives
+
+
