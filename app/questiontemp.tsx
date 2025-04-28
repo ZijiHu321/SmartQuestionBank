@@ -164,7 +164,7 @@ const QuestionCard = ({
           remarkPlugins={[remarkMath]}
           rehypePlugins={[rehypeMathjax]}
           components={{
-            p: ({node, children}) => (
+            p: ({ children}) => (
               <div style={{ 
                 margin: 0, 
                 whiteSpace: 'pre-line',
@@ -173,7 +173,7 @@ const QuestionCard = ({
                 {children}
               </div>
             ),
-            img: ({node, ...props}) => {
+            img: (props) => {
               const [path, params] = (props.src || '').split('?');
               const size = new URLSearchParams(params).get('size')?.split('x') || [];
               
@@ -251,7 +251,7 @@ const QuestionCard = ({
               remarkPlugins={[remarkMath]}
               rehypePlugins={[rehypeMathjax]}
               components={{
-                p: ({node, ...props}) => <div {...props} style={{ margin: 0 }}/>
+                p: (props) => <div {...props} style={{ margin: 0 }}/>
               }}
             >
               {choice}

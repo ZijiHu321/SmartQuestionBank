@@ -2,7 +2,6 @@
 import { useEffect, useState } from 'react';
 import { Bar } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend, ChartOptions } from 'chart.js';
-import { useRouter } from 'next/navigation';
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
@@ -16,7 +15,6 @@ const TopicAnalyze = ({ params }: { params: { course: string } }) => {
   const [loading, setLoading] = useState(true);
   const [showAllUnits, setShowAllUnits] = useState(false);
   const [showAllTopics, setShowAllTopics] = useState(false);
-  const router = useRouter();
 
   useEffect(() => {
     const loadData = () => {
@@ -118,7 +116,6 @@ const TopicAnalyze = ({ params }: { params: { course: string } }) => {
   // Process data for display
   const allUnits = Object.entries(unitData).sort(([a], [b]) => a.localeCompare(b));
   const allTopics = Object.entries(topicData).sort(([,a], [,b]) => b - a);
-  const topTopics = allTopics.slice(0, 5);
 
   return (
     <div className="container py-5">

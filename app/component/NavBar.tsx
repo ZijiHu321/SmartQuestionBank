@@ -1,6 +1,6 @@
 'use client';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 

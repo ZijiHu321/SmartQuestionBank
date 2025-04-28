@@ -2,7 +2,6 @@
 import { useEffect, useState } from 'react';
 import { Pie } from 'react-chartjs-2';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend, ChartOptions } from 'chart.js';
-import { useRouter } from 'next/navigation';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -33,7 +32,6 @@ const StatisticsPage = ({ params }: { params: { course: string } }) => {
   const [topicData, setTopicData] = useState<TopicUnitData>({});
   const [unitData, setUnitData] = useState<TopicUnitData>({});
   const [loading, setLoading] = useState(true);
-  const router = useRouter();
 
   useEffect(() => {
     const loadData = () => {
@@ -165,14 +163,6 @@ const StatisticsPage = ({ params }: { params: { course: string } }) => {
 
   const overallChart = createPieChart(allCoursesStats.correct, allCoursesStats.incorrect, 'Overall Accuracy');
   const courseChart = createPieChart(courseStats.correct, courseStats.incorrect, 'Course Accuracy');
-  const topicChart = createDistributionChart(topicData, [
-    '#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0',
-    '#9966FF', '#FF9F40', '#8AC24A', '#607D8B'
-  ]);
-  const unitChart = createDistributionChart(unitData, [
-    '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF',
-    '#FF9F40', '#8AC24A', '#607D8B', '#FF6384'
-  ]);
 
   return (
     <div className="container py-5">

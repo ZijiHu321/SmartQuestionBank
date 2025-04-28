@@ -2,12 +2,10 @@
 import StatisticsPage from "@/app/component/Stats/courseAnalyze";
 import TopicAnalyze from "@/app/component/Stats/topicAnalyze";
 import Diagnosis from "@/app/component/Stats/diagnosis";
-import { useParams } from 'next/navigation';
 import ClearAllData from "@/app/component/Stats/clearData";
 import { useState } from 'react';
 
 export default function UnitPage() {
-  const params = useParams();
   const [refreshKey, setRefreshKey] = useState(0);
 
   const handleClearData = () => {

@@ -110,7 +110,7 @@ const ClearBookmarks = ({ onClear }: ClearBookmarksProps) => {
                   transition: 'all 0.2s ease'
                 }}
               >
-                Yes, I'm sure
+                Yes, I&#39;m sure
               </button>
             </div>
           </div>

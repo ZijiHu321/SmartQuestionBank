@@ -40,7 +40,7 @@ const calculatePerformanceIndex = async (courseName: string) => {
               correct: correct as boolean
             };
           }
-        } catch (e) {
+        } catch {
           continue;
         }
       }

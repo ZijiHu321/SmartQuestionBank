@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import QuestionCard from '../questiontemp';
-import { parseQuestionBlock, parseQuestionFile, Question } from '../questionParser';
+import { parseQuestionFile, Question } from '../questionParser';
 import ClearBookmarks from './ClearBookmarks';
 
 interface BookmarkedQuestion extends Question {
@@ -136,7 +136,7 @@ const Bookmark = () => {
           fontSize: '25px',
           marginTop: '-8rem'
         }}>
-          You haven't bookmarked any questions.
+          You haven&#39;t bookmarked any questions.
         </div>
       ) : (
         <>

@@ -26,13 +26,11 @@ const extractCourseFromPath = (filePath: string): string => {
 
 const QuestionLoader = ({ filePath }: QuestionLoaderProps) => {
   const [questions, setQuestions] = useState<Question[]>([]);
-  const [course, setCourse] = useState('General');
 
   useEffect(() => {
     const loadQuestions = async () => {
       try {
         const detectedCourse = extractCourseFromPath(filePath);
-        setCourse(detectedCourse);
 
         const response = await fetch(`/${filePath}`);
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
