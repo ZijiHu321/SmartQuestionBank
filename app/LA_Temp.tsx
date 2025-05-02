@@ -272,7 +272,7 @@ const LACard = ({
                 transition: 'all 0.2s ease'
             }}
             >
-            I can't do this question by myself
+            I can&#39;t do this question by myself
             </button>
     </div>
 </div>
