@@ -79,7 +79,7 @@ function NavBar() {
               marginLeft: '5rem'
             }}>
               {['/unit', '/mockexam', '/link'].map((path) => (
-                <li key={path} style={{ margin: '0 1.5rem' }}>
+                <li key={path} style={{ margin: '0 0.5rem' }}>
                   <Link
                     href={path}
                     style={{
@@ -104,7 +104,7 @@ function NavBar() {
               ))}
 
               {/* Profile Link */}
-              <li style={{ marginLeft: '30rem', marginTop: '0.3rem' }}>
+              <li style={{ position: 'fixed', right: '200px', marginTop: '0.3rem' }}>
                 <Link
                   href="/profile"
                   style={{
@@ -184,7 +184,7 @@ function NavBar() {
         style={{
           position: 'fixed',
           top: isNavHidden ? '0' : '22px',
-          right: '20px',
+          right: '50px',
           zIndex: 1001,
           padding: '8px 16px',
           backgroundColor: '#f8f9fa',

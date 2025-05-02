@@ -2,45 +2,52 @@
 
 import { useEffect, useState } from 'react';
 import QuestionCard from '../questiontemp';
+import LACard from '../LA_Temp';
 import { parseQuestionFile, Question } from '../questionParser';
+import { parseLAQuestionFile, LAQuestion } from '../LA_Parser';
 import ClearBookmarks from './ClearBookmarks';
 
-interface BookmarkedQuestion extends Question {
-  id: string;
-}
+type AnyQuestion = Question | LAQuestion;
 
 const Bookmark = () => {
-  const [bookmarkedQuestions, setBookmarkedQuestions] = useState<BookmarkedQuestion[]>([]);
+  const [bookmarkedQuestions, setBookmarkedQuestions] = useState<AnyQuestion[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [allQuestions, setAllQuestions] = useState<Question[]>([]);
+  const [allQuestions, setAllQuestions] = useState<AnyQuestion[]>([]);
 
   useEffect(() => {
     const loadAllQuestions = async () => {
       try {
-        const coursesRes = await fetch('/MCquestion/courses.json');
-        const courses: string[] = await coursesRes.json();
-        
-        const allQuestions = await Promise.all(
-          courses.map(async (course) => {
-            const filesRes = await fetch(`/MCquestion/${encodeURIComponent(course)}/files.json`);
+        const questionTypes = ['MCquestion', 'LAquestion'];
+        const loadedQuestions: AnyQuestion[] = [];
+
+        for (const type of questionTypes) {
+          // Load courses for current question type
+          const coursesRes = await fetch(`/${type}/courses.json`);
+          const courses: string[] = await coursesRes.json();
+          
+          for (const course of courses) {
+            // Load files for current course
+            const filesRes = await fetch(`/${type}/${encodeURIComponent(course)}/files.json`);
             const files: string[] = await filesRes.json();
             
-            const courseQuestions = await Promise.all(
-              files.map(async (file) => {
-                const res = await fetch(
-                  `/MCquestion/${encodeURIComponent(course)}/${encodeURIComponent(file)}`
-                );
-                const text = await res.text();
-                return parseQuestionFile(text, file.replace('.txt', ''), course);
-              })
-            );
-            
-            return courseQuestions.flat();
-          })
-        );
+            for (const file of files) {
+              const res = await fetch(
+                `/${type}/${encodeURIComponent(course)}/${encodeURIComponent(file)}`
+              );
+              const text = await res.text();
+              
+              // Parse based on question type
+              const questions = type === 'MCquestion'
+                ? parseQuestionFile(text, file.replace('.txt', ''), course)
+                : parseLAQuestionFile(text, file.replace('.txt', ''), course);
+              
+              loadedQuestions.push(...questions);
+            }
+          }
+        }
 
-        setAllQuestions(allQuestions.flat(3).filter(q => q !== null) as Question[]);
+        setAllQuestions(loadedQuestions);
       } catch (error) {
         console.error('Error loading questions:', error);
         setError('Failed to load question bank');
@@ -61,7 +68,7 @@ const Bookmark = () => {
         
         const bookmarked = allQuestions.filter(q => 
           bookmarks.includes(q.id)
-        ) as BookmarkedQuestion[];
+        );
 
         setBookmarkedQuestions(bookmarked);
         setError(null);
@@ -136,22 +143,35 @@ const Bookmark = () => {
           fontSize: '25px',
           marginTop: '-8rem'
         }}>
-          You haven&#39;t bookmarked any questions.
+          You haven't bookmarked any questions.
         </div>
       ) : (
         <>
           {bookmarkedQuestions.map((question) => (
             <div key={question.id} style={{ marginBottom: '3rem' }}>
-              <QuestionCard
-                id={question.id}
-                question={question.question}
-                choices={question.choices}
-                correctIndex={question.correctIndex}
-                difficulty={question.difficulty}
-                unit={question.unit}
-                topics={question.topics}
-                course={question.course}
-              />
+              {'choices' in question ? (
+                <QuestionCard
+                  id={question.id}
+                  question={question.question}
+                  choices={question.choices}
+                  correctIndex={question.correctIndex}
+                  difficulty={question.difficulty}
+                  unit={question.unit}
+                  topics={question.topics}
+                  course={question.course}
+                />
+              ) : (
+                <LACard
+                  id={question.id}
+                  question={question.question}
+                  solution={question.solution}
+                  difficulty={question.difficulty}
+                  tags={question.tags}
+                  topics={question.topics}
+                  unit={question.unit}
+                  course={question.course}
+                />
+              )}
             </div>
           ))}
           <ClearBookmarks onClear={() => {

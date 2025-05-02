@@ -29,7 +29,7 @@ const FuncCard = ({ func }: { func: Func }) => {
           transition: 'all 0.3s ease',
           backgroundColor: isHovered ? '#f5f5f5' : 'white',
           transform: isHovered ? 'translateY(-2px)' : 'none',
-          margin: '0 2.5rem',
+          margin: '0 3rem',
           textAlign: 'center',
         }}
       >
@@ -81,7 +81,8 @@ function AllFunc() {
           minHeight: '100vh',
           maxWidth: '1200px',
           margin: '0 auto',
-          marginLeft: '15rem'
+          marginLeft: '10rem',
+          marginRight: '10rem'
         }}>
           <h1 style={{ 
             marginTop: '100px', 

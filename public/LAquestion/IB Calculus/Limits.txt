@@ -1,0 +1,50 @@
+Question: Function $g$ is defined as: $$g(x)=\frac{x}{x^2-2x}$$. 
+
+(a) State the domain of the function $g$. [2]
+
+(b) Determine all possible values of $a$ for which $$\lim_{x\to a} g(x)$$ does not exist. [3]
+
+(c) Classify any discontinuity of $g$. [2]
+
+Solution:
+(a)
+$x \in (-\infty , 0) \cup (0,2) \cup (2, \infty)$ **A1 A1**
+$ $
+(b)
+As $x \to 0$,
+$$\lim_{x \to 0} \frac{x}{x^2-2x} = \lim_{x \to 0} \frac{1}{x-2} = -\frac{1}{2}$$ **M1 A1**
+As $x \to 2$,
+$$\lim_{x \to 2} \frac{x}{x^2-2x} = \infty$$, which does not exist. **A1**
+$ $
+(c)
+At $x=0$, $g$ has a removable discontinuity **A1**
+At $x=2$, $g$ has a infinite discontinuity **A1**
+
+Difficulty: 4
+Unit: Limits
+Topics: Rational Functions,Continuity
+Tags: Paper 1
+---
+Question:
+
+(a) Given that $t = 5^\frac{1}{x}$. Evaluate $$\lim_{x \to 0^+} t$$. [2]
+
+(b) Evaluate the limit $$\lim_{x \to 0^+} \frac{2+5^\frac{1}{x}}{1+5^\frac{4}{x}}$$ by letting $$t = 5^\frac{1}{x}.$$ [3]
+
+Solution:
+
+(a)  
+For $t = 5^\frac{1}{x}$ as $x \to 0^+$:  
+Since $\frac{1}{x} \to +\infty$, we have  
+$$\lim_{x \to 0^+} t = \lim_{x \to 0^+} 5^\frac{1}{x} = +\infty$$ **M1 A1**
+$\ $ 
+(b)  
+Let $t = 5^\frac{1}{x}$. Then $5^\frac{4}{x} = t^4$. As $x \to 0^+$, $t \to +\infty$: **M1**  
+$$\lim_{x \to 0^+} \frac{2+t}{1+t^4} = \lim_{t \to +\infty} \frac{2+t}{1+t^4}$$
+$$= \lim_{t \to +\infty} \frac{t(2/t + 1)}{t^4(1/t^4 + 1)}$$ **(M1)**
+$$= \lim_{t \to +\infty} \frac{1}{t^3} \cdot \frac{2/t + 1}{1/t^4 + 1} = 0$$ **A1**
+
+Difficulty: 4  
+Unit: Limits  
+Topics: Limits at Infinity, Basic Limits
+Tags: Paper 1
