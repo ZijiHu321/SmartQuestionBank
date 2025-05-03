@@ -60,7 +60,7 @@ const LALoader = ({ filePath, course }: LALoaderProps) => {
       {questions.map((q) => (
         <LACard
           key={q.id}
-          id={q.id}
+          id={"q"+q.id}
           question={q.question}
           solution={q.solution}
           difficulty={q.difficulty}

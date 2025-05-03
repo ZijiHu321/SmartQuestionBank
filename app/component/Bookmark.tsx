@@ -62,12 +62,14 @@ const Bookmark = () => {
       if (allQuestions.length === 0) return;
 
       try {
+        // drop the begging 'q' if exists
         const bookmarks: string[] = JSON.parse(
           localStorage.getItem('Bookmarks') || '[]'
-        );
+        ).map((id: string) => id.startsWith('q') ? id.substring(1) : id);
         
+        // drop the begging 'q' if exists
         const bookmarked = allQuestions.filter(q => 
-          bookmarks.includes(q.id)
+          bookmarks.includes(q.id.startsWith('q') ? q.id.substring(1) : q.id)
         );
 
         setBookmarkedQuestions(bookmarked);

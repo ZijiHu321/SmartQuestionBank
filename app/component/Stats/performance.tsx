@@ -1,3 +1,4 @@
+import { parseLAQuestionFile } from "@/app/LA_Parser";
 import { parseQuestionFile } from "@/app/questionParser";
 
 interface QuestionData {
@@ -10,43 +11,68 @@ const calculatePerformanceIndex = async (courseName: string) => {
   
   const results = await Promise.all(
     Object.entries(answered).map(async ([id, correct]) => {
-      // 1. Fix ID parsing for units with underscores
-      if (!id.startsWith(`q${courseName}_`)) return null;
+      // 1. Updated ID parsing to handle both MC and LA questions
+      const cleanedId = id.replace(/^q/, '').replace('%20',' '); // Remove MC prefix if exists
+      const parts = cleanedId.split('_');
       
-      // Remove 'q' prefix and split components
-      const parts = id.substring(1).split('_');
-      if (parts.length < 3) return null;
+      // Validate ID structure
+      if (parts[0] !== courseName || parts.length < 3) return null;
       
       const [coursePart, ...rest] = parts;
       const idx = rest.pop();
-      const unit = rest.join('_');
-      const index = parseInt(idx || "", 10);
+      const isLA = rest[0] === 'LA';
+    if (isLA) rest.shift(); // Remove the 'LA' marker
+    
+    const unit = rest.join('_');
+    const index = parseInt(idx || "", 10);
 
-      if (coursePart !== courseName || isNaN(index)) return null;
+    if (coursePart !== courseName || isNaN(index)) return null;
 
-      // 2. Correct file path to match /public/[type]/[course]/[unit].txt
-      for (const type of ['MCquestion', 'LAquestion']) {
-        try {
-          const res = await fetch(`/${type}/${courseName}/${unit}.txt`);
-          if (!res.ok) throw new Error('File not found');
-          
-          const text = await res.text();
-          const questions = parseQuestionFile(text, unit, courseName);
-          const q = questions[index - 1];
-          
-          if (q?.difficulty !== undefined) {
-            return {
-              difficulty: q.difficulty,
-              correct: correct as boolean
-            };
-          }
-        } catch {
-          continue;
+    // 3. Optimized single fetch with fallback
+    try {
+      // Try LA path first if marked, otherwise try MC
+      const firstAttempt = isLA ? 'LAquestion' : 'MCquestion';
+      const res = await fetch(`/${firstAttempt}/${courseName}/${unit}.txt`);
+      
+      if (res.ok) {
+        const text = await res.text();
+        const questions = isLA
+          ? parseLAQuestionFile(text, unit, courseName)
+          : parseQuestionFile(text, unit, courseName);
+        
+        const q = questions[index - 1];
+        if (q?.difficulty !== undefined) {
+          return {
+            difficulty: q.difficulty,
+            correct: correct as boolean
+          };
         }
       }
+      
+      // Fallback to opposite type if first attempt fails
+      const fallbackType = isLA ? 'MCquestion' : 'LAquestion';
+      const fallbackRes = await fetch(`/${fallbackType}/${courseName}/${unit}.txt`);
+      
+      if (fallbackRes.ok) {
+        const text = await fallbackRes.text();
+        const questions = isLA
+          ? parseQuestionFile(text, unit, courseName) // Should never happen since isLA=true would use LA path first
+          : parseLAQuestionFile(text, unit, courseName);
+        
+        const q = questions[index - 1];
+        if (q?.difficulty !== undefined) {
+          return {
+            difficulty: q.difficulty,
+            correct: correct as boolean
+          };
+        }
+      }
+    } catch {
       return null;
-    })
-  );
+    }
+    return null;
+  })
+);
 
   // 3. Filter and categorize valid results
   const validResults = results.filter(Boolean) as QuestionData[];

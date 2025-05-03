@@ -48,3 +48,309 @@ Difficulty: 4
 Unit: Limits  
 Topics: Limits at Infinity, Basic Limits
 Tags: Paper 1
+---
+Question:
+
+Consider the function $f$ defined by $$f(x)=\sqrt{2x-4}$$.
+
+(a) Evaluate the following limits: [3]
+
+$\quad$(i) $$\lim_{x \to 2^+} f(x)$$;
+
+$\quad$(ii) $$\lim_{x \to 2^-} f(x)$$.
+
+(b) Hence, determine if the limit $$\lim_{x \to 2} f(x)$$ exists. [2]
+
+Solution:  
+(a)
+(i) For $x \to 2^+$:
+As $x$ approaches 2 from the right, $2x - 4$ approaches $0^+$.
+Thus:
+$$\lim_{x \to 2^+} \sqrt{2x - 4} = \sqrt{0^+} = 0$$
+**M1** (approach analysis) **A1** (correct limit)
+$\ $
+(ii) For $x \to 2^-$:
+As $x$ approaches 2 from the left, $2x - 4$ approaches $0^-$.
+Since the square root of a negative number is not real:
+$$\lim_{x \to 2^-} \sqrt{2x - 4} \text{ does not exist in the real numbers.}$$
+**M1** (approach analysis) **A1** (DNE conclusion)
+$\ $
+(b)
+Because the left-hand limit does not exist (while the right-hand limit exists and equals 0), the two-sided limit $\lim_{x \to 2} f(x)$ does not exist.
+**A1** (comparison) **A1** (final conclusion)  
+
+Difficulty: 3
+Unit: Limits  
+Topics: Existence of Limits  
+Tags: Paper 1  
+---
+Question: Function $f$ is defined as: $$f(x)=\frac{2^x(2^x-3)}{(2^x-1)^2}$$. 
+
+(a) State and classify any discontinuity of $f$. [2]
+
+(b) State any axis intercepts of $f$. [3]
+
+(c) Evaluate the limit of $f(x)$ as $x$ approaches to $\infty$ by letting $t=2^x$. What does this mean geometrically? [4]
+
+Solution:
+(a)
+Discontinuity occurs when denominator equals zero:
+$$(2^x-1)^2=0 \Rightarrow 2^x=1 \Rightarrow x=0$$ **M1** 
+Classification: Removable discontinuity (0/0 indeterminate form) **A1** 
+
+$\ $
+
+(b)
+x-intercept ($f(x)=0$):
+$$2^x(2^x-3)=0 \Rightarrow 2^x=3 \Rightarrow x=\log_2 3$$ **M1**
+$$(\log_2 3, 0)$$ **A1** (x-intercept)
+y-intercept ($x=0$):
+$$f(0)=\frac{1(1-3)}{(1-1)^2} \text{ (undefined)}$$ **A1** (y-intercept analysis)
+
+$\ $
+
+(c)
+Let $t=2^x$, as $x\to\infty$, $t\to\infty$:
+$$\lim_{x\to\infty} f(x) = \lim_{t\to\infty} \frac{t(t-3)}{(t-1)^2}$$ **M1** 
+$$= \lim_{t\to\infty} \frac{t^2-3t}{t^2-2t+1}$$ **(M1)** 
+$$= \lim_{t\to\infty} \frac{1-3/t}{1-2/t+1/t^2} = 1$$ **A1** 
+Geometric meaning: Horizontal asymptote at $y=1$ **A1** 
+
+Difficulty: 4
+Unit: Limits
+Topics: Rational Functions,Continuity
+Tags: Paper 1
+---
+Question:
+
+Evaluate the following limits: [2 each]
+
+(a) $$\lim_{x \to 0} \frac{\sin 2x}{x}$$;
+
+(b) $$\lim_{x \to 0} \frac{\tan 2x}{x}$$;
+
+(c) $$\lim_{x \to 0} \frac{\sin x \cdot \tan x}{x}$$;
+
+(d) $$\lim_{x \to \infty} x\sin \frac{1}{x}$$;
+
+(e) $$\lim_{x \to 0} \frac{x^2+x}{\sin x}$$.
+
+
+Solution:  
+(a)
+$$\lim_{x \to 0} \frac{\sin 2x}{x} = 2\lim_{x \to 0} \frac{\sin 2x}{2x}$$ **M1** 
+$$= 2 \times 1 = 2$$ **A1** (final answer)
+
+$\ $
+
+(b)
+$$\lim_{x \to 0} \frac{\tan 2x}{x} = \lim_{x \to 0} \frac{\sin 2x}{x \cos 2x}$$ **M1** (tan conversion)
+$$= 2\lim_{x \to 0} \frac{\sin 2x}{2x} \cdot \frac{1}{\cos 2x}$$ **M1** (factor constant)
+$$= 2 \times 1 \times 1 = 2$$  **A1** (final answer)
+
+$\ $
+
+(c)
+$$\lim_{x \to 0} \frac{\sin x \cdot \tan x}{x} = \lim_{x \to 0} \frac{\sin x}{x} \cdot \frac{\sin x}{\cos x}$$ **M1** (separate terms)
+$$= 1 \times \frac{0}{1} = 0$$  **A1** (final answer)
+
+$\ $
+
+(d)
+Let $t = \frac{1}{x}$:
+$$\lim_{x \to \infty} x\sin \frac{1}{x} = \lim_{t \to 0^+} \frac{\sin t}{t}$$ **M1** (substitution)
+$$= 1$$ **A1** (final answer)
+
+$\ $
+
+(e)
+$$\lim_{x \to 0} \frac{x^2+x}{\sin x} = \lim_{x \to 0} \left(\frac{x^2}{\sin x} + \frac{x}{\sin x}\right)$$ **M1** (term separation)
+$$= \lim_{x \to 0} \left(x \cdot \frac{x}{\sin x} + \frac{1}{\frac{\sin x}{x}}\right)$$ 
+$$= 0 \times 1 + \frac{1}{1} = 1$$ **A1** (final answer)
+
+Difficulty: 5
+Unit: Limits  
+Topics: Trigonometric Limits  
+Tags: Paper 1  
+---
+Question:
+
+Evaluate the limit $$\lim_{x \to 0} \frac{1-\cos x}{x^2}$$ by multiplying both the numerator and denominator by $1+\cos x$. [3]
+
+Solution:  
+Multiply numerator and denominator by $1+\cos x$:
+$$=\lim_{x \to 0} \frac{1-\cos ^2 x}{x^2(1+\cos x)}$$  
+$$= \lim_{x \to 0} \frac{\sin ^2 x}{x^2} \cdot \lim_{x \to 0} \frac{1}{1+\cos x}$$ **A1 A1** 
+$$= \frac{1}{2}$$ **A1** 
+
+Difficulty: 5
+Unit: Limits  
+Topics: Trigonometric Limits  
+Tags: Paper 1  
+---
+Question:
+
+(a) Evaluate the limit $$\lim_{x \to 0} \frac{x + \sin x}{x - \sin x}$$ by dividing both the numerator and denominator by $x$. [2]
+
+(b) Evaluate $$\lim_{x \to 0} \frac{\sin ^2 x + x\sin x}{x\sin x + x}$$ [2]
+
+
+Solution:  
+(a)
+Divide numerator and denominator by $x$:
+$$\lim_{x \to 0} \frac{1 + \frac{\sin x}{x}}{1 - \frac{\sin x}{x}}$$ **M1** 
+$$= \frac{1 + 1}{1 - 1} = \frac{2}{0}$$ 
+The limit does not exist (approaches $\infty$) **A1** 
+
+$\ $
+
+(b)
+Divide numerator and denominator by $\sin x$:
+$$\lim_{x \to 0} \frac{\sin x + x}{x + \frac{x}{\sin x}}$$ **M1** (division by sin x)
+
+Rewrite using standard limit $\frac{x}{\sin x} \to 1$ as $x \to 0$:
+$$= \lim_{x \to 0} \frac{\sin x + x}{x + 1}$$ 
+
+Now evaluate directly:
+Numerator: $\sin x + x \to 0 + 0 = 0$
+Denominator: $x + 1 \to 0 + 1 = 1$
+$$= \frac{0}{1} = 0$$ **A1** 
+
+Difficulty: 6
+Unit: Limits  
+Topics: Trigonometric Limits  
+Tags: Paper 1  
+---
+Question:
+
+Evaluate the following limits:
+
+(a) $$\lim_{x \to 4} \frac{x-4}{\sqrt{x}-2}$$. [2]
+
+(b) $$\lim_{x \to \sqrt{2}} \frac{x^3+\sqrt{2}x^2-2x-2\sqrt{2}}{x^2-2}$$. [4]
+
+
+Solution:  
+(a)
+Factor the numerator:
+$$\lim_{x \to 4} \frac{(\sqrt{x}-2)(\sqrt{x}+2)}{\sqrt{x}-2} = \lim_{x \to 4} \sqrt{x}+2 = 4$$ **M1 A1**
+$ $
+Alternatively ...
+Rationalize the denominator:
+$$\lim_{x \to 4} \frac{x-4}{\sqrt{x}-2} \cdot \frac{\sqrt{x}+2}{\sqrt{x}+2} = \lim_{x \to 4} \frac{(x-4)(\sqrt{x}+2)}{x-4}$$ **M1**
+Cancel common term:
+$$= \lim_{x \to 4} (\sqrt{x}+2) = \sqrt{4}+2 = 4$$ **A1**
+
+$\ $
+
+(b)
+Factor numerator and denominator:
+Numerator: $x^3+\sqrt{2}x^2-2x-2\sqrt{2} = (x+\sqrt{2})(x^2-2)$
+Denominator: $x^2-2 = (x-\sqrt{2})(x+\sqrt{2})$
+Simplify:
+$$\lim_{x \to \sqrt{2}} \frac{(x+\sqrt{2})(x^2-2)}{(x-\sqrt{2})(x+\sqrt{2})} = \lim_{x \to \sqrt{2}} \frac{x^2-2}{x-\sqrt{2}}$$
+Factor numerator again:
+$$x^2 - 2 = (x - \sqrt{2})(x + \sqrt{2})$$
+
+Final simplification:
+$$\lim_{x \to \sqrt{2}} \frac{(x - \sqrt{2})(x + \sqrt{2})}{x - \sqrt{2}} = \lim_{x \to \sqrt{2}} (x + \sqrt{2}) = 2\sqrt{2}$$
+
+**M1** (initial factoring) **M1** (denominator factorization) **A1** (cancellation) **A1** (final answer)
+
+Difficulty: 7
+Unit: Limits  
+Topics: Factoring,Basic Limits  
+Tags: Paper 1  
+---
+Question:
+
+Consider the function $f_n(x)=\prod_{k=1}^{n} \cos (\frac{x}{2^k}) = (\cos\frac{x}{2})(\cos \frac{x}{4})...(\cos \frac{x}{2^n})$, $$n \in \mathbb{Z}^+$$.
+
+(a) Determine weather $f_n$ is an even or odd function, justify your answer. [2]
+
+(b) By using mathematical induction, prove that: $$f_n(x) = \frac{\sin x}{2^n \sin\left( \frac{x}{2^n} \right)}, x \neq m\pi, \text{where}\ m \in \mathbb{Z}$$. [8]
+
+(c) Find the limit: $\lim_{n \to \infty} f_n(\alpha), \alpha \neq 0$. You may express your answer in terms of $\alpha$. [4]
+
+
+Solution:  
+(a)
+$f_n(-x) = \prod_{k=1}^n \cos\left(-\frac{x}{2^k}\right) = \prod_{k=1}^n \cos\left(\frac{x}{2^k}\right) = f_n(x)$ **M1** (cosine property)
+Thus $f_n$ is even. **A1** (conclusion)
+
+$\ $
+
+(b)
+Base case ($n=1$):
+LHS = $\cos\left(\frac{x}{2}\right)$
+RHS = $\frac{\sin x}{2\sin\left(\frac{x}{2}\right)} = \frac{2\sin\left(\frac{x}{2}\right)\cos\left(\frac{x}{2}\right)}{2\sin\left(\frac{x}{2}\right)} = \cos\left(\frac{x}{2}\right)$ **M1** (verify base) **A1**
+
+Inductive step:
+Assume true for $n=k$: $f_k(x)=\frac{\sin x}{2^k\sin\left(\frac{x}{2^k}\right)}$ **M1** (hypothesis)
+For $n=k+1$:
+$f_{k+1}(x) = f_k(x)\cos\left(\frac{x}{2^{k+1}}\right) = \frac{\sin x}{2^k\sin\left(\frac{x}{2^k}\right)}\cos\left(\frac{x}{2^{k+1}}\right)$ **M1** (construct)
+Using $\sin\left(\frac{x}{2^k}\right) = 2\sin\left(\frac{x}{2^{k+1}}\right)\cos\left(\frac{x}{2^{k+1}}\right)$: **M1** (identity)
+= $\frac{\sin x}{2^{k+1}\sin\left(\frac{x}{2^{k+1}}\right)}$ **A1** (simplify)
+Since $n=1$ is ture, $n=k+1$ is true whenever $n=k$ is true, hence is true for all positive integer $n$. **A1** (conclusion)
+
+$\ $
+
+(c)
+Using (b): $\lim_{n\to\infty} f_n(\alpha) = \lim_{n\to\infty} \frac{\sin\alpha}{2^n\sin\left(\frac{\alpha}{2^n}\right)}$ **M1** 
+Let $t=\frac{\alpha}{2^n}$: $\lim_{t\to0} \frac{\sin\alpha}{\alpha}\cdot\frac{t}{\sin t} = \frac{\sin\alpha}{\alpha}$ **M1** (substitution) **M1** (trig limit) **A1**
+
+
+Difficulty: 8
+Unit: Limits  
+Topics: Trigonometric Limits,mathematical Induction
+Tags: Paper 1  
+---
+Question:
+
+In this question, you will explore the application of trigonometric identities in limit evaluation.
+
+(a) Using the compound angle identity, evaluate $\sin(75^{\circ})$. [2]
+
+(b) Prove the trigonometric identity: $\sin(\alpha + \beta) - \sin(\alpha - \beta) = 2\cos \alpha \sin \beta$. [3]
+
+(c) Hence or otherwise, prove the trigonometric identity: $\sin x - \sin y = 2\sin \frac{x-y}{2} \cos \frac{x+y}{2}$ (This is known as "Sum-to-product Identity") [2]
+
+(d) Consider the limit: $L = \lim_{x \to \theta} \frac{\sin x - \sin \theta}{x- \theta}$ [5]
+$\quad$ (i) When $\theta = 0$, evaluate the limit.
+$\quad$ (ii) Using the identity in part (c), find $L$ in terms of $\theta$.
+
+Solution:
+(a)
+$\sin(75^\circ) = \sin(45^\circ + 30^\circ) = \sin45^\circ\cos30^\circ + \cos45^\circ\sin30^\circ$ **M1** 
+$= \frac{\sqrt{2}}{2} \cdot \frac{\sqrt{3}}{2} + \frac{\sqrt{2}}{2} \cdot \frac{1}{2} = \frac{\sqrt{6} + \sqrt{2}}{4}$ **A1** 
+
+$\ $
+
+(b)
+$\sin(\alpha+\beta) = \sin\alpha\cos\beta + \cos\alpha\sin\beta$ **M1** 
+$\sin(\alpha-\beta) = \sin\alpha\cos\beta - \cos\alpha\sin\beta$ **M1** 
+Subtracting gives $2\cos\alpha\sin\beta$ **A1** 
+
+$\ $
+
+(c)
+Let $\alpha = \frac{x+y}{2}$, $\beta = \frac{x-y}{2}$ **M1** 
+From part (b), we get the required identity **A1** 
+
+$\ $
+
+(d)(i)
+$L = \lim_{x \to 0} \frac{\sin x}{x} = 1$ **A1** 
+
+(d)(ii)
+Using part (c):
+$\frac{2\sin\left(\frac{x-\theta}{2}\right)\cos\left(\frac{x+\theta}{2}\right)}{x-\theta}$ **M1**
+Let $h = x - \theta$:
+$= \lim_{h \to 0} \frac{2\sin(h/2)\cos(\theta + h/2)}{h}$ **M1**
+$= \lim_{h \to 0} \frac{\sin(h/2)}{h/2} \cdot \cos(\theta + h/2)$ **M1**
+$= \cos\theta$ **A1** 
+
+Difficulty: 8
+Unit: Limits  
+Topics: Trigonometric Limits,Trigonometric Identity
+Tags: Paper 3 

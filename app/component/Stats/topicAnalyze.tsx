@@ -42,8 +42,11 @@ const TopicAnalyze = ({ params }: { params: { course: string } }) => {
   }, [params.course]);
 
   const createBarChart = (data: TopicUnitData, title: string, maxItems?: number) => {
-    // Process data for chart
-    const sortedEntries = Object.entries(data).sort(([,a], [,b]) => b - a);
+    // Filter out zero values and process data for chart
+    const sortedEntries = Object.entries(data)
+      .filter(([, value]) => value > 0)
+      .sort(([,a], [,b]) => b - a);
+    
     const limitedEntries = maxItems ? sortedEntries.slice(0, maxItems) : sortedEntries;
     
     const labels = limitedEntries.map(([key]) => key);
@@ -113,9 +116,14 @@ const TopicAnalyze = ({ params }: { params: { course: string } }) => {
     );
   }
 
-  // Process data for display
-  const allUnits = Object.entries(unitData).sort(([a], [b]) => a.localeCompare(b));
-  const allTopics = Object.entries(topicData).sort(([,a], [,b]) => b - a);
+  // Process data for display (filter out zero values)
+  const allUnits = Object.entries(unitData)
+    .filter(([, count]) => count > 0)
+    .sort(([a], [b]) => a.localeCompare(b));
+    
+  const allTopics = Object.entries(topicData)
+    .filter(([, count]) => count > 0)
+    .sort(([,a], [,b]) => b - a);
 
   return (
     <div className="container py-5">

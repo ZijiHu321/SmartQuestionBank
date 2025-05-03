@@ -139,3 +139,16 @@ Difficulty: 5
 Unit: Limits
 Topics: Limits at Infinity
 ---
+Question: Find the limit $\lim_{x \to \infty} \arctan x$?
+
+Choices:
+- 1
+- 0
+- $\infty$
+- $\frac{\pi}{2}$
+
+Correct: 3
+Difficulty: 5
+Unit: Limits
+Topics: Basic Limits
+---

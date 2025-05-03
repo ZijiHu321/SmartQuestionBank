@@ -63,9 +63,9 @@ const Diagnosis = ({ courseName }: { courseName: string }) => {
   };
 
   return (
-    <div className="d-flex justify-content-left align-items-center vh-50" style={{marginLeft:'10.75rem'}}>
-      <div className="col-lg-8 col-xl-6 mb-4">
-        <div className="card shadow-sm h-100 border-0 mx-auto" style={{ width: '1300px', marginTop:'-4rem' }}>
+    <div className="d-flex justify-content-center align-items-center vh-50" >
+      <div style={{ width: '1300px' }}>
+        <div className="card shadow-sm h-100 border-0 mx-auto" style={{ width: '100%', marginTop:'-4rem' }}>
           <div className="card-header bg-secondary text-white rounded-top">
             <h3 className="mb-0 font-medium ps-3">Performance Index</h3>
           </div>
