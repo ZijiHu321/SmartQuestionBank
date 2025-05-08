@@ -300,9 +300,9 @@ Using (b): $\lim_{n\to\infty} f_n(\alpha) = \lim_{n\to\infty} \frac{\sin\alpha}{
 Let $t=\frac{\alpha}{2^n}$: $\lim_{t\to0} \frac{\sin\alpha}{\alpha}\cdot\frac{t}{\sin t} = \frac{\sin\alpha}{\alpha}$ **M1** (substitution) **M1** (trig limit) **A1**
 
 
-Difficulty: 8
+Difficulty: 7
 Unit: Limits  
-Topics: Trigonometric Limits,mathematical Induction
+Topics: Trigonometric Limits,Mathematical Induction
 Tags: Paper 1  
 ---
 Question:

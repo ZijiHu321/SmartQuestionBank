@@ -48,7 +48,7 @@ const StatisticsPage = ({ params }: { params: { course: string } }) => {
         // Course-specific stats
         const encodedCourse = encodeURIComponent(params.course);
         const courseQuestionIds = Object.keys(answeredQuestions).filter(id =>
-          id.startsWith(`q${encodedCourse}_`)
+          id.startsWith(`q${encodedCourse}_`) || id.startsWith(`${encodedCourse}_`)
         );
         const courseCorrect = courseQuestionIds.filter(id => answeredQuestions[id]).length;
         const courseTotal = courseQuestionIds.length;

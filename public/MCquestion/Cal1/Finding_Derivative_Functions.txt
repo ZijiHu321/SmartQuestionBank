@@ -1,5 +1,5 @@
 ---
-Question: What is the tangent of function $$f(x) = 24 x^{24}$$ at $$x = 0$$ ?
+Question: What is the slope of the tangent of the function $$f(x) = 24 x^{24}$$ at $$x = 0$$ ?
 
 Choices:
 - 0

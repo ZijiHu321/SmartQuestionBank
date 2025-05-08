@@ -1,0 +1,641 @@
+Question: Find the derivative functions of $f(x) = x^3$ by using the $\textbf{first principle}$. [4]
+
+Solution:
+Using the definition of derivative:
+$$f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}$$ 
+$$= \lim_{h \to 0} \frac{(x+h)^3 - x^3}{h}$$ **M1**
+$$= \lim_{h \to 0} \frac{x^3 + 3x^2h + 3xh^2 + h^3 - x^3}{h}$$ **M1**
+$$= \lim_{h \to 0} \frac{3x^2h + 3xh^2 + h^3}{h}$$ 
+$$= \lim_{h \to 0} (3x^2 + 3xh + h^2)$$ **A1**
+$$= 3x^2$$ **A1**
+
+Difficulty: 4
+Unit: Finding Derivative Functions
+Topics: First Principle
+Tags: Paper 1
+---
+Question: Find the derivative functions of $f(x) = \frac{1}{\sqrt{2x+1}}$ by using the $\textbf{first principle}$. [4]
+
+Solution:
+Using the definition of derivative:
+$$f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}$$ 
+$$= \lim_{h \to 0} \frac{\frac{1}{\sqrt{2(x+h)+1}} - \frac{1}{\sqrt{2x+1}}}{h}$$ **M1**
+$$= \lim_{h \to 0} \frac{\sqrt{2x+1} - \sqrt{2x+2h+1}}{h\sqrt{(2x+1)(2x+2h+1)}}$$ 
+$$= \lim_{h \to 0} \frac{(2x+1)-(2x+2h+1)}{h\sqrt{(2x+1)(2x+2h+1)}(\sqrt{2x+1}+\sqrt{2x+2h+1})}$$ **M1**
+$$= \lim_{h \to 0} \frac{-2h}{h\sqrt{(2x+1)(2x+2h+1)}(\sqrt{2x+1}+\sqrt{2x+2h+1})}$$ 
+$$= \lim_{h \to 0} \frac{-2}{\sqrt{(2x+1)(2x+2h+1)}(\sqrt{2x+1}+\sqrt{2x+2h+1})}$$ **A1**
+$$= \frac{-2}{\sqrt{(2x+1)^2}(2\sqrt{2x+1})} = \frac{-2}{(2x+1)(2\sqrt{2x+1})}$$ **A1**
+
+Final simplification:
+$$f'(x) = \frac{-1}{(2x+1)^{3/2}}$$ 
+
+Difficulty: 5
+Unit: Finding Derivative Functions
+Topics: First Principle
+Tags: Paper 1
+---
+Question: Find the derivative functions of $f(x) = \sin x$ by using the $\textbf{first principle}$. [4]
+
+Solution:
+Using the definition of derivative:
+$$f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}$$ 
+$$= \lim_{h \to 0} \frac{\sin(x+h) - \sin x}{h}$$ **M1**
+$$= \lim_{h \to 0} \frac{\sin x \cos h + \cos x \sin h - \sin x}{h}$$ **M1**
+$$= \lim_{h \to 0} \frac{\sin x (\cos h - 1) + \cos x \sin h}{h}$$ 
+$$= \sin x \lim_{h \to 0} \frac{\cos h - 1}{h} + \cos x \lim_{h \to 0} \frac{\sin h}{h}$$ **M1**
+$$= \sin x \cdot 0 + \cos x \cdot 1$$ **A1**
+Final result:
+$$f'(x) = \cos x$$
+
+Difficulty: 6
+Unit: Finding Derivative Functions
+Topics: First Principle,Trigonometric Identity,Trigonometric Limits
+Tags: Paper 1
+---
+Question: 
+Consider the function $f(x)=\frac{1}{2x+1}$.
+
+(a) Using the $\textbf{first principle}$ (definition of derivatives), show that $f'(x)=\frac{-2}{(2x+1)^2}$. [4]
+
+(b) Prove by induction that $f^{(n)}(x) = (-1)^n \frac{2^n n!}{(2x+1)^{n+1}}$. [8]
+
+Solution:
+(a)
+Using the definition:
+$$f'(x) = \lim_{h \to 0} \frac{f(x+h)-f(x)}{h}$$ 
+$$= \lim_{h \to 0} \frac{\frac{1}{2(x+h)+1} - \frac{1}{2x+1}}{h}$$ **M1 A1**
+$$= \lim_{h \to 0} \frac{(2x+1)-(2x+2h+1)}{h(2x+1)(2x+2h+1)}$$ **M1**
+$$= \lim_{h \to 0} \frac{-2h}{h(2x+1)(2x+2h+1)} = \frac{-2}{(2x+1)^2}$$ **A1**
+
+$\ $
+
+(b)
+Base case ($n=1$):
+$$f'(x) = \frac{-2}{(2x+1)^2} = (-1)^1 \frac{2^1 1!}{(2x+1)^2}$$ **M1**
+
+Inductive step:
+Assume true for $n=k$:
+$$f^{(k)}(x) = (-1)^k \frac{2^k k!}{(2x+1)^{k+1}}$$ **M1**
+
+Differentiate both sides:
+$$f^{(k+1)}(x) = (-1)^k 2^k k! \cdot \frac{d}{dx}(2x+1)^{-(k+1)}$$ **M1**
+$$= (-1)^k 2^k k! \cdot (-(k+1))(2x+1)^{-(k+2)} \cdot 2$$ **(M1) A1**
+$$= (-1)^{k+1} \frac{2^{k+1} (k+1)!}{(2x+1)^{k+2}}$$ **(M1) A1**
+
+Since the result holds for $n=1$, and holds for $n=k+1$ whenever holds for $n=k$, the result holds for all positive integers $n$. **A1**
+
+Difficulty: 6
+Unit: Finding Derivative Functions
+Topics: First Principle,Mathematical Induction
+Tags: Paper 1
+---
+Question:
+Show that $\frac{d}{dx}\frac{x+1}{x^2+1} = \frac{1}{x^2+1} - \frac{2x^2+2x}{(x^2+1)^2}$. [4]
+
+Solution:
+Let $f(x) = \frac{x+1}{x^2+1} $.
+Using the quotient rule:
+$ f'(x) = \frac{(1)(x^2+1) - (x+1)(2x)}{(x^2+1)^2} $ **M1**
+$ = \frac{x^2 + 1 - 2x^2 - 2x}{(x^2+1)^2} $ **M1** (expand numerator)
+$ = \frac{-x^2 - 2x + 1}{(x^2+1)^2} $ (**A1**)
+$ = \frac{1}{x^2+1} - \frac{2x^2 + 2x}{(x^2+1)^2} $ **A1** (final form)
+
+Difficulty: 5
+Unit: Finding Derivative Functions
+Topics: the Quotient Rule
+Tags: Paper 1
+---
+Question:
+Consider the function $f(x) = e^{-x} \sin x$.
+(a) Show that $\frac{d}{dx} f(x) = \frac{ -\sqrt{2} \sin (x + \pi /4) }{e^x}$. [5]
+
+(b) Find all real number $x$ on the interval $[0,2\pi]$ for which $f'(x) \geq 0$. [4]
+
+Solution:
+(a)
+Using product rule:
+$f'(x) = \frac{d}{dx}(e^{-x}) \sin x + e^{-x} \frac{d}{dx}(\sin x)$ **M1**
+$= -e^{-x} \sin x + e^{-x} \cos x$ 
+$= e^{-x} (\cos x - \sin x)$ **A1**
+$\cos x - \sin x = \sqrt{2} \left( \frac{1}{\sqrt{2}} \cos x - \frac{1}{\sqrt{2}} \sin x \right)$ **M1**
+$= \sqrt{2} \sin(\pi/4 - x)$ **A1**
+$= -\sqrt{2} \sin(x + \pi/4)$ 
+
+Thus:
+$f'(x) = \frac{ -\sqrt{2} \sin (x + \pi /4) }{e^x}$ **A1**
+
+$\ $
+
+(b)
+From part (a), $f'(x) \geq 0$ when:
+$-\sqrt{2} \sin(x + \pi/4) \geq 0$ **M1**
+$\Rightarrow \sin(x + \pi/4) \leq 0$ **M1**
+
+$\Rightarrow x + \pi/4 \in [\pi, 2\pi]$ **M1**
+
+Thus $x \in [3\pi/4, 7\pi/4]$ **A1**
+
+
+Difficulty: 7
+Unit: Differential Calculus
+Topics: Product Rule, Trigonometric Identity, Trigonometric Function Graph
+Tags: Paper 1
+---
+Question:
+Show that $\frac{d}{dx} \frac{2x^4 -3x^2 -1}{x^3} = 2 + 3x^{-2} + 3x^{-4}$. [2]
+
+Solution:
+$ \frac{d}{dx} \frac{2x^4 -3x^2 -1}{x^3} $
+$ = \frac{d}{dx} (2x - 3x^{-1} - x^{-3})$ **M1**
+$ = 2 + 3x^{-2} + 3x^{-4}$ **A1**
+
+Difficulty: 4
+Unit: Finding Derivative Functions
+Topics: Derivatives of Elementary Functions
+Tags: Paper 1
+---
+---
+Question:
+Consider the curve defined by $y = \frac{\ln x}{x}$.
+
+(a) Find the equation of the tangent to the curve at $x=1$. [3]
+
+(b) Find the equation of the horizontal tangent to the curve. [3]
+
+Solution:
+
+(a)
+First, find the y-coordinate at $x=1$:
+$y(1) = \frac{\ln 1}{1} = 0$ 
+
+Find the derivative using quotient rule:
+$y' = \frac{\frac{1}{x} \cdot x - \ln x \cdot 1}{x^2} = \frac{1 - \ln x}{x^2}$ **M1**
+
+Evaluate derivative at $x=1$:
+$y'(1) = \frac{1 - \ln 1}{1} = 1$ **A1**
+
+Equation of tangent line:
+$y = x+b$
+
+Plug the point $(1,0)$ into the equation to solve $b$:
+$0 = 1+b \Rightarrow b=-1$
+
+Final answer: $y=x-1$ **A1**
+
+$\ $
+
+(b)
+For horizontal tangent, set $y' = 0$:
+$\frac{1 - \ln x}{x^2} = 0 \Rightarrow 1 - \ln x = 0 \Rightarrow x = e$ **M1**
+
+Find y-coordinate at $x=e$:
+$y(e) = \frac{\ln e}{e} = \frac{1}{e}$ **A1**
+
+Equation of horizontal tangent:
+$y = \frac{1}{e}$ **A1**
+
+Difficulty: 3
+Unit: Finding Derivative Functions
+Topics: Slope of the Tangent
+Tags: Paper 1
+---
+Question:
+Line $l: y=\frac{1}{2}x + b$ is tangent to the curve defined by $y=\sqrt{x-1}$. Find $b$. [5]
+
+Solution:
+First, find the derivative of the curve $y=\sqrt{x-1} = (x-1)^{1/2}$:
+$y' = \frac{1}{2}(x-1)^{-1/2} = \frac{1}{2\sqrt{x-1}}$ **M1**
+
+The slope of the tangent line $l$ is $\frac{1}{2}$, so set them equal:
+$\frac{1}{2\sqrt{x-1}} = \frac{1}{2}$ **M1**
+$\Rightarrow \sqrt{x-1} = 1$ 
+$\Rightarrow x-1 = 1 \Rightarrow x=2$ **A1**
+
+Find the point of tangency on the curve:
+$y=\sqrt{2-1}=1$ 
+
+Substitute $(2,1)$ into line equation: 
+$1 = \frac{1}{2}(2) + b$ **M1**
+$\Rightarrow 1 = 1 + b \Rightarrow b=0$ **A1**
+
+Difficulty: 5
+Unit: Finding Derivative Functions
+Topics: Slope of the Tangent
+Tags: Paper 1
+---
+Question:
+Find the equation of the tangent to the curve $y=\ln x$ that passes through the origin. [5]
+
+Solution:
+Let the point of tangency be $(a, \ln a)$. 
+The derivative of $y=\ln x$ is: $y' = \frac{1}{x}$ **M1**
+
+The slope at $x=a$ is $m = \frac{1}{a}$, which gives the tangent line equation:
+$y = \frac{1}{a} x + b$ **M1**
+
+Since it passes through $(0,0)$, the tangent line equation is:
+$y = \frac{1}{a} x$ **A1**
+
+Substitute the point $(a, \ln a)$ into the equation of the tangent line:
+$\ln a = \frac{1}{a}\cdot a \Rightarrow \ln a = 1 \Rightarrow a = e$ **M1**
+
+Therefore, the equation of the tangent is $y=\frac{x}{e}$. **A1**
+
+Difficulty: 6
+Unit: Finding Derivative Functions
+Topics: Slope of the Tangent
+Tags: Paper 1
+---
+Question:
+Find the closest point (both $x$ and $y$ coordinates) on $f(x)=\sqrt{x-1}$ to the line $y=2x+1$. [4]
+
+Solution:
+Note that the closest point occurs where the tangent to $f(x)$ is parallel to $y=2x+1$ (i.e., same slope). 
+
+Find derivative of $f(x)$:
+$f'(x) = \frac{1}{2\sqrt{x-1}}$ **A1**
+
+Set slope equal to 2 (the line's slope):
+$\frac{1}{2\sqrt{x-1}} = 2$ **M1**
+$\Rightarrow \sqrt{x-1} = \frac{1}{4}$ 
+$\Rightarrow x-1 = \frac{1}{16}$
+$\Rightarrow x = \frac{17}{16}$ **A1**
+
+Find y-coordinate:
+$y = \sqrt{\frac{17}{16}-1} = \frac{1}{4}$ 
+
+Final Answer:
+The closest point is $\left(\frac{17}{16}, \frac{1}{4}\right)$. **A1**
+
+Difficulty: 7
+Unit: Finding Derivative Functions
+Topics: Slope of the Tangent
+Tags: Paper 1
+---
+Question: 
+Consider the functions $f(x) = x^2 +1$ and $g(x) = -x^2 -1$. Find the equations of all lines that tangent to both $f$ and $g$. [7]
+
+Solution:
+Find general tangent to $f(x)$:
+   - $f'(x) = 2x$
+   - At $x=a$, slope is $m=2a$
+   - Tangent equation: $y = 2a x - a^2 + 1$ **M1**
+
+Find general tangent to $g(x)$:
+   - $g'(x) = -2x$
+   - At $x=b$, slope is $m=-2b$
+   - Tangent equation: $y = -2b x + b^2 - 1$ **M1**
+
+For common tangent, the two tangent lines need to have identical slope and intercept:
+Slopes must be equal: $2a = -2b \Rightarrow a = -b$ **A1**
+Intercepts must be equal: $-a^2 + 1 = b^2 - 1$ **A1**
+
+Substitute $b = -a$ into intercept equation:
+   $-a^2 + 1 = (-a)^2 - 1$
+   $-a^2 + 1 = a^2 - 1$
+   $-2a^2 = -2$
+   $a^2 = 1 \Rightarrow a = \pm 1$ **A1**
+
+Find tangent lines:
+   - For $a=1$: $y = 2(1)x - (1)^2 + 1 = 2x$ **A1**
+   - For $a=-1$: $y = 2(-1)x - (-1)^2 + 1 = -2x$ **A1**
+
+Difficulty: 7
+Unit: Finding Derivative Functions
+Topics: Slope of the Tangent
+Tags: Paper 1
+---
+Question:
+A curve is defined by $x^3 + y^2 =1$. Find all point(s) where the tangent to the curve is:
+(a) horizontal; [4]
+(b) vertical. [2]
+
+Solution:
+(a)
+Differentiate implicitly:
+$3x^2 + 2y \frac{dy}{dx} = 0$ **M1**
+$\Rightarrow \frac{dy}{dx} = -\frac{3x^2}{2y}$ **A1**
+
+$-\frac{3x^2}{2y} = 0 \Rightarrow x = 0$ **M1**
+
+Find corresponding y-coordinate:
+$0^3 + y^2 = 1 \Rightarrow y = \pm 1$ **A1**
+
+Points: $(0,1)$ and $(0,-1)$ 
+
+$\ $
+
+(b) 
+Vertical tangent when $\frac{dy}{dx}$ is undefined (denominator = 0):
+$2y = 0 \Rightarrow y = 0$ **M1**
+
+Find corresponding x-coordinate:
+$x^3 + 0^2 = 1 \Rightarrow x = 1$ **A1**
+
+Point: $(1,0)$ 
+
+Difficulty: 3/10
+Unit: Finding Derivative Functions
+Topics: Implicit differentiation,Slope of the Tangent
+Tags: Paper 1
+---
+Question:
+Consider the curve with the equation: $$x^3 + y^3 = 4xy$$. The tangent to the curve is parallel to the $x$ axis at the point when $x=k, k>0$.
+(a) Show that $\frac{dy}{dx} = \frac{4y-3x^2}{3y^2-4x}$. [3]
+(b) Find the value of $k$. [5]
+
+Solution:
+(a)
+Differentiate both sides implicitly with respect to $x$:
+$\frac{d}{dx}(x^3) + \frac{d}{dx}(y^3) = \frac{d}{dx}(4xy)$ **M1**
+$3x^2 + 3y^2\frac{dy}{dx} = 4y + 4x\frac{dy}{dx}$ **A1**
+$3y^2\frac{dy}{dx} - 4x\frac{dy}{dx} = 4y - 3x^2$ 
+$\frac{dy}{dx}(3y^2 - 4x) = 4y - 3x^2$ **A1**
+$\frac{dy}{dx} = \frac{4y-3x^2}{3y^2-4x}$ 
+
+$\ $
+
+(b)
+For tangent parallel to x-axis, $\frac{dy}{dx} = 0$:
+$\frac{4y-3x^2}{3y^2-4x} = 0 \Rightarrow 4y = 3x^2$ **M1**
+
+Substitute into original equation when $x=k$:
+$k^3 + y^3 = 4ky$ and $4y = 3k^2 \Rightarrow y = \frac{3}{4}k^2$ **M1**
+
+Substitute $y$:
+$k^3 + \left(\frac{3}{4}k^2\right)^3 = 4k\left(\frac{3}{4}k^2\right)$ 
+$k^3 + \frac{27}{64}k^6 = 3k^3$ **A1**
+Solve for $k$:
+$\frac{27}{64}k^6 - 2k^3 = 0$ 
+$k^3\left(\frac{27}{64}k^3 - 2\right) = 0$ **M1** (Attepting to solve for $k$)
+Since $k>0$:
+$k = \frac{4\sqrt[3]{2}}{3}$ (or $1.68$) **A1**
+
+Difficulty: 5/10
+Unit: Finding Derivative Functions
+Topics: Implicit differentiation,Slope of the Tangent
+Tags: Paper 2
+---
+Question:
+The curve $C$ is defined as $xy-\ln y = 1, y>0$. 
+(a) Find $\frac{dy}{dx}$ in terms of $x$ and $y$. [3]
+(b) Determine the equation of the tangent to $C$ at the point $(\frac{2}{e}, e)$. [3]
+
+Solution:
+(a)
+Differentiate both sides implicitly with respect to $x$:
+$\frac{d}{dx}(xy) - \frac{d}{dx}(\ln y) = \frac{d}{dx}(1)$ **M1**
+$y + x\frac{dy}{dx} - \frac{1}{y}\frac{dy}{dx} = 0$ **A1**
+
+Solve for $\frac{dy}{dx}$:
+$(x - \frac{1}{y})\frac{dy}{dx} = -y$ 
+$\frac{dy}{dx} = \frac{-y}{x - \frac{1}{y}} = \frac{-y^2}{xy - 1}$ **A1**
+
+$\ $
+
+(b)
+Find the slope at this point:
+$\left.\frac{dy}{dx}\right|_{(\frac{2}{e},e)} = \frac{-e^2}{\frac{2}{e}\cdot e - 1} = \frac{-e^2}{2 - 1} = -e^2$ **M1 A1**
+Write the tangent line equation:
+$y - e = -e^2(x - \frac{2}{e})$
+or equivalently:
+$y = -e^2x + 2e + e = -e^2x + 3e$ **A1**
+
+Difficulty: 3/10
+Unit: Finding Derivative Functions
+Topics: Implicit differentiation,Slope of the Tangent
+Tags: Paper 1
+---
+Question:
+Show that the points $(0,0)$ and $(\sqrt{2\pi},-\sqrt{2\pi})$ on the curve $e^{x+y} = cos(xy)$ have a common tangent. [6]
+
+Solution:
+
+Differentiate implicitly:
+$\frac{d}{dx}(e^{x+y}) = \frac{d}{dx}(\cos(xy))$ **M1**
+$e^{x+y}(1 + \frac{dy}{dx}) = -\sin(xy)(y + x\frac{dy}{dx})$ **M1**
+
+Solve for $\frac{dy}{dx}$:
+$\frac{dy}{dx} = \frac{-e^{x+y} - y\sin(xy)}{e^{x+y} + x\sin(xy)}$ **A1**
+
+Find slope at $(0,0)$:
+$\left.\frac{dy}{dx}\right|_{(0,0)} = \frac{-1 - 0}{1 + 0} = -1$ **A1**
+
+Find slope at $(\sqrt{2\pi},-\sqrt{2\pi})$:
+$\left.\frac{dy}{dx}\right|_{(\sqrt{2\pi},-\sqrt{2\pi})} = \frac{-1 - 0}{1 + 0} = -1$ **A1**
+
+Note that both points have tangent line:
+$y = -x$ **A1**
+
+Difficulty: 6/10
+Unit: Finding Derivative Functions
+Topics: Implicit differentiation,Slope of the Tangent
+Tags: Paper 1
+---
+Question:
+Consider the curve defined by the equation $x^2 + \sin y -xy = 0$.
+(a) Show that $\frac{dy}{dx} = \frac{y-2x}{\cos y -x}$. [4]
+
+Let $l_1$ be the tangent line to the curve at $(\pi, \pi)$. Denote the acute angle between $l_1$ and the line $y=x$ to be $\theta$.  
+
+(b) Show that $\tan \theta = \frac{1}{1+2\pi}$ [4]
+
+Solution:
+(a)
+Differentiate both sides implicitly with respect to $x$:
+$\frac{d}{dx}(x^2) + \frac{d}{dx}(\sin y) - \frac{d}{dx}(xy) = 0$ **M1**
+$2x + \cos y \frac{dy}{dx} - (y + x\frac{dy}{dx}) = 0$ **M1 M1**
+
+Collect terms with $\frac{dy}{dx}$:
+$(\cos y - x)\frac{dy}{dx} = y - 2x$ 
+
+Solve for $\frac{dy}{dx}$:
+$\frac{dy}{dx} = \frac{y-2x}{\cos y -x}$ **A1**
+
+$\ $
+
+(b)
+Compute $\frac{dy}{dx}$ at $(\pi,\pi)$:
+$\left.\frac{dy}{dx}\right|_{(\pi,\pi)} = \frac{\pi - 2\pi}{\cos \pi - \pi} = \frac{-\pi}{-1 - \pi} = \frac{\pi}{1+\pi}$ **A1**
+
+Find the angle between $l_1$ (slope $m_1 = \frac{\pi}{1+\pi}$) and $y=x$ (slope $m_2=1$):
+Let the angle between $l1$ and the $x$-axis be $\theta _1$,
+the angle between $y=x$ and the $x$-axis be $\theta _2$.
+Note that $\tan \theta_1 = m_1 = \frac{\pi}{1+\pi}$ and $\tan \theta_2 = m_2 = 1$.
+$\tan \theta = \tan (\theta_1-\theta_2) = \left|\frac{m_2 - m_1}{1 + m_1 m_2}\right| = \left|\frac{1 - \frac{\pi}{1+\pi}}{1 + \frac{\pi}{1+\pi}}\right|$ **M1 M1**
+$= \left|\frac{\frac{1}{1+\pi}}{\frac{1+2\pi}{1+\pi}}\right| = \frac{1}{1+2\pi}$ **A1**
+
+Difficulty: 7/10
+Unit: Finding Derivative Functions
+Topics: Implicit differentiation,Slope of the Tangent
+Tags: Paper 1
+
+---
+
+Question:
+The ellipse $\gamma : x^2 + (2y)^2 = 16$ is drawn in the figure $\textit{P1-1}$. Point $A$ is the $x$-intercept on the negative $x$-axis, and point $B$ is the $y$-intercept on the positive $y$-axis.
+
+(a) Find coordinates of $A$ and $B$. [2]
+
+(b) Find length of $AB$. [1]
+
+(c) Find $\frac{dy}{dx}$ in terms of $x$ and $y$. [3]
+
+(d) $C$ is a point on the ellipse $\gamma$ which maximize the area of $\triangle ABC$ (as shown in the figure $\textit{P1-2}$). Find the coordinate of $C$. [3]
+
+(e) Line $l: y=kx, k<0$ intersects the ellipse $\gamma$ at point $M$ and $N$ (as shown in the figure $\textit{P1-3}$). Find $k$ which maximizes area of quadrilateral $AMBN$. [4]
+
+![ ](/questionPic/der_1.png?800x)
+
+Solution:
+(a)
+For $A$ ($x$-intercept):
+Set $y=0$ in $\gamma$:
+$x^2 = 16 \Rightarrow x = \pm4$
+Thus $A(-4, 0)$ **A1**
+
+For $B$ ($y$-intercept):
+Set $x=0$ in $\gamma$:
+$(2y)^2 = 16 \Rightarrow y = \pm2$
+Thus $B(0, 2)$ **A1**
+
+$\ $
+
+(b)
+Length $AB$:
+$AB = \sqrt{(0-(-4))^2 + (2-0)^2} = \sqrt{16 + 4} = \sqrt{20} = 2\sqrt{5}$ **A1**
+
+$\ $
+
+(c)
+Differentiate $\gamma$ implicitly:
+$2x + 8y\frac{dy}{dx} = 0$ **M1 A1**
+$\Rightarrow 8y\frac{dy}{dx} = -2x$ 
+$\Rightarrow \frac{dy}{dx} = -\frac{x}{4y}$ **A1**
+
+$\ $
+
+(d) 
+The tangent line parallel to $AB$ will give maximal area $\triangle ABC$ 
+Slope of $AB$: $m_{AB} = \frac{2-0}{0-(-4)} = \frac{1}{2}$ **A1**
+From part (c), $\frac{dy}{dx} = -\frac{x}{4y} = \frac{1}{2}$ (parallel condition) **M1**
+Solve: $-\frac{x}{4y} = \frac{1}{2} \Rightarrow x = -2y$
+Substitute into ellipse equation: $(-2y)^2 + (2y)^2 = 16 \Rightarrow y = \pm \sqrt{2}$
+Take $y = -\sqrt{2}$ for maximum area: $C = (2\sqrt{2}, -\sqrt{2})$ **A1**
+
+$\ $
+
+(e)
+To maximize area $AMBN$, we need two points $M$ and $N$ on $\gamma$ such that:
+   $\qquad$ The tangent at $M$ is parallel to $AB$ 
+   $\qquad$ The tangent at $N$ is parallel to $AB$ 
+From part (d), slope of $AB$ is $m_{AB} = \frac{1}{2}$ 
+
+Using the derivative from part (c):
+   $\frac{dy}{dx} = -\frac{x}{4y} = \frac{1}{2}$ (parallel condition) **M1**
+
+Solve for points with tangent parallel to AB:
+   $-\frac{x}{4y} = \frac{1}{2} \Rightarrow x = -2y$ 
+
+Substitute into ellipse equation:
+   $(-2y)^2 + (2y)^2 = 16 \Rightarrow y = \pm \sqrt{2}$
+   Thus two points: $(2\sqrt{2}, -\sqrt{2})$ and $(-2\sqrt{2}, \sqrt{2})$ **A1**
+
+These points must lie on $y = kx$:
+   $-\sqrt{2} = k(2\sqrt{2}) \Rightarrow k = -\frac{1}{2}$
+   $\sqrt{2} = k(-2\sqrt{2}) \Rightarrow k = -\frac{1}{2}$  **A1**
+Therefore, $k=-\frac{1}{2}$ since both points lies on the line $y=kx$. (this verification is needed) **M1**
+
+Difficulty: 8/10
+Unit: Finding Derivative Functions
+Topics: Implicit differentiation,Slope of the Tangent
+Tags: Paper 3
+---
+Question:
+Let $f_n(x) = x(x+1)(x+2)...(x+n)$. Find the smallest natural number $n$ such that $f_n'(0) > 2024$.
+
+Solution:
+Expand $f(x)$ as a polynomial:
+$f(x) = x^{n+1} + a_nx^n + \cdots + a_1x$ (constant term is 0) **M1**
+
+Differentiate term-by-term:
+$f'(x) = (n+1)x^n + na_nx^{n-1} + \cdots + a_1$ **M1**
+
+Evaluate at $x=0$:
+$f'(0) = a_1$ (all other terms vanish) **A1**
+
+Recognize $a_1$ is the coefficient of $x$, which is obtained by choosing the constant in all brackets except the first factor $x$:
+$a_1 = 1 \cdot 2 \cdots n = n!$ **M1**
+
+Using calculator, observe that $n=7$ is the smallest natural number that satisfies the condition. **A1**
+
+Difficulty: 7/10
+Unit: Finding Derivative Functions
+Topics: Derivatives of Elementary Functions
+Tags: Paper 2
+---
+Question:
+The function $f: \mathbb{R} \rightarrow \mathbb{R}$ and $g: \mathbb{R} \rightarrow \mathbb{R}$ are differentiable on $\mathbb{R}$ and have the properties that for all $x\in \mathbb{R}$:
+$$f'(x) = f(x) + g(x)$$
+$$g'(x) = g(x) - f(x)$$
+
+(a) Show that $f''(x) = f'(x) + g'(x)$ and $g''(x) = f'(x) + g'(x)$ for all $x \in \mathbb{R}$. [2]
+
+(b) Hence, show that $f''(x) = 2g(x)$ and $g''(x) = -2f(x)$ for all $x \in \mathbb{R}$. [2]
+
+(c) Show that $f^{(4)}(x) = -4f(x)$ and $g^{(4)}(x) = -4g(x)$ for all $x \in \mathbb{R}$. [4]
+
+(d) Suppose that $f(0) = 1$, find $f^{(2024)}(0)$. [2]
+
+(e) Let $a \in \mathbb{R}$ such that $g'(a) \in \mathbb{Z}$. Prove that: $f^{(1)}(a) + f^{(2024)}(a) + ... + f^{(2024)}(a)$ is a multiple of 5. [3]
+
+Solution:
+
+(a)
+Differentiate both sides of given equations:
+$f''(x) = f'(x) + g'(x)$ (from first equation) **A1**
+$g''(x) = g'(x) - f'(x) $ **A1**
+
+$\ $
+
+(b)
+Substitute given equations into the results in (a):
+$f''(x) = (f+g) + (g-f) = 2g(x)$ **A1**
+$g''(x) = (g-f) - (f+g) = -2f(x)$ **A1**
+
+$\ $
+
+(c)
+Differentiate (b) results:
+$f'''(x) = 2g'(x) = 2(g-f)$ **M1**
+$f^{(4)}(x) = 2(g'-f') = 2[(g-f)-(f+g)] = -4f(x)$ **A1**
+
+Similarly:
+$g'''(x) = -2f'(x) = -2(f+g)$ **M1**
+$g^{(4)}(x) = -2(f'+g') = -4g(x)$ **A1**
+
+$\ $
+
+(d)
+From (c), $f$ satisfies $f^{(4)}(x) = -4f(x)$:
+This implies periodicity in derivatives with period 4:
+$f^{(4k)}(x) = (-4)^k f(x)$ 
+For $2024 = 4 \times 506$:
+$f^{(2024)}(x) = (-4)^{506} f(x)$ **A1**
+At $x=0$: $f^{(2024)}(0) = (-4)^{506} \times 1 = 4^{506}$ **A1**
+
+$\ $
+
+(e)
+From periodicity, derivatives cycle every 4 steps:
+$\sum_{k=1}^{2024} f^{(k)}(a) = 506 \times [f'(a)+f''(a)+f'''(a)+f^{(4)}(a)]$ **M1**
+Using previous results:
+$= 506 \times [(f+g) + 2g + (2g-2f) + (-4f)]$ **A1**
+$= 506 \times (-5f + 5g)$
+$= 5 \times 506 \times (-f + g)$
+Since $g'(a) = g(a)-f(a) \in \mathbb{Z}$, the sum is divisible by 5. **A1**
+
+Difficulty: 9/10
+Unit: Finding Derivative Functions
+Topics: Higher Order Derivatives,Divisibility Proof
+Tags: Paper 3
