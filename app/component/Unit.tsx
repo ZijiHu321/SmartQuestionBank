@@ -139,7 +139,7 @@ export default function Chapters() {
           }
           .chapters-title {
             margin-top: 20px;
-            font-size: 25px;
+            font-size: 2rem;
           }
           .courses-list {
             flex-direction: column;
