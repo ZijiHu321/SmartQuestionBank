@@ -40,7 +40,7 @@ const LALoader = ({ filePath, course }: LALoaderProps) => {
   }, [filePath, course]);
 
   if (loading) {
-    return <div>Loading questions...</div>;
+    return <div style={{padding: '2rem', textAlign: 'center', marginTop:'5rem'}}>Loading questions...</div>;
   }
 
   if (error) {

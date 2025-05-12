@@ -86,7 +86,7 @@ const Bookmark = () => {
   }, [allQuestions]);
 
   if (loading) {
-    return <div style={{ padding: '2rem', textAlign: 'center' }}>Loading bookmarks...</div>;
+    return <div style={{ padding: '2rem', textAlign: 'center', marginTop:'5rem' }}>Loading bookmarks...</div>;
   }
 
   if (error) {
@@ -130,7 +130,7 @@ const Bookmark = () => {
         fontWeight: '600',
         textAlign: 'left',
         marginTop: '6rem',
-        marginLeft: '6rem'
+        marginLeft: '6vw'
       }}>
         Your Bookmarked Questions:
       </h1>
