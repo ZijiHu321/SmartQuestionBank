@@ -82,6 +82,8 @@ function IBstatisticsPage() {
               tabIndex={0}
             >
               <div style={{
+                minWidth: '40px',
+                minHeight: '40px',
                 width: '40px',
                 height: '40px',
                 borderRadius: '6px',
