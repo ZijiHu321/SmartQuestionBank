@@ -39,7 +39,7 @@ const CourseCard = ({ course }: { course: Course }) => {
           transition: all 0.3s ease;
           background-color: white;
           margin: 0 2.5rem;
-          text-align: center;
+          text-align: center
         }
         .course-card.hovered {
           background-color: #f5f5f5;
@@ -115,6 +115,7 @@ export default function Chapters() {
           margin: 0 auto;
           margin-left: 10rem;
           margin-right: 10rem;
+          margin-top: 0rem
         }
         .chapters-title {
           margin-top: 6vw;
@@ -125,7 +126,7 @@ export default function Chapters() {
           display: flex;
           flex-direction: row;
           align-items: flex-start;
-          margin-top: 2vw;
+          margin-top: 4vw;
           margin-left: 2vw;
           gap: 2vw;
         }
@@ -134,10 +135,11 @@ export default function Chapters() {
             padding: 20px 10px;
             margin-left: 1rem;
             margin-right: 1rem;
+            margin-top: 5rem
           }
           .chapters-title {
             margin-top: 20px;
-            font-size: 24px;
+            font-size: 25px;
           }
           .courses-list {
             flex-direction: column;
