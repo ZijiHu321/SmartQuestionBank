@@ -50,7 +50,7 @@ function NavBar() {
           position: 'relative'
         }}>
           {/* Brand */}
-          <div style={{ 
+          <div className="brand" style={{ 
             color: '#333',
             fontSize: '2.5vw',
             fontWeight: '700',
@@ -136,6 +136,7 @@ function NavBar() {
                       border: pathname === '/profile' ? '2px solid #000' : '2px solid transparent'
                     }}
                   />
+                  <span className="profile-label">Profile</span>
                 </Link>
               </li>
             </ul>
@@ -149,6 +150,10 @@ function NavBar() {
 
           .menu-container {
             flex-grow: 1;
+          }
+
+          .profile-label {
+            display: none;
           }
 
           @media (max-width: 991px) {
@@ -183,6 +188,17 @@ function NavBar() {
             .menu-container li:last-child {
               margin-left: 0 !important;
               margin-top: 1rem;
+            }
+
+            .brand {
+              font-size: 1.5rem;
+            }
+
+            .profile-label {
+              display: inline;
+              margin-left: 0.5rem;
+              font-size: 1rem;
+              color: #333;
             }
           }
         `}</style>

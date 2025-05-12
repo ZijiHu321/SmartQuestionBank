@@ -84,7 +84,7 @@ export default function Chapters() {
       marginRight: '10rem'
     }}>
       <h1 style={{ 
-        marginTop: '5vw', 
+        marginTop: '6vw', 
         fontSize: '2.5vw',
         color: '#333'
       }}>
