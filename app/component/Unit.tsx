@@ -16,39 +16,64 @@ const CourseCard = ({ course }: { course: Course }) => {
 
   return (
     <div
-        onClick={() => router.push(course.path)}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        style={{
-          width: '300px',
-          padding: '20px',
-          borderRadius: '10px',
-          boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
-          cursor: 'pointer',
-          transition: 'all 0.3s ease',
-          backgroundColor: isHovered ? '#f5f5f5' : 'white',
-          transform: isHovered ? 'translateY(-2px)' : 'none',
-          margin: '0 2.5rem',
-          textAlign: 'center',
-        }}
-      >
-        {course.imageSrc && (
-          <img 
-            src={course.imageSrc}
-            alt={course.title} 
-            style={{
-              width: '100%',
-              height: 'auto',
-              maxHeight: '230px',
-              objectFit: 'contain',
-              borderRadius: '8px',
-              marginBottom: '15px',
-              filter: isHovered ? 'brightness(90%)' : 'none',
-            }} 
-          />
-        )}
-        <h2 style={{ margin: 0, textAlign: 'center', fontSize: '25px' }}>{course.title}</h2>
-      </div>
+      className={`course-card ${isHovered ? 'hovered' : ''}`}
+      onClick={() => router.push(course.path)}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      {course.imageSrc && (
+        <img 
+          src={course.imageSrc}
+          alt={course.title} 
+          className="course-image"
+        />
+      )}
+      <h2 className="course-title">{course.title}</h2>
+      <style jsx>{`
+        .course-card {
+          width: 300px;
+          padding: 20px;
+          border-radius: 10px;
+          box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+          cursor: pointer;
+          transition: all 0.3s ease;
+          background-color: white;
+          margin: 0 2.5rem;
+          text-align: center;
+        }
+        .course-card.hovered {
+          background-color: #f5f5f5;
+          transform: translateY(-2px);
+        }
+        .course-image {
+          width: 100%;
+          height: auto;
+          max-height: 230px;
+          object-fit: contain;
+          border-radius: 8px;
+          margin-bottom: 15px;
+          transition: filter 0.3s ease;
+        }
+        .course-card.hovered .course-image {
+          filter: brightness(90%);
+        }
+        .course-title {
+          margin: 0;
+          text-align: center;
+          font-size: 25px;
+        }
+        @media (max-width: 768px) {
+          .course-card {
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto;
+          }
+          .course-image {
+            max-height: 150px;
+          }
+        }
+      `}</style>
+    </div>
   );
 };
 
@@ -75,34 +100,53 @@ export default function Chapters() {
   ];
 
   return (
-    <div style={{
-      padding: '40px 20px',
-      minHeight: '100vh',
-      maxWidth: '1200px',
-      margin: '0 auto',
-      marginLeft: '10rem',
-      marginRight: '10rem'
-    }}>
-      <h1 style={{ 
-        marginTop: '6vw', 
-        fontSize: '2.5vw',
-        color: '#333'
-      }}>
-        Currently Available Courses:
-      </h1>
-      
-      <div style={{
-        display: 'flex',
-        flexDirection: 'row',
-        alignItems: 'flex-start',
-        marginTop: '2vw',
-        marginLeft: '2vw',
-        gap: '2vw'
-      }}>
+    <div className="chapters-container">
+      <h1 className="chapters-title">Currently Available Courses:</h1>
+      <div className="courses-list">
         {courses.map((course) => (
           <CourseCard key={course.id} course={course} />
         ))}
       </div>
+      <style jsx>{`
+        .chapters-container {
+          padding: 40px 20px;
+          min-height: 100vh;
+          max-width: 1200px;
+          margin: 0 auto;
+          margin-left: 10rem;
+          margin-right: 10rem;
+        }
+        .chapters-title {
+          margin-top: 6vw;
+          font-size: 3vw;
+          color: #333;
+        }
+        .courses-list {
+          display: flex;
+          flex-direction: row;
+          align-items: flex-start;
+          margin-top: 2vw;
+          margin-left: 2vw;
+          gap: 2vw;
+        }
+        @media (max-width: 768px) {
+          .chapters-container {
+            padding: 20px 10px;
+            margin-left: 1rem;
+            margin-right: 1rem;
+          }
+          .chapters-title {
+            margin-top: 20px;
+            font-size: 24px;
+          }
+          .courses-list {
+            flex-direction: column;
+            align-items: center;
+            margin-left: 0;
+            gap: 20px;
+          }
+        }
+      `}</style>
     </div>
   );
 }
