@@ -7,18 +7,24 @@ function NavBar() {
   const pathname = usePathname();
   const [isNavHidden, setIsNavHidden] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [navHeight, setNavHeight] = useState(0);
 
   const toggleNav = () => setIsNavHidden(!isNavHidden);
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
-  // Close mobile menu when resizing to desktop
+  // Measure nav height and update on resize
   useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth >= 992) setIsMenuOpen(false);
+    const updateNavHeight = () => {
+      if (typeof window !== 'undefined') {
+        const nav = document.querySelector('nav');
+        if (nav) setNavHeight(nav.offsetHeight);
+      }
     };
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+
+    updateNavHeight();
+    window.addEventListener('resize', updateNavHeight);
+    return () => window.removeEventListener('resize', updateNavHeight);
+  }, [isMenuOpen]); // Re-calculate when mobile menu opens/closes
 
   return (
     <>
@@ -40,12 +46,13 @@ function NavBar() {
           padding: '0 2rem',
           width: '100%',
           maxWidth: '100%',
-          margin: '0 auto'
+          margin: '0 auto',
+          position: 'relative'
         }}>
           {/* Brand */}
           <div style={{ 
             color: '#333',
-            fontSize: '2.5rem',
+            fontSize: '2.5vw',
             fontWeight: '700',
             margin: '0.5rem 0 0.5rem 2rem',
             marginBottom: '1rem'
@@ -76,22 +83,25 @@ function NavBar() {
               margin: 0,
               padding: 0,
               alignItems: 'center',
-              marginLeft: '5rem'
+              marginLeft: 'clamp(1rem, 5vw, 5rem)',
+              flexWrap: 'wrap',
+              gap: 'clamp(0.5rem, 2vw, 1rem)'
             }}>
               {['/unit', '/mockexam', '/link'].map((path) => (
-                <li key={path} style={{ margin: '0 0.5rem' }}>
+                <li key={path} style={{ margin: '0 0vw' }}>
                   <Link
                     href={path}
                     style={{
-                      fontSize: '1.5rem',
+                      fontSize: 'clamp(0.9rem, 3vw, 1.5rem)',
                       color: pathname === path ? '#000' : '#333',
                       transition: 'all 0.3s ease',
-                      padding: '0.8rem 1.2rem',
+                      padding: 'clamp(0.5rem, 1vw, 0.8rem) clamp(0.8rem, 2vw, 1.2rem)',
                       borderRadius: '4px',
                       position: 'relative',
                       textDecoration: 'none',
                       whiteSpace: 'nowrap',
-                      backgroundColor: pathname === path ? 'rgba(0,0,0,0.1)' : 'transparent'
+                      backgroundColor: pathname === path ? 'rgba(0,0,0,0.1)' : 'transparent',
+                      display: 'inline-block'
                     }}
                     onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(0,0,0,0.08)'}
                     onMouseLeave={(e) => e.currentTarget.style.backgroundColor = pathname === path ? 'rgba(0,0,0,0.1)' : 'transparent'}
@@ -104,7 +114,7 @@ function NavBar() {
               ))}
 
               {/* Profile Link */}
-              <li style={{ position: 'fixed', right: '200px', marginTop: '0.3rem' }}>
+              <li style={{ marginLeft: 'auto', paddingRight: 'clamp(0.33rem, 1.67vw, 1rem)' }}>
                 <Link
                   href="/profile"
                   style={{
@@ -119,8 +129,8 @@ function NavBar() {
                     src="/profile-user.png"
                     alt="Profile"
                     style={{
-                      width: '40px',
-                      height: '40px',
+                      width: 'clamp(30px, 3vw, 50px)',
+                      height: 'clamp(30px, 3vw, 50px)',
                       borderRadius: '50%',
                       objectFit: 'cover',
                       border: pathname === '/profile' ? '2px solid #000' : '2px solid transparent'
@@ -178,24 +188,30 @@ function NavBar() {
         `}</style>
       </nav>
 
-      {/* Toggle Button */}
+      {/* Toggle Button - Outside the nav but positioned relative to it */}
       <button 
         onClick={toggleNav}
         style={{
           position: 'fixed',
-          top: isNavHidden ? '0' : '22px',
-          right: '50px',
+          top: isNavHidden ? '0' : `${navHeight}px`,
+          right: '1rem',
           zIndex: 1001,
-          padding: '8px 16px',
-          backgroundColor: '#f8f9fa',
-          border: '1px solid #dee2e6',
-          borderRadius: '4px',
+          padding: '0.35rem 0.7rem',
+          backgroundColor: 'rgba(248, 249, 250, 0.9)',
+          border: '1px solid rgba(222, 226, 230, 0.7)',
+          borderRadius: '50px',
           cursor: 'pointer',
           transition: 'all 0.3s ease-in-out',
-          boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
+          boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+          fontSize: '0.8rem',
+          fontWeight: '500',
+          backdropFilter: 'blur(4px)',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '0.3rem'
         }}
       >
-        {isNavHidden ? 'Show' : 'Hide'}
+        {isNavHidden ? '▼ Show Nav' : '▲ Hide Nav'}
       </button>
     </>
   );

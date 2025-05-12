@@ -1,0 +1,73 @@
+---
+Question: Suppose that $f'(x) = 3x(x-1)(x+1)^2$. How many local maxima does $f$ have?
+
+Choices:
+- 0
+- 1
+- 2
+- 3
+
+Correct: 1
+Difficulty: 2
+Unit: properties of Curves
+Topics: Monotonicity,Stationary Points
+---
+Question: Which of the following statement is correct?
+
+Choices:
+- If $f$ has a stationary point at $x=0$, then it must be the case that $f$ has a local extremum at $x=0$.
+- If $f'(0) = 0$, then it must be the case that $f$ has a stationary point at $x=0$.
+- If $f(0)=0$, then $f'(0)=0$.
+- If $f'(0) = 0$, then it must be the case that $f$ has a local maximum or local minimum at $x=0$.
+
+Correct: 1
+Difficulty: 2
+Unit: properties of Curves
+Topics: Stationary Points
+---
+Question: $\textbf{True or False}$: All stationary points are local extrema?
+
+Choices:
+- True
+- False
+
+Correct: 1
+Difficulty: 1
+Unit: properties of Curves
+Topics: Stationary Points
+---
+Question: $\textbf{True or False}$: Suppose that $f$ is twice differentiable on $\mathbb{R}$ and $f''(x)>0$ for all $x \in I$. Then $f$ is concave up on $I$.
+
+Choices:
+- True
+- False
+
+Correct: 0
+Difficulty: 1
+Unit: properties of Curves
+Topics: Concavity
+---
+Question: $\textbf{True or False}$: If $f$ has a point of inflection at $x=c$, then $f$ changes concavity at $x=c$.
+
+Choices:
+- True
+- False
+
+Correct: 0
+Difficulty: 1
+Unit: properties of Curves
+Topics: Concavity,Inflection Points
+---
+Question: The normal of the function $f(x) = \tan x$ at $x = \frac{\pi}{3}$ is defined by:
+
+Choices:
+- $y = -\frac{1}{4}x + \frac{\pi}{12} + \sqrt{3}$
+- $y = 4x - \frac{4\pi}{3} + \sqrt{3}$
+- $y = -\frac{3}{4}(x-\frac{\pi}{3}) + \frac{1}{\sqrt{3}}$
+- None of the above.
+
+Correct: 0
+Difficulty: 4
+Unit: properties of Curves
+Topics: Tangent and Normal
+

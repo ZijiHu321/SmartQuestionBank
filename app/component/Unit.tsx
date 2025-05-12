@@ -84,8 +84,8 @@ export default function Chapters() {
       marginRight: '10rem'
     }}>
       <h1 style={{ 
-        marginTop: '100px', 
-        fontSize: '2.5rem',
+        marginTop: '5vw', 
+        fontSize: '2.5vw',
         color: '#333'
       }}>
         Currently Available Courses:
@@ -95,9 +95,9 @@ export default function Chapters() {
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'flex-start',
-        marginTop: '2rem',
-        marginLeft: '2rem',
-        gap: '2rem'
+        marginTop: '2vw',
+        marginLeft: '2vw',
+        gap: '2vw'
       }}>
         {courses.map((course) => (
           <CourseCard key={course.id} course={course} />

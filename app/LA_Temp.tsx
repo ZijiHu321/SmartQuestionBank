@@ -240,6 +240,51 @@ const LACard = ({
           <ReactMarkdown 
             remarkPlugins={[remarkMath]}
             rehypePlugins={[rehypeMathjax]}
+            components={{
+              p: ({ children }) => (
+                <div style={{ 
+                  margin: 0, 
+                  whiteSpace: 'pre-line',
+                  lineHeight: '1'
+                }}>
+                  {children}
+                </div>
+              ),
+              img: (props) => {
+                // Use the same parsing logic as in question
+                const [path, sizeString] = (props.src || '').split('?');
+                const size = sizeString?.split('x').map(Number) || [];
+
+                return (
+                  <div style={{ 
+                    margin: '1rem 0',
+                    textAlign: 'center'
+                  }}>
+                    <img
+                      {...props}
+                      src={path}
+                      alt={props.alt || ''}
+                      style={{
+                        width: size[0] ? `${size[0]}px` : 'auto',
+                        height: size[1] ? `${size[1]}px` : 'auto',
+                        maxWidth: '100%',
+                        borderRadius: '8px',
+                        boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
+                      }}
+                    />
+                    {props.alt && (
+                      <div style={{
+                        fontSize: '0.9rem',
+                        color: '#666',
+                        marginTop: '0.5rem'
+                      }}>
+                        {props.alt}
+                      </div>
+                    )}
+                  </div>
+                );
+              }
+            }}
           >
             {solution}
           </ReactMarkdown>

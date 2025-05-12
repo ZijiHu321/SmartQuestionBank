@@ -1,0 +1,698 @@
+Question: 
+Find the equation of both the tangent and normal for each of the following functions below at the given point: [4 each]
+(a) $f(x) = x^2$ at $(1,1)$;
+
+(b) $f(x) = \sin x$ at $(\frac{\pi}{6},\frac{1}{2})$;
+
+(c) $f(x) = e^x\sin x$ at $x=0$.
+
+Solution:
+(a) For $f(x) = x^2$ at $(1,1)$:
+1. Derivative: $f'(x) = 2x \Rightarrow f'(1) = 2$ **M1**
+2. Tangent line: $y - 1 = 2(x - 1) \Rightarrow y = 2x - 1$ **A1**
+3. Normal line (slope = -1/2): $y - 1 = -\frac{1}{2}(x - 1) \Rightarrow y = -\frac{1}{2}x + \frac{3}{2}$ **A1**
+
+$\ $
+
+(b) For $f(x) = \sin x$ at $(\frac{π}{6},\frac{1}{2})$:
+1. Derivative: $f'(x) = \cos x \Rightarrow f'(\frac{π}{6}) = \frac{\sqrt{3}}{2}$ **M1**
+2. Tangent line: $y - \frac{1}{2} = \frac{\sqrt{3}}{2}(x - \frac{π}{6}) \Rightarrow y = \frac{\sqrt{3}}{2}x - \frac{π\sqrt{3}}{12} + \frac{1}{2}$ **A1**
+3. Normal line (slope = -2/√3): $y - \frac{1}{2} = -\frac{2}{\sqrt{3}}(x - \frac{π}{6}) \Rightarrow y = -\frac{2}{\sqrt{3}}x + \frac{π}{3\sqrt{3}} + \frac{1}{2}$ **A1**
+
+$\ $
+
+(c) For $f(x) = e^x\sin x$ at $x=0$:
+1. Point: $f(0) = 0 \Rightarrow (0,0)$ **M1**
+2. Derivative: $f'(x) = e^x(\sin x + \cos x) \Rightarrow f'(0) = 1$ **A1**
+3. Tangent line: $y = x$ **A1**
+4. Normal line (slope = -1): $y = -x$ **A1**
+
+Difficulty: 2
+Unit: Properties of Curves
+Topics: Tangent and Normal
+Tags: Paper 1
+---
+Question:
+Find the equation of the normal to the curve $f(x) = \ln x$ which passes through the point $(0,1)$.
+
+Solution:
+Let $(a, \ln a)$ be the point of tangency on $f(x) = \ln x$.
+
+Derivative: $f'(x) = \frac{1}{x} \Rightarrow f'(a) = \frac{1}{a}$ **A1**
+
+Slope of normal line: $m_{\text{normal}} = -a$ (negative reciprocal) **A1**
+
+Equation of normal line:
+$y - \ln a = -a(x - a)$ **M1**
+
+Passes through $(0,1)$:
+$1 - \ln a = -a(0 - a) \Rightarrow 1 - \ln a = a^2$ **A1**
+
+Using a graphing calculator, note that $a=1$ is the only solution to this equation, therefore, $y = -x+1$.
+
+Difficulty: 6
+Unit: Properties of Curves
+Topics: Tangent and Normal
+Tags: Paper 2
+---
+Question:
+Given that $f(x) = \ln \frac{x+2}{2-x}$.
+
+(a) Show that $f'(x) = \frac{4}{4-x^2}$. [2]
+
+(b) Find the intervals where $f$ is decreasing. [2]
+
+Solution:
+(a)
+Simplify the argument of ln:
+$\frac{x+2}{2-x} = \frac{x+2}{-(x-2)} = -\frac{x+2}{x-2}$ 
+
+Differentiate using chain rule and logarithm properties:
+$f'(x) = \frac{d}{dx}\left[\ln(x+2) - \ln(2-x)\right] = \frac{1}{x+2} + \frac{1}{2-x}$ **M1**
+
+Combine terms:
+$f'(x) = \frac{(2-x) + (x+2)}{(x+2)(2-x)} = \frac{4}{4 - x^2}$ **A1**
+
+$\ $
+
+(b)
+The denominator $4-x^2$ is negative in $(-\infty,-2) \cup (2,\infty)$ **M1**
+Thus $f'(x) > 0$ for all $x$ in $(-\infty,-2) \cup (2,\infty)$, meaning $f(x)$ is decreasing in $(-\infty,-2) \cup (2,\infty)$. **A1**
+
+Difficulty: 3
+Unit: Properties of Curves
+Topics: Monotonicity
+Tags: Paper 1
+---
+Question:
+A curve has the equation: $y = 2x^2 - 8x\sqrt{x} + 8x + 1$, where $x \geq 1$.
+(a) Prove that the curve has a maximum point at $(1,3)$. [5]
+(b) Find the coordinate of the other stationary point of the curve and state its nature. [4]
+
+Solution:
+(a)
+First verify $(1,3)$ lies on the curve:
+$y(1) = 2(1)^2 - 8(1)\sqrt{1} + 8(1) + 1 = 3$ **A1**
+Compute the first derivative:
+$\frac{dy}{dx} = 4x - 12\sqrt{x} + 8$ **A1**
+Evaluate at $x=1$:
+$\left.\frac{dy}{dx}\right|_{x=1} = 0$ **A1**
+Second derivative test:
+$\frac{d^2y}{dx^2} = 4 - \frac{6}{\sqrt{x}}$ **M1**
+At $x=1$: $\frac{d^2y}{dx^2} = -2 < 0$ ⇒ local maximum **A1**
+
+$\ $
+
+(b)
+Find stationary points by solving $\frac{dy}{dx} = 0$:
+$4x - 12\sqrt{x} + 8 = 0$
+$4\sqrt{x}^2 - 12 \sqrt{x} + 8 = 0$
+$\sqrt{x} = 1$ or $\sqrt{x} = 2$
+$x=1$ or $x=4$ **M1 A1**
+Second derivative at $x=4$:
+$\frac{d^2y}{dx^2} = 1 > 0$ ⇒ local minimum **A1**
+Compute $y$-coordinate:
+$y(4) = 1$ ⇒ $(4,1)$ **A1**
+
+Difficulty: 5
+Unit: Properties of Curves
+Topics: Monotonicity,Stationary Points
+Tags: Paper 1
+---
+Question:
+Find and classify all local extrema for each of the functions below (find both $x$ and $y$ coordinates): [3 each]
+(a) $f(x) = x\sqrt[3]{4-x}$;
+
+(b) $f(x) = \frac{x+1}{x-1} -x$;
+
+(c) $f(x) = \frac{x+1}{x-1} +x$;
+
+(d) $f(x) = e^x + e^{1-x}$.
+
+Solution:
+(a) For $f(x) = x(4-x)^{1/3}$:
+Domain: $x \in \mathbb{R}$
+Derivative:
+$f'(x) = (4-x)^{1/3} + x\cdot\frac{1}{3}(4-x)^{-2/3}(-1) = \frac{3(4-x)-x}{3(4-x)^{2/3}} = \frac{12-4x}{3(4-x)^{2/3}}$ **M1**
+Stationary points: $f'(x)=0 \Rightarrow x=3$ **A1**
+Classification:
+$f'(x)>0$ for $x<3$ (increasing)$f'(x)<0$ for $x>3$ (decreasing)
+Thus local maximum at $(3, 3)$ **A1**
+
+$\ $
+
+(b) For $f(x) = \frac{x+1}{x-1} -x$:
+Domain: $x \neq 1$
+Derivative:
+$f'(x) = \frac{(1)(x-1)-(x+1)(1)}{(x-1)^2} -1 = \frac{-2}{(x-1)^2} -1$ **M1**
+Stationary points: $f'(x)=0 \Rightarrow \frac{-2}{(x-1)^2} = 1$ ⇒ No real solutions **A1**
+No local extrema **A1**
+
+$\ $
+
+(c) For $f(x) = \frac{x+1}{x-1} +x$:
+Domain: $x \neq 1$
+Derivative:
+$f'(x) = \frac{-2}{(x-1)^2} +1$ **M1**
+Stationary points: $\frac{-2}{(x-1)^2} = -1 \Rightarrow (x-1)^2 = 2$ ⇒ $x=1\pm\sqrt{2}$ **A1**
+For $x<1-\sqrt{2}$: Choose $x=-5$, $f'(-5)=\frac{17}{18}>0$ (increasing)
+For $1-\sqrt{2}<x<1$: Choose $x=0$, $f'(0)=-1<0$ (decreasing)
+For $1<x<1+\sqrt{2}$: Choose $x=1.5$, $f'(1.5)=-7<0$ (decreasing)
+For $x>1+\sqrt{2}$: Choose $x=3$, $f'(3)= 0.5>0$ (increasing) **M1**
+Classification:
+Local maximum at $(1-\sqrt{2}, 2-2\sqrt{2})$ 
+Local minimum at $(1+\sqrt{2}, 2+2\sqrt{2})$  **A1**
+
+$\ $
+
+(d) For $f(x) = e^x + e^{1-x}$:
+Domain: $x \in \mathbb{R}$
+Derivative:
+$f'(x) = e^x - e^{1-x}$ **M1**
+Stationary point: $e^x = e^{1-x} \Rightarrow x = \frac{1}{2}$ **A1**
+For $x<\frac{1}{2}$: Choose $x=0$, $f'(0)=1-e<0$ (decreasing)
+For $x>\frac{1}{2}$: Choose $x=1$, $f'(1)=e-1>0$ (increasing) **M1**
+Classification:
+Local minimum at $(\frac{1}{2}, 2\sqrt{e})$ (changes from - to +) **A1**
+
+Difficulty: 6
+Unit: Properties of Curves
+Topics: Monotonicity,Stationary Points
+Tags: Paper 1
+
+---
+Question:
+Determine the concavity and all inflection points for each of the functions below: [4 each]
+
+(a) $f(x) = x^4 + x^3 - 3x^2 +1$;
+
+(b) $f(x) = \frac{x^3}{x^2 - 4}$;
+
+(c) $f(x) = 2\cot x$, where $x \in [-\pi, \pi]$.
+
+Solution:
+
+(a) For $f(x) = x^4 + x^3 - 3x^2 +1$:
+$f''(x) = 12x^2 + 6x - 6 = 6(2x^2 + x - 1)$ **M1**
+Solve $2x^2 + x - 1 = 0$: $x = \frac{1}{2}, -1$ **A1**
+Test intervals:
+$x < -1$: $f''(-2) = 30 > 0$ (concave up)
+$-1 < x < \frac{1}{2}$: $f''(0) = -6 < 0$ (concave down)
+$x > \frac{1}{2}$: $f''(1) = 12 > 0$ (concave up) **A1**
+Inflection points: $(-1, -2)$ and $(\frac{1}{2}, \frac{7}{16})$ **A1** 
+
+$\ $
+
+(b) For $f(x) = \frac{x^3}{x^2 - 4}$:
+$f''(x) = \frac{8x(x^2 + 12)}{(x^2 - 4)^3}$ **M1**
+Points where $f''(x)=0$: $x = 0$ **A1**
+Test intervals:
+$x < -2$: $f''(-3) < 0$ (concave down)
+$-2 < x < 0$: $f''(-1) > 0$ (concave up)
+$0 < x < 2$: $f''(1) < 0$ (concave down)
+$x > 2$: $f''(3) > 0$ (concave up) **A1**
+Inflection point: $(0, 0)$ **A1**
+
+$\ $
+
+(c) For $f(x) = 2\cot x$:
+$f''(x) = 4\csc^2 x \cot x$ **M1**
+Points where $f''(x)=0$: $x = \pm\frac{\pi}{2}$ **A1**
+Test intervals:
+$-\pi < x < -\frac{\pi}{2}$: $f''(x) > 0$ (concave up)
+$-\frac{\pi}{2} < x < 0$: $f''(x) < 0$ (concave down)
+$0 < x < \frac{\pi}{2}$: $f''(x) > 0$ (concave up)
+$\frac{\pi}{2} < x < \pi$: $f''(x) < 0$ (concave down) **A1**
+Inflection points: $(\pm\frac{\pi}{2}, 0)$ **A1**
+
+Difficulty: 6
+Unit: Properties of Curves
+Topics: Concavity,Inflection Points
+Tags: Paper 1
+
+---
+
+Question:
+Let $f(x) = (x-1)^3(x+2), x \in \mathbb{R}$.
+(a) Find all $x$ for which $f'(x)=0$. [3]
+(b) Show that $f(x)$ has a local minimum at $x=-1.25$. [2]
+(c) Find the coordinates of all local extrema of $f$. [3]
+(d) Show that $f(x)$ has inflection points at $x=-0.5$ and $x=1$. [3]
+(e) Sketch the graph of $f$, clearly indicate the coordinates of local extrema, Monotonicity, and the shape of the curve. [7]
+
+Solution:
+(a)
+Applying the product rule:
+$f'(x) = 3(x-1)^2(x+2) + (x-1)^3 = (x-1)^2(4x+5)$ **A1**
+Solve for $f'(x)=0$:
+$x=1$ or $x=\frac{-4}{5}=-1.25$ **A1 A1**
+
+$ $
+
+(b)
+Second derivative:
+$f''(x) = 12x^2 - 6x - 6$ **M1**
+Evaluate at $x = -1.25$:
+$f''(-1.25) = 20.25 > 0$ ⇒ local minimum **A1**
+
+$ $
+
+(c)
+When $-1.25<x<1$, $f'(x)>0$; **A1**
+When $x>1$, $f'(x)>0$. **A1**
+Thus the only local minimum is at $(-1.25,-8.54)$. **A1**
+
+$ $
+
+(d)
+Find inflection points where $f''(x) = 0$:
+$12x^2 - 6x - 6 = 0$ ⇒ $2x^2 - x - 1 = 0$ ⇒ $x = -0.5, 1$ **M1** **A1**
+
+Verify concavity change:
+For $x < -0.5$: $f''(-1) = 12 > 0$;
+$-0.5 < x < 1$: $f''(0) = -6 < 0$
+$x > 1$: $f''(2) = 30 > 0$ **M1**
+Thus POI occurs at $x=-0.5$ and $x=1$
+
+$ $
+
+(e)
+![ ](/questionPic/cur_1.png?600x)
+**A1** for shape $x<-0.5$;
+**A1** for shape $-0.5<x<1$;
+**A1** for shape $x>1$;
+**A1** for local min;
+**A1 A1** for two POIs;
+**A1** for monotonicity.
+
+Difficulty: 4
+Unit: Properties of Curves
+Topics: Graphing Functions
+Tags: Paper 2
+---
+Question:
+Let $f(x) = \frac{2-3x^5}{2x^3}, x\in \mathbb{R}, x\neq 0$.
+(a) The graph of $y=f(x)$ has a local maximum at $A$. Find the coordinates of $A$. [5]
+(b) Show that there is exactly one point of inflection, $B$, on the graph $y=f(x)$. [5]
+(c) The coordinates of $B$ can be expressed in the form $B(2^a, b\cdot 2^{-3a})$, where $a,b \in \mathbb{Q}$. Find the values of $a$ and $b$. [3]
+(d) Sketch the graph of $y=f(x)$ showing clearly the position of the points $A$ and $B$. [4]
+
+Solution:
+(a)
+Attempt to differentiate: **M1**
+$f'(x) = -3x^{-4} - 3x$ **A1**
+Solve for $f'(x)=0$:
+$x^5 = -1$
+$x=-1$ **A1**
+Therefore, $A(-1,-\frac{5}{2})$. **A1**
+ $ $
+
+(b)
+$f''(x) = 12x^{-5} - 3$ **A1**
+Solve for $f''(x) = 0$: **M1**
+$x = \sqrt[5]{4}$ **A1**
+When $x<\sqrt[5]{4}, f''(x)>0$;
+When $x>\sqrt[5]{4}, f''(x)<0$; **M1**
+Since the sign changes, $f$ has a POI at $x = \sqrt[5]{4}$ **A1**
+$ $
+
+(c)
+$x = \sqrt[5]{4} = 2^{\frac{2}{5}} \Rightarrow a=\frac{2}{5}$ **A1**
+$f(\frac{2}{5}) = \frac{2-3\times 2^2}{2 \times 2^\frac{6}{5}} = -5 \times 2^\frac{-6}{5} \Rightarrow b=-5$ **M1 A1**
+$ $
+
+(d)
+![ ](/questionPic/cur_2.png?500x)
+**A1** for shape $x<0$;
+**A1** for shape $x>0$;
+**A1** for local max at $A$;
+**A1** for POI at $B$;
+
+Difficulty: 5
+Unit: Properties of Curves
+Topics: Graphing Functions
+Tags: Paper 1
+---
+Question:
+The function $f$ is given by $f(x)=xe^{-x} (x \geq 0)$.
+(a) Find an expression of $f'(x)$. [1]
+(b) Find the coordinate of the point $A$, where $f'(x) = 0$. [2]
+(c) Find an expression of $f''(x)$, and hence show that $A$ is a maximum. [3]
+(d) Find the coordinate of $B$, the inflection point. [2]
+(e) The graph of the function $g$ is obtained from the graph of $f$ by stretching it in the x-direction by a scale factor 2. [5]
+$\quad$ (i) Write down an expression for $g(x)$;
+$\quad$ (ii) State the coordinates of the maximum C of $g$;
+$\quad$ (iii) Determine the x-coordinates of D and E, the two points where $f(x) = g(x)$.
+(f) Sketch the graph of $f$ and $g$ on the same axes, showing clearly the points $A, B, C, D$ and $E$. [4]
+
+Solution:
+(a)
+$f'(x) = e^{-x} - xe^{-x}$ **A1**
+
+$\ $
+
+(b)
+Set $f'(x) = 0$: 
+$e^{-x}(1 - x) = 0 \Rightarrow x = 1$
+Coordinates of $A$: $(1, e^{-1})$ **M1 A1**
+
+$\ $
+
+(c)
+$f''(x) = -e^{-x} - e^{-x} + xe^{-x} = -e^{-x}(2 - x)$ **A1**
+At $x=1$: $f''(1) = -e^{-1} < 0$ ⇒ $A$ is a maximum **M1** **A1**
+
+$\ $
+
+(d)
+Set $f''(x) = 0$:
+$2 - x = 0 \Rightarrow x = 2$ **M1**
+Coordinates of $B$: $(2, 2e^{-2})$ **A1**
+
+$\ $
+
+(e)
+(i) $g(x) = \frac{x}{2}e^{-\frac{x}{2}}$ **A1**
+
+(ii) Maximum $C$ occurs at $(2, e^{-1})$ **A1**
+
+(iii) Solve $f(x) = g(x)$:
+$xe^{-x} = \frac{x}{2}e^{-\frac{x}{2}}$ **M1**
+Solutions: $x = 0$ **A1** or $x = 2\ln 2$ ($=\ln 4$) **A1**
+$ $
+
+(f)
+![ ](/questionPic/cur_3.png?600x)
+**A1** for the shape of $f$, including domain extending beyond $x=2$;
+**A1** for A and B correctly identified;
+**A1** for the shape of $g$, including domain extending beyond $x=2$;
+**A1** for $C, D$ and $E$ correctly identified ($D$ and $E$ are interchangeable).
+
+Difficulty: 5
+Unit: Properties of Curves
+Topics: Graphing Functions,Transformations of Functions
+Tags: Paper 1
+---
+Question:
+The graph of $y=f(x)$ is shown below, where $A$ is a local maximum point and $D$ is a local minimum point.
+![ ](/questionPic/cur_4.png?400x)
+
+(a) Sketch the graph of $y = \frac{1}{f(x)}$, clearly showing the coordinates of the images of the points $A$, $B$ and $D$, labelling them $A',B'$, and $D'$ respectively, and the equations of any vertical asymptotes. [3]
+(b) Sketch the graph of the derivative $y=f'(x)$, clearly showing the coordinates of the images of the points $A$ and $D$, labelling them $A''$ and $D''$ respectively. [3]
+
+Solution:
+(a)
+![ ](/questionPic/cur_5.png?500x)
+**A1** for correct shape.
+**A1** for two correct asymptotes.
+**A1** for correct coordinates.
+
+(b) 
+![ ](/questionPic/cur_6.png?500x)
+**A1** for correct general shape (increasing, decreasing, then increasing) including the horizontal asymptote.
+**A1** for recognition of 1 maximum point and 1 minimum point.
+**A1** for correct coordinates $A''$ and $D''$.
+
+Difficulty: 6
+Unit: Properties of Curves
+Topics: Graphing Functions
+Tags: Paper 1
+---
+Question:
+The diagram below shows a sketch of the gradient function $f'(x)$ of the curve $f(x)$:
+![](/questionPic/cur_9.png?400x) 
+Sketch the curve $y = f(x)$ given that $f(0) = 0$. Clearly indicate on the graph any maximum, minimum or inflexion points. [5]
+
+Solution:
+![](/questionPic/cur_10.png?500x) 
+**A1** for origin
+**A1** for shape
+**A1** for maximum
+**A1** for each point of inflexion.
+
+Difficulty: 5
+Unit: Properties of Curves
+Topics: Graphing Functions
+Tags: Paper 1
+---
+Question:
+Let $f$ be a function defined by $f(x) = x - \arctan x, x \in \mathbb{R}$. 
+(a) Find $f(1)$ and $f(-\sqrt{3})$. [2]
+(b) Show that $f$ is odd. [2]
+(c) Show that $x - \frac{\pi}{2} < f(x) + \frac{\pi}{2}$, for $x \in \mathbb{R}$. [8]
+(d) Find the expression for $f'(x)$ and $f''(x)$. Hence describe the behaviour of the graph of $f$ at the origin and justify your answer.[8]
+(e) Sketch a graph of $f$ , showing clearly the asymptotes. [3]
+(f) Justify that the inverse of $f$ is defined for all $x \in \mathbb{R}$ and sketch its graph. [3]
+
+Solution:
+(a)
+$f(1) = 1 - \arctan 1 = 1 - \frac{\pi}{4}$ **A1**
+$f(-\sqrt{3}) = -\sqrt{3} - \arctan(-\sqrt{3}) = -\sqrt{3} + \frac{\pi}{3}$ **A1**
+
+$\ $
+
+(b)
+$f(-x) = -x - \arctan(-x) = -x + \arctan x$ **M1**
+$= -(x - \arctan x) = -f(x)$ **A1**
+Thus $f$ is odd.
+
+$\ $
+
+(c)
+Since $-\frac{\pi}{2} < \arctan x < \frac{\pi}{2}$ for all $x \in \mathbb{R}$ **A1**
+$\Rightarrow x - \frac{\pi}{2} < x - \arctan x < x + \frac{\pi}{2}$ **R1**
+Therefore $x - \frac{\pi}{2} < f(x) < x + \frac{\pi}{2}$.
+
+$\ $
+
+(d)
+$f'(x) = 1 - \frac{1}{1+x^2} = \frac{x^2}{1+x^2}$ **A1 A1**
+$f''(x) = \frac{2x(1+x^2)-2x^3}{(1+x^2)^2} = \frac{2x}{(1+x^2)^2}$ **M1 A1**
+At $x=0$: $f'(0) = 0$ and $f''(0) = 0$ **A1 A1**
+
+EITHER:
+Since $f'(x) \geq 0$ for all $x$ and changes from increasing to decreasing at $x=0$ **R1**
+OR:
+$f''(x) > 0$ for $x>0$ and $f''(x) < 0$ for $x<0$ **R1**
+THEN:
+$(0,0)$ is a point of inflection with horizontal tangent **A1 N2**
+
+$ $
+
+(e)
+![ ](/questionPic/cur_7.png?500x)
+**A1** for both asymptotes.
+**A1** for correct shape (concavities) $x<0$.
+**A1** for correct shape (concavities) $x>0$.
+
+$ $
+
+(f)
+![**A1 A1**](/questionPic/cur_8.png?500x) 
+Since $f$ is strictly increasing in $\mathbb{R}$, it is one-to-one in $\mathbb{R}$, which means it is invertible in $\mathbb{R}$. **R1**
+The graph of $y=f^{-1}(x)$ is the reflection about the line $y=x$. 
+
+Difficulty: 7
+Unit: Properties of Curves
+Topics: Graphing Functions,Inverse Functions,Even&Odd Functions,Stationary Points,Inflection Points
+Tags: Paper 1
+---
+Question:
+Consider the function $f(x) = 2\sin ^2 x + 7\sin 2x + \tan x - 9, 0 \leq x < \frac{\pi}{2}$.
+
+(a) Determine an expression for $f'(x)$. [2]
+
+(b) Sketch the graph for $y=f'(x)$, where $0 \leq x < \frac{\pi}{2}$. [4]
+
+(c) Find the $x$ coordinate(s) of the point(s) of inflexion of the graph of $y=f'(x)$. [2]
+
+Solution: 
+(a) 
+$f'(x) = 4\sin x \cos x + 14 \cos 2x + \sec^2 x$ (or equivalent) **M1 A1**
+$ $
+(b)
+![](/questionPic/cur_11.png?400x) 
+Award **A1** for correct behaviour at $x=0$, 
+**A1** for correct domain and correct behaviour for $x \to \frac{\pi}{2}$,
+**A1** for two clear intersections with $x$-axis and minimum point,
+**A1** for clear maximum point. (Students may use graphing calculator directly for this question.)
+$ $
+(c)
+$x=0.0736$ **A1**
+$x=1.13$ **A1** (Students may use graphing calculator directly for this question.)
+
+Difficulty: 2
+Unit: Properties of Curves
+Topics: Graphing Functions
+Tags: Paper 2
+---
+Question:
+The function $f$ is defined on the domain $[0,2]$, by $f(x)=\ln (x+1)\sin (\pi x)$.
+(a) Obtain an expression for $f'(x)$. [3]
+(b) Sketch the graph of $f(x)$ and $f'(x)$ on the same axes, showing clearly all x-intercepts. [4]
+(c) Find the $x$-coordinates of the two points of inflexion on the graph of $f$. [2]
+(d) Find the equation of the normal to the graph of $f$ where $x = 0.75$, giving your answer in the form $y = mx + c$. [3]
+(e) Consider the points $A(a,f(a)), B(b,f(b)),$ and $C(c,f(c))$ where $a,b,$ and $c$ ($a<b<c$) are the solutions of the equation $f(x)=f'(x)$. Find the area of the triangle $ABC$. [6]
+
+Solution:
+(a)
+Using product rule:
+$f'(x) = \frac{d}{dx}[\ln(x+1)]\sin(\pi x) + \ln(x+1)\frac{d}{dx}[\sin(\pi x)]$ **M1**
+$= \frac{1}{x+1}\sin(\pi x) + \ln(x+1)\cdot\pi\cos(\pi x)$ **A1+A1**
+
+$\ $
+(b)
+![](/questionPic/cur_12.png?500x) 
+Award **A1 A1** for graphs, **A1 A1** for intercepts.
+
+$ $
+(c)
+Points of inflexion occur at:
+$x = 0.310$ and $x = 1.12$ **A1A1**
+
+$\ $
+
+(d)
+At $x = 0.75$:
+$f'(0.75) = -0.839092$ **A1**
+Equation of normal:
+$y - 0.39570812 = \frac{1}{0.839092}(x - 0.75)$ **M1**
+$y = 1.19x - 0.498$ **A1**
+
+$\ $
+
+(e)
+Points where $f(x)=f'(x)$:
+$A(0, 0)$
+$B(0.548, 0.432)$ **A1**
+$C(1.44, -0.881)$ **A1**
+
+Area calculation:
+Using vector cross product formula **M1A1**
+$\text{Area} = \frac{1}{2}|(0.548)(-0.881)-(1.44)(0.432)|$ **A1**
+$= 0.554$ **A1**
+
+Difficulty: 5
+Unit: Properties of Curves
+Topics: Graphing Functions,Cross Product
+Tags: Paper 2
+---
+Question:
+Find the equation of the normal to the curve $y = \frac{e^x \cos x \ln (x+e)}{(x^{17}+1)^5} at the point where $x=0$. In your answer give the value of the gradient, of the normal, to three decimal places. [7]
+
+Solution:
+When $x=0$, $y=1$ **A1**
+Using a graphing calculator:
+$y'(0) =1.367879$ **M1 A1**
+so gradient of normal is $\frac{-1}{1.367879} = -0.731058$ **M1 A1**
+Thus the equation of the normal is $y=-0.731x+1$. **A1**
+
+Difficulty: 4
+Unit: Properties of Curves
+Topics: Tangent and Normal
+Tags: Paper 2
+---
+Question:
+A curve is defined by $x^2 -5xy + y^2 = 7$.
+(a) Show that $\frac{dy}{dx} = \frac{5y-2x}{2y-5x}$. [3]
+(b) Find the equation of the normal to the curve at the point $(6,1)$. [4]
+(c) Find the distance between the two points on the curve where each tangent is parallel to the line $y=x$. [8]
+
+Solution:
+(a)
+Differentiating implicitly:
+$2x - 5x\frac{dy}{dx} - 5y + 2y\frac{dy}{dx} = 0$ **M1** **A1A1**
+(Note: **A1** for differentiation of $x^2 -5xy$, **A1** for differentiation of $y^2$ and $7$)
+
+Rearranging:
+$2x - 5y + \frac{dy}{dx}(2y - 5x) = 0$
+$\frac{dy}{dx} = \frac{5y - 2x}{2y - 5x}$ 
+
+$\ $
+
+(b)
+At $(6,1)$:
+$\frac{dy}{dx} = \frac{5(1)-2(6)}{2(1)-5(6)} = \frac{-7}{-28} = \frac{1}{4}$ **A1**
+Gradient of normal = $-4$ **A1**
+Equation form: $y = -4x + c$ **M1**
+Substituting $(6,1)$ gives $y = -4x + 25$ **A1**
+(Note: Accept $y-1 = -4(x-6)$)
+
+$\ $
+
+(c)
+Set $\frac{5y-2x}{2y-5x} = 1$ (parallel to $y=x$) **M1**
+Simplify to $y = -x$ **A1**
+Substitute into original equation: **M1**
+$x^2 -5x(-x) + (-x)^2 = 7$ **A1**
+$7x^2 = 7$ ⇒ $x = \pm1$ **A1**
+Points: $(1,-1)$ and $(-1,1)$ **A1**
+Distance = $\sqrt{(1-(-1))^2 + (-1-1)^2} = \sqrt{8} = 2\sqrt{2}$ **M1** **A1**
+
+Difficulty: 5
+Unit: Properties of Curves
+Topics: Tangent and Normal,Implicit differentiation
+Tags: Paper 2
+---
+Question:
+The line $y= m(x-m)$ is a tangent to the curve $(1-x)y=1$. Determine $m$ and the coordinates of the point where the tangent meets the curve.
+
+Solution:
+EITHER METHOD:
+
+Given curve: $y = \frac{1}{1 - x}$ 
+Derivative: $y' = \frac{1}{(1 - x)^2}$ **M1A1**
+
+Solve simultaneously:
+$\frac{1}{1 - x} = m(x - m)$
+$\frac{1}{(1 - x)^2} = m$ **M1**
+
+Substitute (2) into (1):
+$\frac{1}{1 - x} = \frac{1}{(1 - x)^2}\left(x - \frac{1}{(1 - x)^2}\right)$ **A1**
+
+Simplify to:
+$(1 - x)^3 - x(1 - x)^2 + 1 = 0$, $x \neq 1$
+
+Numerical solution:
+$x \approx 1.65729$ ⇒ $y = \frac{1}{1 - 1.65729} \approx -1.52138$ **A1A1**
+
+Tangent point: $(1.66, -1.52)$
+Slope: $m = (-1.52138)^2 \approx 2.31$ **A1**
+
+$\ $
+
+OR METHOD:
+
+Given $(1 - x)y = 1$ and tangent $y = m(x - m)$
+Substitute: $m(1 - x)(x - m) = 1$ **M1**
+
+Expand:
+$mx^2 - x(m + m^2) + (m^2 + 1) = 0$ **A1**
+
+For tangency condition ($b^2 - 4ac = 0$):
+$(m + m^2)^2 - 4m(m^2 + 1) = 0$ **M1**
+
+Solve:
+$m \approx 2.31$ **A1**
+
+Substitute back to find point:
+$x \approx 1.66$ **A1**
+$y = \frac{1}{1 - 1.65729} \approx -1.52$ **A1**
+
+Tangent point: $(1.66, -1.52)$
+
+$\ $
+
+Final Answer:
+$m \approx 2.31$ and tangent point is $(1.66, -1.52)$ **A1**
+
+Difficulty: 7
+Unit: Properties of Curves
+Topics: Tangent and Normal
+Tags: Paper 2
+---
+
+
+
+
+

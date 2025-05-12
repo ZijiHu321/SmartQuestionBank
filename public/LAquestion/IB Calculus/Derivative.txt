@@ -569,7 +569,7 @@ $a_1 = 1 \cdot 2 \cdots n = n!$ **M1**
 
 Using calculator, observe that $n=7$ is the smallest natural number that satisfies the condition. **A1**
 
-Difficulty: 7/10
+Difficulty: 8/10
 Unit: Finding Derivative Functions
 Topics: Derivatives of Elementary Functions
 Tags: Paper 2

@@ -317,7 +317,7 @@ In this question, you will explore the application of trigonometric identities i
 
 (d) Consider the limit: $L = \lim_{x \to \theta} \frac{\sin x - \sin \theta}{x- \theta}$ [5]
 $\quad$ (i) When $\theta = 0$, evaluate the limit.
-$\quad$ (ii) Using the identity in part (c), find $L$ in terms of $\theta$.
+$\quad$ (ii) Find $L$ in terms of $\theta$.
 
 Solution:
 (a)
