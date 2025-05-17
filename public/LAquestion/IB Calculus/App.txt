@@ -96,7 +96,7 @@ Solution:
 
 (a)
 Let length = $L$ meters
-Perimeter: $2W + 2L = 400$ ⇒ $L = 200 - W$ **M1**
+Perimeter: $2W + 2L = 400 \Rightarrow L = 200 - W$ **M1**
 Area: $A = W \times L = W(200 - W) = 200W - W^2$ **A1**
 
 $\ $
@@ -106,7 +106,7 @@ To find maximum area:
 **Method 1 (Calculus)**
 $A(W) = 200W - W^2$
 $A'(W) = 200 - 2W$ **M1**
-Set $A'(W) = 0$ ⇒ $200 - 2W = 0\RightarrowW = 100$ m **A1**
+Set $A'(W) = 0$ ⇒ $200 - 2W = 0\Rightarrow W = 100$ m **A1**
 Verify the mmaximum:
 $A''(100) = -2 <0$ **M1**
 $A(100) = 200(100) - (100)^2 = 10000\ m^2$ **A1**
