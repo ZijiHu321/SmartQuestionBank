@@ -1,0 +1,862 @@
+Question:
+A ball is thrown vertically upward from a height of $5$ feet with an initial velocity of $48$ feet per second. The height of the ball (in feet) after $t$ seconds is modeled by the function: $h(t) = -16t^2 +48t +5$.
+(a) Calculate the average rate of change of the ball’s height from $t=0$ to $t=2$ seconds. [2]
+(b) Find the instantaneous rate of change of the ball’s height at $t=1.5$ seconds. What does this value represent physically? [3]
+(c) Determine the time $t$ at which the ball reaches its maximum height. [2]
+
+Solution:
+
+(a)
+Average rate of change = $\frac{h(2)-h(0)}{2-0}$ **M1**
+$h(0) = -16(0)^2 +48(0) +5 = 5$ ft
+$h(2) = -16(2)^2 +48(2) +5 = -64 +96 +5 = 37$ ft
+$\frac{37-5}{2} = 16$ ft/s **A1**
+
+$\ $
+
+(b)
+$h'(t) = -32t +48$ **M1**
+At $t=1.5$: $h'(1.5) = -32(1.5) +48 = 0$ ft/s **A1**
+This represents the instantaneous velocity of the ball at 1.5 seconds. The value 0 indicates the ball is at its maximum height (momentarily at rest). **A1**
+
+$\ $
+
+(c)
+For maximum height, set $h'(t) = 0$:
+$-32t +48 = 0$ **M1**
+$t = \frac{48}{32} = 1.5$ seconds **A1**
+
+Difficulty: 3/10
+Unit: Application of Derivatives
+Topics: Rate of Change, Optimization
+Tags: Paper 1
+
+---
+Question:
+A population of deer in a forest is modeled by the logistic growth function: $P(t) = \frac{10000}{1+9e^{-0.3t}}$, where $P(t)$ is the population (in individuals) and $t$ is time in years.
+
+(a) Calculate the average rate of change of the population from $t=0$ to $t=10$ years. [2]
+(b) Find the instantaneous rate of change of the population at $t=5$ years. What does this value signify about the population trend at this time? [2]
+(c) Determine the time $t$ when the population is growing at its fastest rate. [2]
+(d) Describe the population's behavior as $t\to\infty$. What is the biological significance of this result? [2]
+(e) Solve for the time $t$ when the population reaches $5,000$ individuals. Explain why this point is important in logistic growth models. [3]
+
+Solution:
+
+(a)
+Average rate of change = $\frac{P(10)-P(0)}{10-0}$ **M1**
+$P(0) = \frac{10000}{1+9e^0} = 1000$ deer
+$P(10) = \frac{10000}{1+9e^{-3}} \approx 9279$ deer
+$\frac{9279-1000}{10} \approx 828$ deer/year **A1**
+
+$\ $
+
+(b)
+$P'(t) = \frac{10000(9)(0.3)e^{-0.3t}}{(1+9e^{-0.3t})^2} = \frac{27000e^{-0.3t}}{(1+9e^{-0.3t})^2}$ 
+At $t=5$: $P'(5) \approx \frac{27000e^{-1.5}}{(1+9e^{-1.5})^2} \approx 1190$ deer/year **A1**
+This indicates the population is growing rapidly (near maximum growth rate) at this time. **A1**
+
+$\ $
+
+(c)
+Maximum growth occurs when $P''(t)=0$ (inflection point) **M1**
+Solving the equation gives $t \approx 7.32$ years **A1** 
+(Candidates may use graphing calculator directly to obtain the answer.)
+
+$\ $
+
+(d)
+As $t\to\infty$, $e^{-0.3t}\to 0 \Rightarrow P(t)\to 10000$ deer **A1**
+This is the carrying capacity - the maximum sustainable population. **A1**
+
+$\ $
+
+(e)
+Set $P(t) = 5000$:
+$5000 = \frac{10000}{1+9e^{-0.3t}}$ **M1**
+$t = \frac{\ln 9}{0.3} \approx 7.32$ years **A1**
+This is the inflection point where growth rate transitions from increasing to decreasing. **A1**
+
+$\ $
+
+Difficulty: 7/10
+Unit: Application of Derivatives
+Topics: Rates of Change, Inflection Points
+Tags: Paper 2
+
+---
+
+Question:
+A rectangular plot is enclosed by $400 \text{ m}$ of fencing and has and area of $A\ m^2$. The width of the rectangular plot is $W \text{m}$.
+
+(a) Find an expression of $A$ in terms of $W$. [2]
+(b) Find the maximum possible area of the rectangular plot. Justifying that this value gives a maximum. [4]
+
+Solution:
+
+(a)
+Let length = $L$ meters
+Perimeter: $2W + 2L = 400$ ⇒ $L = 200 - W$ **M1**
+Area: $A = W \times L = W(200 - W) = 200W - W^2$ **A1**
+
+$\ $
+
+(b)
+To find maximum area:
+**Method 1 (Calculus)**
+$A(W) = 200W - W^2$
+$A'(W) = 200 - 2W$ **M1**
+Set $A'(W) = 0$ ⇒ $200 - 2W = 0\RightarrowW = 100$ m **A1**
+Verify the mmaximum:
+$A''(100) = -2 <0$ **M1**
+$A(100) = 200(100) - (100)^2 = 10000\ m^2$ **A1**
+$ $
+**Method 2 (Vertex formula)**
+$A = -W^2 + 200W$ is a downward parabola **M1**
+Maximum occurs at vertex: $W = -\frac{b}{2a} = \frac{200}{2} = 100$ m **M1 A1**
+$A(100) = 10000\ m^2$ **A1**
+
+Difficulty: 3/10
+Unit: Application of Derivatives
+Topics: Optimization
+Tags: Paper 1
+
+---
+
+Question:
+If we set the price of our product to be $18$ per item, then we can sell 300 items. For every dollar we raise the price, we will sell 5 less items. Let the unit price be $p$.
+(a) Find an expression of revenue (R) in terms of $p$. [2]
+(b) Find $p$ that maximizes $R$. Justifying that this value gives a maximum. [3]
+
+Solution:
+
+(a)
+First determine the demand function (quantity sold as function of price):
+At $p = 18$, quantity sold = 300
+For each $1$ increase, quantity decreases by 5
+Thus, quantity sold = $300 - 5(p - 18) = 390 - 5p$ **M1**
+
+Revenue function:
+$R(p) = p \times (390 - 5p) = 390p - 5p^2$ **A1**
+
+$\ $
+
+(b)
+To find price that maximizes revenue:
+
+**Method 1 (Calculus)**
+$R(p) = -5p^2 + 390p$
+$R'(p) = -10p + 390$ **M1**
+Set $R'(p) = 0 \Rightarrow -10p + 390 = 0 \Rightarrow p = 39$ **A1**
+Since $R''(39) = -10 <0$, the maximum occurs. **M1**
+
+**Method 2 (Algebra)**
+The revenue function is quadratic with $a = -5$, $b = 390$
+Maximum occurs at vertex: $p = -\frac{b}{2a} = \frac{390}{10} = 39$ since this is a downward parabola. **M1 A1 A1 M1**
+
+Difficulty: 4/10
+Unit: Application of Derivatives
+Topics: Optimization
+Tags: Paper 1
+
+---
+
+Question:
+The beverage company $\textit{Kocacola}$ is designing a cylindrical tin can for the coke they produce. The can must have a capacity of $1 L$, and they must use as little metal as possible. 
+Let the height be $h\ cm$, and the surface area be $A\ cm^2$.
+(a) Express $A$ in terms of $h$. [3]
+(b) Find $h$ that minimizes the surface area of metal sheet used to produce one can, justify that this value gives a minimum. [6]
+
+Solution:
+
+(a)
+First convert 1 L to volume in cm³: $1 L = 1000 cm³$.
+
+The volume of the cylinder is $V = \pi r^2 h = 1000$, which gives the radius $r = \sqrt{\frac{1000}{\pi h}}$ **M1**
+
+The total surface area (including top and bottom) is:
+$A = 2\pi r^2 + 2\pi r h$ **M1**
+
+Substituting the expression for $h$ gives:
+$A(h) = 2\pi \left(\frac{1000}{\pi h}\right) + 2\pi \sqrt{\frac{1000}{\pi h}} h = \frac{2000}{h} + 2\sqrt{1000\pi h}$ **A1** (accept unsimplified expression)
+
+$\ $
+
+(b)
+To minimize surface area:
+
+Find derivative:
+$A'(h) = -\frac{2000}{h^2} + \sqrt{1000\pi}{h^{-\frac{1}{2}}}$ **M1**
+
+Set $A'(h) = 0$:
+$-\frac{2000}{h^2} + \sqrt{1000\pi}{h^{-\frac{1}{2}}} = 0$ **M1**
+
+Solve for $h$:
+$h = 10.8385... (\text{or exact value: } 4^{1/3}\cdot 10\pi^{-1/3})$ **M1 A1**
+
+Since $A'(h) < 0$ when $h<10.8385...$, and $A'(h) > 0$ when $h>10.8385...$, the minimum occurs.
+
+Difficulty: 4/10
+Unit: Application of Derivatives
+Topics: Optimization
+Tags: Paper 1
+
+---
+
+Question:
+A packaging company makes boxes for chocolates. An example of a box is shown below. This box is closed and the top and bottom of the box are identical regular hexagons of side $x\ cm$.
+![](/questionPic/app_2.png?400x)
+(a) Show that the area of each hexagon is $\frac{3\sqrt{3} x^2}{2}\ cm^2$. [2]
+(b) Given that the volume of the box is $90\ cm^2$, show that when $x = \sqrt[3]{20}$, the total surface area of the box is a minimum, justifying that this value gives a minimum. [8]
+
+Solution:
+(a)
+Area of regular hexagon with side $x$:
+$A = 6 \times \frac{1}{2} \times x \times x \times \sin 60^\circ$ **M1**
+$= \frac{3\sqrt{3}x^2}{2}$ cm² **AG**
+
+$\ $
+
+(b)
+Let height of box be $h$ cm.
+
+Volume of box:
+$V = \frac{3\sqrt{3}hx^2}{2} = 90$ cm³ **M1**
+$\Rightarrow h = \frac{60}{\sqrt{3}x^2}$ **A1**
+
+Surface area:
+$A = 2 \times \text{hexagon area} + 6 \times \text{side area}$
+$= 3\sqrt{3}x^2 + 6hx$ **M1**
+$= 3\sqrt{3}x^2 + \frac{360}{\sqrt{3}}x^{-1}$ **A1**
+
+First derivative:
+$\frac{dA}{dx} = 6\sqrt{3}x - \frac{360}{\sqrt{3}}x^{-2}$ **A1**
+
+Set $\frac{dA}{dx} = 0$:
+$6\sqrt{3}x = \frac{360}{\sqrt{3}x^2}$ **M1**
+$\Rightarrow x^3 = 20$
+$\Rightarrow x = \sqrt[3]{20}$ **AG**
+
+Second derivative test:
+$\frac{d^2A}{dx^2} = 6\sqrt{3} + \frac{720}{\sqrt{3}}x^{-3}$ **A1**
+At $x = \sqrt[3]{20}$, $\frac{d^2A}{dx^2} > 0 \Rightarrow$ minimum **R1**
+
+Difficulty: 6/10
+Unit: Application of Derivatives
+Topics: Optimization,Non Right-angled Trigonometry
+Tags: Paper 1
+
+---
+
+Question:
+Infinitely many rectangles can be inscribed in a semi-circle of diameter $20$. Let $W$ be the height of the inscribed rectangle.
+(a) Express the area of the rectangle $A$ in terms of $W$. [3]
+(b) Find the dimension (both length and width) of the largest rectangle which can be inscribed. [4]
+
+Solution:
+(a)
+For a semicircle with radius 10 (diameter 20):
+The base of rectangle satisfies: $(\frac{L}{2})^2 + W^2 = 10^2$  **M1**
+Solving for length: $L = 2\sqrt{100 - W^2}$ **A1**
+Area function: $A(W) = L \times W = 2W\sqrt{100 - W^2}$ **A1**
+
+$\ $
+
+(b)
+To find maximum area:
+Differentiate $A(W) = 2W(100-W^2)^{1/2}$:
+   $A'(W) = 2(100-W^2)^{1/2} + 2W(\frac{1}{2})(100-W^2)^{-1/2}(-2W)$ **M1**
+Simplify: $A'(W) = \frac{200-4W^2}{\sqrt{100-W^2}}$ **A1**
+Set $A'(W) = 0\Rightarrow 200-4W^2=0\Rightarrow W=\sqrt{50}=5\sqrt{2}$ **A1**
+Corresponding length: $L = 2\sqrt{100-50} = 10\sqrt{2}$ **A1**
+
+Difficulty: 5/10
+Unit: Application of Derivatives
+Topics: Optimization
+Tags: Paper 1
+
+---
+
+Question:
+Infinitely many rectangles which sit on the $x$-axis can be inscribed under the curve $y=e^{-x^2}$ (as shown below). 
+![](/questionPic/app_1.png?500x) 
+Find the area of the largest inscribed rectangle. Justify why it is the largest. [7]
+
+Solution:
+Let the rectangle have vertices at $(-a, 0), (a, 0), (a, e^{-a^2})$, and $(-a, e^{-a^2})$ **M1**
+then $\text{Width} = 2a, \text{Height} = e^{-a^2}$ 
+Area function: $A(a) = 2a e^{-a^2}$ **A1**
+
+Differentiate $A(a)$: $A'(a) = 2e^{-a^2}(1 - 2a^2)$ **M1**
+Set $A'(a) = 0 \Rightarrow 1 - 2a^2 = 0 \Rightarrow a = 1/\sqrt{2}$ **M1A1**
+Verify maximum: $A'(a)$ changes from + to - at $a = 1/\sqrt{2}$ **A1**
+Maximum area: $A(1/\sqrt{2}) = \sqrt{2/e}$ **A1**
+
+Difficulty: 5/10
+Unit: Application of Derivatives
+Topics: Optimization
+Tags: Paper 1
+
+---
+
+Question:
+The diagram below shows a circular lake with centre $O$, diameter AB and radius $2\ km$.
+![](/questionPic/app_3.png?350x) 
+
+Jorg needs to get from $A$ to $B$ as quickly as possible. He considers rowing to point $P$ and then walking to point $B$. He can row at $3\ km\ h^{-1}$ and walk at $6\ km\ h^{-1}$. Let $\angle PAB = \theta\ rad$, and $t$ be the time in hours taken by Jorg to travel from A to B.
+
+(a) Show that $t = \frac{2}{3} (2\cos \theta + \theta)$. [3]
+(b) Find the value of $\theta$ for which $\frac{d\theta}{dt} = 0$.[2]
+(c) What route should Jorg take to travel from A to B in the least amount of time? Give reasons for why it is the least. [3]
+
+Solution:
+(a)
+In right triangle $\triangle APB$:
+$\cos\theta = \frac{AP}{4} \Rightarrow AP = 4\cos\theta$ **A1**
+
+Arc length $PB = 2 \times 2\theta = 4\theta$ **M1**
+
+Total time:
+$t = \frac{AP}{3} + \frac{PB}{6} = \frac{4\cos\theta}{3} + \frac{4\theta}{6} = \frac{2}{3}(2\cos\theta + \theta)$ **AG**
+
+$\ $
+
+(b)
+Differentiate $t$ with respect to $\theta$:
+$\frac{dt}{d\theta} = \frac{2}{3}(-2\sin\theta + 1)$ **A1**
+
+Set $\frac{dt}{d\theta} = 0$:
+$-2\sin\theta + 1 = 0 \Rightarrow \sin\theta = \frac{1}{2} \Rightarrow \theta = \frac{\pi}{6}$ **A1**
+
+$\ $
+
+(c)
+Second derivative:
+$\frac{d^2t}{d\theta^2} = -\frac{4}{3}\cos\theta < 0$ at $\theta = \frac{\pi}{6}$ **M1**
+$\Rightarrow t$ is maximized at $\theta = \frac{\pi}{6}$ **R1**
+
+Alternative routes:
+- Walking entire arc $AB$: time $= \frac{2\pi}{6} \approx 1.05$ hours
+- Rowing directly $AB$: time $= \frac{4}{3} \approx 1.33$ hours
+
+Therefore, walking the entire arc $AB$ minimizes travel time. **R1**
+
+Difficulty: 6/10
+Unit: Application of Derivatives
+Topics: Optimization,Right-angled Trigonometry
+Tags: Paper 1
+
+---
+
+Question:
+Points $A$, $B$, and $T$ lie on a line on an indoor soccer field. The goal, $AB$ , is 2 metres wide. A player situated at point $P$ kicks a ball at the goal. $PT$ is perpendicular to $AB$ and is 6 metres from a parallel line through the centre of $AB$. Let $PT$ be $x$ metres and let $\alpha = \angle APB$ measured in degrees. Assume that the ball travels along the floor.
+![](/questionPic/app_4.png?450x) 
+Note that the maximum for $\tan \alpha$ gives the maximum for $\alpha$.
+(a) Find the value of $\alpha$ when $x=10$. [4]
+(b) Show that $\tan \alpha = \frac{2x}{x^2 + 35}$. [4]
+(c) [11]
+$\quad$ (i) Find $\frac{d\tan \alpha}{dx}$.
+$\quad$ (ii) Hence or otherwise find the value of $\alpha$ such that $\frac{d\tan \alpha}{dx} = 0$.
+$\quad$ (iii) Find $\frac{d^2(\tan \alpha)}{dx^2}$ and hence show that the value of $\alpha$ never exceed $10^\circ$.
+(d) Find the set of values of $x$ for which $\alpha > 7^{\circ} $.
+
+Solution:
+(a)
+Using angle difference formula:
+$\alpha = \arctan\left(\frac{7}{10}\right) - \arctan\left(\frac{5}{10}\right)$ **M1**
+$= 34.992^\circ - 26.565^\circ$ **A1 A1**
+Note: **A1** for each correct arctan evaluation
+$= 8.43^\circ$ **A1**
+
+$\ $
+
+(b)
+Using $\tan(A-B)$ formula:
+$\tan \alpha = \frac{\frac{7}{5} - \frac{5}{2}}{1 + \left(\frac{7}{5}\right)\left(\frac{5}{2}\right)}$ **M1**
+$= \frac{-\frac{11}{10}}{\frac{49}{10}} = \frac{2x}{x^2 + 35}$ **A1 A1 AG**
+Note: **A1** for correct numerator, **A1** for correct denominator
+
+$\ $
+
+(c) (i)
+Using quotient rule:
+$\frac{d(\tan \alpha)}{dx} = \frac{2(x^2 + 35) - 2x(2x)}{(x^2 + 35)^2}$ **M1**
+$= \frac{70 - 2x^2}{(x^2 + 35)^2}$ **A1 A1**
+Note: **A1** for correct numerator, **A1** for correct denominator
+
+$\ $
+
+(c) (ii)
+Set derivative to zero:
+$70 - 2x^2 = 0 \Rightarrow x = \sqrt{35}$ **M1 A1**
+Substitute back:
+$\tan \alpha = \frac{1}{\sqrt{35}} \Rightarrow \alpha = 9.59^\circ$ **A1 A1**
+Note: **A1** for correct $x$, **A1** for correct $\alpha$
+
+$\ $
+
+(c) (iii)
+Second derivative:
+$\frac{d^2(\tan \alpha)}{dx^2} = \frac{4x(x^2 - 105)}{(x^2 + 35)^3}$ **M1 A1**
+At $x = \sqrt{35}$: $\frac{d^2(\tan \alpha)}{dx^2} < 0$ (maximum) **M1**
+Therefore $\alpha$ never exceeds $10^\circ$ **R1 AG**
+
+$\ $
+
+(d)
+Solve inequality:
+$\frac{2x}{x^2 + 35} \geq \tan 7^\circ$ **M1**
+Solutions: $x \in [2.55, 13.7]$ metres **A1A1**
+Note: **A1** for each correct boundary
+
+
+Difficulty: 6/10
+Unit: Application of Derivatives
+Topics: Optimization,Right-angled Trigonometry,Trigonometric Identity
+Tags: Paper 2
+
+---
+
+Question:
+The length of a rectangle is decreasing at $1\ cm$ per minute, but the area of the rectangle remains constant at $100\ cm^2$. 
+
+(a) At what rate is the width of the rectangle increasing at the instant when the length is $20\ cm$? [4]
+(b) At what rate is the width of the rectangle increasing at the instant when the rectangle is a square? [3]
+
+Solution:
+(a)
+Given:
+$\frac{dL}{dt} = -1\ cm/min$ (decreasing)
+Area $A = L \times W = 100\ cm^2$ (constant)
+
+Differentiate area with respect to time:
+$\frac{dA}{dt} = \frac{d}{dt}(LW) = W\frac{dL}{dt} + L\frac{dW}{dt} = 0$ **M1**
+
+When $L = 20\ cm$:
+$W = \frac{100}{20} = 5\ cm$ **A1**
+
+Substitute into differentiated equation:
+$5(-1) + 20\frac{dW}{dt} = 0$ **M1**
+$-5 + 20\frac{dW}{dt} = 0 \Rightarrow \frac{dW}{dt} = \frac{1}{4}\ cm/min$ **A1**
+
+$\ $
+
+(b)
+When rectangle is square:
+$L = W = \sqrt{100} = 10\ cm$ **A1**
+
+Using same differentiated equation:
+$10(-1) + 10\frac{dW}{dt} = 0$ **M1**
+$\frac{dW}{dt} = 1\ cm/min$ **A1**
+
+Difficulty: 3/10
+Unit: Application of Derivatives
+Topics: Related Rates
+Tags: Paper 1
+
+---
+
+Question:
+$\triangle ABC$ is right angled at $A$, and $AB=20\ cm$. $\angle ABC$ increases at a constant rate $1\ rad\ min^{-1}$. At what rate is $BC$ changing at the instant when $\angle ABC$ measures $\frac{\pi}{6}$? [5]
+
+Solution:
+Relationship:
+$\cos\theta = \frac{AB}{BC} = \frac{20}{BC}$ **M1**
+$\Rightarrow BC = 20\sec\theta$ 
+
+Differentiate with respect to time:
+$\frac{d(BC)}{dt} = 20\sec\theta\tan\theta \cdot \frac{d\theta}{dt}$ **M1**
+
+At $\theta = \frac{\pi}{6}$:
+$\sec\frac{\pi}{6} = \frac{2}{\sqrt{3}}$, $\tan\frac{\pi}{6} = \frac{1}{\sqrt{3}}$ **A1**
+$\frac{d(BC)}{dt} = 20 \times \frac{2}{\sqrt{3}} \times \frac{1}{\sqrt{3}} \times 1 = \frac{40}{3}\ cm/min$ **M1 A1**
+
+Difficulty: 4/10
+Unit: Application of Derivatives
+Topics: Related Rates
+Tags: Paper 1
+
+---
+
+Question:
+An airplane is flying overhead at a constant elevation of $4000\ m$. The airplane is flying horizontally away from a person. What is the speed of the plane if the distance between the person and the plane is increasing at the rate of $450\ m/sec$ and the distance between the person and the airplane is $5000\ m$? [5]
+![](/questionPic/app_5.png?450x) 
+
+Solution:
+Given:
+Elevation (vertical distance) = $4000\ m$ (constant)
+Rate of change of direct distance ($\frac{dD}{dt}$) = $450\ m/sec$
+Direct distance ($D$) = $5000\ m$ at the instant
+
+Let:
+$x$ = horizontal distance between person and plane
+$D$ = direct distance = $\sqrt{x^2 + 4000^2}$ **A1**
+
+When $D = 5000\ m$:
+$5000 = \sqrt{x^2 + 4000^2}$ 
+$\Rightarrow x = \sqrt{5000^2 - 4000^2} = 3000\ m$ **A1**
+
+Differentiate distance relationship:
+$D^2 = x^2 + 4000^2$
+$2D\frac{dD}{dt} = 2x\frac{dx}{dt}$ **M1**
+
+Substitute known values:
+$2 \times 5000 \times 450 = 2 \times 3000 \times \frac{dx}{dt}$ **M1**
+$\Rightarrow \frac{dx}{dt} = \frac{5000 \times 450}{3000} = 750\ m/sec$ **A1**
+
+Difficulty: 4/10
+Unit: Application of Derivatives
+Topics: Related Rates,Pythagorean Theorem
+Tags: Paper 1
+
+---
+
+Question:
+Two cars start moving from the same point. One travels north at $2\ km/h$ and the other travels east at $4\ km/h$. At what rate is the distance between the cars increasing $3\ h$ later? Express your answer in terms of $a\sqrt{b}$, where $a,b \in \mathbb{Z}$. [6]
+
+Solution:
+Given:
+Car A: speed north = $2\ km/h$
+Car B: speed east = $4\ km/h$
+Find $\frac{dD}{dt}$ at $t = 3\ h$
+
+After $3\ h$:
+Distance north ($y$) = $2 \times 3 = 6\ km$ **A1**
+Distance east ($x$) = $4 \times 3 = 12\ km$ **A1**
+
+Distance between cars:
+$D = \sqrt{x^2 + y^2} = \sqrt{12^2 + 6^2} = \sqrt{180} = 6\sqrt{5}\ km$ **M1**
+
+Differentiate with respect to time:
+$\frac{dD}{dt} = \frac{1}{2}(x^2 + y^2)^{-1/2}(2x\frac{dx}{dt} + 2y\frac{dy}{dt})$ **M1**
+$= \frac{x\frac{dx}{dt} + y\frac{dy}{dt}}{\sqrt{x^2 + y^2}} = \frac{12 \times 4 + 6 \times 2}{6\sqrt{5}} = \frac{60}{6\sqrt{5}} = \frac{10}{\sqrt{5}} = 2\sqrt{5}\ km/h$ **M1 A1**
+
+Difficulty: 5/10
+Unit: Application of Derivatives
+Topics: Related Rates,Pythagorean Theorem,kinematics
+Tags: Paper 1
+
+---
+
+Question:
+Gravel is being dumped from a convayor belt at a rate of $20\ m^3/h$, and its coarseness is such that it forms a pile in the shape of a cone whose base diameter and height are always equal. How fast is the height of the pile increasing in $m/h$ when the pile is $9\ m$ high? [5]
+![](/questionPic/app_6.png?350x) 
+
+Solution:
+Given:
+$\frac{dV}{dt} = 20\ m^3/h$ (rate of gravel dumping)
+Cone dimensions: diameter $D = h$ (height)
+$ $
+Find $\frac{dh}{dt}$ when $h = 9\ m$
+
+Cone relationships:
+Radius $r = \frac{D}{2} = \frac{h}{2}$ **M1**
+Volume $V = \frac{1}{3}\pi r^2 h = \frac{1}{3}\pi \left(\frac{h}{2}\right)^2 h = \frac{\pi}{12}h^3$ **A1**
+
+Differentiate volume:
+$\frac{dV}{dt} = \frac{\pi}{12} \times 3h^2 \frac{dh}{dt} = \frac{\pi h^2}{4} \frac{dh}{dt}$ **M1**
+
+Substitute known values at $h = 9\ m$:
+$20 = \frac{\pi (9)^2}{4} \frac{dh}{dt}$ **M1**
+$\frac{dh}{dt} = \frac{20 \times 4}{81\pi} = \frac{80}{81\pi}\ m/h$ **A1**
+
+Difficulty: 5/10
+Unit: Application of Derivatives
+Topics: Related Rates,Volume Calculation
+Tags: Paper 1
+
+---
+
+Question:
+Jim, who is $180\ cm$ tall, is walking towards a lamp-post which is $3$ meters high. The lamp casts a shadow behind him. He notices that his shadow gets shorter as he moves closer to the lamp. He is walking at $2.4$ meters per second. Let $x$ be the distance between Jim and the lamp-post in metres, $s$ be the length of the shadow in metres.
+
+(a) When he is $2$ meters from the lamp-post, how fast is the length of his shadow decreasing? [4]
+(b) How fast is the tip of his shadow moving? [2]
+
+Solution:
+
+(a)
+![](/questionPic/app_7.png?450x) 
+Given:
+Lamp height = $3\ m$
+Jim's height = $1.8\ m$ (converted from cm)
+$\frac{dx}{dt} = -2.4\ m/s$ (negative since distance is decreasing)
+Find $\frac{ds}{dt}$ when $x = 2\ m$
+$ $
+Using similar triangles:
+$\frac{3}{x + s} = \frac{1.8}{s}$ **M1**
+$3s = 1.8x + 1.8s$ ⇒ $1.2s = 1.8x$ ⇒ $s = 1.5x$ **A1**
+
+Differentiate:
+$\frac{ds}{dt} = 1.5\frac{dx}{dt} = 1.5(-2.4) = -3.6\ m/s$ **M1 A1**
+(negative sign indicates decreasing length)
+
+$\ $
+
+(b)
+Let $y$ = distance from lamp to shadow tip = $x + s$
+From part (a): $y = x + 1.5x = 2.5x$ 
+
+Differentiate:
+$\frac{dy}{dt} = 2.5\frac{dx}{dt} = 2.5(-2.4) = -6\ m/s$ **A1**
+(negative sign indicates shadow tip is moving towards lamp) **A1**
+
+Difficulty: 6/10
+Unit: Application of Derivatives
+Topics: Related Rates,Similar Triangles
+Tags: Paper 2
+
+---
+
+Question:
+A perfectly spherical balloon is being inflated at a rate of $2\ m^3/s$. How fast is the surface area increasing when the radius is $0.5\ m$? [5]
+
+Solution:
+Given:
+Volume rate: $\frac{dV}{dt} = 2\ m^3/s$
+Find $\frac{dA}{dt}$ when $r = 0.5\ m$
+$ $
+Step 1: Relate A and V 
+From sphere formulas:
+$V = \frac{4}{3}\pi r^3$ and $A = 4\pi r^2$ **M1**
+
+$\Rightarrow V = \frac{4}{3}\pi \left(\frac{A}{4\pi}\right)^{3/2} = \frac{A^{3/2}}{6\sqrt{\pi}}$ **M1**
+
+Step 2: Differentiate the A-V relationship
+$\frac{dV}{dt} = \frac{3}{2} \cdot \frac{A^{1/2}}{6\sqrt{\pi}} \cdot \frac{dA}{dt} = \frac{\sqrt{A}}{4\sqrt{\pi}} \cdot \frac{dA}{dt}$ **M1**
+
+Step 3: Evaluate at r = 0.5 m
+First find A:
+$A = 4\pi (0.5)^2 = \pi\ m^2$ **A1**
+
+Now substitute:
+$2 = \frac{\sqrt{\pi}}{4\sqrt{\pi}} \cdot \frac{dA}{dt} = \frac{1}{4} \cdot \frac{dA}{dt}$
+$\frac{dA}{dt} = 8\ m^2/s$ **A1**
+
+Difficulty: 7/10
+Unit: Application of Derivatives
+Topics: Related Rates,Volume Calculation
+Tags: Paper 2
+
+---
+
+Question:
+Four points are moving from the origin and towards the positive $x$-axis, positive $y$-axis, negative $x$-axis, and negative $y$-axis at the speed following by the function $v_1(t)=t$, $v_2(t)=t^2$, $v_3(t)=2t$, and $v_4(t)=2t^2$ respectively. At what rate is the area of quadrilateral formed by the four point increasing when $t=10$? [6]
+![](/questionPic/app_8.png?400x) 
+
+Solution:
+Determine positions:
+   $x_1(t) = \int t \, dt = \frac{1}{2}t^2$ 
+   $x_2(t) = \int t^2 \, dt = \frac{1}{3}t^3$ 
+   $x_3(t) = -\int 2t \, dt = -t^2$ 
+   $x_4(t) = -\int 2t^2 \, dt = -\frac{2}{3}t^3$ **M1 A1**
+$ $
+Calculate quadrilateral area:
+   $A = \frac{1}{2}\left(x_1x_2 - x_2x_3 + x_3x_4 - x_4x_1\right)$ **M1**
+   $= \frac{1}{2}\left(\frac{1}{6}t^5 + \frac{1}{3}t^5 + \frac{2}{3}t^5 + \frac{1}{3}t^5\right) = \frac{11}{12}t^5$ **A1**
+$ $
+Differentiate area:
+   $\frac{dA}{dt} = \frac{55}{12}t^4$ **M1**
+$ $
+Evaluate at $t=10$:
+   $\frac{dA}{dt}\big|_{t=10} = \frac{55}{12} \times 10000 = \frac{137500}{3} \approx 45833.33$ **A1**
+
+Difficulty: 7/10
+Unit: Application of Derivatives
+Topics: Related Rates,Kinematics
+Tags: Paper 2
+
+---
+
+Question:
+Suppose that $\begin{align} L = \lim_{x\to \infty} (2^x+3^x+...+2025^x)^{\frac{1}{x}} \end{align} $.
+(a) Show that $ \begin{align} \ln L = \lim_{x\to \infty} \frac{\ln(2^x+3^x+...+2025^x)}{x} \end{align} $. [2]
+(b) Evaluate $\ln L$ by using L'Hopital's Rule. [4]
+(c) Hence, find $L$. [1]
+
+Solution:
+(a)
+Take natural log of both sides:
+$\ln L = \ln\left(\lim_{x\to \infty} (2^x+\cdots+2025^x)^{1/x}\right)$ **M1**
+$= \lim_{x\to \infty} \frac{\ln(2^x+\cdots+2025^x)}{x}$ (applying logarithm rule) **AG**
+
+$\ $
+
+(b)
+
+Apply L'Hopital's Rule:**M1**
+$
+\begin{align}
+\ln L & = \lim_{x \to \infty} \frac{\frac{2^x\ln2+\cdots+2025^x\ln2025}{2^x+\cdots+2025^x}}{1}\\
+& = \lim_{x \to \infty} \frac{2^x\ln2+\cdots+2025^x\ln2025}{2^x+\cdots+2025^x}
+\end{align}
+$ **A1**
+
+Divide numerator and denominator by $2025^x$:
+$\ln L = \lim_{x\to\infty} \frac{\left(\frac{2}{2025}\right)^x\ln2+\cdots+\ln2025}{\left(\frac{2}{2025}\right)^x+\cdots+1}$ **M1**
+
+Since $\left(\frac{n}{2025}\right)^x \to 0$ for all $n < 2025$:
+$\ln L = \ln2025$ **A1**
+
+$\ $
+
+(c)
+From (b):
+$L = e^{\ln2025} = 2025$ **A1**
+
+Difficulty: 7/10
+Unit: Application of Derivatives
+Topics: L'Hopital's Rule
+Tags: Paper 3
+
+---
+
+Question:
+An inscribed triangle in a circle refers to the triangle inside a circle and whose vertices are on the circle, as shown in $\textit{P1-1}$.
+![](/questionPic/app_9.png?250x) 
+As $\textit{P1-2}$ shows, $\triangle ABC$ is an inscribed triangle of the circle centered at $O$. Given that $BC=1$, the radius of circle $O$ is $r=1$.
+![](/questionPic/app_10.png?250x)
+
+(a) Find the distance from the O to BC. [2]
+(b) Find the maximum possible area of $\triangle ABC$. [2]
+
+Suppose that now, all information above is unchanged except $BC=k$ for some positive real number $k<2$.
+
+(c) Find the maximum possible area of $\triangle ABC$. Express your answer in terms of $k$. [3]
+(d) Hence, deduce the shape of the inscribed triangle of circle $O$ that has the greatest possible area. [4]
+
+An inscribed tetrahedron in a sphere refers to the tetrahedron inside a sphere and whose vertices are on the sphere. For example, as $\textit{P1-3}$ shows, tetrahedron $ABCD$ is an inscribed tetrahedron in the sphere $O$.
+![](/questionPic/app_11.png?250x)
+
+(e) Suppose that the sphere $O$ has a radius of $1$, find the maximum possible volume of its inscribed tetrahedron. Round your answer to four decimal places. [5]
+
+
+
+
+Solution:
+(a)
+Using right triangle formed by $O$, midpoint of $BC$, and $B$:
+$d = \sqrt{1^2 - (0.5)^2} = \sqrt{0.75} = \frac{\sqrt{3}}{2}$ **M1 A1**
+
+$\ $
+
+(b)
+Maximum height occurs when $A$ is directly opposite $BC$:
+$h_{max} = 1 + \frac{\sqrt{3}}{2}$ **M1**
+Area $= \frac{1}{2} \times 1 \times (1 + \frac{\sqrt{3}}{2}) = \frac{1}{2} + \frac{\sqrt{3}}{4}$ **A1**
+
+$\ $
+
+(c)
+General case for $BC=k$:
+$d = \sqrt{1 - (\frac{k}{2})^2}$ **M1**
+$h_{max} = 1 + \sqrt{1 - (\frac{k}{2})^2}$ **A1**
+Area $= \frac{k}{2} \times (1 + \sqrt{1 - (\frac{k}{2})^2})$ **A1**
+
+$ $
+
+(d)
+Using graphing calculator, obtain that Area $= \frac{k}{2} \times (1 + \sqrt{1 - (\frac{k}{2})^2})$ is maximized at $k=\mp \sqrt{3}$. Since $k$ is the length of $BC$, $k$ is positive. Therefore, $k=\sqrt{3}$. **A1**
+Since $BC=\sqrt{3}$, 
+$h = 1+ \sqrt{1 - (\frac{k}{2})^2} = \frac{3}{2}$ **A1**
+$\Rightarrow AB = AC = \sqrt{(\frac{3}{2})^2 + (\frac{\sqrt{3}}{2})^2} = \sqrt{3} = BC$ **A1**
+Therefore, the maximum area occurs when $\triangle ABC$ is equilateral. **AG**
+
+$ $
+
+(e)
+Consider the cross-sectional circle of the sphere that is cut by $\triangle BCD$. Denote the radius of the circle to be $r$, where $0<r\leq 1$; the center of the circle to be $M$.
+By (d), we know that the area of $\triangle BCD$ is maximized when it is equilateral. **M1**
+Let $A$ be the area of $\triangle BCD$, then we have:
+$\begin{align}
+A_{max} & = A_{\triangle MBC} + A_{\triangle MBD} + A_{\triangle MCD}\\
+& = 3\cdot \frac{1}{2} r^2 \sin \frac{2\pi}{3} \\
+& = \frac{3\sqrt{3}}{4} r^2 \end{align}$ **A1**
+Let $V$ be the volume of the inscribed tetrahedron $ABCD$, then:
+$V = \frac{1}{3} Ah$, where $h$ is the height of the face $BCD$.
+Note that $V$ is maximized when:
+(1) $A = A_{max} = \frac{3\sqrt{3}}{4} r^2$
+**AND**
+(2) $AO$ is perpendicular to the plane $BCD \Leftrightarrow h = 1 + \sqrt{1-r^2} $ **M1**
+$ \Rightarrow V_max =  \frac{3\sqrt{3}}{4} r^2 (1 + \sqrt{1-r^2}) = \frac{ \sqrt{3} }{4} ( r^2 + r^2(1-r^2) )$ **A1**
+Using graphing calculator, $V_{max} = 0.4949$ (or exact value $\frac{8\sqrt{3}}{27}$) **A1**
+
+
+Difficulty: 9/10
+Unit: Application of Derivatives
+Topics: Optimization
+Tags: Paper 3
+
+---
+
+Question:
+Dungeon crawling games is a type of Role Playing Games (RPGs) in which heroes navigate a “dungeon” and battle various monsters. A common element in these games is the use of lasers as attacks. 
+In a specific scenario, there is a laser turret located $\sqrt{2}\ m$ away from the center of a circular obstacle with the radius of $1\ m$. The laser turret emits a laser beam that rotates counterclockwise around the turret at a constant angular speed of $\omega\ rad/s$. The laser beam is obstructed by the circular obstacle. (All angles in this question are in radian measure.) 
+The position of the laser turret is denoted by $L$, the center of the obstacle is denoted by $O$, the point where the laser hits the obstacle is denoted by $P$, the angle formed by $O, L,$ and $P$ is measured by $\theta$ (as shown in $\textit{P2-1}$). Note that, the rate of change of $\theta$ is $\omega$.
+![P2-1](/questionPic/app_12.png?350x) 
+
+(a) Show that $\theta \in [0,\frac{\pi}{4}]$ for which $P$ remains on the circular obstacle. [2]
+
+Let $\phi$ be the measure of $\angle POL$, and $l$ be the arclength of the arc $PM$ (as shown in $\textit{P2-2}$).
+![P2-1](/questionPic/app_13.png?300x) 
+
+(b) Show that $\phi = l$. [1]
+(c) Show that $\sin \theta = \frac{\sin(\theta + \phi)}{\sqrt{2}}$. [2]
+(d) Find the rate of change of $l$ at the instance when $\theta=0$, express your answer in terms of $\omega$. [5]
+(e) Find the minimum rate of change of $l$ for which $P$ remains on the circular obstacle, express your answer in terms of $\omega$. [6]
+
+Solution:
+(a)  
+Using the tangent condition for the laser beam:  
+$\sqrt{2} \sin\theta = 1 \Rightarrow \theta_{\text{max}} = \frac{\pi}{4}$ **M1**  
+Thus, $\theta \in [0, \frac{\pi}{4}]$ **A1**
+
+$\ $
+
+(b)  
+Arc length $l = r\phi = \phi$ (radius $r=1$). **M1**  
+Hence, $\phi = l$ 
+
+$\ $
+
+(c)  
+Law of Sines in $\triangle OLP$:  
+$\frac{1}{\sin\theta} = \frac{\sqrt{2}}{\sin(\theta+\phi)}$ **M1**  
+$\Rightarrow \sin\theta = \frac{\sin(\theta+\phi)}{\sqrt{2}}$ **AG**
+
+$\ $
+
+(d)  
+Differentiate $\sin\theta = \frac{\sin(\theta+\phi)}{\sqrt{2}}$: 
+$\cos\theta \cdot \frac{d\theta}{dt} = \frac{\cos(\theta+\phi)(\frac{d\theta}{dt} + \frac{d\phi}{dt})}{\sqrt{2}}$ **M1**
+Since:
+$\quad \omega = \frac{d\theta}{dt}$
+$\quad \phi = l$
+$\Rightarrow\cos\theta \cdot \omega = \frac{\cos(\theta+\phi)(\omega + \frac{dl}{dt})}{\sqrt{2}}$ **M1 M1**  
+At $\theta=0$, $\phi=0$:  
+$\omega = \frac{\omega + \frac{dl}{dt}}{\sqrt{2}} \Rightarrow \frac{dl}{dt} = \omega(\sqrt{2}-1)$ **M1A1**
+
+$\ $
+
+(e)  
+From part (d),
+   $\cos\theta \cdot \omega = \frac{\cos(\theta + \phi)}{\sqrt{2}} \cdot \left(\omega + \frac{dl}{dt}\right)$ **M1**
+
+Solve for $\frac{dl}{dt}$:
+   $\frac{dl}{dt} = \frac{\sqrt{2}\omega\cos\theta}{\cos(\theta + \phi)} - \omega$ **A1**
+
+From part (c),
+   $\sqrt{2} \sin\theta = \sin(\theta + \phi)$
+
+By Pythagorean Identity:
+   $\cos(\theta + \phi) = \sqrt{ 1-2\sin^2\theta }$ (positive since $0 \leq \theta + \phi \leq \frac{\pi}{2}$)**M1**
+   $\Rightarrow \frac{dl}{dt} = \omega(  \frac{\sqrt{2}\cos\theta}{ \sqrt{ 1-2\sin^2\theta } -1}  )$ **M1**
+
+Using a graphing calculator, we obtain that $(\frac{\sqrt{2}\cos\theta}{ \sqrt{ 1-2\sin^2\theta } -1})_{min} = \sqrt{2} - 1$ **A1**
+   $\Rightarrow \left.\frac{dl}{dt}\right|_{\text{min}} = \omega(\sqrt{2} - 1)$ **A1**
+
+Difficulty: 10/10
+Unit: Application of Derivatives
+Topics: Related Rate,Optimization
+Tags: Paper 3
+

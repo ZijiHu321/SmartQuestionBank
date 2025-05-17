@@ -1,0 +1,55 @@
+---
+Question: Evaluate the limit $\lim_{x \to 0} \frac{e^x -1}{x}$.
+
+Choices:
+- 0
+- 1
+- e 
+- limit does not exist
+
+Correct: 1
+Difficulty: 1
+Unit: Application of Derivatives
+Topics: L'Hopital's Rule
+---
+Question: 
+Evaluate the limit $\lim_{x \to 0} \frac{e^x -x-1}{x^2}$.
+
+Choices:
+- 0
+- $\frac{1}{2}$
+- 1
+- $\infty$
+
+Correct: 1
+Difficulty: 3
+Unit: Application of Derivatives
+Topics: L'Hopital's Rule
+---
+Question: 
+Evaluate the limit $\lim_{x \to 0} \frac{x+1}{\sin x}$.
+
+Choices:
+- 0
+- $\frac{1}{2}$
+- 1
+- $\infty$
+
+Correct: 3
+Difficulty: 2
+Unit: Application of Derivatives
+Topics: L'Hopital's Rule
+---
+Question: The volume of a sphere is given by $V = \frac{4}{3} \pi r^3$. What is the rate of change of the volume with respect to the radius when $r = 3$?
+
+Choices:
+- $36\pi$
+- $108\pi$
+- $12\pi$
+- $48\pi$
+
+Correct: 0
+Difficulty: 3
+Unit: Application of Derivatives
+Topics: Rate of Change
+---

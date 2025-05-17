@@ -439,7 +439,7 @@ Question:
 Let $f$ be a function defined by $f(x) = x - \arctan x, x \in \mathbb{R}$. 
 (a) Find $f(1)$ and $f(-\sqrt{3})$. [2]
 (b) Show that $f$ is odd. [2]
-(c) Show that $x - \frac{\pi}{2} < f(x) + \frac{\pi}{2}$, for $x \in \mathbb{R}$. [8]
+(c) Show that $x - \frac{\pi}{2} < f(x) + \frac{\pi}{2}$, for $x \in \mathbb{R}$. [2]
 (d) Find the expression for $f'(x)$ and $f''(x)$. Hence describe the behaviour of the graph of $f$ at the origin and justify your answer.[8]
 (e) Sketch a graph of $f$ , showing clearly the asymptotes. [3]
 (f) Justify that the inverse of $f$ is defined for all $x \in \mathbb{R}$ and sketch its graph. [3]

@@ -67,21 +67,6 @@ Difficulty: 1
 Unit: Finding Derivative Functions
 Topics: Slope of the Tangent
 ---
-
----
-Question: The volume of a sphere is given by $V = \frac{4}{3} \pi r^3$. What is the rate of change of the volume with respect to the radius when $r = 3$?
-
-Choices:
-- $36\pi$
-- $108\pi$
-- $12\pi$
-- $48\pi$
-
-Correct: 0
-Difficulty: 3
-Unit: Finding Derivative Functions
-Topics: Rate of Change
----
 Question: Which statement below is $\textbf{incorrect}$?
 
 Choices:
@@ -332,7 +317,7 @@ Choices:
 Correct: 0
 Difficulty: 5
 Unit: Finding Derivative Functions
-Topics: Trigonometric Indentity,the Chain Rule
+Topics: Trigonometric Identity,the Chain Rule
 ---
 Question: Evaluate $\frac{d^{10}}{dx^{10}} (e^2x) |_{x=0}$?
 
@@ -344,5 +329,5 @@ Choices:
 Correct: 3
 Difficulty: 5
 Unit: Finding Derivative Functions
-Topics: Trigonometric Indentity,the Chain Rule
+Topics: Trigonometric Identity,the Chain Rule
 ---
