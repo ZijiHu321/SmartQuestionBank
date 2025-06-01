@@ -10,7 +10,9 @@ import PdfTable from './Table'
 //   filename: string; 
 // };
 
-const [List, setList] = useState([
+
+const MockExam = () => {
+  const [List, setList] = useState([
   // cal1 course
   { course: 'cal1', unit: 'Limits and Continuity', examType: 'Unit Test', filename: 'cal1_Limits and Continuity.pdf' },
   { course: 'cal1', unit: 'Finding Derivative Functions', examType: 'Unit Test', filename: 'cal1_Finding Derivative Functions.pdf' },
@@ -36,7 +38,6 @@ const [List, setList] = useState([
 
 const [search, setSearch] = useState<string>('')
 
-const MockExam = () => {
   return (
     <div style={{
       display: 'flex',

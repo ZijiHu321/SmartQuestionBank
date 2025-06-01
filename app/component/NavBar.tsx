@@ -114,8 +114,8 @@ function NavBar() {
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {path === '/unit' && 'Chapters'}
-                    {path === '/mockexam' && 'Mock Exam'}
-                    {path === '/link' && 'Random Question'}
+                    {path === '/mockexam' && 'MockExam'}
+                    {path === '/link' && 'RandomQuestion'}
                   </Link>
                 </li>
               ))}
