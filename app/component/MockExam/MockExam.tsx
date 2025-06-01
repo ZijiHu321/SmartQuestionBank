@@ -37,27 +37,69 @@ const [List, setList] = useState([
 const [search, setSearch] = useState<string>('')
 
 const MockExam = () => {
-    
   return (
-    <div>
-        <header> 
-            <h1>Mock Examaminations</h1>
-        </header>
+    <div style={{
+      display: 'flex',
+      flexDirection: 'column',
+      minHeight: '100vh',
+      backgroundColor: '#f8f9fa',
+      padding: '20px'
+    }}>
+      <header style={{
+        marginTop: '100px',
+        textAlign: 'center',
+        fontSize: '2.5rem',
+        color: '#333',
+        marginBottom: '40px',
+        marginRight: '40vw'
+      }}> 
+        <h1>Mock Examinations</h1>
+      </header>
 
-        <SearchItem
-        search={search}
-        setSearch={setSearch}
-        />
+      <div style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        minHeight: '100vh',
+        padding: '20px'
+      }}>
+        <div style={{
+          width: '100%',
+          maxWidth: '1200px',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '20px'
+        }}>
+          <SearchItem
+            search={search}
+            setSearch={setSearch}
+          />
 
-        <PdfTable
-        List = {List.filter(item => (item.course.toLowerCase().includes(search.toLowerCase()) ||
-        item.unit.toLowerCase().includes(search.toLowerCase()) ||
-        item.examType.toLowerCase().includes(search.toLowerCase())))}
-        setList = {setList}
+          <PdfTable
+            List={List.filter(item => (
+              item.course.toLowerCase().includes(search.toLowerCase()) ||
+              item.unit.toLowerCase().includes(search.toLowerCase()) ||
+              item.examType.toLowerCase().includes(search.toLowerCase())
+            ))}
+            setList={setList}
+          />
+        </div>
+      </div>
 
-        />
+      <style jsx>{`
+        @media (max-width: 768px) {
+          header h1 {
+            font-size: 1.8rem;
+            margin-right: 0;
+            text-align: left;
+            margin-top: 6rem;
+            margin-left: 2vw;
+            margin-bottom: 20px;
+          }
+        }
+      `}</style>
     </div>
-  )
+  );
 }
 
 export default MockExam
