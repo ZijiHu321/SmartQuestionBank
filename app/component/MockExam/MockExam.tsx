@@ -12,7 +12,7 @@ import PdfTable from './Table'
 
 
 const MockExam = () => {
-  const [List, setList] = useState([
+  const List= [
   // cal1 course
   { course: 'cal1', unit: 'Limits and Continuity', examType: 'Unit Test', filename: 'cal1_Limits and Continuity.pdf' },
   { course: 'cal1', unit: 'Finding Derivative Functions', examType: 'Unit Test', filename: 'cal1_Finding Derivative Functions.pdf' },
@@ -34,7 +34,7 @@ const MockExam = () => {
   { course: 'ib_stat', unit: 'Statistics', examType: 'Unit Test', filename: 'ib_stat_Statistics.pdf' },
   { course: 'ib_stat', unit: 'Discrete Random Variables', examType: 'Unit Test', filename: 'ib_stat_Discrete Random Variables.pdf' },
   { course: 'ib_stat', unit: 'Continuous Random Variables', examType: 'Unit Test', filename: 'ib_stat_Continuous Random Variables.pdf' },
-]);
+];
 
 const [search, setSearch] = useState<string>('')
 
@@ -82,7 +82,7 @@ const [search, setSearch] = useState<string>('')
               item.unit.toLowerCase().includes(search.toLowerCase()) ||
               item.examType.toLowerCase().includes(search.toLowerCase())
             ))}
-            setList={setList}
+            
           />
         </div>
       </div>

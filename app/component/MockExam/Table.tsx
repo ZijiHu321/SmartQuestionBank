@@ -1,5 +1,4 @@
 'use client';
-import { useState } from 'react';
 
 import React from 'react';
 
@@ -14,10 +13,10 @@ interface PdfItem {
 
 interface PdfTableProps {
   List: PdfItem[];
-  setList: React.Dispatch<React.SetStateAction<PdfItem[]>>;
+  
 }
 
-const PdfTable: React.FC<PdfTableProps> = ({ List, setList }) => {
+const PdfTable: React.FC<PdfTableProps> = ({ List }) => {
   const [hoveredRow, setHoveredRow] = React.useState<number | null>(null);
 
   return (
