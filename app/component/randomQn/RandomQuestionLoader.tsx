@@ -1,86 +1,51 @@
 'use client';
 import { useState, useEffect, useCallback } from 'react';
 import QuestionCard from '@/app/questiontemp';
+import { parseLAQuestionFile, LAQuestion } from '@/app/LA_Parser';
+import { parseQuestionFile, Question } from '@/app/questionParser';
 
-interface Question {
-  id: string;
-  question: string;
-  choices: string[];
-  correctIndex: number;
-  difficulty: number;
-  unit: string;
-  topics: string[];
-  course: string;
-}
+// Union type for both question types
+type AnyQuestion = Question | LAQuestion;
 
-const parseQuestionBlock = (block: string): Question => {
-  // Implement your actual parsing logic here
-  const lines = block.split('\n');
-  const question: Partial<Question> = { choices: [] };
-  let currentKey: string | null = null;
-  let currentValue: string[] = [];
+// Type guard to check if question is LA question
+const isLAQuestion = (question: AnyQuestion): question is LAQuestion => {
+  return 'solution' in question && !('choices' in question);
+};
 
-  const flushCurrentValue = () => {
-    if (currentKey && currentValue.length > 0) {
-      const value = currentValue.join('\n').trim();
-      switch(currentKey.toLowerCase()) {
-        case 'question':
-          question.question = value;
-          break;
-        case 'choices':
-          question.choices = value.split('\n')
-            .filter(l => l.startsWith('-'))
-            .map(l => l.substring(1).trim());
-          break;
-        case 'correct':
-          question.correctIndex = parseInt(value, 10);
-          break;
-        case 'difficulty':
-          question.difficulty = parseInt(value, 10);
-          break;
-        case 'unit':
-          question.unit = value;
-          break;
-        case 'topics':
-          question.topics = value.split(',').map(t => t.trim());
-          break;
-      }
-      currentValue = [];
-    }
-  };
+// Extract question type from filepath
+const extractQuestionType = (filePath: string): 'regular' | 'la' => {
+  const pathParts = filePath.split('/');
+  const questionFolder = pathParts.find(part => part.includes('question'));
+  
+  if (questionFolder?.toLowerCase().includes('la')) {
+    return 'la';
+  }
+  return 'regular';
+};
 
-  lines.forEach(line => {
-    const trimmedLine = line.trim();
-    if (!trimmedLine) return;
+// Extract course from filepath
+const extractCourse = (filePath: string): string => {
+  const pathParts = filePath.split('/');
+  const questionFolderIndex = pathParts.findIndex(part => part.includes('question'));
+  
+  if (questionFolderIndex !== -1 && questionFolderIndex + 1 < pathParts.length) {
+    return pathParts[questionFolderIndex + 1];
+  }
+  return '';
+};
 
-    const keyMatch = trimmedLine.match(/^(question|choices|correct|difficulty|unit|topics):/i);
-    if (keyMatch) {
-      flushCurrentValue();
-      currentKey = keyMatch[1].toLowerCase();
-      currentValue.push(trimmedLine.replace(/^.*?:/, '').trim());
-    } else if (currentKey) {
-      currentValue.push(trimmedLine);
-    }
-  });
-
-  flushCurrentValue();
-
-  return {
-    id: `generated_${Date.now()}`,
-    question: question.question || '',
-    choices: question.choices || [],
-    correctIndex: question.correctIndex || 0,
-    difficulty: question.difficulty || 1,
-    unit: question.unit || '',
-    topics: question.topics || [],
-    course: ''
-  };
+// Extract filename from filepath
+const extractFilename = (filePath: string): string => {
+  const pathParts = filePath.split('/');
+  const filename = pathParts[pathParts.length - 1];
+  return filename.replace('.txt', '');
 };
 
 const RandomQuestionLoader = ({ filePath }: { filePath: string }) => {
-  const [question, setQuestion] = useState<Question | null>(null);
+  const [question, setQuestion] = useState<AnyQuestion | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [questionType, setQuestionType] = useState<'regular' | 'la'>('regular');
 
   const loadRandomQuestion = useCallback(async () => {
     setLoading(true);
@@ -90,16 +55,36 @@ const RandomQuestionLoader = ({ filePath }: { filePath: string }) => {
       if (!response.ok) throw new Error('Failed to fetch');
       
       const text = await response.text();
-      const questionBlocks = text.split(/^---$/m).filter(b => b.trim() !== '');
+      const detectedQuestionType = extractQuestionType(filePath);
+      setQuestionType(detectedQuestionType);
       
-      if (questionBlocks.length === 0) {
-        setQuestion(null);
-        return;
-      }
+      if (detectedQuestionType === 'la') {
+        // Parse LA questions
+        const course = extractCourse(filePath);
+        const filename = extractFilename(filePath);
+        const laQuestions = parseLAQuestionFile(text, filename, course);
+        
+        if (laQuestions.length === 0) {
+          setQuestion(null);
+          return;
+        }
+        
+        const randomIndex = Math.floor(Math.random() * laQuestions.length);
+        setQuestion(laQuestions[randomIndex]);
+      } else {
+        // Parse regular questions
+        const course = extractCourse(filePath);
+        const filename = extractFilename(filePath);
+        const regularQuestions = parseQuestionFile(text, filename, course);
+        
+        if (regularQuestions.length === 0) {
+          setQuestion(null);
+          return;
+        }
 
-      const randomIndex = Math.floor(Math.random() * questionBlocks.length);
-      const parsedQuestion = parseQuestionBlock(questionBlocks[randomIndex]);
-      setQuestion(parsedQuestion);
+        const randomIndex = Math.floor(Math.random() * regularQuestions.length);
+        setQuestion(regularQuestions[randomIndex]);
+      }
     } catch (err) {
       setError('Failed to load question');
       console.error(err);
@@ -115,68 +100,264 @@ const RandomQuestionLoader = ({ filePath }: { filePath: string }) => {
   }, [filePath, loadRandomQuestion]);
 
   if (loading) return (
-    <div style={{
-      padding: '20px',
-      textAlign: 'center',
-      color: '#37474f'
-    }}>
+    <div className="status-message">
       Loading question...
     </div>
   );
 
   if (error) return (
-    <div style={{
-      padding: '20px',
-      textAlign: 'center',
-      color: '#d32f2f'
-    }}>
+    <div className="status-message error">
       {error}
     </div>
   );
 
   if (!question) return (
-    <div style={{
-      padding: '20px',
-      textAlign: 'center',
-      color: '#37474f'
-    }}>
+    <div className="status-message">
       No questions found in this unit
     </div>
   );
 
   return (
-    <div style={{ marginTop: '20px' }}>
-      <QuestionCard
-        key={question.id}
-        id={question.id}
-        question={question.question}
-        choices={question.choices}
-        correctIndex={question.correctIndex}
-        difficulty={question.difficulty}
-        unit={question.unit}
-        topics={question.topics}
-        course={question.course}
-      />
+    <div className="question-loader-container">
+      {isLAQuestion(question) ? (
+        // Render LA Question
+        <div className="la-question-card">
+          <div className="question-header">
+            <span className="question-type-badge la">Long Answer</span>
+            <div className="question-meta">
+              <span className="difficulty">Difficulty: {question.difficulty}</span>
+              <span className="unit">{question.unit}</span>
+            </div>
+          </div>
+          
+          <div className="question-content">
+            <h3>Question:</h3>
+            <div className="question-text" dangerouslySetInnerHTML={{ 
+              __html: question.question.replace(/\n/g, '<br />') 
+            }} />
+          </div>
+          
+          <div className="solution-content">
+            <h3>Solution:</h3>
+            <div className="solution-text" dangerouslySetInnerHTML={{ 
+              __html: question.solution.replace(/\n/g, '<br />') 
+            }} />
+          </div>
+          
+          <div className="question-footer">
+            <div className="topics">
+              <strong>Topics:</strong> {question.topics.join(', ')}
+            </div>
+            <div className="tags">
+              <strong>Tags:</strong> {question.tags.join(', ')}
+            </div>
+          </div>
+        </div>
+      ) : (
+        // Render Regular Question
+        <QuestionCard
+          key={question.id}
+          id={question.id}
+          question={question.question}
+          choices={question.choices}
+          correctIndex={question.correctIndex}
+          difficulty={question.difficulty}
+          unit={question.unit}
+          topics={question.topics}
+          course={question.course}
+        />
+      )}
       
       <button 
         onClick={loadRandomQuestion}
-        style={{
-          marginTop: '30px',
-          padding: '12px 24px',
-          backgroundColor: '#37474f',
-          color: 'white',
-          border: 'none',
-          borderRadius: '6px',
-          cursor: 'pointer',
-          fontWeight: '500',
-          fontSize: '1rem',
-          transition: 'all 0.2s ease',
-          width: '100%',
-          
-        }}
+        className="load-question-button"
       >
-        Load Another Random Question
+        Load Another Random {questionType === 'la' ? 'Long Answer' : ''} Question
       </button>
+
+      <style jsx>{`
+        .question-loader-container {
+          margin-top: 20px;
+        }
+
+        .status-message {
+          padding: 20px;
+          text-align: center;
+          color: #37474f;
+          font-size: 1rem;
+          border-radius: 8px;
+          background-color: #f8f9fa;
+          border: 1px solid #e9ecef;
+        }
+
+        .status-message.error {
+          color: #d32f2f;
+          background-color: #ffebee;
+          border-color: #ffcdd2;
+        }
+
+        .la-question-card {
+          background: white;
+          border-radius: 12px;
+          padding: 24px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          border: 1px solid #e5e7eb;
+          margin-bottom: 20px;
+        }
+
+        .question-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 20px;
+          flex-wrap: wrap;
+        }
+
+        .question-type-badge {
+          padding: 6px 12px;
+          border-radius: 20px;
+          font-size: 0.8rem;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+        }
+
+        .question-type-badge.la {
+          background-color: #e3f2fd;
+          color: #1565c0;
+        }
+
+        .question-meta {
+          display: flex;
+          gap: 15px;
+          font-size: 0.9rem;
+          color: #6b7280;
+        }
+
+        .question-content, .solution-content {
+          margin-bottom: 20px;
+        }
+
+        .question-content h3, .solution-content h3 {
+          color: #374151;
+          margin-bottom: 10px;
+          font-size: 1.1rem;
+          font-weight: 600;
+        }
+
+        .question-text, .solution-text {
+          color: #4b5563;
+          line-height: 1.6;
+          padding: 15px;
+          background-color: #f9fafb;
+          border-radius: 8px;
+          border-left: 4px solid #3b82f6;
+        }
+
+        .solution-text {
+          border-left-color: #10b981;
+        }
+
+        .question-footer {
+          border-top: 1px solid #e5e7eb;
+          padding-top: 15px;
+          font-size: 0.9rem;
+          color: #6b7280;
+        }
+
+        .topics, .tags {
+          margin-bottom: 8px;
+        }
+
+        .load-question-button {
+          margin-top: 30px;
+          padding: 12px 24px;
+          background-color: #37474f;
+          color: white;
+          border: none;
+          border-radius: 6px;
+          cursor: pointer;
+          font-weight: 500;
+          font-size: 1rem;
+          transition: all 0.2s ease;
+          width: 100%;
+        }
+
+        .load-question-button:hover {
+          background-color: #2c3b41;
+          transform: translateY(-1px);
+          box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .load-question-button:active {
+          transform: translateY(0);
+          box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .load-question-button:focus {
+          outline: none;
+          box-shadow: 0 0 0 3px rgba(55, 71, 79, 0.3);
+        }
+
+        @media (max-width: 768px) {
+          .question-loader-container {
+            margin-top: 15px;
+          }
+
+          .la-question-card {
+            padding: 20px;
+          }
+
+          .question-header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+          }
+
+          .question-meta {
+            gap: 10px;
+          }
+
+          .status-message {
+            padding: 15px;
+            font-size: 0.9rem;
+            border-radius: 6px;
+          }
+
+          .load-question-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 0.9rem;
+            border-radius: 5px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .question-loader-container {
+            margin-top: 10px;
+          }
+
+          .la-question-card {
+            padding: 16px;
+          }
+
+          .question-meta {
+            flex-direction: column;
+            gap: 5px;
+          }
+
+          .status-message {
+            padding: 12px;
+            font-size: 0.85rem;
+          }
+
+          .load-question-button {
+            margin-top: 15px;
+            padding: 8px 16px;
+            font-size: 0.85rem;
+          }
+        }
+      `}</style>
     </div>
   );
 };

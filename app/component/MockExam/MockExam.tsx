@@ -46,16 +46,29 @@ const [search, setSearch] = useState<string>('')
       backgroundColor: '#f8f9fa',
       padding: '20px'
     }}>
-      <header style={{
-        marginTop: '100px',
-        textAlign: 'center',
-        fontSize: '2.5rem',
-        color: '#333',
-        marginBottom: '40px',
-        marginRight: '40vw'
-      }}> 
-        <h1>Mock Examinations</h1>
-      </header>
+      <h1 className="mock-exam-title">Mock Examinations</h1>
+
+      <style jsx>{`
+        .mock-exam-title {
+          margin-top: 100px;
+          text-align: center;
+          font-size: 2.5rem;
+          color: #333;
+          margin-bottom: 40px;
+          margin-right: 40vw;
+        }
+
+        @media (max-width: 768px) {
+          .mock-exam-title {
+            font-size: 1.8rem;
+            margin-right: 0;
+            text-align: left;
+            margin-top: 6rem;
+            margin-left: 2vw;
+            margin-bottom: 20px;
+          }
+        }
+      `}</style>
 
       <div style={{
         display: 'flex',
@@ -86,19 +99,6 @@ const [search, setSearch] = useState<string>('')
           />
         </div>
       </div>
-
-      <style jsx>{`
-        @media (max-width: 768px) {
-          header h1 {
-            font-size: 1.8rem;
-            margin-right: 0;
-            text-align: left;
-            margin-top: 6rem;
-            margin-left: 2vw;
-            margin-bottom: 20px;
-          }
-        }
-      `}</style>
     </div>
   );
 }
