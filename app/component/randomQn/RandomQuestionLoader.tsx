@@ -4,6 +4,27 @@ import QuestionCard from '@/app/questiontemp';
 import { parseLAQuestionFile, LAQuestion } from '@/app/LA_Parser';
 import { parseQuestionFile, Question } from '@/app/questionParser';
 
+// Type definitions for MathJax
+interface MathJaxConfig {
+  tex: {
+    inlineMath: string[][];
+    displayMath: string[][];
+    processEscapes: boolean;
+    processEnvironments: boolean;
+  };
+  options: {
+    skipHtmlTags: string[];
+  };
+}
+
+interface MathJaxWindow extends Window {
+  MathJax?: {
+    typesetPromise?: () => Promise<void>;
+  } & MathJaxConfig;
+}
+
+declare const window: MathJaxWindow;
+
 // Union type for both question types
 type AnyQuestion = Question | LAQuestion;
 
@@ -39,6 +60,78 @@ const extractFilename = (filePath: string): string => {
   const pathParts = filePath.split('/');
   const filename = pathParts[pathParts.length - 1];
   return filename.replace('.txt', '');
+};
+
+// Component to render text with MathJax and bold formatting support
+const MathJaxRenderer = ({ text }: { text: string }) => {
+  const [renderedHTML, setRenderedHTML] = useState<string>('');
+  const [mathJaxReady, setMathJaxReady] = useState(false);
+  
+  useEffect(() => {
+    // Check if MathJax is loaded and ready
+    const checkMathJax = () => {
+      if (typeof window !== 'undefined' && window.MathJax) {
+        setMathJaxReady(true);
+      } else {
+        setTimeout(checkMathJax, 100); // Check again in 100ms
+      }
+    };
+    checkMathJax();
+  }, []);
+  
+  // Function to process bold formatting and line breaks
+  const processFormatting = (text: string): string => {
+    let processed = text;
+    
+    // Convert newlines to <br /> tags
+    processed = processed.replace(/\n/g, '<br />');
+    
+    // Process bold text (**text**)
+    processed = processed.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    
+    return processed;
+  };
+  
+  useEffect(() => {
+    const renderContent = async () => {
+      try {
+        // Process formatting
+        const processedText = processFormatting(text);
+        
+        // Set the processed text
+        setRenderedHTML(processedText);
+        
+        // If MathJax is ready, process math expressions
+        if (mathJaxReady) {
+          setTimeout(() => {
+            if (window.MathJax && window.MathJax.typesetPromise) {
+              window.MathJax.typesetPromise()
+                .then(() => {
+                  console.log('MathJax rendering complete');
+                })
+                .catch((err: Error) => {
+                  console.error('MathJax rendering error:', err);
+                });
+            }
+          }, 10);
+        }
+        
+      } catch (error) {
+        console.error('Content rendering error:', error);
+        // Fallback to simple processing
+        setRenderedHTML(processFormatting(text));
+      }
+    };
+    
+    renderContent();
+  }, [text, mathJaxReady]);
+  
+  return (
+    <div 
+      dangerouslySetInnerHTML={{ __html: renderedHTML }}
+      className="mathjax-content"
+    />
+  );
 };
 
 const RandomQuestionLoader = ({ filePath }: { filePath: string }) => {
@@ -99,6 +192,36 @@ const RandomQuestionLoader = ({ filePath }: { filePath: string }) => {
     }
   }, [filePath, loadRandomQuestion]);
 
+  // Load MathJax
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      // Only load MathJax if it's not already loaded
+      if (!window.MathJax) {
+        // Configure MathJax
+        window.MathJax = {
+          tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']],
+            processEscapes: true,
+            processEnvironments: true
+          },
+          options: {
+            skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+          }
+        };
+
+        // Load MathJax script
+        const script = document.createElement('script');
+        script.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js';
+        script.async = true;
+        script.onload = () => {
+          console.log('MathJax loaded successfully');
+        };
+        document.head.appendChild(script);
+      }
+    }
+  }, []);
+
   if (loading) return (
     <div className="status-message">
       Loading question...
@@ -132,16 +255,16 @@ const RandomQuestionLoader = ({ filePath }: { filePath: string }) => {
           
           <div className="question-content">
             <h3>Question:</h3>
-            <div className="question-text" dangerouslySetInnerHTML={{ 
-              __html: question.question.replace(/\n/g, '<br />') 
-            }} />
+            <div className="question-text">
+              <MathJaxRenderer text={question.question} />
+            </div>
           </div>
           
           <div className="solution-content">
             <h3>Solution:</h3>
-            <div className="solution-text" dangerouslySetInnerHTML={{ 
-              __html: question.solution.replace(/\n/g, '<br />') 
-            }} />
+            <div className="solution-text">
+              <MathJaxRenderer text={question.solution} />
+            </div>
           </div>
           
           <div className="question-footer">
@@ -256,6 +379,24 @@ const RandomQuestionLoader = ({ filePath }: { filePath: string }) => {
 
         .solution-text {
           border-left-color: #10b981;
+        }
+
+        /* MathJax and bold formatting styling */
+        .mathjax-content {
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        .mathjax-content .MJXc-display {
+          margin: 1em 0;
+        }
+
+        .mathjax-content .MathJax {
+          font-size: 1.1em;
+        }
+
+        .mathjax-content strong {
+          font-weight: 600;
+          color: #374151;
         }
 
         .question-footer {
