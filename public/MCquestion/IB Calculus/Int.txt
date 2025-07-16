@@ -1,0 +1,160 @@
+---
+Question: Which of the following is an antiderivative of $\ln x$?
+
+Choices:
+- $\ln x$
+- $e^x$
+- $x\ln x - x$
+- $\frac{\ln x}{x} + x$
+
+Correct: 2
+Difficulty: 2
+Unit: Integral
+Topics: Antiderivative,the Product Rule
+---
+Question: Find $\displaystyle\int \frac{1}{\sqrt{2x+1}}\ dx$.
+
+Choices:
+- $\sqrt{2x + 1} + C$
+- $\sqrt{-1}{2\sqrt{(2x+1)^3}} +C$
+- $\sqrt{1}{x^2 +x} +C$
+- $\frac{\sqrt{2x+1}}{2} + C$
+
+Correct: 0
+Difficulty: 2
+Unit: Integral
+Topics: Basic Integral
+---
+Question: Suppose that $F(x)$ is an antiderivative of $f(x)$, and $F(1)=1$, $F(0)=-1$, what is the value of $\int_{1}^{0}f(x)\ dx$?
+
+Choices:
+- $0$
+- $1$
+- $2$
+- $-2$
+
+Correct: 3
+Difficulty: 2
+Unit: Integral
+Topics: Fundamental Theorem of Calculus,Antiderivative
+---
+
+---
+Question: What is $\int (4x^3 - 3x^2 + 6) \, dx$?
+
+Choices:
+- $12x^2 - 6x + C$
+- $x^4 - x^3 + 6x + C$
+- $x^4 - 3x^3 + 6x + C$
+- $\frac{4}{3}x^4 - x^3 + 6x + C$
+
+Correct: 1
+Difficulty: 1
+Unit: Integral
+Topics: Basic Integral
+---
+
+---
+Question: If $\frac{dy}{dx} = 5x^4$ and $y(0) = 2$, what is $y(1)$?
+
+Choices:
+- 1
+- 3
+- 5
+- 7
+
+Correct: 1
+Difficulty: 3
+Unit: Integral
+Topics: Particular Values, Antiderivative
+---
+
+---
+Question: What is $\int e^{3x+1} \, dx$?
+
+Choices:
+- $3e^{3x+1} + C$
+- $\frac{1}{3}e^{3x+1} + C$
+- $e^{3x+1} + C$
+- $\frac{1}{3}e^{3x} + C$
+
+Correct: 1
+Difficulty: 2
+Unit: Integral
+Topics: Integrating $f(ax+b)$, Substitution
+---
+
+---
+Question: What is the correct partial fraction decomposition for $\frac{2x+1}{(x+1)(x+2)}$?
+
+Choices:
+- $\frac{1}{x+1} + \frac{1}{x+2}$
+- $\frac{3}{x+1} - \frac{1}{x+2}$
+- $\frac{-1}{x+1} + \frac{3}{x+2}$
+- $\frac{2}{x+1} + \frac{1}{x+2}$
+
+Correct: 2
+Difficulty: 4
+Unit: Integral
+Topics: Partial Fraction
+---
+
+---
+Question: Which trigonometric substitution is appropriate for $\int \frac{dx}{\sqrt{9 - x^2}}$?
+
+Choices:
+- $x = 3 \tan \theta$
+- $x = 3 \sin \theta$
+- $x = 3 \sec \theta$
+- $x = 9 \sin \theta$
+
+Correct: 1
+Difficulty: 3
+Unit: Integral
+Topics: Trigonometric Substitution
+---
+
+---
+Question: Evaluate $\int_{0}^{\pi} \cos x \, dx$.
+
+Choices:
+- $-1$
+- $0$
+- $1$
+- $\frac{\pi}{2}$
+
+Correct: 1
+Difficulty: 2
+Unit: Integral
+Topics: Fundamental Theorem of Calculus, Definite Integral,Even & Odd Function
+---
+
+---
+Question: What is $\int_{-2025}^{2025} (x^1+x^3+x^5+...+x^{2025}) \, dx$? (Hint: what does the graph of an odd function look like?)
+
+Choices:
+- $2025^{2025}$
+- $2025^2$
+- $1$
+- $0$
+
+Correct: 3
+Difficulty: 5
+Unit: Integral
+Topics: Definite Integral,Even & Odd Function
+---
+Question: Which integral is equivalent to $\int_{0}^{1} \frac{1}{\sqrt{x^2+1}}\ dx$ after performing the trignometric substitution of $x=\tan x$?
+
+Choices:
+- $\int_{0}^{\frac{\pi}{2}} \frac{1}{\tan x}\ dx$
+- $\int_{0}^{\pi} \frac{1}{\cos x}\ dx$
+- $\int_{0}^{\frac{\pi}{4}} \cos x\ dx $
+- $\int_{0}^{\frac{\pi}{4}} \sec x\ dx $
+
+Correct: 3
+Difficulty: 4
+Unit: Integral
+Topics: Trignometric Substitution,Even & Odd Function,Definite Integral by Substitution
+
+
+

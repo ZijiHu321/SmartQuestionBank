@@ -115,10 +115,11 @@ export default function AllFunc() {
           margin: 0 auto;
           margin-left: 10rem;
           margin-right: 10rem;
+          margin-top: 0rem;
         }
         .profile-title {
           margin-top: 6vw;
-          font-size: 2.5rem;
+          font-size: 3vw;
           color: #333;
         }
         .funcs-list {
@@ -126,7 +127,7 @@ export default function AllFunc() {
           flex-direction: row;
           align-items: flex-start;
           margin-top: 4vw;
-          margin-left: 0;
+          margin-left: 2vw;
           gap: 2vw;
         }
         @media (max-width: 768px) {
@@ -134,7 +135,7 @@ export default function AllFunc() {
             padding: 20px 10px;
             margin-left: 1rem;
             margin-right: 1rem;
-            margin-top: 4rem
+            margin-top: 4rem;
           }
           .profile-title {
             margin-top: 20px;
@@ -144,6 +145,7 @@ export default function AllFunc() {
             flex-direction: column;
             align-items: center;
             margin-top: 2rem;
+            margin-left: 0;
             gap: 20px;
           }
         }

@@ -12,6 +12,7 @@ function IBcalculusPage() {
     { title: 'Properties of Curves', path: '/unit/IBcalculus/PropertiesOfCurves' },
     { title: 'Application of Derivatives', path: '/unit/IBcalculus/ApplicationofDerivatives' },
     { title: 'Integral', path: '/unit/IBcalculus/Integral' },
+    { title: 'Application of Integral', path: '/unit/IBcalculus/ApplicationofIntegral' },
     { title: 'Kinematics', path: '/unit/IBcalculus/Kinematics' },
     { title: 'Taylor Series', path: '/unit/IBcalculus/TaylorSeries' },
     { title: 'Differential Equations', path: '/unit/IBcalculus/DifferentialEquations' },

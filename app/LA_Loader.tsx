@@ -40,7 +40,47 @@ const LALoader = ({ filePath, course }: LALoaderProps) => {
   }, [filePath, course]);
 
   if (loading) {
-    return <div style={{padding: '2rem', textAlign: 'center', marginTop:'5rem'}}>Loading questions...</div>;
+    return (
+      <div style={{padding: '2rem', textAlign: 'center', marginTop:'5rem'}}>
+        <div className="bouncing-dots">
+          <div className="dot dot1"></div>
+          <div className="dot dot2"></div>
+          <div className="dot dot3"></div>
+        </div>
+        <div style={{marginTop: '1rem', fontWeight: 600, fontSize: '1.2rem', color: '#3498db'}}>
+          Loading questions...
+        </div>
+        <style jsx>{`
+          .bouncing-dots {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            height: 48px;
+            gap: 10px;
+          }
+          .dot {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #f39c12;
+            animation: bounce 0.6s infinite alternate;
+          }
+          .dot2 {
+            background: #e74c3c;
+            animation-delay: 0.2s;
+          }
+          .dot3 {
+            background: #3498db;
+            animation-delay: 0.4s;
+          }
+          @keyframes bounce {
+            to {
+              transform: translateY(-24px);
+            }
+          }
+        `}</style>
+      </div>
+    );
   }
 
   if (error) {

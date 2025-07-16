@@ -1,0 +1,1135 @@
+---
+Question: 
+Consider the function $f(x)=x\ln x$.
+(a) Find an expression for $\frac{d}{dx}f(x)$. [2]
+(b) Hence, find $\displaystyle \int \ln x\ dx$. [3]
+
+Solution:
+(a)
+Using the product rule:
+$\frac{d}{dx} f(x) = \frac{d}{dx}(x) \cdot \ln x + x \cdot \frac{d}{dx}(\ln x)$ **M1**
+$= 1 \cdot \ln x + x \cdot \frac{1}{x} = \ln x + 1$ **A1**
+
+$\ $
+
+(b)
+From part (a), we have:
+$\frac{d}{dx}(x \ln x) = \ln x + 1$
+$\Rightarrow x \ln x = \displaystyle\int \ln x \, dx + \displaystyle\int 1 \, dx$ **M1**
+$\Rightarrow x \ln x = \displaystyle\int \ln x \, dx + x + C$ **A1**
+Rearranging:
+$\displaystyle\int \ln x \, dx = x \ln x - x + C$ **A1**
+
+Difficulty: 4
+Unit: Integral
+Topics: Basic Integral,the Product Rule
+Tags: Paper 1
+---
+
+Question:
+Consider the functions $f,g$ defined for $x\in\mathbb{R}$ given by $f(x)=e^{-x}\sin x$ and $g(x)=e^{-x}\cos x$.
+(a) 
+$\quad$ (i) Find $f'(x)$. [2]
+$\quad$ (ii) Find $g'(x)$. [1]
+(b) Hence, or otherwise, find $\displaystyle\int_0^\pi e^{-x}\sin x\ dx$. [4]
+
+Solution:
+(a)(i)
+Using the product rule:
+$f'(x) = \frac{d}{dx}(e^{-x})\sin x + e^{-x}\frac{d}{dx}(\sin x)$ **M1**
+$= -e^{-x}\sin x + e^{-x}\cos x = e^{-x}(\cos x - \sin x)$ **A1**
+
+$\ $
+
+(a)(ii)
+Using the product rule:
+$g'(x) = -e^{-x}\cos x - e^{-x}\sin x = -e^{-x}(\sin x + \cos x)$ **A1**
+
+$\ $
+
+(b) METHOD 1
+From part (a), we have:
+$f'(x) = e^{-x}(\cos x - \sin x)$
+$g'(x) = -e^{-x}(\sin x + \cos x)$
+
+Adding $f(x) + g(x)$:
+$f(x) + g(x) = e^{-x}\sin x + e^{-x}\cos x = e^{-x}(\sin x + \cos x)$ **M1**
+Differentiating gives:
+$(f(x) + g(x))' = -e^{-x}(\sin x + \cos x) + e^{-x}(\cos x - \sin x) = -2e^{-x}\sin x$ **A1**
+
+Thus:
+$\displaystyle\int_0^\pi e^{-x}\sin x\ dx = -\frac{1}{2}[f(x) + g(x)]_0^\pi$ **A1**
+$= -\frac{1}{2}[e^{-\pi}(\sin\pi + \cos\pi) - e^{0}(\sin 0 + \cos 0)]$
+$= -\frac{1}{2}[e^{-\pi}(0 - 1) - (0 + 1)] = \frac{1 + e^{-\pi}}{2}$ **A1**
+
+$\ $
+
+METHOD 2
+Using integration by parts twice:
+Let $I = \displaystyle\int e^{-x}\sin x\ dx$
+First integration by parts:
+$u = \sin x$, $dv = e^{-x}dx$
+$du = \cos x dx$, $v = -e^{-x}$
+$I = -e^{-x}\sin x + \displaystyle\int e^{-x}\cos x\ dx$ **M1**
+
+Second integration by parts:
+$u = \cos x$, $dv = e^{-x}dx$
+$du = -\sin x dx$, $v = -e^{-x}$
+$I = -e^{-x}\sin x + [-e^{-x}\cos x - \displaystyle\int e^{-x}\sin x\ dx]$ **A1**
+
+Thus:
+$I = -e^{-x}\sin x - e^{-x}\cos x - I$
+$2I = -e^{-x}(\sin x + \cos x)$
+$I = -\frac{1}{2}e^{-x}(\sin x + \cos x) + C$ **A1**
+
+Evaluating from $0$ to $\pi$:
+$\displaystyle\int_0^\pi e^{-x}\sin x\ dx = \left[-\frac{1}{2}e^{-x}(\sin x + \cos x)\right]_0^\pi = \frac{1 + e^{-\pi}}{2}$ **A1**
+
+Difficulty: 5
+Unit: Integral
+Topics: Basic Integral,the Product Rule
+Tags: Paper 1
+---
+Question:
+(a) Expand $(x^2+1)^5$ using binomial theorem. [2]
+(b) Hence, find $\displaystyle\int (x^2+1)^5\ dx$. [2]
+
+Solution:
+(a)
+Using binomial expansion:
+$(x^2+1)^5 = \sum_{k=0}^5 \binom{5}{k} (x^2)^{5-k} \cdot 1^k$ **M1**
+$= x^{10} + 5x^8 + 10x^6 + 10x^4 + 5x^2 + 1$ **A1**
+
+$\ $
+
+(b)
+Integrating term by term:
+$\displaystyle\int (x^2+1)^5\ dx = \displaystyle\int (x^{10} + 5x^8 + 10x^6 + 10x^4 + 5x^2 + 1)\ dx$ **M1**
+$= \frac{x^{11}}{11} + \frac{5x^9}{9} + \frac{10x^7}{7} + \frac{10x^5}{5} + \frac{5x^3}{3} + x + C$ **A1**
+
+Difficulty: 3
+Unit: Integral
+Topics: Binomial Theorem, Basic Integral
+Tags: Paper 1
+---
+Question:
+Suppose that the graph of the function $f(x)$ passes through the origin, and its derivative function is given by $f'(x)=2e^{-2x}$. Find $f(x)$. [4]
+
+Solution:
+Given the derivative:
+$f'(x) = 2e^{-2x}$
+
+Integrate to find $f(x)$:
+$f(x) = \displaystyle\int 2e^{-2x} dx$ **M1**
+$= 2 \cdot \left(-\frac{1}{2}\right) e^{-2x} + C$ **M1**
+$= -e^{-2x} + C$ **A1**
+
+Apply initial condition $f(0) = 0$:
+$0 = -e^{0} + C$ **M1**
+$0 = -1 + C \Rightarrow C = 1$ **A1**
+
+Final solution:
+$f(x) = -e^{-2x} + 1$
+
+Difficulty: 3
+Unit: Integral
+Topics: Basic Integral,Particular Values,Integrating f(ax+b)
+Tags: Paper 1
+---
+Question:
+Suppose $f'(x) = p \sin\left(\frac{1}{2}x\right)$ where $p$ is a constant. Given $f(0) = 1$ and $f(2\pi) = 0$, find $p$ and hence determine $f(x)$. [6]
+
+Solution:
+Integrate $f'(x)$:
+$f(x) = \displaystyle\int p \sin\left(\frac{1}{2}x\right) dx$ **M1**
+$= -2p \cos\left(\frac{1}{2}x\right) + C$ **A1**
+
+Apply $f(0) = 1$:
+$-2p \cos(0) + C = 1$ 
+$-2p + C = 1$ (Equation 1) **A1**
+
+Apply $f(2\pi) = 0$:
+$-2p \cos(\pi) + C = 0$ 
+$2p + C = 0$ (Equation 2) **A1**
+
+Solve the system:
+$p = -\frac{1}{4}$ 
+$C = \frac{1}{2}$ **A1**
+Thus $f(x) = \frac{1}{2}\cos\left(\frac{1}{2}x\right) + \frac{1}{2}$ **A1**
+
+Difficulty: 5
+Unit: Integral
+Topics: Basic Integral,Particular Values,Integrating f(ax+b)
+Tags: Paper 1
+---
+---
+Question:
+Find $f(x)$ given that $f''(x)=2x$ and the points $(1, 0)$ and $(0, 5)$ lie on the curve. [5]
+
+Solution:
+Given the second derivative:
+$f''(x) = 2x$
+
+Integrate to find $f'(x)$:
+$f'(x) = \displaystyle\int 2x\ dx$ **M1**
+$= x^2 + C_1$ **A1**
+
+Integrate to find $f(x)$:
+$f(x) = \displaystyle\int (x^2 + C_1)\ dx$ **M1**
+$= \frac{1}{3}x^3 + C_1x + C_2$ **A1**
+
+Apply the point $(0, 5)$:
+$5 = \frac{1}{3}(0)^3 + C_1(0) + C_2 \Rightarrow C_2 = 5$ **M1**
+
+Apply the point $(1, 0)$:
+$0 = \frac{1}{3}(1)^3 + C_1(1) + 5$ **M1**
+$\Rightarrow 0 = \frac{1}{3} + C_1 + 5 \Rightarrow C_1 = -\frac{16}{3}$ **A1**
+
+Final solution:
+$f(x) = \frac{1}{3}x^3 - \frac{16}{3}x + 5$ **A1**
+
+Difficulty: 4
+Unit: Integral
+Topics: Basic Integral, Particular Values, Second Derivative
+Tags: Paper 1
+---
+---
+Question:
+Consider the function $f(x) = (\cos x + 1)^2$.
+(a) Show that $f(x)=\frac{1}{2}\cos 2x + 2\cos x + \frac{3}{2}$. [3]
+(b) Hence, find an expression for $\displaystyle\int f(x)\ dx$. [3]
+(c) Show that $f(x+2\pi)=f(x)$. [1]
+(d) Hence, find $\displaystyle\int_{0}^{1000\pi} f(x)\ dx$. [3]
+
+Solution:
+(a)
+Expanding $f(x)$:
+$f(x) = (\cos x + 1)^2 = \cos^2 x + 2\cos x + 1$ **M1**
+Using identity $\cos^2 x = \frac{1}{2}(1 + \cos 2x)$:
+$= \frac{1}{2}(1 + \cos 2x) + 2\cos x + 1$ **M1**
+$= \frac{1}{2}\cos 2x + 2\cos x + \frac{3}{2}$ **A1**
+
+$\ $
+
+(b)
+Integrating term by term:
+$\displaystyle\int f(x)\ dx = \frac{1}{2}\displaystyle\int \cos 2x\ dx + 2\displaystyle\int \cos x\ dx + \frac{3}{2}\displaystyle\int 1\ dx$ **M1**
+$= \frac{1}{4}\sin 2x + 2\sin x + \frac{3}{2}x + C$ **A2**
+
+$\ $
+
+(c)
+Since cosine is periodic with period $2\pi$:
+$f(x+2\pi) = (\cos(x+2\pi) + 1)^2 = (\cos x + 1)^2 = f(x)$ **A1**
+
+$\ $
+
+(d)
+Using periodicity from (c):
+$\displaystyle\int_{0}^{1000\pi} f(x)\ dx = 500 \times \displaystyle\int_{0}^{2\pi} f(x)\ dx$ **M1**
+Calculating over one period:
+$\displaystyle\int_{0}^{2\pi} f(x)\ dx = \left[\frac{1}{4}\sin 2x + 2\sin x + \frac{3}{2}x\right]_{0}^{2\pi} = \frac{3}{2}(2\pi) = 3\pi$ **A1**
+Final result:
+$500 \times 3\pi = 1500\pi$ **A1**
+
+Difficulty: 6
+Unit: Integral
+Topics: Trigonometric Identity, Integrating f(ax+b),Even & Odd Function
+Tags: Paper 1
+---
+Question:
+Find $\displaystyle\int \cos^2 x\ dx$. [4]
+
+Solution:
+Using the trigonometric identity $\cos^2 x = \frac{1 + \cos 2x}{2}$: M1
+$\displaystyle\int \cos^2 x\ dx = \displaystyle\int \frac{1 + \cos 2x}{2}\ dx = \frac{1}{2} \displaystyle\int (1 + \cos 2x)\ dx$ M1
+Integrating term by term:
+$\frac{1}{2} \left[ \displaystyle\int 1\ dx + \displaystyle\int \cos 2x\ dx \right] = \frac{1}{2} \left[ x + \frac{1}{2} \sin 2x \right] + C$ A1
+Final solution:
+$\frac{1}{2}x + \frac{1}{4} \sin 2x + C$ A1
+
+Difficulty: 3
+Unit: Integral
+Topics: Trigonometric Identity, Basic Integral, Integrating f(ax+b)
+Tags: Paper 1
+---
+Question:
+(a) Prove the trigonometric identity $\cos \frac{1}{2} x = \sqrt{\frac{1+\cos x}{2}}$, $0 \leq x \leq \pi$ using the double angle identity. [3]
+(b) Find a similar expression for $\sin \frac{1}{2} x$. [2]
+(c) Hence find the value of $\displaystyle\int_{0}^{\frac{\pi}{2}} (\sqrt{1+\cos x} + \sqrt{1-\cos x})\ dx$. [4]
+
+Solution:
+(a)
+Using the double angle identity for cosine, $\cos x = 2\cos^2 \frac{x}{2} - 1$:
+$\cos x + 1 = 2\cos^2 \frac{x}{2}$ M1
+$\frac{1 + \cos x}{2} = \cos^2 \frac{x}{2}$ M1
+Taking the square root (since $\cos \frac{x}{2} \geq 0$ for $0 \leq x \leq \pi$):
+$\cos \frac{x}{2} = \sqrt{\frac{1 + \cos x}{2}}$ A1
+
+$\ $
+
+(b)
+Using the double angle identity for sine, $\cos x = 1 - 2\sin^2 \frac{x}{2}$:
+$1 - \cos x = 2\sin^2 \frac{x}{2}$ M1
+$\sin \frac{x}{2} = \sqrt{\frac{1 - \cos x}{2}}$ (since $\sin \frac{x}{2} \geq 0$ for $0 \leq x \leq \pi$) A1
+
+$\ $
+
+(c)
+From parts (a) and (b):
+$\sqrt{1 + \cos x} = \sqrt{2 \cos^2 \frac{x}{2}} = \sqrt{2} \cos \frac{x}{2}$ M1
+$\sqrt{1 - \cos x} = \sqrt{2 \sin^2 \frac{x}{2}} = \sqrt{2} \sin \frac{x}{2}$ M1
+Thus, the integral becomes:
+$\displaystyle\int_{0}^{\frac{\pi}{2}} (\sqrt{1 + \cos x} + \sqrt{1 - \cos x})\ dx = \displaystyle\int_{0}^{\frac{\pi}{2}} (\sqrt{2} \cos \frac{x}{2} + \sqrt{2} \sin \frac{x}{2})\ dx$
+$= \sqrt{2} \displaystyle\int_{0}^{\frac{\pi}{2}} \left( \cos \frac{x}{2} + \sin \frac{x}{2} \right) dx$ M1
+Integrating:
+$\sqrt{2} \left[ 2 \sin \frac{x}{2} - 2 \cos \frac{x}{2} \right]_{0}^{\frac{\pi}{2}} = \sqrt{2} \left( \left[ 2 \sin \frac{\pi}{4} - 2 \cos \frac{\pi}{4} \right] - \left[ 2 \sin 0 - 2 \cos 0 \right] \right)$
+$= \sqrt{2} \left( \left[ 2 \cdot \frac{\sqrt{2}}{2} - 2 \cdot \frac{\sqrt{2}}{2} \right] - [0 - 2] \right) = \sqrt{2} \cdot 2 = 2\sqrt{2}$ A1
+
+Difficulty: 5
+Unit: Integral
+Topics: Trigonometric Identity, Basic Integral, Integrating f(ax+b)
+Tags: Paper 1
+---
+Question:
+Evaluate $\displaystyle\int \frac{\cos x-\sin x}{\cos x+\sin x}\ dx$. [4]
+
+Solution:
+Let $u = \sin x + \cos x$ **M1**
+Then $du = (\cos x - \sin x)\ dx$ **A1**
+
+The integral becomes:
+$\displaystyle\int \frac{du}{u}$ **M1**
+
+$= \ln|u| + C$ **A1**
+
+Substitute back:
+$= \ln|\sin x + \cos x| + C$ **A1**
+
+Difficulty: 4
+Unit: Integral
+Topics: u-substitution,Trigonometric Identity
+Tags: Paper 1
+---
+---
+Question:
+Evaluate $\displaystyle\int \tan x\ dx$ by using the substitution $u=\cos x$. [4]
+
+Solution:
+Let $u = \cos x$, then $du = -\sin x\ dx$ **M1**
+$\Rightarrow -du = \sin x\ dx$
+
+Rewrite the integral:
+$\displaystyle\int \tan x\ dx = \displaystyle\int \frac{\sin x}{\cos x}\ dx = -\displaystyle\int \frac{1}{u}\ du$ **M1**
+
+Integrate:
+$= -\ln|u| + C$ **A1**
+
+Substitute back:
+$= -\ln|\cos x| + C = \ln|\sec x| + C$ **A1**
+
+Difficulty: 3
+Unit: Integral
+Topics: u-substitution
+Tags: Paper 1
+---
+---
+Question:
+(a) Calculate $\displaystyle\int_{\frac{\pi}{4}}^{\frac{\pi}{3}} \frac{\sec^2 x}{\sqrt[3]{\tan x}}\, dx$. [6]
+(b) Find $\displaystyle\int \tan^3 x\, dx$. [3]
+
+Solution:
+(a) METHOD 1:
+Let $u = \tan x$ $\Rightarrow$ $du = \sec^2 x\, dx$ **M1**
+Change of limits:
+When $x = \frac{\pi}{4}$, $u = 1$
+When $x = \frac{\pi}{3}$, $u = \sqrt{3}$ **M1**
+
+Transform integral:
+$\displaystyle\int_{1}^{\sqrt{3}} u^{-\frac{1}{3}}\, du$ **A1**
+$= \left[\frac{3u^{\frac{2}{3}}}{2}\right]_{1}^{\sqrt{3}}$ **A1**
+$= \frac{3(\sqrt{3})^{\frac{2}{3}}}{2} - \frac{3(1)^{\frac{2}{3}}}{2}$ **A1**
+$= \frac{3\sqrt[3]{3}}{2} - \frac{3}{2} = \frac{3(\sqrt[3]{3} - 1)}{2}$ **A1**
+
+METHOD 2:
+Direct integration:
+$\displaystyle\int \frac{\sec^2 x}{\sqrt[3]{\tan x}}\, dx = \frac{3(\tan x)^{\frac{2}{3}}}{2} + C$ **M2A2**
+Evaluate at limits:
+$\left.\frac{3(\tan x)^{\frac{2}{3}}}{2}\right|_{\frac{\pi}{4}}^{\frac{\pi}{3}} = \frac{3\sqrt[3]{3}}{2} - \frac{3}{2}$ **A1A1**
+
+$\ $
+
+(b) Rewrite integrand:
+$\tan^3 x = \tan x(\sec^2 x - 1)$ **M1**
+$= \tan x\sec^2 x - \tan x$
+
+Integrate term by term:
+$\displaystyle\int \tan x\sec^2 x\, dx - \displaystyle\int \tan x\, dx$ **A1**
+$= \frac{1}{2}\tan^2 x - \ln|\sec x| + C$ **A1**
+
+Difficulty: 6
+Unit: Integral Calculus
+Topics: u-substitution, Definite Integral by Substitution, Trigonometric Identity
+Tags: Paper 1
+---
+---
+Question:
+(a) Find real numbers $A$ and $B$ for which $\frac{A}{1+x}+\frac{B}{1-x} = \frac{1}{1-x^2}$. [2]
+(b) Hence find $\displaystyle\int \frac{1}{1-x^2}$. [2]
+(c) Evaluate $\displaystyle\int \sec x\ dx$ by using the substitution $u=\sin x$. [4]
+
+Solution:
+(a)
+Combine the left side:
+$\frac{A(1-x) + B(1+x)}{1-x^2} = \frac{1}{1-x^2}$ **M1**
+Comparing numerators:
+$A(1-x) + B(1+x) = 1$
+Set $x=1$: $2B = 1 \Rightarrow B = \frac{1}{2}$
+Set $x=-1$: $2A = 1 \Rightarrow A = \frac{1}{2}$ **A1**
+
+$\ $
+
+(b)
+Using the partial fractions:
+$\displaystyle\int \frac{1}{1-x^2} dx = \frac{1}{2}\displaystyle\int \left(\frac{1}{1+x} + \frac{1}{1-x}\right) dx$ **M1**
+$= \frac{1}{2}[\ln|1+x| - \ln|1-x|] + C = \frac{1}{2}\ln\left|\frac{1+x}{1-x}\right| + C$ **A1**
+
+$\ $
+
+(c)
+Let $u = \sin x$, then $du = \cos x dx$ **M1**
+
+Rewrite $\sec x$:
+$\displaystyle\int \sec x dx = \displaystyle\int \frac{1}{\cos x} dx = \displaystyle\int \frac{\cos x}{\cos^2 x} dx = \displaystyle\int \frac{du}{1-u^2}$ **M1**
+
+From part (b):
+$= \frac{1}{2}\ln\left|\frac{1+u}{1-u}\right| + C$ **M1**
+Substitute back:
+$= \frac{1}{2}\ln\left|\frac{1+\sin x}{1-\sin x}\right| + C$ **A1**
+
+This can be rewritten as (optional):
+$= \ln|\sec x + \tan x| + C$ **A1**
+
+Difficulty: 4
+Unit: Integral
+Topics: Partial Fraction,u-substitution
+Tags: Paper 1
+---
+---
+Question:
+(a) Find real numbers $A$ and $B$ such that $\frac{A}{u-2}+\frac{B}{u+1} = \frac{u}{(u-2)(u+1)}$. [3]
+(b) Hence, by using the substitution $u=\sin x$, find $\displaystyle\int \frac{\sin x \cos x}{\sin^2 x-\sin x-2}\ dx$. [4]
+
+Solution:
+(a)
+Combine the left side:
+$\frac{A(u+1) + B(u-2)}{(u-2)(u+1)} = \frac{u}{(u-2)(u+1)}$ **M1**
+Comparing numerators:
+$A(u+1) + B(u-2) = u$
+Set $u=-1$: $-3B = -1 \Rightarrow B = \frac{1}{3}$ **M1**
+Set $u=2$: $3A = 2 \Rightarrow A = \frac{2}{3}$ **A1**
+
+$\ $
+
+(b)
+First rewrite the denominator:
+$\sin^2 x - \sin x - 2 = (\sin x - 2)(\sin x + 1)$ **M1**
+
+Using the substitution $u = \sin x$, $du = \cos x dx$:
+$\displaystyle\int \frac{\sin x \cos x}{(\sin x-2)(\sin x+1)} dx = \displaystyle\int \frac{u}{(u-2)(u+1)} du$ **M1**
+
+From part (a):
+$= \displaystyle\int \left(\frac{2/3}{u-2} + \frac{1/3}{u+1}\right) du$ **M1**
+$= \frac{2}{3}\ln|u-2| + \frac{1}{3}\ln|u+1| + C$ **A1**
+Substitute back:
+$= \frac{2}{3}\ln|\sin x - 2| + \frac{1}{3}\ln|\sin x + 1| + C$ **A1**
+
+Difficulty: 4
+Unit: Integral
+Topics: Partial Fraction,u-substitution
+Tags: Paper 1
+---
+---
+Question:
+Find $\displaystyle\int \frac{\ln x}{x}\ dx$. [3]
+
+Solution:
+Use substitution:
+Let $u = \ln x$, then $du = \frac{1}{x}dx$ **M1**
+
+The integral becomes:
+$\displaystyle\int u\ du$ **M1**
+
+$= \frac{1}{2}u^2 + C$ **A1**
+
+Substitute back:
+$= \frac{1}{2}(\ln x)^2 + C$ **A1**
+
+Difficulty: 5
+Unit: Integral
+Topics: u-substitution
+Tags: Paper 1
+---
+---
+Question:
+Find $\displaystyle\int \frac{x}{\sqrt{x+1}}\ dx$. [4]
+
+Solution:
+Use substitution:
+Let $u = x + 1$, then $du = dx$ and $x = u - 1$ **M1**
+
+The integral becomes:
+$\displaystyle\int \frac{u - 1}{\sqrt{u}}\ du = \displaystyle\int (u^{1/2} - u^{-1/2})\ du$ **M1**
+
+Integrate term by term:
+$= \frac{2}{3}u^{3/2} - 2u^{1/2} + C$ **A1**
+
+Substitute back:
+$= \frac{2}{3}(x+1)^{3/2} - 2(x+1)^{1/2} + C$ **A1**
+
+Simplified form (optional):
+$= \frac{2}{3}(x+1)^{1/2}(x - 2) + C$ **A1**
+
+Difficulty: 4
+Unit: Integral
+Topics: u-substitution
+Tags: Paper 1
+---
+---
+Question:
+Find $\displaystyle\int (e^x + 2)^3\ dx$. [5]
+
+Solution:
+First expand the integrand:
+$(e^x + 2)^3 = e^{3x} + 6e^{2x} + 12e^x + 8$ **M1**
+
+Now integrate term by term:
+$\displaystyle\int (e^{3x} + 6e^{2x} + 12e^x + 8)\ dx$ **M1**
+
+$= \frac{1}{3}e^{3x} + 3e^{2x} + 12e^x + 8x + C$ **A3**
+
+Difficulty: 3
+Unit: Integral
+Topics: Binomial Expansion, Basic Integration
+Tags: Paper 1
+---
+Question:
+Find $\displaystyle\int \frac{x^3}{\sqrt{9-x^2}}\ dx$ using the substitution $u=\sqrt{9-x^2}$. [5]
+
+Solution:
+Let $u = \sqrt{9-x^2}$ **M1**
+Then $u^2 = 9 - x^2$ ⇒ $x^2 = 9 - u^2$ **M1**
+Differentiate: $2u du = -2x dx$ ⇒ $x dx = -u du$ **M1**
+
+Rewrite the integral:
+$\displaystyle\int \frac{x^2 \cdot x}{\sqrt{9-x^2}} dx = \displaystyle\int \frac{(9-u^2)}{u} (-u du)$ **M1**
+$= -\displaystyle\int (9 - u^2) du$ **A1**
+
+Integrate:
+$= -9u + \frac{1}{3}u^3 + C$ **A1**
+
+Substitute back:
+$= -9\sqrt{9-x^2} + \frac{1}{3}(9-x^2)^{3/2} + C$ **A1**
+
+Simplified form:
+$= \sqrt{9-x^2}\left(-9 + \frac{9-x^2}{3}\right) + C$
+$= \sqrt{9-x^2}\left(\frac{-27 + 9 - x^2}{3}\right) + C$
+$= \frac{\sqrt{9-x^2}}{3}(-18 - x^2) + C$ **A1**
+
+Difficulty: 5
+Unit: Integral
+Topics: u-substitution
+Tags: Paper 1
+---
+Question:
+Find $\displaystyle\int_{1}^{2} 3x^2\sqrt{x^3-1}\ dx$. [5]
+
+Solution:
+Let $u = \sqrt{x^3-1}$, then:
+$u^2 = x^3 - 1$ ⇒ $2u du = 3x^2 dx$ ⇒ $3x^2 dx = 2u du$ **M1**
+
+Change limits:
+When $x=1$, $u=0$
+When $x=2$, $u=\sqrt{7}$ **M1**
+
+The integral becomes:
+$\displaystyle\int_{0}^{\sqrt{7}} u \cdot 2u du = 2\displaystyle\int_{0}^{\sqrt{7}} u^2 du$ **M1**
+
+Integrate:
+$= 2\left[\frac{u^3}{3}\right]_{0}^{\sqrt{7}} = \frac{2}{3}(7^{3/2} - 0)$ **A1**
+$= \frac{14\sqrt{7}}{3}$ **A1**
+
+Difficulty: 5
+Unit: Integral
+Topics: u-substitution, Definite Integral by Substitution
+Tags: Paper 1
+---
+---
+Question:
+Find $\displaystyle\int x\ln x\ dx$. [4]
+
+Solution:
+Use integration by parts:
+Let $u = \ln x$, $dv = x\ dx$ **M1**
+Then $du = \frac{1}{x}\ dx$, $v = \frac{x^2}{2}$ **A1**
+
+Apply integration by parts formula:
+$\displaystyle\int u\ dv = uv - \displaystyle\int v\ du$
+$= \frac{x^2}{2}\ln x - \displaystyle\int \frac{x^2}{2} \cdot \frac{1}{x}\ dx$
+$= \frac{x^2}{2}\ln x - \frac{1}{2}\displaystyle\int x\ dx$ **M1**
+
+Complete the integration:
+$= \frac{x^2}{2}\ln x - \frac{x^2}{4} + C$ **A1**
+
+Difficulty: 2
+Unit: Integral
+Topics: Integration by Parts, Logarithmic Integrals
+Tags: Paper 1
+---
+---
+Question:
+(a) Find $\displaystyle\int \arctan x\ dx$. [4]
+(b) Find $\displaystyle\int \arcsin x\ dx$. [4]
+
+Solution:
+(a)
+Using integration by parts with $u = \arctan x$ ($du = \frac{1}{1+x^2}dx$) and $dv = dx$ ($v = x$):
+$\displaystyle\int \arctan x\ dx = x\arctan x - \displaystyle\int \frac{x}{1+x^2}dx$ **M1A1**
+
+For the remaining integral, substitute $w = 1+x^2$:
+$\displaystyle\int \frac{x}{1+x^2}dx = \frac{1}{2}\ln(1+x^2) + C$ **M1A1**
+
+(b)
+Using integration by parts with $u = \arcsin x$ ($du = \frac{1}{\sqrt{1-x^2}}dx$) and $dv = dx$ ($v = x$):
+$\displaystyle\int \arcsin x\ dx = x\arcsin x - \displaystyle\int \frac{x}{\sqrt{1-x^2}}dx$ **M1A1**
+
+For the remaining integral, substitute $w = 1-x^2$:
+$\displaystyle\int \frac{x}{\sqrt{1-x^2}}dx = -\sqrt{1-x^2} + C$ **M1A1**
+
+Difficulty: 5
+Unit: Integral
+Topics: Integration by Parts,u-substitution
+Tags: Paper 1
+---
+---
+Question:
+Find $\displaystyle\int (\ln x)^2\ dx$. [7]
+
+Solution:
+First integration by parts:
+Let $u = (\ln x)^2$, $dv = dx$ **M1**
+Then $du = \frac{2\ln x}{x}\ dx$, $v = x$ **A1**
+$\displaystyle\int (\ln x)^2 dx = x(\ln x)^2 - 2\displaystyle\int \ln x\ dx$ **M1**
+
+Second integration by parts (for $\int \ln x\ dx$):
+Let $u = \ln x$, $dv = dx$ **M1**
+Then $du = \frac{1}{x}dx$, $v = x$
+$\displaystyle\int \ln x\ dx = x\ln x - \displaystyle\int x \cdot \frac{1}{x} dx = x\ln x - x + C$ **A1**
+
+Combine results:
+$\displaystyle\int (\ln x)^2 dx = x(\ln x)^2 - 2(x\ln x - x) + C$ **M1**
+$= x(\ln x)^2 - 2x\ln x + 2x + C$ **A1**
+
+Difficulty: 6
+Unit: Integral
+Topics: Integration by Parts
+Tags: Paper 1
+---
+---
+Question:
+(a) Use integration by parts to show that 
+$\displaystyle\int e^x \cos 2x\ dx = \frac{2e^x}{5}\sin 2x + \frac{e^x}{5}\cos 2x + C$, $C \in \mathbb{R}$. [5]
+
+(b) Hence, show that 
+$\displaystyle\int e^x \cos^2 x\ dx = \frac{e^x}{5}\sin 2x + \frac{e^x}{10}\cos 2x + \frac{e^x}{2} + C$, $C \in \mathbb{R}$. [4]
+
+Solution:
+(a)
+Let $I = \displaystyle\int e^x \cos 2x\ dx$
+
+Using integration by parts with:
+$u = \cos 2x$ $\Rightarrow$ $du = -2\sin 2x\ dx$
+$dv = e^x dx$ $\Rightarrow$ $v = e^x$ **M1**
+
+$I = e^x \cos 2x + 2\displaystyle\int e^x \sin 2x\ dx$ **A1**
+
+Apply integration by parts again to $\int e^x \sin 2x\ dx$:
+$u = \sin 2x$ $\Rightarrow$ $du = 2\cos 2x\ dx$
+$dv = e^x dx$ $\Rightarrow$ $v = e^x$
+
+$\displaystyle\int e^x \sin 2x\ dx = e^x \sin 2x - 2\displaystyle\int e^x \cos 2x\ dx = e^x \sin 2x - 2I$ **M1**
+
+Substitute back:
+$I = e^x \cos 2x + 2(e^x \sin 2x - 2I)$
+$I = e^x \cos 2x + 2e^x \sin 2x - 4I$
+$5I = e^x (2\sin 2x + \cos 2x)$ **A1**
+$I = \frac{e^x}{5}(2\sin 2x + \cos 2x) + C$ **A1**
+
+$\ $
+
+(b)
+Using $\cos^2 x = \frac{1 + \cos 2x}{2}$: **M1**
+$\displaystyle\int e^x \cos^2 x\ dx = \frac{1}{2}\displaystyle\int e^x (1 + \cos 2x)\ dx$
+$= \frac{1}{2}\left(\displaystyle\int e^x dx + \displaystyle\int e^x \cos 2x\ dx\right)$ **M1**
+
+From part (a):
+$= \frac{1}{2}\left(e^x + \frac{e^x}{5}(2\sin 2x + \cos 2x)\right) + C$ **A1**
+$= \frac{e^x}{5}\sin 2x + \frac{e^x}{10}\cos 2x + \frac{e^x}{2} + C$ **A1**
+
+Difficulty: 6
+Unit: Integral
+Topics: Integration by Parts,Trigonometric Identity
+Tags: Paper 1
+---
+---
+Question:
+Find the value of $a$ that satisfies: $\displaystyle\int_{a}^{2a} \frac{e^x}{x}\ dx = \displaystyle\int_{a}^{2a} \frac{e^x}{x^2}\ dx$ [5]
+
+Solution:
+Let $I_1 = \displaystyle\int_{a}^{2a} \frac{e^x}{x}\ dx$ and $I_2 = \displaystyle\int_{a}^{2a} \frac{e^x}{x^2}\ dx$
+
+Apply integration by parts to $I_1$:
+Let $u = \frac{1}{x}$ $\Rightarrow$ $du = -\frac{1}{x^2}dx$ **M1**
+Let $dv = e^x dx$ $\Rightarrow$ $v = e^x$ **A1**
+
+Then:
+$I_1 = \left.\frac{e^x}{x}\right|_{a}^{2a} - \displaystyle\int_{a}^{2a} e^x\left(-\frac{1}{x^2}\right)dx$ **M1**
+$= \left(\frac{e^{2a}}{2a} - \frac{e^a}{a}\right) + \displaystyle\int_{a}^{2a} \frac{e^x}{x^2}dx$ **A1**
+
+From the original equation $I_1 = I_2$:
+$\left(\frac{e^{2a}}{2a} - \frac{e^a}{a}\right) + I_2 = I_2$
+$\Rightarrow \frac{e^{2a}}{2a} - \frac{e^a}{a} = 0$ **M1**
+
+Simplify:
+$\frac{e^a}{a}\left(\frac{e^a}{2} - 1\right) = 0$
+Since $\frac{e^a}{a} \neq 0$:
+$\frac{e^a}{2} = 1$ $\Rightarrow$ $e^a = 2$ **A1**
+Thus:
+$a = \ln 2$ **A1**
+
+Difficulty: 7
+Unit: Integral
+Topics: Integration by Parts, Exponential Integrals
+Tags: Paper 1
+---
+---
+Question:
+Using the substitution $x = a\sec\theta$, to show that $\displaystyle\int_{a\sqrt{2}}^{2a} \frac{dx}{x^3\sqrt{x^2-a^2}} = \frac{1}{24a^3}\left(3\sqrt{3} + \pi - 6\right)$ [8]
+
+Solution:
+Substitution and derivative:
+Let $x = a\sec\theta$ $\Rightarrow$ $dx = a\sec\theta\tan\theta\,d\theta$ **A1**
+
+Change of limits:
+When $x = a\sqrt{2}$: $\theta = \frac{\pi}{4}$  
+When $x = 2a$: $\theta = \frac{\pi}{3}$ **A1**
+
+Substitute into integral:
+$\displaystyle\int_{\frac{\pi}{4}}^{\frac{\pi}{3}} \frac{a\sec\theta\tan\theta}{a^3\sec^3\theta\sqrt{a^2\sec^2\theta-a^2}}\,d\theta$ **M1**
+
+Simplify integrand:
+$= \displaystyle\int_{\frac{\pi}{4}}^{\frac{\pi}{3}} \frac{\cos^2\theta}{a^3}\,d\theta$ **A1**
+
+Use trigonometric identity:
+$\cos^2\theta = \frac{1}{2}(\cos 2\theta + 1)$ **M1**
+
+Integrate and evaluate:
+$\frac{1}{2a^3}\left[\frac{1}{2}\sin 2\theta + \theta\right]_{\frac{\pi}{4}}^{\frac{\pi}{3}}$ **A1**
+$= \frac{1}{4a^3}\left(\frac{\sqrt{3}}{2} + \frac{2\pi}{3} - 1 - \frac{\pi}{2}\right)$ **A1**
+
+Final simplification:
+$= \frac{1}{24a^3}\left(3\sqrt{3} + \pi - 6\right)$ **AG**
+
+Difficulty: 5
+Unit: Integral
+Topics: Trigonometric Substitution, Definite Integral by Substitution 
+Tags: Paper 1
+---
+---
+Question:
+By using the substitution $x^2 = 2\sec\theta$, show that:
+$\displaystyle\int \frac{dx}{x\sqrt{x^4-4}} = \frac{1}{4} \arccos \frac{2}{x^2} + C$ [7]
+
+Solution:
+
+Let $x^2 = 2\sec\theta$ $\Rightarrow$ $2x\,dx = 2\sec\theta\tan\theta\,d\theta$ **M1**
+$\Rightarrow$ $x\,dx = \sec\theta\tan\theta\,d\theta$ **A1**
+
+$\displaystyle\int \frac{dx}{x\sqrt{x^4-4}} = \displaystyle\int \frac{x\,dx}{x^2\sqrt{x^4-4}}$ **M1**
+$= \displaystyle\int \frac{\sec\theta\tan\theta\,d\theta}{2\sec\theta\sqrt{4\sec^2\theta-4}}$ **A1**
+
+$= \displaystyle\int \frac{\tan\theta\,d\theta}{2\sqrt{4(\sec^2\theta-1)}}$ 
+$= \displaystyle\int \frac{\tan\theta\,d\theta}{4\tan\theta}$ (since $\sec^2\theta-1=\tan^2\theta$) **M1**
+$= \frac{1}{4}\displaystyle\int d\theta = \frac{1}{4}\theta + C$ **A1**
+
+From $x^2 = 2\sec\theta$ $\Rightarrow$ $\cos\theta = \frac{2}{x^2}$ **M1**
+$\Rightarrow$ $\theta = \arccos\left(\frac{2}{x^2}\right)$ **A1**
+
+$\displaystyle\int \frac{dx}{x\sqrt{x^4-4}} = \frac{1}{4} \arccos \frac{2}{x^2} + C$ **AG**
+
+Difficulty: 5
+Unit: Integral
+Topics: Trigonometric Substitution
+Tags: Paper 1
+---
+Question:
+By using the substitution $x^2 = 2\tan u$, show that:
+$\displaystyle\int \frac{dx}{x^2\sqrt{x^2+4}} = \frac{-\sqrt{x^2+4}}{4x} + C$ [7]
+
+Solution:
+Using the substitution $x = 2 \tan u$, we have:
+$\frac{dx}{du} = 2 \sec^2 u$ **A1**
+
+Transform the integral:
+$\displaystyle\int \frac{2 \sec^2 u du}{4 \tan^2 u \sqrt{4 \tan^2 u + 4}}$ **M1**
+$= \displaystyle\int \frac{2 \sec^2 u du}{4 \tan^2 u \cdot 2 \sec u}$ **A1**
+$= \frac{1}{4} \displaystyle\int \frac{\sec u}{\tan^2 u} du$
+
+Simplify using trigonometric identities:
+$= \frac{1}{4} \displaystyle\int \frac{\cos u}{\sin^2 u} du$ **A1**
+$= -\frac{1}{4 \sin u} + C$ **A1**
+
+Express in terms of $x$:
+Using $\sin u = \frac{x}{\sqrt{x^2 + 4}}$, we get:
+$-\frac{1}{4} \cdot \frac{\sqrt{x^2 + 4}}{x} + C$ **M1A1**
+
+Final result:
+$-\frac{\sqrt{x^2 + 4}}{4x} + C$ **AG**
+
+Difficulty: 5
+Unit: Integral
+Topics: Trigonometric Substitution
+Tags: Paper 1
+---
+---
+Question:
+Using the substitution $x = 2 \sin \theta$, show that
+$\displaystyle\int \sqrt{4 - x^2} dx = A x \sqrt{4 - x^2} + B \arcsin \frac{x}{2} + C$,
+where $A$ and $B$ are constants to be found. [8]
+
+Solution:
+Using $x = 2 \sin \theta$, we get:
+$dx = 2 \cos \theta d\theta$ **A1**
+
+Transform the integral:
+$\begin{align*}
+\displaystyle\int \sqrt{4 - x^2} dx &= \displaystyle\int \sqrt{4 - 4 \sin^2 \theta} \cdot 2 \cos \theta d\theta \quad \text{\textbf{M1A1}} \\
+&= \displaystyle\int 2 \cos \theta \cdot 2 \cos \theta d\theta \\
+&= 4 \displaystyle\int \cos^2 \theta d\theta
+\end{align*}$
+
+Using identity $\cos^2 \theta = \frac{1}{2}(1 + \cos 2\theta)$:
+$\begin{align*}
+4 \displaystyle\int \cos^2 \theta d\theta &= 4 \displaystyle\int \frac{1}{2}(1 + \cos 2\theta) d\theta \quad \text{\textbf{M1A1}} \\
+&= 2 \theta + \sin 2\theta + C \quad \text{\textbf{A1}} \\
+&= 2 \theta + 2 \sin \theta \cos \theta + C
+\end{align*}$
+
+Back-substitute using:
+$\sin \theta = \frac{x}{2}$, $\cos \theta = \frac{\sqrt{4 - x^2}}{2}$, $\theta = \arcsin \frac{x}{2}$
+
+$\begin{align*}
+&= 2 \arcsin \frac{x}{2} + 2 \cdot \frac{x}{2} \cdot \frac{\sqrt{4 - x^2}}{2} + C \quad \text{\textbf{A1A1}} \\
+&= \frac{x \sqrt{4 - x^2}}{2} + 2 \arcsin \frac{x}{2} + C
+\end{align*}$
+
+Thus the constants are:
+$A = \frac{1}{2}$, $B = 2$ **A1**
+
+Difficulty: 5
+Unit: Integral
+Topics: Trigonometric Substitution
+Tags: Paper 1
+---
+---
+Question:
+Find the exact value of $\displaystyle\int_{0}^{\infty} \frac{dx}{x^2+1}$. [4]
+
+Solution:
+Recognize the standard integral form:
+$\displaystyle\int \frac{dx}{x^2+1} = \arctan x + C$ **M1A1**
+
+Evaluate the improper integral:
+$\displaystyle\int_{0}^{\infty} \frac{dx}{x^2+1} = \lim_{b \to \infty} \left[ \arctan x \right]_{0}^{b}$ **M1**
+$= \lim_{b \to \infty} (\arctan b - \arctan 0) = \frac{\pi}{2} - 0 = \frac{\pi}{2}$ **A1**
+
+Difficulty: 3
+Unit: Integral
+Topics: Basic Integral, Improper Integral
+Tags: Paper 1
+---
+---
+Question:
+(a) Using l'Hôpital's Rule, show that $\lim\limits_{x \to \infty} xe^{-x} = 0$. [2]  
+(b) Determine $\displaystyle\int_0^a xe^{-x} dx$. [5]  
+(c) Show that the integral $\displaystyle\int_0^\infty xe^{-x} dx$ is convergent and find its value. [2]
+
+Solution:
+(a)  
+Rewrite the limit as:  
+$\lim_{x \to \infty} \frac{x}{e^x}$ **M1**  
+Applying l'Hôpital's Rule:  
+$= \lim_{x \to \infty} \frac{1}{e^x} = 0$ **A1**  
+
+$\ $
+
+(b)  
+Using integration by parts:  
+Let $u = x$ ⇒ $du = dx$ **M1**  
+Let $dv = e^{-x} dx$ ⇒ $v = -e^{-x}$ **A1**  
+
+$\displaystyle\int_0^a xe^{-x} dx = [-xe^{-x}]_0^a + \displaystyle\int_0^a e^{-x} dx$ **A1**  
+$= -ae^{-a} + 0 + [-e^{-x}]_0^a$ **A1**  
+$= -ae^{-a} - e^{-a} + 1$ **A1**  
+
+$\ $
+
+(c)  
+From part (b), as $a \to \infty$:  
+$\lim_{a \to \infty} (-ae^{-a} - e^{-a} + 1) = 1$ since $e^{-a}$ and $ae^{-a} \to 0$ **R1**  
+Thus, the integral converges to 1. **A1**  
+
+Difficulty: 4  
+Unit: Calculus  
+Topics: L'Hopital's Rule,Integration by Parts,Improper Integral  
+Tags: Paper 1  
+---
+
+---
+Question:
+Find the exact value of $\displaystyle\int_{0}^{\infty} \frac{dx}{(x+2)(2x+1)}$. [7]
+
+Solution:
+First, perform partial fraction decomposition:
+Let $\frac{1}{(x+2)(2x+1)} = \frac{A}{x+2} + \frac{B}{2x+1}$ **M1**
+$= \frac{A(2x+1) + B(x+2)}{(x+2)(2x+1)}$ **A1**
+
+Solve for coefficients:
+When $x = -2$: $1 = A(-3) \Rightarrow A = -\frac{1}{3}$ **A1**
+When $x = -\frac{1}{2}$: $1 = B(\frac{3}{2}) \Rightarrow B = \frac{2}{3}$ **A1**
+
+Rewrite the integral:
+$I = \frac{1}{3}\displaystyle\int_{0}^{\infty} \left(\frac{2}{2x+1} - \frac{1}{x+2}\right) dx$ **M1**
+
+Integrate term by term:
+$= \frac{1}{3}\left[\ln|2x+1| - \ln|x+2|\right]_{0}^{\infty}$ **A1**
+
+Evaluate limits:
+$\lim_{h\to\infty}\frac{1}{3}\ln\left(\frac{2h+1}{h+2}\right) - \frac{1}{3}\ln\left(\frac{1}{2}\right)$ **M1**
+$= \frac{1}{3}\left(\ln 2 - (-\ln 2)\right) = \frac{2}{3}\ln 2$ **A1**
+
+Difficulty: 5
+Unit: Integral
+Topics: Partial Fraction, Improper Integral
+Tags: Paper 1
+---
+---
+Question:
+The integral $I_n$ is defined by $I_n = \displaystyle\int_{n\pi}^{(n+1)\pi} e^{-x} |\sin x| dx$, for $n \in \mathbb{N}$.
+
+(a) Show that $I_0 = \frac{1}{2}(1 + e^{-\pi})$. [6]  
+(b) By letting $y = x - n\pi$, show that $I_n = e^{-n\pi} I_0$. [4]  
+(c) Hence determine the exact value of $\displaystyle\int_0^\infty e^{-x} |\sin x| dx$. [5]
+
+Solution:
+(a)
+$I_0 = \displaystyle\int_0^\pi e^{-x} \sin x dx$ **M1**
+
+Using integration by parts:
+Let $u = \sin x$ ⇒ $du = \cos x dx$ **M1**
+Let $dv = e^{-x} dx$ ⇒ $v = -e^{-x}$ **A1**
+
+$I_0 = [-e^{-x}\sin x]_0^\pi + \displaystyle\int_0^\pi e^{-x}\cos x dx$ **M1**
+$= (0 - 0) + \displaystyle\int_0^\pi e^{-x}\cos x dx$
+
+Second integration by parts:
+Let $u = \cos x$ ⇒ $du = -\sin x dx$
+Let $dv = e^{-x} dx$ ⇒ $v = -e^{-x}$
+
+$\displaystyle\int e^{-x}\cos x dx = [-e^{-x}\cos x]_0^\pi - \displaystyle\int_0^\pi e^{-x}\sin x dx$ **A1**
+$= (e^{-\pi} + 1) - I_0$
+
+Thus:
+$I_0 = e^{-\pi} + 1 - I_0$ **M1**
+$2I_0 = 1 + e^{-\pi}$
+$I_0 = \frac{1}{2}(1 + e^{-\pi})$ **AG**
+
+$\ $
+
+(b)
+Let $y = x - n\pi$ ⇒ $dy = dx$ **M1**
+When $x = n\pi$, $y = 0$
+When $x = (n+1)\pi$, $y = \pi$ **A1**
+
+$I_n = \displaystyle\int_0^\pi e^{-(y+n\pi)} |\sin(y+n\pi)| dy$ **M1**
+$= e^{-n\pi} \displaystyle\int_0^\pi e^{-y} \sin y dy$ (since $|\sin(y+n\pi)| = \sin y$ for $y \in [0,\pi]$) **A1**
+$= e^{-n\pi} I_0$ **AG**
+
+$\ $
+
+(c)
+$\displaystyle\int_0^\infty e^{-x} |\sin x| dx = \sum_{n=0}^\infty I_n$ **M1**
+$= \sum_{n=0}^\infty e^{-n\pi} I_0$ **A1**
+
+This is an infinite geometric series with first term $I_0$ and common ratio $e^{-\pi}$ **M1**
+
+Thus:
+$= \frac{I_0}{1 - e^{-\pi}} = \frac{\frac{1}{2}(1 + e^{-\pi})}{1 - e^{-\pi}}$ **A1**
+$= \frac{1 + e^{-\pi}}{2(1 - e^{-\pi})} = \frac{e^\pi + 1}{2(e^\pi - 1)}$ **A1**
+
+Difficulty: 7
+Unit: Integral  
+Topics: Integration by Parts,Geometric Series,Definite Inregral by Substitution,Improper Integral
+Tags: Paper 3
+---
+---
+Question:
+This question investigates the recursive properties of integrals of sine powers. Let $I_n = \displaystyle\int_0^{\pi/2} \sin^n x \, dx$ for integers $n \geq 0$.
+
+(a) Verify the base cases:
+   $\quad$(i) $I_0 = \frac{\pi}{2}$ [1]
+   $\quad$(ii) $I_1 = 1$ [1]
+
+(b) Using integration by parts, prove the reduction formula: $I_n = \frac{n-1}{n} I_{n-2}$ for $n \geq 2$ [5]
+
+(c) Apply the reduction formula to compute:
+   $\quad$(i) $I_4$ [2]
+   $\quad$(ii) $I_5$ [2]
+
+(d) Explain why $\frac{I_n}{I_{n+1}} > 1$ geometrically. [3]  
+(e) Show that $\frac{I_n}{I_{n+1}} < \frac{I_{n-1}}{I_{n+1}}$. [3]  
+(f) Hence, show that for all $n \geq 2$, $1 < \frac{I_{n-1}}{I_{n+1}} < \frac{n}{n-1}$. [3]
+
+Solution:
+(a)(i)
+$I_0 = \displaystyle\int_0^{\pi/2} 1 \, dx = \frac{\pi}{2}$ **A1**
+$\ $
+(a)(ii)
+$I_1 = \displaystyle\int_0^{\pi/2} \sin x \, dx = [-\cos x]_0^{\pi/2} = 1$ **A1**
+$\ $
+
+(b)
+Let $u = \sin^{n-1} x$ and $dv = \sin x \, dx$ **M1**
+Then $du = (n-1)\sin^{n-2} x \cos x \, dx$ and $v = -\cos x$ **A1**
+By integration by parts:
+$I_n = [-\sin^{n-1} x \cos x]_0^{\pi/2} + (n-1)\displaystyle\int_0^{\pi/2} \sin^{n-2} x \cos^2 x \, dx$ **M1A1**
+Simplify using $\cos^2 x = 1 - \sin^2 x$:
+$= 0 + (n-1)(I_{n-2} - I_n)$ **M1**
+Rearrange to get $I_n = \frac{n-1}{n} I_{n-2}$ **AG**
+$\ $
+
+(c)(i)
+Using recursion:
+$I_2 = \frac{1}{2}I_0 = \frac{\pi}{4}$ **M1**
+$I_4 = \frac{3}{4}I_2 = \frac{3\pi}{16}$ **A1**
+$\ $
+(c)(ii)
+$I_3 = \frac{2}{3}I_1 = \frac{2}{3}$ **M1**
+$I_5 = \frac{4}{5}I_3 = \frac{8}{15}$ **A1**
+$\ $
+
+(d)  
+For $x \in (0, \pi/2)$, $0 < \sin x < 1$, so $\sin^{n+1} x < \sin^n x$ **M1**  
+The graphs: $y = \sin^n x$ lies above $y = \sin^{n+1} x$ on $(0, \pi/2)$ **A1**  
+Integrating gives $I_n > I_{n+1}$, so $\frac{I_n}{I_{n+1}} > 1$ **A1**
+$\ $
+
+(e)  
+Since $\{I_n\}$ is decreasing (from (d)), $I_{n-1} > I_n$ **M1**  
+Thus $I_n < I_{n-1}$ **A1**  
+Divide by $I_{n+1} > 0$: $\frac{I_n}{I_{n+1}} < \frac{I_{n-1}}{I_{n+1}}$ **A1**
+$\ $
+
+(f)  
+From (d): $\frac{I_n}{I_{n+1}} > 1$ (left inequality) **M1**  
+From (e): $\frac{I_n}{I_{n+1}} < \frac{I_{n-1}}{I_n}$  **M1** 
+Thus the statements follows. **M1** 
+
+Difficulty: 7
+Unit: Integral
+Topics: Integration by Parts,Trigonometric Identity
+Tags: Paper 3
+---
+Question:
+Euler's formula, $e^{i\theta} = \cos \theta + i \sin \theta$, provides a powerful tool for simplifying integrals involving trigonometric functions. This question explores this technique.
+
+(a) Express $\cos \theta$ and $\sin \theta$ in terms of $e^{i\theta}$ and $e^{-i\theta}$ using Euler's formula. [2]
+
+(b) Using part (a), derive the identity: $\cos A \cos B = \frac{1}{2}[\cos(A+B) + \cos(A-B)]$. [3]
+
+(c) Evaluate $\displaystyle\int_0^{\pi} \cos(3x)\cos(2x)\ dx$ using the identity from (b). [3]
+
+(d) Consider $J = \displaystyle\int_0^{\pi} \cos x \cos(2x) \cos(3x)\ dx$.
+$\quad$(i) Express $\cos x$, $\cos(2x)$, and $\cos(3x)$ using complex exponentials. [3]
+$\quad$(ii) Hence, express the integrand as a sum of cosines. [4]
+
+(e) Use (d)(ii) to evaluate $J$. [3]
+
+Solution:
+(a)
+$\cos \theta = \frac{e^{i\theta} + e^{-i\theta}}{2}$ **A1**
+$\sin \theta = \frac{e^{i\theta} - e^{-i\theta}}{2i}$ **A1**
+
+$\ $
+
+(b)
+$\cos A \cos B = \left(\frac{e^{iA}+e^{-iA}}{2}\right)\left(\frac{e^{iB}+e^{-iB}}{2}\right)$ **M1**
+$= \frac{1}{4}\left(e^{i(A+B)} + e^{-i(A+B)} + e^{i(A-B)} + e^{-i(A-B)}\right)$ **M1**
+$= \frac{1}{2}\left[\frac{e^{i(A+B)}+e^{-i(A+B)}}{2} + \frac{e^{i(A-B)}+e^{-i(A-B)}}{2}\right] = \frac{1}{2}[\cos(A+B) + \cos(A-B)]$ **A1**
+
+$\ $
+
+(c)
+Using (b) with $A=3x$, $B=2x$:
+$\cos(3x)\cos(2x) = \frac{1}{2}[\cos(5x) + \cos x]$ **M1**
+$\displaystyle\int_0^{\pi} \frac{1}{2}[\cos(5x) + \cos x] dx = \frac{1}{2}\left[\frac{\sin(5x)}{5} + \sin x\right]_0^{\pi} = 0$ **A2**
+
+$\ $
+
+(d)(i)
+$\cos x = \frac{e^{ix} + e^{-ix}}{2}$ **A1**
+$\cos(2x) = \frac{e^{i2x} + e^{-i2x}}{2}$ **A1**
+$\cos(3x) = \frac{e^{i3x} + e^{-i3x}}{2}$ **A1**
+
+$\ $
+
+(d)(ii)
+Product becomes $\frac{1}{8}(e^{ix}+e^{-ix})(e^{i2x}+e^{-i2x})(e^{i3x}+e^{-i3x})$ **M1**
+Expanding gives $\frac{1}{8}[2\cos(6x) + 4\cos(4x) + 4\cos(2x) + 2]$ **M1 A1**
+$= \frac{1}{4}[\cos(6x) + 2\cos(4x) + 2\cos(2x) + 1]$ **A1**
+
+$\ $
+
+(e)
+Integrating term by term:
+$J = \frac{1}{4}\left[\frac{\sin(6x)}{6} + \frac{2\sin(4x)}{4} + \frac{2\sin(2x)}{2} + x\right]_0^{\pi}$ **M1**
+$= \frac{1}{4}\left[0 + 0 + 0 + \pi - 0\right] = \frac{\pi}{4}$ **A2**
+
+Difficulty: 7
+Unit: Integral Calculus
+Topics: Complex Numbers, Trigonometric Integration
+Tags: Paper 3
+---
+Question:
+Find all real numbers $E$ such that $\displaystyle\int_{0}^{\infty} \left(\frac{2x}{x^2+4} - \frac{E}{x+1}\right)\ dx$ converges. [6]
+
+Solution:
+First evaluate the indefinite integral:
+$\displaystyle\int \left(\frac{2x}{x^2+4} - \frac{E}{x+1}\right)\ dx = \ln(x^2+4) - E\ln|x+1| + C$ **M1A1**
+
+Now evaluate the improper integral:
+$\displaystyle\int_{0}^{\infty} = \lim\limits_{b\to\infty} \left[\ln(x^2+4) - E\ln(x+1)\right]_0^b$ **M1**
+
+Evaluate at bounds:
+$= \lim\limits_{b\to\infty} \left[\ln\left(\frac{b^2+4}{(b+1)^E}\right) - \ln\left(\frac{4}{1^E}\right)\right]$ **A1**
+
+Analyze the limit:
+$\lim\limits_{b\to\infty} \ln\left(\frac{b^2(1+4/b^2)}{b^E(1+1/b)^E}\right) = \lim\limits_{b\to\infty} \ln\left(b^{2-E}\cdot\frac{1+4/b^2}{(1+1/b)^E}\right)$ **M1**
+
+For convergence, we require $2-E=0$ (otherwise the logarithm argument tends to 0 or $\infty$) **M1**
+Thus $E=2$ is the only value where the limit exists **A1**
+
+Difficulty: 7
+Unit: Integral Calculus
+Topics: Improper Integral
+Tags: Paper 1
