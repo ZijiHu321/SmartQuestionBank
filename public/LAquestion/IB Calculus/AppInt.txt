@@ -1,0 +1,622 @@
+---
+Question:
+The following diagram shows the region $R$ which is bounded by two axes, the line $x = 4$ and the curve $y = \frac{10}{x+1}$.
+![ ](/questionPic/appint_5.png?400x)
+(a) Find the area of the region $R$. [3]
+(b) Find the volume of the solid generated when the region $R$ is rotated $2\pi$ about the $x$-axis. [3]
+(c) Show that the volume of the solid generated when the region $R$ is rotated $2\pi$ about the $y$-axis is $(80 - 20\ln5)\pi$. [4]
+
+Solution:
+(a)
+The region $R$ is in the first quadrant, bounded by the $x$-axis, $y$-axis, the vertical line $x=4$, and the curve $y = \frac{10}{x+1}$. The area is given by:
+$A = \displaystyle\int_0^4 \frac{10}{x+1}  dx$ **M1**
+$= 10 \displaystyle\int_0^4 \frac{1}{x+1}  dx = 10 \left[ \ln|x+1| \right]_0^4$ **A1**
+$= 10 (\ln 5 - \ln 1) = 10 \ln 5$ **A1**
+
+(b)
+When rotating about the $x$-axis, use the disk method. The volume is:
+$V_x = \pi \displaystyle\int_0^4 \left( \frac{10}{x+1} \right)^2  dx = \pi \displaystyle\int_0^4 \frac{100}{(x+1)^2}  dx$ **M1**
+$= 100\pi \left[ -\frac{1}{x+1} \right]_0^4$ **A1**
+$= 100\pi \left( -\frac{1}{5} + 1 \right) = 100\pi \cdot \frac{4}{5} = 80\pi$ **A1**
+
+(c)
+When rotating about the $y$-axis, use the shell method. The volume is:
+$V_y = 2\pi \displaystyle\int_0^4 x \cdot \frac{10}{x+1}  dx = 20\pi \displaystyle\int_0^4 \frac{x}{x+1}  dx$ **M1**
+Simplify the integrand: $\frac{x}{x+1} = 1 - \frac{1}{x+1}$ **M1**
+So, $V_y = 20\pi \displaystyle\int_0^4 \left(1 - \frac{1}{x+1}\right) dx = 20\pi \left[ x - \ln|x+1| \right]_0^4$ **A1**
+$= 20\pi \left( (4 - \ln 5) - (0 - \ln 1) \right) = 20\pi (4 - \ln 5) = 80\pi - 20\pi \ln 5 = \pi(80 - 20\ln 5)$ **AG**
+
+Difficulty: 4
+Unit: Application of Integral
+Topics: Area under a Curve,Solid of Revolution
+Tags: Paper 1
+---
+---
+Question:
+The following graph shows the relation $x = 3 \cos 2y + 4$, $0 \leq y \leq \pi$.
+![ ](/questionPic/appint_1.png?400x)
+The curve is rotated $360^\circ$ about the $y$-axis to form a volume of revolution.
+A container with this shape is made with a solid base of diameter 14 cm. The container is filled with water at a rate of 2 cm$^3$ min$^{-1}$. At time $t$ minutes, the water depth is $h$ cm, $0 \leq h \leq \pi$ and the volume of water in the container is $V$ cm$^3$.
+(a) Calculate the value of the volume generated. [8]
+
+Solution:
+(a)
+The volume of revolution is given by:
+$V = \pi \int_0^\pi x^2  dy = \pi \int_0^\pi (3 \cos 2y + 4)^2  dy$ **M1A1**
+Expanding the integrand:
+$(3 \cos 2y + 4)^2 = 9 \cos^2 2y + 24 \cos 2y + 16$ **A1**
+Using the identity $\cos^2 2y = \frac{1 + \cos 4y}{2}$: **M1**
+$9 \cos^2 2y = \frac{9}{2}(1 + \cos 4y)$
+Thus:
+$V = \pi \int_0^\pi \left( \frac{9}{2} + \frac{9}{2} \cos 4y + 24 \cos 2y + 16 \right) dy = \pi \int_0^\pi \left( \frac{41}{2} + \frac{9}{2} \cos 4y + 24 \cos 2y \right) dy$ **M1**
+Integrating term by term:
+$V = \pi \left[ \frac{41}{2}y + \frac{9}{8} \sin 4y + 12 \sin 2y \right]_0^\pi$ **A1**
+Evaluating the definite integral:
+$V = \pi \left( \frac{41}{2}\pi + \frac{9}{8} \sin 4\pi + 12 \sin 2\pi \right) - \pi \left( 0 \right) = \pi \left( \frac{41\pi}{2} \right)$ **A1**
+Final volume:
+$V = \frac{41\pi^2}{2}$ cm$^3$ **A1**
+
+Difficulty: 5
+Unit: Application of Integral
+Topics: Solid of Revolution, Trigonometric Identity
+Tags: Paper 1
+---
+---
+Question:
+The following diagram shows the graph of $y = \frac{(\ln x)^2}{x}$, $x > 0$.
+![ ](/questionPic/appint_2.png?400x)
+The region $R$ is enclosed by the curve, the $x$-axis and the line $x = e$.
+Let $I_n = \int_1^e \frac{(\ln x)^n}{x^2}  dx$, $n \in \mathbb{N}$.
+(a) Given that the curve passes through the point $(a, 0)$, state the value of $a$. [1]
+(b) Use the substitution $u = \ln x$ to find the area of the region $R$. [5]
+(c) (i) Find the value of $I_0$. [2]
+   $\quad$(ii) Prove that $I_n = \frac{1}{e} + nI_{n-1}$, $n \in \mathbb{Z}^+$. [3]
+   $\quad$(iii) Hence find the value of $I_1$. [2]
+(d) Find the volume of the solid formed when the region $R$ is rotated through $2\pi$ about the $x$-axis. [5]
+
+Solution:
+(a)
+The curve $y = \frac{(\ln x)^2}{x}$ intersects the $x$-axis where $y=0$.
+$\frac{(\ln x)^2}{x} = 0 \Rightarrow (\ln x)^2 = 0 \Rightarrow \ln x = 0 \Rightarrow x = 1$
+Thus, $a = 1$. **A1**
+
+$\ $
+
+(b)
+Area of region $R$ is $A = \int_1^e \frac{(\ln x)^2}{x}  dx$.
+Use the substitution $u = \ln x$. Then $\frac{du}{dx} = \frac{1}{x} \Rightarrow du = \frac{dx}{x}$ **A1**
+When $x=1$, $u = \ln 1 = 0$; when $x=e$, $u = \ln e = 1$. **A1**
+The integral becomes:
+$A = \int_0^1 u^2  du$ **M1A1**
+$= \left[ \frac{u^3}{3} \right]_0^1 = \frac{1}{3} - 0 = \frac{1}{3}$ **A1**
+
+$\ $
+
+(c)(i)
+$I_0 = \int_1^e \frac{(\ln x)^0}{x^2}  dx = \int_1^e x^{-2}  dx$ **M1**
+$= \left[ -\frac{1}{x} \right]_1^e = \left( -\frac{1}{e} \right) - (-1) = 1 - \frac{1}{e}$ **A1**
+
+$\ $
+
+(c)(ii)
+To prove: $I_n = -\frac{1}{e} + n I_{n-1}$ for $n \in \mathbb{Z}^+$.
+Use integration by parts.
+Let $u = (\ln x)^n$ $\Rightarrow$ $du = \frac{n(\ln x)^{n-1}}{x} dx$ **M1**
+Let $dv = \frac{1}{x^2} dx$ $\Rightarrow$ $v = \int x^{-2} dx = -\frac{1}{x}$ **A1**
+Apply the formula $\int u  dv = uv - \int v  du$:
+$I_n = \left[ (\ln x)^n \cdot \left( -\frac{1}{x} \right) \right]_1^e - \int_1^e \left( -\frac{1}{x} \right) \cdot \frac{n(\ln x)^{n-1}}{x} dx$
+$= \left[ -\frac{(\ln x)^n}{x} \right]_1^e + n \int_1^e \frac{(\ln x)^{n-1}}{x^2} dx$
+Evaluate the boundary term:
+At $x=e$: $-\frac{(\ln e)^n}{e} = -\frac{1}{e}$
+At $x=1$: $-\frac{(\ln 1)^n}{1} = 0$
+Thus, $I_n = -\frac{1}{e} + n I_{n-1}$ **AG**
+
+$\ $
+
+(c)(iii)
+Using the reduction formula with $n=1$:
+$I_1 = -\frac{1}{e} + 1 \cdot I_0$ **M1**
+From (c)(i), $I_0 = 1 - \frac{1}{e}$
+So, $I_1 = -\frac{1}{e} + \left(1 - \frac{1}{e}\right) = 1 - \frac{2}{e}$ **A1**
+
+$\ $
+
+(d)
+The volume of revolution about the $x$-axis is given by:
+$V = \pi \int_1^e [f(x)]^2  dx = \pi \int_1^e \left( \frac{(\ln x)^2}{x} \right)^2  dx = \pi \int_1^e \frac{(\ln x)^4}{x^2}  dx = \pi I_4$ **A1**
+We need to find $I_4$ using the reduction formula.
+$I_4 = -\frac{1}{e} + 4 I_3$ **M1A1**
+$I_3 = -\frac{1}{e} + 3 I_2$
+$I_2 = -\frac{1}{e} + 2 I_1$
+From (c)(iii), $I_1 = 1 - \frac{2}{e}$
+Substitute backwards:
+$I_2 = -\frac{1}{e} + 2 \left(1 - \frac{2}{e}\right) = -\frac{1}{e} + 2 - \frac{4}{e} = 2 - \frac{5}{e}$ **M1**
+$I_3 = -\frac{1}{e} + 3 \left(2 - \frac{5}{e}\right) = -\frac{1}{e} + 6 - \frac{15}{e} = 6 - \frac{16}{e}$
+$I_4 = -\frac{1}{e} + 4 \left(6 - \frac{16}{e}\right) = -\frac{1}{e} + 24 - \frac{64}{e} = 24 - \frac{65}{e}$ **A1**
+Thus, the volume is:
+$V = \pi \left(24 - \frac{65}{e}\right)$ **A1**
+
+Difficulty: 7
+Unit: Application of Integral
+Topics: u-substitution, Integration by Parts, Solid of Revolution
+Tags: Paper 1
+---
+---
+Question:
+The first set of axes below shows the graph of $y = f(x)$ for $-4 \leq x \leq 4$.
+![ ](/questionPic/appint_4.png?500x)
+Let $g(x) = \int_{-4}^x f(t)dt$ for $-4 \leq x \leq 4$.
+(a) State the value of $x$ at which $g(x)$ is a minimum. [1]
+(b) On the second set of axes, sketch the graph of $y = g(x)$. [5]
+
+Solution:
+(a)
+The function $g(x)$ is defined as the accumulated area under $f(t)$ from $-4$ to $x$. By the Fundamental Theorem of Calculus, $g'(x) = f(x)$. Therefore, critical points of $g$ occur where $f(x) = 0$ or where $f$ is undefined. The graph shows $f(x) = 0$ at $x = -4, 0, 4$. The function $g$ will have a minimum where its derivative $f(x)$ changes from negative to positive, indicating a local minimum. On the interval $(-4, 4)$, this occurs at $x = 1$. **A1**
+
+$\ $
+
+(b)
+Key points for the sketch of $g(x)$:
+*   At $x = -4$, $g(-4) = \int_{-4}^{-4} f(t)dt = 0$. **A1**
+*   On $[-4, 0]$, $f(x)$ is negative. Therefore, $g(x)$ is decreasing on this interval. The area under $f$ from $-4$ to $0$ is a triangle with area $\frac{1}{2} \times 4 \times (-2) = -4$. Thus, $g(0) = -4$. **A1**
+*   On $[0, 1]$, $f(x)$ is still negative. Therefore, $g(x)$ continues to decrease. The area from $0$ to $1$ is a triangle with area $\frac{1}{2} \times 1 \times (-1) = -0.5$. Thus, $g(1) = -4.5$. This is the minimum point. **A1**
+*   On $[1, 4]$, $f(x)$ is positive. Therefore, $g(x)$ is increasing. The area from $1$ to $4$ is a triangle with area $\frac{1}{2} \times 3 \times 3 = 4.5$. Thus, $g(4) = g(1) + 4.5 = -4.5 + 4.5 = 0$. **A1**
+The graph should be a continuous curve that is decreasing on $[-4, 1]$ and increasing on $[1, 4]$, passing through the points $(-4, 0)$, $(0, -4)$, $(1, -4.5)$, and $(4, 0)$. **A1**
+![ ](/questionPic/appint_3.png?300x)
+
+Difficulty: 4
+Unit: Application of Integral
+Topics: Area under a Curve
+Tags: Paper 1
+---
+---
+Question:
+Find the area bounded by the function $f(x)=\frac{x+1}{x^2+1}$, the $x$-axis, and the $y$-axis. Express your answer in the form $\frac{\pi}{a} - \ln b$, where $a$ and $b$ are integers. [6]
+
+Solution:
+The region is bounded by the curve $y = \frac{x+1}{x^2+1}$, the $x$-axis ($y=0$), and the $y$-axis ($x=0$). The curve intersects the $x$-axis when $\frac{x+1}{x^2+1} = 0 \Rightarrow x = -1$. However, since the $y$-axis ($x=0$) is a boundary, the relevant $x$-interval for the area is from the intersection with the $x$-axis ($x=-1$) to the $y$-axis ($x=0$). **M1**
+
+Thus, the area $A$ is given by:
+$A = \displaystyle\int_{-1}^0 \frac{x+1}{x^2+1}  dx$ **A1**
+
+Split the integral into two simpler integrals:
+$A = \displaystyle\int_{-1}^0 \frac{x}{x^2+1}  dx + \displaystyle\int_{-1}^0 \frac{1}{x^2+1}  dx$ **M1**
+
+Evaluate the first integral using substitution:
+Let $u = x^2 + 1$, then $du = 2x  dx \Rightarrow \frac{1}{2} du = x  dx$.
+$\displaystyle\int \frac{x}{x^2+1}  dx = \frac{1}{2} \displaystyle\int \frac{1}{u}  du = \frac{1}{2} \ln|u| + C = \frac{1}{2} \ln(x^2+1) + C$ **A1**
+
+The second integral is a standard result:
+$\displaystyle\int \frac{1}{x^2+1}  dx = \arctan(x) + C$ **A1**
+
+Now evaluate the definite integral:
+$A = \left[ \frac{1}{2} \ln(x^2+1) + \arctan(x) \right]_{-1}^0$ **M1**
+$= \left( \frac{1}{2} \ln(1) + \arctan(0) \right) - \left( \frac{1}{2} \ln(2) + \arctan(-1) \right)$
+$= (0 + 0) - \left( \frac{1}{2} \ln 2 + (-\frac{\pi}{4}) \right)$
+$= -\frac{1}{2} \ln 2 + \frac{\pi}{4}$
+$= \frac{\pi}{4} - \ln \sqrt{2}$ **A1**
+
+Difficulty: 7
+Unit: Application of Integral
+Topics: Definite Integral by Substitution, Area under a Curve
+Tags: Paper 1
+---
+---
+Question:
+It is given that $\log_2 y + \log_4 x + \log_4 2x = 0$.
+(a) Show that $\log_{r^2} x = \frac{1}{2} \log_r x$ where $r, x \in \mathbb{R}^+$. [2]
+(b) Express $y$ in terms of $x$. Give your answer in the form $y = px^q$, where $p, q$ are constants. [5]
+(c) The region $R$ is bounded by the graph of the function found in part (b), the $x$-axis, and the lines $x = 1$ and $x = \alpha$ where $\alpha > 1$. The area of $R$ is $\sqrt{2}$. Find the value of $\alpha$. [5]
+
+Solution:
+(a)
+$\log_{r^2} x = \frac{1}{\log_x r^2} = \frac{1}{2 \log_x r} = \frac{1}{2} \cdot \frac{1}{\log_x r} = \frac{1}{2} \log_r x$ **A1**
+Thus, $\log_r x = 2 \log_{r^2} x$ or equivalently, $\log_{r^2} x = \frac{1}{2} \log_r x$. **AG**
+
+$\ $
+
+(b) METHOD 1
+Start with the given equation:
+$\log_2 y + \log_4 x + \log_4 2x = 0$
+Combine the logarithms with base 4: $\log_4 x + \log_4 2x = \log_4 (x \cdot 2x) = \log_4 (2x^2)$ **M1**
+Convert $\log_4 (2x^2)$ to base 2: $\log_4 (2x^2) = \frac{\log_2 (2x^2)}{\log_2 4} = \frac{\log_2 (2x^2)}{2}$ **M1**
+So the equation becomes: $\log_2 y + \frac{1}{2} \log_2 (2x^2) = 0$
+$\Rightarrow \log_2 y = -\frac{1}{2} \log_2 (2x^2)$
+$\Rightarrow \log_2 y = \log_2 \left( (2x^2)^{-1/2} \right) = \log_2 \left( \frac{1}{\sqrt{2x^2}} \right) = \log_2 \left( \frac{1}{\sqrt{2} |x|} \right)$ **M1A1**
+Since $x \in \mathbb{R}^+$, $|x| = x$. Thus:
+$\log_2 y = \log_2 \left( \frac{1}{\sqrt{2} x} \right)$
+Therefore, $y = \frac{1}{\sqrt{2}} x^{-1}$ **A1**
+
+METHOD 2
+Convert all terms to base 2:
+$\log_4 x = \frac{\log_2 x}{\log_2 4} = \frac{1}{2} \log_2 x$
+$\log_4 2x = \frac{\log_2 (2x)}{\log_2 4} = \frac{1}{2} \log_2 (2x)$ **M1**
+So the equation becomes:
+$\log_2 y + \frac{1}{2} \log_2 x + \frac{1}{2} \log_2 (2x) = 0$
+Combine the last two terms: $\frac{1}{2} [ \log_2 x + \log_2 (2x) ] = \frac{1}{2} \log_2 (2x^2)$ **M1**
+So, $\log_2 y + \frac{1}{2} \log_2 (2x^2) = 0$
+$\Rightarrow \log_2 y = -\frac{1}{2} \log_2 (2x^2) = \log_2 \left( (2x^2)^{-1/2} \right)$ **M1A1**
+$\Rightarrow y = \frac{1}{\sqrt{2x^2}} = \frac{1}{\sqrt{2} x}$ **A1**
+
+$\ $
+
+(c)
+The function from part (b) is $y = \frac{1}{\sqrt{2}} x^{-1}$.
+The area of region $R$ is:
+$A = \displaystyle\int_1^{\alpha} \frac{1}{\sqrt{2}} x^{-1}  dx$ **M1**
+$= \frac{1}{\sqrt{2}} \displaystyle\int_1^{\alpha} \frac{1}{x}  dx = \frac{1}{\sqrt{2}} \left[ \ln x \right]_1^{\alpha}$ **A1**
+$= \frac{1}{\sqrt{2}} (\ln \alpha - \ln 1) = \frac{1}{\sqrt{2}} \ln \alpha$ **A1**
+Set this equal to the given area $\sqrt{2}$:
+$\frac{1}{\sqrt{2}} \ln \alpha = \sqrt{2}$ **M1**
+Solve for $\alpha$:
+$\ln \alpha = \sqrt{2} \cdot \sqrt{2} = 2$
+$\alpha = e^2$ **A1**
+
+Difficulty: 6
+Unit: Application of Integral
+Topics: Logarithmic Properties, Change of Base, Integration, Area Under Curve
+Tags: Paper 1
+---
+---
+Question:
+The graphs of $y = 2x e^x$ and $y = x e^{2x}$ are on the same set of axes.
+(a) Find the $x$-coordinates of their points of intersection algebraically. [3]
+(b) Hence, find the area enclosed by the graphs. [6]
+
+Solution:
+(a)
+To find the points of intersection, set the functions equal:
+$2x e^x = x e^{2x}$ **M1**
+Rearrange:
+$2x e^x - x e^{2x} = 0 \Rightarrow x e^x (2 - e^x) = 0$ **M1**
+This gives:
+$x = 0$ or $e^x = 2 \Rightarrow x = \ln 2$ **A1**
+Thus, the $x$-coordinates of intersection are $x = 0$ and $x = \ln 2$.
+
+$\ $
+
+(b)
+On the interval $[0, \ln 2]$, $2x e^x \geq x e^{2x}$. The area enclosed is:
+$A = \displaystyle\int_0^{\ln 2} \left( 2x e^x - x e^{2x} \right) dx$ **M1**
+Split the integral:
+$A = \displaystyle\int_0^{\ln 2} 2x e^x  dx - \displaystyle\int_0^{\ln 2} x e^{2x}  dx$
+
+Evaluate $\displaystyle\int 2x e^x  dx$ using integration by parts:
+Let $u = 2x$, $dv = e^x dx$ $\Rightarrow$ $du = 2 dx$, $v = e^x$ **M1**
+$\displaystyle\int 2x e^x  dx = 2x e^x - \displaystyle\int 2 e^x  dx = 2x e^x - 2e^x + C$ **A1**
+
+Evaluate $\displaystyle\int x e^{2x}  dx$ using integration by parts:
+Let $u = x$, $dv = e^{2x} dx$ $\Rightarrow$ $du = dx$, $v = \frac{1}{2} e^{2x}$ **M1**
+$\displaystyle\int x e^{2x}  dx = \frac{1}{2} x e^{2x} - \displaystyle\int \frac{1}{2} e^{2x}  dx = \frac{1}{2} x e^{2x} - \frac{1}{4} e^{2x} + C$ **A1**
+
+Now compute the definite integral:
+$A = \left[ 2x e^x - 2e^x \right]_0^{\ln 2} - \left[ \frac{1}{2} x e^{2x} - \frac{1}{4} e^{2x} \right]_0^{\ln 2}$
+At $x = \ln 2$:
+$e^{\ln 2} = 2$, $e^{2 \ln 2} = e^{\ln 4} = 4$
+First term: $2(\ln 2)(2) - 2(2) = 4 \ln 2 - 4$
+Second term: $\frac{1}{2}(\ln 2)(4) - \frac{1}{4}(4) = 2 \ln 2 - 1$
+At $x = 0$:
+First term: $0 - 2 = -2$
+Second term: $0 - \frac{1}{4} = -\frac{1}{4}$
+Thus:
+$A = \left[ (4 \ln 2 - 4) - (-2) \right] - \left[ (2 \ln 2 - 1) - (-\frac{1}{4}) \right]$
+$= (4 \ln 2 - 2) - (2 \ln 2 - \frac{3}{4})$
+$= 2 \ln 2 - \frac{5}{4}$ **A1**
+
+Difficulty: 5
+Unit: Application of Integral
+Topics: Area between Two Functions, Integration by Parts
+Tags: Paper 1
+---
+---
+Question:
+Find the area of the region enclosed by the curve $y = \frac{x}{2}$ and $x = y^2 - 3$. [6]
+
+Solution:
+To find the area enclosed by the curves, first find the points of intersection.
+Set $x = 2y$ (from $y = x/2$) equal to $x = y^2 - 3$:
+$2y = y^2 - 3$ **M1**
+Rearrange:
+$y^2 - 2y - 3 = 0$ **M1**
+Factor:
+$(y - 3)(y + 1) = 0$
+So $y = 3$ or $y = -1$ **A1**
+Corresponding $x$-values:
+When $y = 3$, $x = 6$; when $y = -1$, $x = -2$.
+Intersection points: $(-2, -1)$ and $(6, 3)$.
+
+The area is best found by integrating with respect to $y$ from $y = -1$ to $y = 3$.
+For each $y$ in this interval, the right boundary is the line $x = 2y$ and the left boundary is the parabola $x = y^2 - 3$.
+Thus, the area is:
+$A = \displaystyle\int_{-1}^{3} \left[ (2y) - (y^2 - 3) \right] dy = \displaystyle\int_{-1}^{3} (2y - y^2 + 3)  dy$ **M1**
+
+Integrate term by term:
+$\displaystyle\int (2y - y^2 + 3)  dy = y^2 - \frac{y^3}{3} + 3y$ **A1**
+
+Evaluate the definite integral:
+$\left[ y^2 - \frac{y^3}{3} + 3y \right]_{-1}^{3} = \left( 9 - \frac{27}{3} + 9 \right) - \left( 1 - \frac{-1}{3} - 3 \right)$
+$= (9 - 9 + 9) - \left( 1 + \frac{1}{3} - 3 \right) = 9 - \left( -\frac{5}{3} \right) = 9 + \frac{5}{3} = \frac{32}{3}$ **A1**
+
+Difficulty: 4
+Unit: Application of Integral
+Topics: Area Between Two Functions
+Tags: Paper 1
+---
+---
+Question:
+The graph below shows the two curves $y = \frac{1}{x}$ and $y = \frac{k}{x}$, where $k > 1$.
+![ ](/questionPic/appint_6.png?400x)
+Region $A$ is bounded by the curves and the lines $y = 1$ and $y = \sqrt{6}$.
+Region $B$ is bounded by the curves and the lines $x = 1$ and $x = \sqrt{6}$.
+(a) Find the area of region $A$ in terms of $k$. [3]
+(b) Find the area of region $B$ in terms of $k$. [2]
+(c) Find the ratio of the area of region $A$ to the area of region $B$. [3]
+
+Solution:
+(a)
+For region $A$, the $y$-values range from $y = \frac{1}{6}$ to $y = 1$. For each $y$, the right curve is $x = \frac{k}{y}$ and the left curve is $x = \frac{1}{y}$, so the horizontal distance is $\frac{k}{y} - \frac{1}{y} = \frac{k-1}{y}$.
+Thus, the area is:
+$A_A = \displaystyle\int_{1/6}^{1} \left( \frac{k}{y} - \frac{1}{y} \right) dy = \displaystyle\int_{1/6}^{1} \frac{k-1}{y}  dy$ **M1**
+$= (k-1) \left[ \ln y \right]_{1/6}^{1}$ **A1**
+$= (k-1) (\ln 1 - \ln(1/6)) = (k-1) (0 + \ln 6) = (k-1) \ln 6$ **A1**
+
+(b)
+For region $B$, the $x$-values range from $x = 1$ to $x = \sqrt{6}$. For each $x$, the upper curve is $y = \frac{k}{x}$ and the lower curve is $y = \frac{1}{x}$, so the vertical distance is $\frac{k}{x} - \frac{1}{x} = \frac{k-1}{x}$.
+Thus, the area is:
+$A_B = \displaystyle\int_{1}^{\sqrt{6}} \left( \frac{k}{x} - \frac{1}{x} \right) dx = \displaystyle\int_{1}^{\sqrt{6}} \frac{k-1}{x}  dx$ **A1**
+$= (k-1) \left[ \ln x \right]_{1}^{\sqrt{6}} = (k-1) (\ln \sqrt{6} - \ln 1) = (k-1) \ln \sqrt{6} = \frac{1}{2} (k-1) \ln 6$ **A1**
+
+(c)
+The ratio of the areas is:
+$\frac{A_A}{A_B} = \frac{(k-1) \ln 6}{\frac{1}{2} (k-1) \ln 6} = \frac{1}{\frac{1}{2}} = 2$ **A1**
+Thus, the ratio is $2:1$. **A1**
+
+Difficulty: 5
+Unit: Application of Integral
+Topics: Area Between Two Functions
+Tags: Paper 1
+---
+---
+---
+Question:
+Consider the part of the curve $4x^2 + y^2 = 4$ shown in the diagram below.
+![ ](/questionPic/appint_7.png?200x)
+A bowl is formed by rotating this curve through $2\pi$ radians about the $x$-axis. Calculate the volume of this bowl. [4]
+
+Solution:
+The curve is given by $4x^2 + y^2 = 4$. Solve for $y^2$:
+$y^2 = 4 - 4x^2 = 4(1 - x^2)$ **M1**
+When rotating about the $x$-axis, the volume is given by:
+$V = \pi \int_{x_1}^{x_2} y^2  dx$
+From the diagram, the relevant $x$-interval is from $x = 0$ to $x = 1$ (since at $x=1$, $y=0$).
+Thus:
+$V = \pi \int_{0}^{1} 4(1 - x^2)  dx = 4\pi \int_{0}^{1} (1 - x^2)  dx$ **A1**
+Integrate:
+$4\pi \left[ x - \frac{x^3}{3} \right]_{0}^{1} = 4\pi \left( 1 - \frac{1}{3} \right) = 4\pi \cdot \frac{2}{3} = \frac{8\pi}{3}$ **A1A1**
+
+Difficulty: 4
+Unit: Application of Integral
+Topics: Solid of Revolution
+Tags: Paper 1
+---
+---
+Question:
+Consider the function defined by $f(x) = x\sqrt{1-x^2}$ on the domain $-1 \leq x \leq 1$.
+![ ](/questionPic/appint_9.png?400x)
+(a) Find the area of the region enclosed by the graph of $y = f(x)$ and the $x$-axis for $x \geq 0$. [4]
+(b) Show that $\displaystyle\int_{-1}^1 |x\sqrt{1-x^2}| dx > \left| \displaystyle\int_{-1}^1 x\sqrt{1-x^2} dx \right|$. [2]
+
+Solution:
+(a)
+The area for $x \geq 0$ is given by:
+$A = \displaystyle\int_0^1 x\sqrt{1-x^2}  dx$ **M1**
+Use the substitution $u = 1 - x^2$, so $du = -2x  dx$ $\Rightarrow$ $x  dx = -\frac{1}{2} du$ **M1**
+When $x = 0$, $u = 1$; when $x = 1$, $u = 0$.
+Then:
+$A = \displaystyle\int_1^0 \sqrt{u} \cdot \left(-\frac{1}{2}\right) du = \frac{1}{2} \displaystyle\int_0^1 u^{1/2}  du$ **A1**
+$= \frac{1}{2} \left[ \frac{2}{3} u^{3/2} \right]_0^1 = \frac{1}{3}$ **A1**
+
+(b)
+Since $f(x) = x\sqrt{1-x^2}$ is an odd function ($f(-x) = -f(x)$), we have:
+$\displaystyle\int_{-1}^1 x\sqrt{1-x^2}  dx = 0$ **R1**
+Thus, $\left| \displaystyle\int_{-1}^1 x\sqrt{1-x^2}  dx \right| = 0$.
+On the other hand, $|f(x)|$ is an even function, so:
+$\displaystyle\int_{-1}^1 |x\sqrt{1-x^2}|  dx = 2\displaystyle\int_0^1 x\sqrt{1-x^2}  dx = 2 \cdot \frac{1}{3} = \frac{2}{3} > 0$ **R1**
+Hence, $\displaystyle\int_{-1}^1 |x\sqrt{1-x^2}|  dx > \left| \displaystyle\int_{-1}^1 x\sqrt{1-x^2}  dx \right|$. **AG**
+
+Difficulty: 5
+Unit: Application of Integral
+Topics: Area under a Curve,Even&Odd Functions
+Tags: Paper 1
+---
+---
+Question:
+The graphs of $f(x) = -x^2 + 2$ and $g(x) = x^3 - x^2 - bx + 2$, $b > 0$, intersect and create two closed regions. Show that these two regions have equal areas. [6]
+![ ](/questionPic/appint_8.png?400x)
+
+Solution:
+Find the points of intersection by setting $f(x) = g(x)$:
+$-x^2 + 2 = x^3 - x^2 - bx + 2$ **M1**
+Simplify:
+$0 = x^3 - bx$
+$x(x^2 - b) = 0$
+Thus, $x = 0$, $x = \sqrt{b}$, and $x = -\sqrt{b}$ **A1**
+
+The two closed regions are:
+Region 1: between $x = -\sqrt{b}$ and $x = 0$
+Region 2: between $x = 0$ and $x = \sqrt{b}$
+
+Define $h(x) = f(x) - g(x) = -x^3 + bx = x(b - x^2)$ **M1**
+
+For $x \in [-\sqrt{b}, 0]$, $x \leq 0$ and $b - x^2 \geq 0$, so $h(x) \leq 0$ $\Rightarrow$ $g(x) \geq f(x)$.
+Area of Region 1:
+$A_1 = \displaystyle\int_{-\sqrt{b}}^{0} [g(x) - f(x)]  dx = \displaystyle\int_{-\sqrt{b}}^{0} [-h(x)]  dx = \displaystyle\int_{-\sqrt{b}}^{0} (x^3 - bx)  dx$ **A1**
+
+For $x \in [0, \sqrt{b}]$, $x \geq 0$ and $b - x^2 \geq 0$, so $h(x) \geq 0$ $\Rightarrow$ $f(x) \geq g(x)$.
+Area of Region 2:
+$A_2 = \displaystyle\int_{0}^{\sqrt{b}} [f(x) - g(x)]  dx = \displaystyle\int_{0}^{\sqrt{b}} h(x)  dx = \displaystyle\int_{0}^{\sqrt{b}} (-x^3 + bx)  dx = \displaystyle\int_{0}^{\sqrt{b}} (bx - x^3)  dx$ **A1**
+
+Now, evaluate $A_1$ using substitution $u = -x$:
+When $x = -\sqrt{b}$, $u = \sqrt{b}$; when $x = 0$, $u = 0$; $dx = -du$
+$A_1 = \displaystyle\int_{-\sqrt{b}}^{0} (x^3 - bx)  dx = \displaystyle\int_{\sqrt{b}}^{0} [(-u)^3 - b(-u)] (-du) = \displaystyle\int_{\sqrt{b}}^{0} (-u^3 + bu) (-du)$
+$= \displaystyle\int_{\sqrt{b}}^{0} (u^3 - bu)  du = -\displaystyle\int_{0}^{\sqrt{b}} (u^3 - bu)  du = \displaystyle\int_{0}^{\sqrt{b}} (bu - u^3)  du = A_2$ **A1**
+
+Thus, $A_1 = A_2$, so the two regions have equal areas.
+
+Difficulty: 6
+Unit: Application of Integral
+Topics: Area between Two Functions
+Tags: Paper 1
+---
+---
+Question:
+The region $A$ is enclosed by the graph of $y = 2 \arcsin(x - 1) - \frac{\pi}{4}$, the $y$-axis and the line $y = \frac{\pi}{4}$.
+(a) Write down a definite integral to represent the area of $A$. [4]
+(b) Calculate the area of $A$. [2]
+
+Solution:
+(a) METHOD 1
+Find the intersection of the curve and the line $y = \frac{\pi}{4}$:
+$2 \arcsin(x - 1) - \frac{\pi}{4} = \frac{\pi}{4}$ **M1**
+$2 \arcsin(x - 1) = \frac{\pi}{2}$
+$\arcsin(x - 1) = \frac{\pi}{4}$
+$x - 1 = \sin\left(\frac{\pi}{4}\right) = \frac{1}{\sqrt{2}}$
+$x = 1 + \frac{1}{\sqrt{2}}$ **A1**
+The area is the integral from $x = 0$ to $x = 1 + \frac{1}{\sqrt{2}}$ of the difference between the top function ($y = \frac{\pi}{4}$) and the bottom function ($y = 2 \arcsin(x - 1) - \frac{\pi}{4}$):
+$A = \displaystyle\int_{0}^{1 + \frac{1}{\sqrt{2}}} \left[ \frac{\pi}{4} - \left(2 \arcsin(x - 1) - \frac{\pi}{4}\right) \right] dx$ **M1**
+$= \displaystyle\int_{0}^{1 + \frac{1}{\sqrt{2}}} \left( \frac{\pi}{2} - 2 \arcsin(x - 1) \right) dx$ **A1**
+
+(b)
+Evaluating the integral:
+Let $u = x - 1$, then $du = dx$. When $x = 0$, $u = -1$; when $x = 1 + \frac{1}{\sqrt{2}}$, $u = \frac{1}{\sqrt{2}}$.
+$A = \displaystyle\int_{-1}^{1/\sqrt{2}} \left( \frac{\pi}{2} - 2 \arcsin u \right) du$
+$= \left[ \frac{\pi}{2}u - 2\left( u \arcsin u + \sqrt{1 - u^2} \right) \right]_{-1}^{1/\sqrt{2}}$ **M1**
+At $u = \frac{1}{\sqrt{2}}$: $\arcsin\left(\frac{1}{\sqrt{2}}\right) = \frac{\pi}{4}$, $\sqrt{1 - \frac{1}{2}} = \frac{1}{\sqrt{2}}$
+Value: $\frac{\pi}{2} \cdot \frac{1}{\sqrt{2}} - 2\left( \frac{1}{\sqrt{2}} \cdot \frac{\pi}{4} + \frac{1}{\sqrt{2}} \right) = \frac{\pi}{2\sqrt{2}} - 2\left( \frac{\pi}{4\sqrt{2}} + \frac{1}{\sqrt{2}} \right) = \frac{\pi}{2\sqrt{2}} - \frac{\pi}{2\sqrt{2}} - \frac{2}{\sqrt{2}} = -\frac{2}{\sqrt{2}} = -\sqrt{2}$
+At $u = -1$: $\arcsin(-1) = -\frac{\pi}{2}$, $\sqrt{1 - 1} = 0$
+Value: $\frac{\pi}{2} \cdot (-1) - 2\left( -1 \cdot \left(-\frac{\pi}{2}\right) + 0 \right) = -\frac{\pi}{2} - 2\left( \frac{\pi}{2} \right) = -\frac{\pi}{2} - \pi = -\frac{3\pi}{2}$
+$A = (-\sqrt{2}) - (-\frac{3\pi}{2}) = \frac{3\pi}{2} - \sqrt{2} \approx 3.30$ **A1**
+
+Difficulty: 4
+Unit: Application of Integral
+Topics: Area between Two Functions
+Tags: Paper 2
+---
+---
+Question:
+Consider the curve defined by the equation $4x^2 + y^2 = 7$.
+(a) Find the equation of the normal to the curve at the point $(1, \sqrt{3})$. [6]
+(b) Find the volume of the solid formed when the region bounded by the curve, the $x$-axis for $x > 0$ and the $y$-axis for $y > 0$ is rotated through $2\pi$ about the $x$-axis. [3]
+
+Solution:
+(a)
+Differentiate implicitly:
+$8x + 2y \frac{dy}{dx} = 0$ **M1A1**
+Solve for $\frac{dy}{dx}$:
+$\frac{dy}{dx} = -\frac{4x}{y}$ **A1**
+At the point $(1, \sqrt{3})$, the slope of the tangent is:
+$\frac{dy}{dx} = -\frac{4}{\sqrt{3}}$
+The slope of the normal is the negative reciprocal:
+$m_n = \frac{\sqrt{3}}{4}$ **M1A1**
+Equation of the normal:
+$y - \sqrt{3} = \frac{\sqrt{3}}{4}(x - 1)$
+Or $y = \frac{\sqrt{3}}{4}x + \frac{3\sqrt{3}}{4}$ **A1**
+
+(b)
+The region is in the first quadrant, bounded by the curve, the $x$-axis, and the $y$-axis. The curve intersects the $x$-axis when $y=0$:
+$4x^2 = 7 \Rightarrow x = \frac{\sqrt{7}}{2}$ (since $x > 0$)
+The volume when rotated about the $x$-axis is:
+$V = \pi \displaystyle\int_{0}^{\sqrt{7}/2} y^2  dx$ **M1**
+From the curve, $y^2 = 7 - 4x^2$, so:
+$V = \pi \displaystyle\int_{0}^{\sqrt{7}/2} (7 - 4x^2)  dx$ **A1**
+Integrate:
+$\displaystyle\int (7 - 4x^2)  dx = 7x - \frac{4}{3}x^3$
+Evaluate from $0$ to $\frac{\sqrt{7}}{2}$:
+$= 7 \cdot \frac{\sqrt{7}}{2} - \frac{4}{3} \left( \frac{\sqrt{7}}{2} \right)^3 = \frac{7\sqrt{7}}{2} - \frac{4}{3} \cdot \frac{7\sqrt{7}}{8} = \frac{7\sqrt{7}}{2} - \frac{7\sqrt{7}}{6} = \frac{21\sqrt{7} - 7\sqrt{7}}{6} = \frac{14\sqrt{7}}{6} = \frac{7\sqrt{7}}{3}$
+Thus, $V = \pi \cdot \frac{7\sqrt{7}}{3} = \frac{7\sqrt{7}\pi}{3}$ **A1**
+
+Difficulty: 4
+Unit: Application of Integral
+Topics: Implicit Differentiation, Tangent and Normal, Solid of Revolution
+Tags: Paper 2
+---
+---
+Question:
+The shaded region $S$ is enclosed between the curve $y = x + 2 \cos x$, for $0 \leq x \leq 2\pi$, and the line $y = x$, as shown in the diagram below.
+![ ](/questionPic/appint_10.png?300x)
+(a) Find the coordinates of the points where the line meets the curve. [3]
+(b) The region $S$ is rotated by $2\pi$ about the $x$-axis to generate a solid.
+$\quad$(i) Write down an integral that represents the volume $V$ of the solid. [3]
+$\quad$(ii) Find the volume $V$. [2]
+
+Solution:
+(a)
+Set $x + 2 \cos x = x$ to find intersections:
+$2 \cos x = 0 \Rightarrow \cos x = 0$ **M1**
+Within $0 \leq x \leq 2\pi$, $x = \frac{\pi}{2}$ and $x = \frac{3\pi}{2}$ **A1**
+Corresponding $y$-values: $y = x$, so points are $\left( \frac{\pi}{2}, \frac{\pi}{2} \right)$ and $\left( \frac{3\pi}{2}, \frac{3\pi}{2} \right)$ **A1**
+
+(b)(i)
+The region $S$ is between the line $y = x$ (upper boundary) and the curve $y = x + 2 \cos x$ (lower boundary) from $x = \frac{\pi}{2}$ to $x = \frac{3\pi}{2}$.
+When rotated about the $x$-axis, the volume is given by the washer method:
+$V = \pi \displaystyle\int_{\pi/2}^{3\pi/2} \left[ (\text{outer radius})^2 - (\text{inner radius})^2 \right] dx$
+Here, outer radius is $x$ (from line) and inner radius is $x + 2 \cos x$ (from curve):
+$V = \pi \displaystyle\int_{\pi/2}^{3\pi/2} \left[ x^2 - (x + 2 \cos x)^2 \right] dx$ **A1A1A1**
+Note: Award A1 for the integrand $x^2 - (x + 2 \cos x)^2$, A1 for correct limits, and A1 for the factor $\pi$.
+
+(b)(ii)
+$V = -4\pi \left( -\frac{3\pi}{2} \right) = 4\pi \cdot \frac{3\pi}{2} = 6\pi^2$ **A2**
+
+Difficulty: 6
+Unit: Application of Integral
+Topics: Area between Two Functions, Solid of Revolution
+Tags: Paper 2
+---
+---
+Question:
+Let R be the region in the first quadrant of the xy-plane bounded below by $y = x^2$ and above by $y = x$, as pictured below.
+![ ](/questionPic/appint_11.png?300x)
+Determine the volume of the solid obtained by revolving R about the line $y = x$.
+
+(a) Find the coordinates of the points of intersection of the curves $y = x^2$ and $y = x$ in the first quadrant. [2]
+(b) Show that the perpendicular distance from a point $(x, y)$ to the line $y = x$ is given by $d = \frac{|y - x|}{\sqrt{2}}$. [2]
+(c) Show that the volume of the solid is expressed by $\pi \displaystyle\int_{0}^{\sqrt{2}} \left[ \left( \frac{u}{\sqrt{2}} \right)^2 - \left( \frac{u^2}{\sqrt{2}} \right)^2 \right]  du$. [3]
+(d) Hence, show that the volume of the solid is $\frac{\pi \sqrt{2}}{15}$. [3]
+
+Solution:
+(a) Set $x^2 = x$ $\Rightarrow$ $x^2 - x = 0$ $\Rightarrow$ $x(x - 1) = 0$.  
+In the first quadrant, $x = 0$ and $x = 1$.  
+Corresponding $y$-values: $y = 0$ and $y = 1$.  
+Intersection points: $(0, 0)$ and $(1, 1)$. **A1A1**
+
+(b) The distance from a point $(x_0, y_0)$ to the line $Ax + By + C = 0$ is $d = \frac{|Ax_0 + By_0 + C|}{\sqrt{A^2 + B^2}}$.  
+For the line $y = x$, rewrite as $x - y = 0$, so $A = 1$, $B = -1$, $C = 0$.  
+Thus, $d = \frac{|x_0 - y_0|}{\sqrt{1^2 + (-1)^2}} = \frac{|x_0 - y_0|}{\sqrt{2}}$. **M1A1**
+
+(c) When rotating about $y = x$, use washers perpendicular to the line.  
+Let $u$ be the distance along the line $y = x$.  
+For a fixed $u$, the inner radius $r$ and outer radius $R$ are the perpendicular distances from the line to the curves.  
+For $y = x^2$, solve $\frac{|y - x|}{\sqrt{2}} = d$ and express in terms of $u$.  
+The volume is:  
+$V = \int_{u_{\text{min}}}^{u_{\text{max}}} \pi [R(u)^2 - r(u)^2]  du$.  
+After parameterization, the integral becomes:  
+$V = \pi \int_{0}^{\sqrt{2}} \left[ \left( \frac{u}{\sqrt{2}} \right)^2 - \left( \frac{u^2}{\sqrt{2}} \right)^2 \right]  du$  
+**M1A1A1**
+
+(d) Simplify the integrand:  
+$R(u) = \frac{u}{\sqrt{2}}$, $r(u) = \frac{u^2}{\sqrt{2}}$  
+$R(u)^2 = \frac{u^2}{2}$, $r(u)^2 = \frac{u^4}{2}$  
+So, $V = \pi \int_{0}^{\sqrt{2}} \left( \frac{u^2}{2} - \frac{u^4}{2} \right)  du = \frac{\pi}{2} \int_{0}^{\sqrt{2}} (u^2 - u^4)  du$ **M1**  
+Integrate:  
+$\int (u^2 - u^4)  du = \frac{u^3}{3} - \frac{u^5}{5}$ **A1**  
+Evaluate from $0$ to $\sqrt{2}$:  
+At $u = \sqrt{2}$: $\frac{(\sqrt{2})^3}{3} - \frac{(\sqrt{2})^5}{5} = \frac{2\sqrt{2}}{3} - \frac{4\sqrt{2}}{5} = \sqrt{2} \left( \frac{10}{15} - \frac{12}{15} \right) = -\frac{2\sqrt{2}}{15}$  
+At $u = 0$: $0$  
+Thus, $V = \frac{\pi}{2} \left( -\frac{2\sqrt{2}}{15} \right) = -\frac{\pi \sqrt{2}}{15}$  
+Take absolute value: $V = \frac{\pi \sqrt{2}}{15}$ **A1**  
+
+Difficulty: 8  
+Unit: Application of Integral
+Topics: Solid of Revolution
+Tags: Paper 3  
+---

@@ -1,0 +1,561 @@
+---
+Question:
+A particle moves along a straight line. Its displacement, $s$ metres, at time $t$ seconds is given by $s = t + \cos 2t$, $t \geq 0$. The first two times when the particle is at rest are denoted by $t_1$ and $t_2$, where $t_1 < t_2$.
+(a) Find $t_1$ and $t_2$. [5]
+(b) Find the displacement of the particle when $t = t_1$. [2]
+
+Solution:
+(a)
+The particle is at rest when its velocity is zero. Velocity is the derivative of displacement with respect to time.
+$v = \frac{ds}{dt} = \frac{d}{dt}(t + \cos 2t) = 1 - 2\sin 2t$ **M1**
+Set $v = 0$:
+$1 - 2\sin 2t = 0$ **M1**
+$\Rightarrow \sin 2t = \frac{1}{2}$ **A1**
+Solve for $t$:
+$2t = \frac{\pi}{6}, \frac{5\pi}{6}, \frac{13\pi}{6}, \ldots$ (within the domain $t \geq 0$)
+$t = \frac{\pi}{12}, \frac{5\pi}{12}, \frac{13\pi}{12}, \ldots$ **A1**
+Thus, the first two times are:
+$t_1 = \frac{\pi}{12}$ s, $t_2 = \frac{5\pi}{12}$ s **A1**
+
+$\ $
+
+(b)
+Substitute $t_1 = \frac{\pi}{12}$ into the displacement equation:
+$s = t + \cos 2t = \frac{\pi}{12} + \cos\left(2 \cdot \frac{\pi}{12}\right) = \frac{\pi}{12} + \cos\left(\frac{\pi}{6}\right)$ **M1**
+$\cos\left(\frac{\pi}{6}\right) = \frac{\sqrt{3}}{2}$
+Therefore, $s = \frac{\pi}{12} + \frac{\sqrt{3}}{2}$ m **A1**
+
+Difficulty: 4
+Unit: Kinematics
+Topics: Displacement, Velocity, Acceleration
+Tags: Paper 1
+---
+---
+Question:
+A body is moving in a straight line. When it is $s$ metres from a fixed point $O$ on the line its velocity, $v$, is given by $v = -\frac{1}{s^2}$, $s > 0$. Find the acceleration of the body when it is 50 cm from $O$. [6]
+
+Solution:
+First, find the derivative of velocity with respect to displacement:
+$\frac{dv}{ds} = \frac{d}{ds}\left(-s^{-2}\right) = 2s^{-3}$ **M1A1**
+
+Use the chain rule to find acceleration:
+$a = v \frac{dv}{ds}$ **M1**
+$a = -\frac{1}{s^2} \times \frac{2}{s^3} = -\frac{2}{s^5}$ **A1**
+
+Convert 50 cm to metres: $s = 0.5$ m
+Substitute $s = 0.5$ into the acceleration equation:
+$a = -\frac{2}{(0.5)^5} = -\frac{2}{0.03125} = -64$ **M1A1**
+The acceleration is $-64$ ms$^{-2}$.
+
+Difficulty: 4
+Unit: Kinematics
+Topics: Velocity, Acceleration
+Tags: Paper 1
+---
+---
+Question:
+A particle P moves in a straight line with displacement relative to origin given by $s = 2\sin(\pi t) + \sin(2\pi t)$, $t > 0$, where $t$ is the time in seconds and the displacement is measured in centimetres.
+(i) Write down the period of the function $s$. [1]
+(ii) Find expressions for the velocity, $v$, and the acceleration, $a$, of P. [4]
+(iii) Determine all the solutions of the equation $v = 0$ for $0 < t < 4$. [5]
+
+Solution:
+(i)
+The period of $\sin(\pi t)$ is 2 seconds, and the period of $\sin(2\pi t)$ is 1 second. The fundamental period is the least common multiple, which is 2 seconds.
+Period = 2 seconds **A1**
+
+(ii)
+Velocity is the derivative of displacement:
+$v = \frac{ds}{dt} = 2\pi \cos(\pi t) + 2\pi \cos(2\pi t)$ **M1A1**
+Acceleration is the derivative of velocity:
+$a = \frac{dv}{dt} = -2\pi^2 \sin(\pi t) - 4\pi^2 \sin(2\pi t)$ **M1A1**
+
+(iii)
+Set $v = 0$:
+$2\pi (\cos(\pi t) + \cos(2\pi t)) = 0$
+$\Rightarrow \cos(\pi t) + \cos(2\pi t) = 0$ **M1**
+Use the identity $\cos(2\pi t) = 2\cos^2(\pi t) - 1$:
+$\cos(\pi t) + 2\cos^2(\pi t) - 1 = 0$
+$2\cos^2(\pi t) + \cos(\pi t) - 1 = 0$
+Factorize:
+$(2\cos(\pi t) - 1)(\cos(\pi t) + 1) = 0$ **A1**
+Thus:
+$\cos(\pi t) = \frac{1}{2}$ or $\cos(\pi t) = -1$ **A1**
+Solve $\cos(\pi t) = \frac{1}{2}$:
+$\pi t = \frac{\pi}{3}, \frac{5\pi}{3}, \frac{7\pi}{3}, \frac{11\pi}{3}$ (within $0 < t < 4$)
+$t = \frac{1}{3}, \frac{5}{3}, \frac{7}{3}, \frac{11}{3}$ **A1**
+Solve $\cos(\pi t) = -1$:
+$\pi t = \pi, 3\pi$ (within $0 < t < 4$)
+$t = 1, 3$ **A1**
+All solutions: $t = \frac{1}{3}, 1, \frac{5}{3}, \frac{7}{3}, 3, \frac{11}{3}$ seconds.
+
+Difficulty: 5
+Unit: Kinematics
+Topics: Displacement, Velocity, Acceleration
+Tags: Paper 1
+---
+---
+Question:
+The displacement, $s$, in metres, of a particle $t$ seconds after it passes through the origin is given by the expression $s = \ln(2 - e^{-t})$, $t \geq 0$.
+(a) Find an expression for the velocity, $v$, of the particle at time $t$. [2]
+(b) Find an expression for the acceleration, $a$, of the particle at time $t$. [2]
+(c) Find the acceleration of the particle at time $t = 0$. [1]
+
+Solution:
+(a)
+Velocity is the derivative of displacement with respect to time:
+$v = \frac{ds}{dt} = \frac{d}{dt}[\ln(2 - e^{-t})]$ **M1**
+Using the chain rule:
+$v = \frac{1}{2 - e^{-t}} \cdot \frac{d}{dt}(2 - e^{-t}) = \frac{1}{2 - e^{-t}} \cdot e^{-t} = \frac{e^{-t}}{2 - e^{-t}}$ **A1**
+
+(b)
+Acceleration is the derivative of velocity with respect to time:
+$a = \frac{dv}{dt} = \frac{d}{dt}\left(\frac{e^{-t}}{2 - e^{-t}}\right)$ **M1**
+Using the quotient rule:
+$a = \frac{(-e^{-t})(2 - e^{-t}) - (e^{-t})(e^{-t})}{(2 - e^{-t})^2} = \frac{-2e^{-t} + e^{-2t} - e^{-2t}}{(2 - e^{-t})^2} = \frac{-2e^{-t}}{(2 - e^{-t})^2}$ **A1**
+
+(c)
+Substitute $t = 0$ into the acceleration expression:
+$a(0) = \frac{-2e^{0}}{(2 - e^{0})^2} = \frac{-2}{(2 - 1)^2} = \frac{-2}{1} = -2$ **A1**
+The acceleration at time $t = 0$ is $-2$ ms$^{-2}$.
+
+Difficulty: 3
+Unit: Kinematics
+Topics: Displacement, Velocity, Acceleration
+Tags: Paper 1
+---
+---
+Question:
+A particle moves such that its velocity $v$ ms$^{-1}$ is related to its displacement $s$ m, by the equation $v(s) = \arctan(\sin s)$, $0 \leq s \leq 1$. The particle's acceleration is $a$ ms$^{-2}$.
+(a) Find the particle's acceleration in terms of $s$. [4]
+(b) Using an appropriate sketch graph, find the particle's displacement when its acceleration is $0.25$ ms$^{-2}$. [2]
+
+Solution:
+(a)
+Acceleration can be found using the chain rule: $a = v \frac{dv}{ds}$ **M1**
+First, find $\frac{dv}{ds}$:
+$v = \arctan(\sin s)$
+$\frac{dv}{ds} = \frac{1}{1 + (\sin s)^2} \cdot \cos s = \frac{\cos s}{1 + \sin^2 s}$ **M1A1**
+Now compute acceleration:
+$a = \arctan(\sin s) \cdot \frac{\cos s}{1 + \sin^2 s}$ **A1**
+
+(b)
+To find when $a = 0.25$ ms$^{-2}$, we solve:
+$\frac{\arctan(\sin s) \cos s}{1 + \sin^2 s} = 0.25$
+This equation can be solved graphically by sketching $y = a(s)$ and $y = 0.25$ on the interval $0 \leq s \leq 1$. **M1**
+either:
+![ ](/questionPic/kin_1.png?300x)
+or
+![ ](/questionPic/kin_2.png?300x)
+The solutions are approximately $s = 0.296$ m and $s = 0.918$ m. **A1**
+
+Difficulty: 5
+Unit: Kinematics
+Topics: Velocity, Acceleration
+Tags: Paper 2
+---
+
+---
+Question:
+Xavier, the parachutist, jumps out of a plane at a height of $h$ metres above the ground. After free falling for 10 seconds his parachute opens. His velocity, $v$ ms$^{-1}$, $t$ seconds after jumping from the plane, can be modelled by the function
+$v(t) = 
+\begin{cases} 
+9.8t, & 0 \leq t \leq 10 \\ 
+\frac{98}{\sqrt{1 + (t - 10)^2}}, & t > 10 
+\end{cases}$
+His velocity when he reaches the ground is $2.8$ ms$^{-1}$.
+(a) Find his velocity when $t = 15$. [2]
+(b) Calculate the vertical distance Xavier travelled in the first 10 seconds. [2]
+(c) Determine the value of $h$. [5]
+
+Solution:
+(a)
+For $t = 15 > 10$, use the second case:
+$v(15) = \frac{98}{\sqrt{1 + (15 - 10)^2}} = \frac{98}{\sqrt{1 + 25}} = \frac{98}{\sqrt{26}}$ **M1**
+$v(15) = 19.2$ ms$^{-1}$ **A1**
+
+(b)
+Distance traveled in first 10 seconds:
+$s = \displaystyle\int_0^{10} v(t)  dt = \displaystyle\int_0^{10} 9.8t  dt$ **M1**
+$s = \left[4.9t^2\right]_0^{10} = 4.9 \times 100 = 490$ m **A1**
+
+(c)
+First, find the time $T$ when Xavier reaches the ground (when $v(T) = 2.8$ ms$^{-1}$):
+$\frac{98}{\sqrt{1 + (T - 10)^2}} = 2.8$ **M1**
+Solve for $T$:
+$\sqrt{1 + (T - 10)^2} = \frac{98}{2.8} = 35$
+$1 + (T - 10)^2 = 1225$
+$(T - 10)^2 = 1224$
+$T - 10 = \sqrt{1224} = 34.985...$
+$T = 44.985$ seconds **A1**
+
+Now calculate total distance fallen:
+$h = \displaystyle\int_0^{10} 9.8t  dt + \displaystyle\int_{10}^{44.985} \frac{98}{\sqrt{1 + (t - 10)^2}}  dt$ **M1A1**
+The first integral is 490 m (from part b).
+For the second integral, use substitution $u = t - 10$:
+$\displaystyle\int_{0}^{34.985} \frac{98}{\sqrt{1 + u^2}}  du = 98[\sinh^{-1} u]_0^{34.985} = 98\sinh^{-1}(34.985)$
+$\sinh^{-1}(34.985) \approx \ln(34.985 + \sqrt{34.985^2 + 1}) \approx \ln(69.97) \approx 4.248$
+Thus second distance $\approx 98 \times 4.248 \approx 416.3$ m
+Total height $h \approx 490 + 416.3 = 906.3$ m
+$h = 906$ m **A1**
+
+Difficulty: 6
+Unit: Kinematics
+Topics: Velocity, Acceleration
+Tags: Paper 2
+---
+---
+Question:
+Particle $A$ moves such that its velocity $v$ ms$^{-1}$, at time $t$ seconds, is given by $v(t) = \frac{t}{12 + t^4}$, $t \geq 0$.
+Particle $B$ moves such that its velocity $v$ ms$^{-1}$ is related to its displacement $s$ m, by the equation $v(s) = \arcsin \left( \sqrt{s} \right)$.
+(a) Sketch the graph of $y = v(t)$, indicate clearly the local maximum and write down its coordinates. [2]
+(b) Use the substitution $u = t^2$ to find $\displaystyle\int \frac{t}{12 + t^4}  dt$. [4]
+(c) Find the exact distance travelled by particle $A$ between $t = 0$ and $t = 6$ seconds. Give your answer in the form $k \arctan(b)$, $k, b \in \mathbb{R}$. [3]
+(d) Find the acceleration of particle $B$ when $s = 0.1$ m. [3]
+
+Solution:
+(a)
+![ ](/questionPic/kin_3.png?300x) **A1**
+Coordinates of local maximum: $\left( \sqrt{2}, \frac{\sqrt{2}}{16} \right)$ or approximately $(1.41, 0.0884)$ **A1**
+
+(b)
+Use substitution $u = t^2$, then $du = 2t  dt$ **A1**
+$\displaystyle\int \frac{t}{12 + t^4}  dt = \frac{1}{2} \displaystyle\int \frac{du}{12 + u^2}$ **M1**
+$= \frac{1}{2\sqrt{12}} \arctan \left( \frac{u}{\sqrt{12}} \right) + C$ **M1**
+$= \frac{1}{4\sqrt{3}} \arctan \left( \frac{t^2}{2\sqrt{3}} \right) + C$ **A1**
+
+(c)
+Distance traveled by particle A from $t = 0$ to $t = 6$:
+$\displaystyle\int_0^6 v(t)  dt = \displaystyle\int_0^6 \frac{t}{12 + t^4}  dt$ **M1**
+Using the result from part (b):
+$= \left[ \frac{1}{4\sqrt{3}} \arctan \left( \frac{t^2}{2\sqrt{3}} \right) \right]_0^6$ **M1**
+$= \frac{1}{4\sqrt{3}} \left( \arctan \left( \frac{36}{2\sqrt{3}} \right) - \arctan(0) \right) = \frac{1}{4\sqrt{3}} \arctan \left( \frac{18}{\sqrt{3}} \right)$ **A1**
+
+(d)
+For particle B, acceleration $a = v \frac{dv}{ds}$ **M1**
+First, find $\frac{dv}{ds}$:
+$v = \arcsin (\sqrt{s})$
+$\frac{dv}{ds} = \frac{1}{\sqrt{1 - (\sqrt{s})^2}} \cdot \frac{1}{2\sqrt{s}} = \frac{1}{2\sqrt{s(1-s)}}$ **A1**
+Thus, $a = \arcsin (\sqrt{s}) \cdot \frac{1}{2\sqrt{s(1-s)}}$
+At $s = 0.1$:
+$a = \arcsin (\sqrt{0.1}) \cdot \frac{1}{2\sqrt{0.1 \times 0.9}} = 0.536$ ms$^{-2}$ **A1**
+
+Difficulty: 5
+Unit: Kinematics
+Topics: Velocity, Acceleration
+Tags: Paper 2
+---
+---
+Question:
+A point P moves in a straight line with velocity $v$ ms$^{-1}$ given by $v(t) = e^{-t} - 8t^2e^{-2t}$ at time $t$ seconds, where $t \geq 0$.
+(a) Determine the first time $t_1$ at which P has zero velocity. [2]
+(b)
+$\quad$(i) Find an expression for the acceleration of P at time $t$. [2]
+$\quad$(ii) Find the value of the acceleration of P at time $t_1$. [1]
+
+Solution:
+(a)
+Set velocity equal to zero:
+$v(t) = e^{-t} - 8t^2e^{-2t} = 0$ **M1**
+$e^{-t}(1 - 8t^2e^{-t}) = 0$
+Since $e^{-t} \neq 0$ for all $t$, solve:
+$1 - 8t^2e^{-t} = 0$
+$8t^2e^{-t} = 1$
+This equation can be solved numerically:
+$t_1 = 0.441$ seconds **A1**
+
+(b)(i)
+Acceleration is the derivative of velocity:
+$a(t) = \frac{dv}{dt} = \frac{d}{dt}(e^{-t} - 8t^2e^{-2t})$ **M1**
+Using product rule on the second term:
+$a(t) = -e^{-t} - [16te^{-2t} - 16t^2e^{-2t}] = -e^{-t} - 16te^{-2t} + 16t^2e^{-2t}$ **A1**
+
+(b)(ii)
+Substitute $t_1 = 0.441$ into the acceleration expression:
+$a(t_1) = -e^{-0.441} - 16(0.441)e^{-2(0.441)} + 16(0.441)^2e^{-2(0.441)}$ **M1**
+$a(t_1) = -2.28$ ms$^{-2}$ **A1**
+
+Difficulty: 4
+Unit: Kinematics
+Topics: Velocity, Acceleration
+Tags: Paper 2
+---
+---
+Question:
+A particle performing 1-dimensional motion has the distance function: $s(t) = \ln(2 - e^{-t})$.
+(a) Find the time $t_0$ when the particle’s velocity is 1. [2]
+(b) Show that the object always moves to a single direction (no turn). [2]
+(c) Show that the object never slows down. [2]
+
+Solution:
+(a)
+Velocity $v(t) = \frac{ds}{dt} = \frac{d}{dt} \ln(2 - e^{-t}) = \frac{e^{-t}}{2 - e^{-t}}$ **M1**
+Set $v(t) = 1$:
+$\frac{e^{-t}}{2 - e^{-t}} = 1$
+$e^{-t} = 2 - e^{-t}$
+$2e^{-t} = 2$
+$e^{-t} = 1$
+$t = 0$ **A1**
+Thus, $t_0 = 0$ seconds.
+
+(b)
+Since $e^{-t} > 0$ and $2 - e^{-t} > 0$ for all $t \geq 0$, $v(t) > 0$ for all $t \geq 0$. **M1**
+Therefore, the velocity is always positive, so the object always moves in the same direction (no turn). **A1**
+
+(c)
+Acceleration $a(t) = \frac{dv}{dt} = \frac{d}{dt} \left( \frac{e^{-t}}{2 - e^{-t}} \right)$.
+Using the quotient rule:
+$a(t) = \frac{ (-e^{-t})(2 - e^{-t}) - (e^{-t})(e^{-t}) }{ (2 - e^{-t})^2 } = \frac{ -2e^{-t} + e^{-2t} - e^{-2t} }{ (2 - e^{-t})^2 } = \frac{ -2e^{-t} }{ (2 - e^{-t})^2 }$ **M1**
+Since $e^{-t} > 0$ and $(2 - e^{-t})^2 > 0$ for all $t \geq 0$, $a(t) < 0$ for all $t \geq 0$. **A1**
+Thus, the acceleration is always negative, meaning the velocity is always decreasing, so the object always slows down. 
+Note: The question asks to "show that the object never slows down," but based on the calculation, it always slows down. This may indicate a possible error in the question or interpretation.
+
+Difficulty: 5
+Unit: Kinematics
+Topics: Velocity, Acceleration
+Tags: Paper 2
+---
+---
+Question:
+[This question may require knowledge from the later chapter: differential equation]
+A particle moves in a straight line in a positive direction from a fixed point O. The velocity $v$ m s$^{-1}$, at time $t$ seconds, where $t \geq 0$, satisfies the differential equation
+$
+\frac{dv}{dt} = -\frac{v(1 + v^2)}{50}.
+$
+The particle starts from O with an initial velocity of $10$ m s$^{-1}$.
+(a) 
+$\quad$(i) Express as a definite integral, the time taken for the particle's velocity to decrease from $10$ m s$^{-1}$ to $5$ m s$^{-1}$. [3]
+$\quad$(ii) Hence calculate the time taken for the particle's velocity to decrease from $10$ m s$^{-1}$ to $5$ m s$^{-1}$. [2]
+(b) 
+$\quad$(i) Show that, when $v > 0$, the motion of this particle can also be described by the differential equation $\frac{dv}{dx} = -\frac{(1 + v^2)}{50}$ where $x$ metres is the displacement from O. [2]
+$\quad$(ii) Given that $v = 10$ when $x = 0$, solve the differential equation expressing $x$ in terms of $v$. [6]
+$\quad$(iii) Hence show that $v = \frac{10 - \tan \frac{x}{50}}{1 + 10 \tan \frac{x}{50}}$. [4]
+
+Solution:
+(a)(i)
+Separate variables:
+$
+\frac{dt}{dv} = -\frac{50}{v(1 + v^2)}
+$
+The time taken is:
+$
+t = \displaystyle\int_{10}^{5} \frac{dt}{dv}  dv = \displaystyle\int_{10}^{5} -\frac{50}{v(1 + v^2)}  dv = 50 \displaystyle\int_{5}^{10} \frac{1}{v(1 + v^2)}  dv
+$
+**M1A1A1**
+
+(a)(ii)
+Evaluate the integral:
+$
+\displaystyle\int \frac{1}{v(1 + v^2)}  dv = \ln \left( \frac{v}{\sqrt{1 + v^2}} \right) + C
+$
+Thus,
+$
+t = 50 \left[ \ln \left( \frac{v}{\sqrt{1 + v^2}} \right) \right]_{5}^{10} = 50 \left( \ln \left( \frac{10}{\sqrt{101}} \right) - \ln \left( \frac{5}{\sqrt{26}} \right) \right) = 50 \ln \left( \frac{10 \sqrt{26}}{5 \sqrt{101}} \right) = 50 \ln \left( \frac{2 \sqrt{26}}{\sqrt{101}} \right) = 50 \ln \left( \sqrt{\frac{104}{101}} \right) = 25 \ln \left( \frac{104}{101} \right)
+$
+Time taken is $25 \ln \left( \frac{104}{101} \right)$ seconds $\approx 0.732$ seconds. **A2**
+
+(b)(i)
+Acceleration can be written as $a = \frac{dv}{dt} = v \frac{dv}{dx}$. So,
+$
+v \frac{dv}{dx} = -\frac{v(1 + v^2)}{50}
+$
+Since $v > 0$, divide both sides by $v$:
+$
+\frac{dv}{dx} = -\frac{(1 + v^2)}{50}
+$
+**M1A1**
+
+(b)(ii)
+Separate variables:
+$
+\frac{dv}{1 + v^2} = -\frac{1}{50} dx
+$
+Integrate both sides:
+$
+\displaystyle\int \frac{dv}{1 + v^2} = -\frac{1}{50} \displaystyle\int dx
+$
+$
+\arctan v = -\frac{x}{50} + C
+$
+**M1A1A1**
+Apply initial condition $x = 0$, $v = 10$:
+$
+\arctan 10 = C
+$
+Thus,
+$
+\arctan v = \arctan 10 - \frac{x}{50}
+$
+Solve for $x$:
+$
+x = 50 (\arctan 10 - \arctan v)
+$
+**M1A1**
+
+(b)(iii)
+From $\arctan v = \arctan 10 - \frac{x}{50}$, take tangent of both sides:
+$
+v = \tan \left( \arctan 10 - \frac{x}{50} \right)
+$
+Use the identity $\tan(A - B) = \frac{\tan A - \tan B}{1 + \tan A \tan B}$:
+$
+v = \frac{\tan(\arctan 10) - \tan(\frac{x}{50})}{1 + \tan(\arctan 10) \tan(\frac{x}{50})} = \frac{10 - \tan(\frac{x}{50})}{1 + 10 \tan(\frac{x}{50})}
+$
+**M1A1M1A1**
+
+Note: This question requires knowledge of differential equations.
+
+Difficulty: 7
+Unit: Kinematics
+Topics: Velocity, Displacement
+Tags: Paper 2
+---
+---
+Question:
+The particle $P$ moves along the $x$-axis such that its velocity, $v$ ms$^{-1}$, at time $t$ seconds is given by $v = \cos(t^2)$.
+(a) Given that $P$ is at the origin O at time $t = 0$, calculate
+   $\quad$(i) the displacement of $P$ from O after 3 seconds;
+   $\quad$(ii) the total distance travelled by $P$ in the first 3 seconds. [4]
+(b) Find the time at which the total distance travelled by $P$ is 1 m. [2]
+
+Solution:
+(a)(i)
+Displacement is the integral of velocity:
+$\text{displacement} = \displaystyle\int_0^3 v  dt = \displaystyle\int_0^3 \cos(t^2)  dt$ **M1**
+This integral cannot be expressed in elementary functions and must be evaluated numerically:
+$\text{displacement} = 0.703$ m **A1**
+
+(a)(ii)
+Total distance traveled is the integral of the absolute value of velocity:
+$\text{distance} = \displaystyle\int_0^3 |v|  dt = \displaystyle\int_0^3 |\cos(t^2)|  dt$ **M1**
+This integral must be evaluated numerically:
+$\text{distance} = 2.05$ m **A1**
+
+(b)
+We need to find $t$ such that the total distance traveled is 1 m:
+$\displaystyle\int_0^t |\cos(u^2)|  du = 1$ **M1**
+Solve this equation numerically:
+$t = 1.39$ seconds **A1**
+
+Difficulty: 5
+Unit: Kinematics
+Topics: Displacement, Velocity
+Tags: Paper 2
+---
+---
+Question:
+[This question may require knowledge from the later chapter: differential equation]
+A particle, A, is moving along a straight line. The velocity, $v_A$ ms$^{-1}$, of A t seconds after its motion begins is given by $v_A = t^3 - 5t^2 + 6t$.
+(b) Write down the times for which the velocity of the particle is increasing. [2]
+(c) Write down the times for which the magnitude of the velocity of the particle is increasing. [3]
+(d) At $t = 0$ the particle is at point O on the line. Find an expression for the particle's displacement, $x_A$ m, from O at time $t$. [3]
+(e) A second particle, B, moving along the same line, has position $x_B$ m, velocity $v_B$ ms$^{-1}$ and acceleration, $a_B$ ms$^{-2}$, where $a_B = -2v_B$ for $t \geq 0$. At $t = 0$, $x_B = 20$ and $v_B = -20$. Find an expression for $v_B$ in terms of $t$. [4]
+(f) Find the value of $t$ when the two particles meet. [6]
+
+Solution:
+(b)
+Velocity is increasing when acceleration is positive. Acceleration $a_A = \frac{dv_A}{dt} = 3t^2 - 10t + 6$. **M1**
+Solve $3t^2 - 10t + 6 > 0$. The roots are $t = \frac{5 \pm \sqrt{7}}{3}$. Thus, velocity is increasing for $0 \leq t < \frac{5 - \sqrt{7}}{3}$ (approximately $0 \leq t < 0.785$) and $t > \frac{5 + \sqrt{7}}{3}$ (approximately $t > 2.55$). **A1A1**
+
+(c)
+The magnitude of velocity is increasing when velocity and acceleration have the same sign. **M1**
+From sign analysis:
+For $0 \leq t < 0.785$, $v_A > 0$ and $a_A > 0$, so magnitude increases. **A1**
+For $2 < t < 2.55$, $v_A < 0$ and $a_A < 0$, so magnitude increases. **A1**
+For $t > 3$, $v_A > 0$ and $a_A > 0$, so magnitude increases. **A1**
+
+(d)
+Displacement $x_A = \displaystyle\int v_A  dt = \displaystyle\int (t^3 - 5t^2 + 6t)  dt = \frac{1}{4}t^4 - \frac{5}{3}t^3 + 3t^2 + C$. **M1A1**
+Since $x_A(0) = 0$, $C = 0$. Thus, $x_A = \frac{1}{4}t^4 - \frac{5}{3}t^3 + 3t^2$. **R1**
+
+(e)
+Given $a_B = -2v_B$ and $a_B = \frac{dv_B}{dt}$, we have $\frac{dv_B}{dt} = -2v_B$. **M1**
+Separate variables: $\displaystyle\int \frac{1}{v_B}  dv_B = \displaystyle\int -2  dt$. **A1**
+This gives $\ln|v_B| = -2t + C$, so $v_B = A e^{-2t}$. **M1**
+Using initial condition $v_B(0) = -20$, we get $A = -20$. Thus, $v_B = -20 e^{-2t}$. **A1**
+
+(f)
+Position of B: $x_B = \displaystyle\int v_B  dt = \displaystyle\int -20 e^{-2t}  dt = 10 e^{-2t} + C$. **M1A1**
+Using $x_B(0) = 20$, we get $20 = 10 + C$, so $C = 10$. Thus, $x_B = 10 e^{-2t} + 10$. **M1A1**
+Particles meet when $x_A = x_B$:
+$\frac{1}{4}t^4 - \frac{5}{3}t^3 + 3t^2 = 10 e^{-2t} + 10$. **M1**
+Solve numerically: $t = 4.41$ seconds. **A1**
+
+Difficulty: 7
+Unit: Kinematics
+Topics: Velocity, Acceleration, Displacement
+Tags: Paper 2
+---
+---
+Question:
+A particle can move along a straight line from a point $O$. The velocity $v$, in ms$^{-1}$, is given by the function $v(t) = 1 - e^{-\sin t^2}$ where time $t \geq 0$ is measured in seconds.
+(a) Write down the first two times $t_1, t_2 > 0$, when the particle changes direction. [2]
+(b) (i) Find the time $t < t_2$ when the particle has a maximum velocity. [2]
+    (ii) Find the time $t < t_2$ when the particle has a minimum velocity. [2]
+(c) Find the distance travelled by the particle between times $t = t_1$ and $t = t_2$. [2]
+
+Solution:
+(a)
+The particle changes direction when $v(t) = 0$. Solve $1 - e^{-\sin t^2} = 0$:
+$e^{-\sin t^2} = 1 \Rightarrow \sin t^2 = 0 \Rightarrow t^2 = n\pi$, $n \in \mathbb{Z}^+$ **M1**
+Thus, $t_1 = \sqrt{\pi} \approx 1.77$ s and $t_2 = \sqrt{2\pi} \approx 2.51$ s. **A1A1**
+
+(b)(i)
+Maximum velocity occurs when acceleration $a(t) = \frac{dv}{dt} = 0$ and $\frac{d^2v}{dt^2} < 0$.
+$a(t) = \frac{d}{dt}(1 - e^{-\sin t^2}) = -e^{-\sin t^2} \cdot (-\cos t^2 \cdot 2t) = 2t \cos t^2 \cdot e^{-\sin t^2}$ **M1**
+Set $a(t) = 0$: $2t \cos t^2 \cdot e^{-\sin t^2} = 0 \Rightarrow \cos t^2 = 0$ (since $t > 0$ and $e^{-\sin t^2} \neq 0$).
+Thus, $t^2 = \frac{\pi}{2} \Rightarrow t = \sqrt{\frac{\pi}{2}} \approx 1.25$ s. **A1**
+
+(b)(ii)
+Minimum velocity occurs when $a(t) = 0$ and $\frac{d^2v}{dt^2} > 0$.
+Next solution: $t^2 = \frac{3\pi}{2} \Rightarrow t = \sqrt{\frac{3\pi}{2}} \approx 2.17$ s. **M1A1**
+
+(c)
+Distance travelled between $t_1$ and $t_2$:
+Since $v(t) < 0$ in this interval (as $\sin t^2$ is negative between $\pi$ and $2\pi$), distance = $\displaystyle\int_{t_1}^{t_2} |v(t)|  dt = \displaystyle\int_{\sqrt{\pi}}^{\sqrt{2\pi}} (e^{-\sin t^2} - 1)  dt$ **M1**
+Numerical integration gives distance $\approx 0.711$ m. **A1**
+
+Difficulty: 5
+Unit: Kinematics
+Topics: Velocity, Acceleration, Displacement
+Tags: Paper 2
+---
+---
+Question:
+[This question may require knowledge from the later chapter: differential equation]
+The acceleration of a car is $\frac{1}{40} (60 - v)$ ms$^{-2}$, when its velocity is $v$ ms$^{-1}$. Given the car starts from rest, find the velocity of the car after 30 seconds. [6]
+
+Solution:
+METHOD 1
+Acceleration is given by $\frac{dv}{dt} = \frac{1}{40}(60 - v)$ **M1**
+Separate variables:
+$\displaystyle\int \frac{dv}{60 - v} = \displaystyle\int \frac{dt}{40}$ **M1**
+Integrate both sides:
+$-\ln|60 - v| = \frac{t}{40} + C$ **A1**
+Apply initial condition: at $t = 0$, $v = 0$:
+$-\ln 60 = C$ **A1**
+Thus, $-\ln(60 - v) = \frac{t}{40} - \ln 60$
+Solve for $v$ when $t = 30$: **M1**
+$\ln(60 - v) = \ln 60 - \frac{30}{40} = \ln 60 - \frac{3}{4}$
+$60 - v = 60 e^{-\frac{3}{4}}$
+$v = 60 - 60 e^{-\frac{3}{4}} = 60(1 - e^{-0.75})$
+$v = 31.7$ ms$^{-1}$ **A1**
+
+METHOD 2
+From $\frac{dv}{dt} = \frac{1}{40}(60 - v)$, we have $\frac{dt}{dv} = \frac{40}{60 - v}$ **M1**
+Integrate from $v=0$ to $v=v_f$:
+$\displaystyle\int_0^{v_f} \frac{40}{60 - v}  dv = \displaystyle\int_0^{30} dt = 30$ **A1A1**
+Solve the integral:
+$40 \displaystyle\int_0^{v_f} \frac{dv}{60 - v} = 40[-\ln|60 - v|]_0^{v_f} = 40(-\ln(60 - v_f) + \ln 60) = 40 \ln \left( \frac{60}{60 - v_f} \right)$
+Set equal to 30:
+$40 \ln \left( \frac{60}{60 - v_f} \right) = 30$ **M1**
+$\ln \left( \frac{60}{60 - v_f} \right) = \frac{3}{4}$
+$\frac{60}{60 - v_f} = e^{0.75}$
+$60 - v_f = 60 e^{-0.75}$
+$v_f = 60(1 - e^{-0.75}) = 31.7$ ms$^{-1}$ **A1**
+
+Difficulty: 5
+Unit: Kinematics
+Topics: Velocity, Acceleration
+Tags: Paper 1
+---

@@ -1,0 +1,454 @@
+---
+Question:
+Assuming the Maclaurin series for $e^x$, determine the first three non-zero terms in the Maclaurin expansion of $\frac{e^x - e^{-x}}{2}$. [3]
+
+Solution:
+The Maclaurin series for $e^x$ is:
+$e^x = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \frac{x^4}{4!} + \frac{x^5}{5!} + \cdots$
+The Maclaurin series for $e^{-x}$ is:
+$e^{-x} = 1 - x + \frac{x^2}{2!} - \frac{x^3}{3!} + \frac{x^4}{4!} - \frac{x^5}{5!} + \cdots$ **A1**
+Subtract and divide by 2:
+$\frac{e^x - e^{-x}}{2} = \frac{1}{2} \left[ (1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \frac{x^4}{4!} + \frac{x^5}{5!} + \cdots) - (1 - x + \frac{x^2}{2!} - \frac{x^3}{3!} + \frac{x^4}{4!} - \frac{x^5}{5!} + \cdots) \right]$
+$= \frac{1}{2} \left[ 2x + 2 \cdot \frac{x^3}{3!} + 2 \cdot \frac{x^5}{5!} + \cdots \right] = x + \frac{x^3}{6} + \frac{x^5}{120} + \cdots$ **M1A1**
+Thus, the first three non-zero terms are $x$, $\frac{x^3}{6}$, and $\frac{x^5}{120}$.
+
+Difficulty: 2
+Unit: Taylor Series
+Topics: Add and Subtract Taylor
+Tags: Paper 1
+---
+---
+Question:
+(a) Write down the derivative of $\arctan x$. [1]
+(b) Hence use the Maclaurin series for $\arctan x$ to derive the Maclaurin series for $\frac{1}{1+x^2}$. State the interval of convergence. [3]
+
+Solution:
+(a)
+The derivative of $\arctan x$ is $\frac{d}{dx} (\arctan x) = \frac{1}{1+x^2}$. **A1**
+
+(b)
+The Maclaurin series for $\arctan x$ is:
+$\arctan x = x - \frac{x^3}{3} + \frac{x^5}{5} - \frac{x^7}{7} + \cdots$ for $|x| < 1$. **M1**
+Differentiate both sides term by term:
+$\frac{d}{dx} (\arctan x) = \frac{d}{dx} \left( x - \frac{x^3}{3} + \frac{x^5}{5} - \frac{x^7}{7} + \cdots \right) = 1 - x^2 + x^4 - x^6 + \cdots$ **M1**
+Since $\frac{d}{dx} (\arctan x) = \frac{1}{1+x^2}$, we conclude:
+$\frac{1}{1+x^2} = 1 - x^2 + x^4 - x^6 + \cdots$ for $|x| < 1$. **A1**
+
+Difficulty: 3
+Unit: Taylor Series
+Topics: Differentiate and Integrate Taylor, Convergence
+Tags: Paper 2
+---
+---
+Question:
+(a) Use the Maclaurin series formula to find the Maclaurin series for $f(x) = \sqrt{1 + 2x}$ up to and including the term in $x^4$. [5]
+(b) Use your answer from part (a) to find an approximation for the value of $\sqrt{1.02}$, and compare the approximation found to the actual value of the square root. [3]
+
+Solution:
+(a)
+Let $f(x) = (1 + 2x)^{1/2}$. Find derivatives at $x = 0$:
+$f(0) = (1 + 0)^{1/2} = 1$ **A1**
+$f'(x) = \frac{1}{2}(1 + 2x)^{-1/2} \cdot 2 = (1 + 2x)^{-1/2}$, so $f'(0) = 1$ **A1**
+$f''(x) = -\frac{1}{2}(1 + 2x)^{-3/2} \cdot 2 = -(1 + 2x)^{-3/2}$, so $f''(0) = -1$ **A1**
+$f'''(x) = \frac{3}{2}(1 + 2x)^{-5/2} \cdot 2 = 3(1 + 2x)^{-5/2}$, so $f'''(0) = 3$ **A1**
+$f^{(4)}(x) = -\frac{15}{2}(1 + 2x)^{-7/2} \cdot 2 = -15(1 + 2x)^{-7/2}$, so $f^{(4)}(0) = -15$ **A1**
+Maclaurin series:
+$f(x) = 1 + 1 \cdot x + \frac{-1}{2!}x^2 + \frac{3}{3!}x^3 + \frac{-15}{4!}x^4 + \cdots = 1 + x - \frac{1}{2}x^2 + \frac{1}{2}x^3 - \frac{5}{8}x^4 + \cdots$ **M1A1**
+
+(b)
+To approximate $\sqrt{1.02}$, note that $1.02 = 1 + 2(0.01)$, so set $x = 0.01$:
+$\sqrt{1.02} \approx 1 + (0.01) - \frac{1}{2}(0.01)^2 + \frac{1}{2}(0.01)^3 - \frac{5}{8}(0.01)^4$ **M1**
+$= 1 + 0.01 - 0.00005 + 0.0000005 - 0.00000000625 = 1.00995049375$ **A1**
+Actual value: $\sqrt{1.02} \approx 1.00995049384$
+The approximation is extremely close to the actual value, with error less than $10^{-10}$. **A1**
+
+Difficulty: 4
+Unit: Taylor Series
+Topics: Taylor for Composite Functions, Convergence
+Tags: Paper 2
+---
+---
+Question:
+(a) By evaluating successive derivatives at $x = 0$, find the Maclaurin series for $\ln \cos x$ up to and including the term in $x^4$. [8]
+(b) Consider $\displaystyle\lim_{x \to 0} \frac{\ln \cos x}{x^n}$, where $n \in \mathbb{R}$. Using your result from (a), determine the set of values of $n$ for which
+   $\quad$(i) the limit does not exist;
+   $\quad$(ii) the limit is zero;
+   $\quad$(iii) the limit is finite and non-zero, giving its value in this case. [5]
+
+Solution:
+(a)
+Let $f(x) = \ln \cos x$. Evaluate derivatives at $x = 0$:
+$f(0) = \ln \cos 0 = \ln 1 = 0$ **A1**
+$f'(x) = -\tan x$, so $f'(0) = -\tan 0 = 0$ **A1**
+$f''(x) = -\sec^2 x$, so $f''(0) = -\sec^2 0 = -1$ **A1**
+$f'''(x) = -2\sec^2 x \tan x$, so $f'''(0) = 0$ **A1**
+$f^{(iv)}(x) = -2\sec^4 x - 4\sec^2 x \tan^2 x$, so $f^{(iv)}(0) = -2$ **A1**
+The Maclaurin series is:
+$f(x) = f(0) + f'(0)x + \frac{f''(0)}{2!}x^2 + \frac{f'''(0)}{3!}x^3 + \frac{f^{(iv)}(0)}{4!}x^4 + \cdots$ **M1**
+$= 0 + 0 \cdot x + \frac{-1}{2}x^2 + 0 \cdot x^3 + \frac{-2}{24}x^4 + \cdots = -\frac{x^2}{2} - \frac{x^4}{12} + \cdots$ **A1A1**
+
+(b)
+From (a), $\ln \cos x = -\frac{x^2}{2} - \frac{x^4}{12} - \cdots$
+So, $\frac{\ln \cos x}{x^n} = -\frac{x^{2-n}}{2} - \frac{x^{4-n}}{12} - \cdots$ **M1**
+(i) The limit does not exist if $n > 2$ (since the leading term $x^{2-n} \to \infty$ as $x \to 0$). **A1**
+(ii) The limit is zero if $n < 2$ (since all terms $\to 0$ as $x \to 0$). **A1**
+(iii) If $n = 2$, the limit is $-\frac{1}{2}$ (the constant term). **A1A1**
+
+Difficulty: 5
+Unit: Taylor Series
+Topics: Differentiate and Integrate Taylor
+Tags: Paper 1
+---
+---
+Question:
+Consider the differential equation $\frac{dy}{dx} = y^2 - x$ with the initial condition $y(0) = 2$.
+(a) Use implicit differentiation to find expressions for $y''$, $y'''$ and $y''''$. [4]
+(b) Use the given initial condition to find the values of $y'(0)$, $y''(0)$, $y'''(0)$ and $y''''(0)$. [4]
+(c) Find the first five terms of the Maclaurin series for $f(x)$. [2]
+
+Solution:
+(a)
+Given $\frac{dy}{dx} = y^2 - x$.
+Differentiate both sides with respect to $x$ to find $y''$:
+$y'' = \frac{d}{dx}(y^2 - x) = 2y \frac{dy}{dx} - 1 = 2y y' - 1$. **A1**
+Differentiate $y''$ to find $y'''$:
+$y''' = \frac{d}{dx}(2y y' - 1) = 2 \left( y \frac{d y'}{dx} + y' \frac{dy}{dx} \right) = 2(y y'' + (y')^2)$. **A1**
+Differentiate $y'''$ to find $y''''$:
+$y'''' = \frac{d}{dx} [2(y y'' + (y')^2)] = 2 \left( y \frac{d y''}{dx} + y'' \frac{dy}{dx} + 2 y' \frac{d y'}{dx} \right) = 2(y y''' + y'' y' + 2 y' y'') = 2 y y''' + 6 y' y''$. **A1**
+
+(b)
+At $x=0$, $y(0)=2$.
+From the differential equation: $y'(0) = (2)^2 - 0 = 4$. **A1**
+From $y'' = 2y y' - 1$: $y''(0) = 2(2)(4) - 1 = 16 - 1 = 15$. **A1**
+From $y''' = 2(y y'' + (y')^2)$: $y'''(0) = 2(2 \cdot 15 + 4^2) = 2(30 + 16) = 2 \cdot 46 = 92$. **A1**
+From $y'''' = 2 y y''' + 6 y' y''$: $y''''(0) = 2(2)(92) + 6(4)(15) = 368 + 360 = 728$. **A1**
+
+(c)
+The Maclaurin series is:
+$f(x) = f(0) + f'(0)x + \frac{f''(0)}{2!}x^2 + \frac{f'''(0)}{3!}x^3 + \frac{f''''(0)}{4!}x^4 + \cdots$
+Substitute the values:
+$f(x) = 2 + 4x + \frac{15}{2}x^2 + \frac{92}{6}x^3 + \frac{728}{24}x^4 + \cdots = 2 + 4x + \frac{15}{2}x^2 + \frac{46}{3}x^3 + \frac{91}{3}x^4 + \cdots$ **M1A1**
+
+Difficulty: 5
+Unit: Taylor Series
+Topics: Differentiate and Integrate Taylor
+Tags: Paper 2
+---
+---
+Question:
+The function $f$ is defined by $f(x) = e^x \cos x$.
+(a) Show that $f''(x) = -2e^x \sin x$. [2]
+(b) Determine the Maclaurin series for $f(x)$ up to and including the term in $x^4$. [5]
+(c) By differentiating your series, determine the Maclaurin series for $e^x \sin x$ up to the term in $x^3$. [4]
+
+Solution:
+(a)
+First derivative: $f'(x) = e^x \cos x - e^x \sin x = e^x (\cos x - \sin x)$ **A1**
+Second derivative: $f''(x) = e^x (\cos x - \sin x) + e^x (-\sin x - \cos x) = e^x (\cos x - \sin x - \sin x - \cos x) = -2e^x \sin x$ **A1**
+
+(b)
+Find derivatives at $x = 0$:
+$f(0) = e^0 \cos 0 = 1$ 
+$f'(0) = e^0 (\cos 0 - \sin 0) = 1$ 
+$f''(0) = -2e^0 \sin 0 = 0$ (**A1**)
+$f'''(x) = -2e^x \sin x - 2e^x \cos x = -2e^x (\sin x + \cos x)$, so $f'''(0) = -2$ **A1**
+$f^{(iv)}(x) = -2e^x (\sin x + \cos x) - 2e^x (\cos x - \sin x) = -4e^x \cos x$, so $f^{(iv)}(0) = -4$ **A1**
+Maclaurin series:
+$f(x) = f(0) + f'(0)x + \frac{f''(0)}{2!}x^2 + \frac{f'''(0)}{3!}x^3 + \frac{f^{(iv)}(0)}{4!}x^4 + \cdots = 1 + x + 0 \cdot x^2 - \frac{2}{6}x^3 - \frac{4}{24}x^4 + \cdots = 1 + x - \frac{x^3}{3} - \frac{x^4}{6} + \cdots$ **M1A1**
+
+(c)
+Differentiate the series for $f(x)$:
+$\frac{d}{dx}[e^x \cos x] = \frac{d}{dx} \left[1 + x - \frac{x^3}{3} - \frac{x^4}{6} + \cdots \right] = 0 + 1 - x^2 - \frac{2x^3}{3} + \cdots$ **M1A1**
+But $\frac{d}{dx}[e^x \cos x] = e^x \cos x - e^x \sin x = f(x) - e^x \sin x$.
+So, $e^x \sin x = f(x) - \frac{d}{dx}[f(x)] = \left(1 + x - \frac{x^3}{3} - \frac{x^4}{6} + \cdots \right) - \left(1 - x^2 - \frac{2x^3}{3} + \cdots \right)$ **M1**
+$= x + x^2 + \frac{x^3}{3} + \cdots$ **A1**
+
+Difficulty: 5
+Unit: Taylor Series
+Topics: Differentiate and Integrate Taylor
+Tags: Paper 1
+---
+---
+Question:
+(a) Find the Maclaurin series for $\ln(1 + \sin x)$ up to and including the term in $x^3$. [3]
+(b) Hence find a series for $\ln(1 - \sin x)$ up to and including the term in $x^3$. [2]
+(c) Deduce, by considering the difference of the two series, that $\ln 3 \simeq \frac{\pi}{3} \left( 1 + \frac{\pi^2}{216} \right)$. [5]
+
+Solution:
+(a) Let $f(x) = \ln(1 + \sin x)$. Find derivatives at $x = 0$:
+$f(0) = \ln(1 + \sin 0) = \ln 1 = 0$ 
+$f'(x) = \frac{\cos x}{1 + \sin x}$, so $f'(0) = \frac{1}{1 + 0} = 1$ 
+$f''(x) = -\frac{\sin x (1 + \sin x) + \cos^2 x}{(1 + \sin x)^2} = -\frac{\sin x + \sin^2 x + \cos^2 x}{(1 + \sin x)^2} = -\frac{\sin x + 1}{(1 + \sin x)^2} = -\frac{1}{1 + \sin x}$, so $f''(0) = -1$ **A1**
+$f'''(x) = \frac{\cos x}{(1 + \sin x)^2}$, so $f'''(0) = \frac{1}{1} = 1$ **A1**
+Thus, the Maclaurin series is:
+$\ln(1 + \sin x) = f(0) + f'(0)x + \frac{f''(0)}{2!}x^2 + \frac{f'''(0)}{3!}x^3 + \cdots = 0 + 1 \cdot x - \frac{1}{2}x^2 + \frac{1}{6}x^3 + \cdots = x - \frac{x^2}{2} + \frac{x^3}{6} + \cdots$ **A1**
+$\ $
+(b) Note that $-\sin x = \sin(-x)$, so $\ln(1 - \sin x) = \ln(1 + \sin(-x))$. **M1**
+Using the series from (i) with $x$ replaced by $-x$:
+$\ln(1 - \sin x) = (-x) - \frac{(-x)^2}{2} + \frac{(-x)^3}{6} + \cdots = -x - \frac{x^2}{2} - \frac{x^3}{6} + \cdots$ **A1**
+$\ $
+(c) Consider the difference:
+$\ln(1 + \sin x) - \ln(1 - \sin x) = \ln \left( \frac{1 + \sin x}{1 - \sin x} \right) \approx \left( x - \frac{x^2}{2} + \frac{x^3}{6} \right) - \left( -x - \frac{x^2}{2} - \frac{x^3}{6} \right) = 2x + \frac{x^3}{3}$ **M1A1**
+Now set $x = \frac{\pi}{6}$:
+$\ln \left( \frac{1 + \sin(\pi/6)}{1 - \sin(\pi/6)} \right) = \ln \left( \frac{1 + 1/2}{1 - 1/2} \right) = \ln 3 \approx 2 \left( \frac{\pi}{6} \right) + \frac{(\pi/6)^3}{3} = \frac{\pi}{3} + \frac{\pi^3}{648}$ **M1A1**
+Factor:
+$\frac{\pi}{3} + \frac{\pi^3}{648} = \frac{\pi}{3} \left( 1 + \frac{\pi^2}{216} \right)$ **A1**
+
+Difficulty: 6
+Unit: Taylor Series
+Topics: Taylor for Composite Functions, Add and Subtract Taylor
+Tags: Paper 1
+---
+Question:
+(a) Prove by mathematical induction that $\frac{d^n}{dy^n} \left( y^2 e^y \right) = \left[ y^2 + 2ny + n(n-1) \right] e^y$ for $n \in \mathbb{Z}^+$. [6]
+(b) Hence or otherwise, determine the Maclaurin series of $f(y) = y^2 e^y$ in ascending powers of $y$, up to and including the term in $y^4$. [2]
+
+Solution:
+(a)
+Base case: For $n=1$,
+$\frac{d}{dy}(y^2 e^y) = 2y e^y + y^2 e^y = (y^2 + 2y) e^y$. **M1**
+The formula gives $\left[ y^2 + 2(1)y + 1(0) \right] e^y = (y^2 + 2y) e^y$. So true for $n=1$. **A1**
+
+Inductive step: Assume the formula holds for $n = k$, i.e.,
+$\frac{d^k}{dy^k}(y^2 e^y) = \left[ y^2 + 2k y + k(k-1) \right] e^y$. **M1**
+Differentiate both sides:
+$\frac{d^{k+1}}{dy^{k+1}}(y^2 e^y) = \frac{d}{dy} \left( \left[ y^2 + 2k y + k(k-1) \right] e^y \right)$
+$= \left( 2y + 2k \right) e^y + \left[ y^2 + 2k y + k(k-1) \right] e^y$ **M1**
+$= e^y \left[ y^2 + 2k y + k(k-1) + 2y + 2k \right]$
+$= e^y \left[ y^2 + (2k+2)y + (k^2 - k + 2k) \right]$
+$= e^y \left[ y^2 + 2(k+1)y + (k^2 + k) \right]$
+$= e^y \left[ y^2 + 2(k+1)y + (k+1)k \right]$. **A1**
+This is exactly the formula for $n = k+1$. Thus, by mathematical induction, the formula holds for all $n \in \mathbb{Z}^+$. **R1**
+$\ $
+(b)
+The Maclaurin series is $f(y) = \sum_{n=0}^{\infty} \frac{f^{(n)}(0)}{n!} y^n$.
+From the formula, for $n \geq 1$, $f^{(n)}(0) = n(n-1)$. Also $f(0) = 0$. **M1**
+So:
+$f^{(0)}(0) = 0$,
+$f^{(1)}(0) = 0$,
+$f^{(2)}(0) = 2$,
+$f^{(3)}(0) = 6$,
+$f^{(4)}(0) = 12$.
+Thus,
+$f(y) = \frac{2}{2!} y^2 + \frac{6}{3!} y^3 + \frac{12}{4!} y^4 + \cdots = y^2 + y^3 + \frac{1}{2} y^4 + \cdots$. **A1**
+
+Difficulty: 6
+Unit: Taylor Series
+Topics: Differentiate and Integrate Taylor
+Tags: Paper 1
+---
+Question:
+Let the Maclaurin series for $\tan x$ be $\tan x = a_1x + a_3x^3 + a_5x^5 + \ldots$ where $a_1, a_3$ and $a_5$ are constants.
+(a) Find series for $\sec^2 x$, in terms of $a_1, a_3$ and $a_5$, up to and including the $x^4$ term
+$\quad$(i) by differentiating the above series for $\tan x$;
+$\quad$(ii) by using the relationship $\sec^2 x = 1 + \tan^2 x$. [3 marks]
+(b) Hence, by comparing your two series, determine the values of $a_1, a_3$ and $a_5$. [3 marks]
+
+Solution:
+(a)(i)
+Differentiating the series term-by-term:
+$\frac{d}{dx}(\tan x) = \sec^2 x = a_1 + 3a_3 x^2 + 5a_5 x^4 + \cdots$
+Thus, $\sec^2 x = a_1 + 3a_3 x^2 + 5a_5 x^4 + \cdots$ **A1**
+
+(a)(ii)
+Using the identity $\sec^2 x = 1 + \tan^2 x$:
+$\tan^2 x = (a_1 x + a_3 x^3 + a_5 x^5 + \cdots)^2 = a_1^2 x^2 + 2a_1 a_3 x^4 + \cdots$ **M1**
+Thus, $\sec^2 x = 1 + a_1^2 x^2 + 2a_1 a_3 x^4 + \cdots$ **A1**
+
+(b)
+Equating the two series for $\sec^2 x$:
+$a_1 + 3a_3 x^2 + 5a_5 x^4 + \cdots = 1 + a_1^2 x^2 + 2a_1 a_3 x^4 + \cdots$
+Comparing coefficients:
+Constant term: $a_1 = 1$ **A1**
+Coefficient of $x^2$: $3a_3 = a_1^2 = 1 \Rightarrow a_3 = \frac{1}{3}$ **A1**
+Coefficient of $x^4$: $5a_5 = 2a_1 a_3 = \frac{2}{3} \Rightarrow a_5 = \frac{2}{15}$ **A1**
+
+Difficulty: 6
+Unit: Taylor Series
+Topics: Differentiate and Integrate Taylor
+Tags: Paper 1
+---
+Question:
+(a) Using the Maclaurin series for $(1 + x)^n$, write down and simplify the Maclaurin series approximation for $(1 - x^2)^{-\frac{1}{2}}$ as far as the term in $x^4$. [3 marks]
+(b) Use your result to show that a series approximation for $\arccos x$ is $\arccos x \approx \frac{\pi}{2} - x - \frac{1}{6}x^3 - \frac{3}{40}x^5$. [3 marks]
+(c) Evaluate $\lim_{x \to 0} \frac{\frac{\pi}{2} - \arccos(x^2) - x^2}{x^6}$. [5 marks]
+(d) Use the series approximation for $\arccos x$ to find an approximate value for $\int_0^{0.2} \arccos\left(\sqrt{x}\right)  dx$, giving your answer to 5 decimal places. Does your answer give the actual value of the integral to 5 decimal places? [6 marks]
+
+Solution:
+(a)
+Using the binomial series: $(1 + u)^n = 1 + nu + \frac{n(n-1)}{2!}u^2 + \frac{n(n-1)(n-2)}{3!}u^3 + \cdots$ **M1**
+Substitute $u = -x^2$ and $n = -\frac{1}{2}$:
+$(1 - x^2)^{-\frac{1}{2}} = 1 + (-\frac{1}{2})(-x^2) + \frac{(-\frac{1}{2})(-\frac{3}{2})}{2!}(-x^2)^2 + \cdots$ **A1**
+$= 1 + \frac{1}{2}x^2 + \frac{3}{8}x^4 + \cdots$ **A1**
+
+(b)
+We know that $\frac{d}{dx}(\arccos x) = -\frac{1}{\sqrt{1 - x^2}} = -(1 - x^2)^{-\frac{1}{2}}$
+Integrating the series from (a): 
+$\arccos x = -\int (1 + \frac{1}{2}x^2 + \frac{3}{8}x^4 + \cdots)  dx = -[x + \frac{1}{6}x^3 + \frac{3}{40}x^5 + \cdots] + C$ **M1A1**
+When $x = 0$, $\arccos 0 = \frac{\pi}{2}$, so $C = \frac{\pi}{2}$ **M1**
+Thus $\arccos x \approx \frac{\pi}{2} - x - \frac{1}{6}x^3 - \frac{3}{40}x^5$ **AG**
+
+(c)
+Using the series approximation: 
+$\arccos(x^2) \approx \frac{\pi}{2} - x^2 - \frac{1}{6}x^6 - \frac{3}{40}x^{10}$ **M1A1**
+Then $\frac{\pi}{2} - \arccos(x^2) - x^2 \approx \frac{1}{6}x^6 + \frac{3}{40}x^{10}$ **M1**
+So $\lim_{x \to 0} \frac{\frac{\pi}{2} - \arccos(x^2) - x^2}{x^6} = \lim_{x \to 0} (\frac{1}{6} + \frac{3}{40}x^4) = \frac{1}{6}$ **A1A1**
+
+(d)
+Substitute $u = \sqrt{x}$ in the integral:
+$\int_0^{0.2} \arccos(\sqrt{x})  dx = \int_0^{\sqrt{0.2}} \arccos u \cdot 2u  du$ **M1**
+Using the series approximation:
+$\approx \int_0^{\sqrt{0.2}} (\frac{\pi}{2} - u - \frac{1}{6}u^3 - \frac{3}{40}u^5) \cdot 2u  du$
+$= \int_0^{\sqrt{0.2}} (\pi u - 2u^2 - \frac{1}{3}u^4 - \frac{3}{20}u^6)  du$ **A1**
+$= [\frac{\pi}{2}u^2 - \frac{2}{3}u^3 - \frac{1}{15}u^5 - \frac{3}{140}u^7]_0^{\sqrt{0.2}}$ **A1**
+$= \frac{\pi}{2}(0.2) - \frac{2}{3}(0.2\sqrt{0.2}) - \frac{1}{15}(0.2^2\sqrt{0.2}) - \frac{3}{140}(0.2^3\sqrt{0.2})$
+$\approx 0.31416 - 0.05963 - 0.00119 - 0.00014 = 0.25320$ **A1**
+The actual value (from GDC) is 0.25325, so the approximation does not give the actual value to 5 decimal places. **A1R1**
+
+Difficulty: 7
+Unit: Taylor Series
+Topics: Differentiate and Integrate Taylor
+Tags: Paper 2
+---
+Question:
+Consider the functions $f_n(x) = \sec^n(x)$, $|x| < \frac{\pi}{2}$ and $g_n(x) = f_n(x) \tan x$.
+(a) Show that
+$\quad$(i) $\frac{df_n(x)}{dx} = n g_n(x)$;
+$\quad$(ii) $\frac{dg_n(x)}{dx} = (n+1)f_{n+2}(x) - n f_n(x)$. [5]
+(b) 
+$\quad$(i) Use these results to show that the Maclaurin series for $f_5(x)$ up to and including the term in $x^4$ is $1 + \frac{5}{2}x^2 + \frac{85}{24}x^4$.
+$\quad$(ii) By considering the general form of its higher derivatives explain briefly why all coefficients in the Maclaurin series for $f_5(x)$ are either positive or zero.
+$\quad$(iii) Hence show that $\sec^5(0.1) > 1.02535$. [14]
+
+Solution:
+(a)(i)
+$f_n(x) = \sec^n x$.
+Using the chain rule:
+$\frac{df_n}{dx} = n \sec^{n-1} x \cdot \frac{d}{dx}(\sec x) = n \sec^{n-1} x \cdot \sec x \tan x = n \sec^n x \tan x$.
+Since $g_n(x) = f_n(x) \tan x = \sec^n x \tan x$, it follows that
+$\frac{df_n}{dx} = n g_n(x)$. **M1A1**
+
+(a)(ii)
+$g_n(x) = f_n(x) \tan x$.
+Using the product rule:
+$\frac{dg_n}{dx} = \frac{df_n}{dx} \tan x + f_n(x) \sec^2 x$.
+From (a)(i), $\frac{df_n}{dx} = n g_n(x) = n f_n(x) \tan x$, so
+$\frac{dg_n}{dx} = n f_n(x) \tan x \cdot \tan x + f_n(x) \sec^2 x = n f_n(x) \tan^2 x + f_n(x) \sec^2 x$.
+Factor out $f_n(x)$:
+$= f_n(x) (n \tan^2 x + \sec^2 x)$.
+Using $\tan^2 x = \sec^2 x - 1$:
+$= f_n(x) [n (\sec^2 x - 1) + \sec^2 x] = f_n(x) [(n+1)\sec^2 x - n]$.
+Now, $f_n(x) \sec^2 x = \sec^n x \cdot \sec^2 x = \sec^{n+2} x = f_{n+2}(x)$, so
+$\frac{dg_n}{dx} = (n+1) f_{n+2}(x) - n f_n(x)$. **M1A1A1**
+
+(b)(i)
+Maclaurin series: $f_5(x) = f_5(0) + f_5'(0)x + \frac{f_5''(0)}{2!}x^2 + \frac{f_5'''(0)}{3!}x^3 + \frac{f_5^{(4)}(0)}{4!}x^4 + \cdots$.
+At $x = 0$, $\sec 0 = 1$, so $f_5(0) = 1$. **A1**
+From (a)(i), $f_5'(x) = 5 g_5(x) = 5 f_5(x) \tan x$.
+At $x = 0$, $\tan 0 = 0$, so $f_5'(0) = 0$. **A1**
+$f_5''(x) = \frac{d}{dx}(5 g_5(x)) = 5 g_5'(x)$.
+From (a)(ii), $g_5'(x) = 6 f_7(x) - 5 f_5(x)$, so
+$f_5''(x) = 5[6 f_7(x) - 5 f_5(x)]$.
+At $x = 0$, $f_7(0) = 1$, $f_5(0) = 1$, so $f_5''(0) = 5[6 - 5] = 5$. **M1A1**
+$f_5'''(x) = \frac{d}{dx}(f_5''(x)) = 5[6 f_7'(x) - 5 f_5'(x)]$.
+But $f_7'(x) = 7 g_7(x)$ and $f_5'(x) = 5 g_5(x)$, so
+$f_5'''(x) = 5[6 \cdot 7 g_7(x) - 5 \cdot 5 g_5(x)] = 5[42 g_7(x) - 25 g_5(x)]$.
+At $x = 0$, $g_7(0) = 0$, $g_5(0) = 0$, so $f_5'''(0) = 0$. **M1A1**
+$f_5^{(4)}(x) = \frac{d}{dx}(f_5'''(x)) = 5[42 g_7'(x) - 25 g_5'(x)]$.
+Now, $g_7'(x) = 8 f_9(x) - 7 f_7(x)$ and $g_5'(x) = 6 f_7(x) - 5 f_5(x)$, so
+$f_5^{(4)}(x) = 5[42(8 f_9(x) - 7 f_7(x)) - 25(6 f_7(x) - 5 f_5(x))]$.
+At $x = 0$, $f_9(0) = 1$, $f_7(0) = 1$, $f_5(0) = 1$, so
+$f_5^{(4)}(0) = 5[42(8 - 7) - 25(6 - 5)] = 5[42 - 25] = 5(17) = 85$. **M1A1**
+Thus, $f_5(x) = 1 + 0 \cdot x + \frac{5}{2!}x^2 + 0 \cdot x^3 + \frac{85}{4!}x^4 + \cdots = 1 + \frac{5}{2}x^2 + \frac{85}{24}x^4 + \cdots$. **A1**
+
+(b)(ii)
+All derivatives of $f_n(x)$ are sums of terms of the form $A \sec^p x \tan^q x$ with $A \geq 0$.
+At $x = 0$, $\tan 0 = 0$, so any term with $q > 0$ evaluates to 0.
+Only terms with $q = 0$ contribute, and these are of the form $A \sec^p 0 = A \cdot 1 = A \geq 0$.
+Therefore, all Maclaurin coefficients are nonnegative. **M1A1**
+
+(b)(iii)
+Since all Maclaurin coefficients are nonnegative, the series for $f_5(x)$ is a sum of positive terms for $x > 0$.
+Hence, $f_5(x) > 1 + \frac{5}{2}x^2 + \frac{85}{24}x^4$ for $x > 0$.
+For $x = 0.1$:
+$\frac{5}{2}(0.1)^2 = 0.025$,
+$\frac{85}{24}(0.1)^4 = \frac{85}{24} \cdot 0.0001 \approx 0.0003541667$,
+so $f_5(0.1) > 1 + 0.025 + 0.0003541667 = 1.0253541667$.
+Since $1.0253541667 > 1.02535$, we have $\sec^5(0.1) > 1.02535$. **M1A1A1**
+
+Difficulty: 7
+Unit: Taylor Series
+Topics: Differentiate and Integrate Taylor
+Tags: Paper 3
+---
+Question:
+This question asks you to investigate the Maclaurin series of $e^x$.
+(a) Write down the Maclaurin series of $e^x$ using sigma notation. [1]
+(b) Hence show that $e > 2.5$. [2]
+(c) 
+$\quad$(i) Prove by induction that $2^{n-1} < n!$ for $n \in \mathbb{Z}$, $n \geq 3$.
+$\quad$(ii) By comparing with a suitable geometric series, or otherwise, show that $e < 3$. [9]
+
+Solution:
+(a)
+The Maclaurin series for $e^x$ is:
+$e^x = \sum_{k=0}^{\infty} \frac{x^k}{k!}$ **A1**
+
+(b)
+Substitute $x = 1$:
+$e = \sum_{k=0}^{\infty} \frac{1}{k!} = 1 + 1 + \frac{1}{2!} + \frac{1}{3!} + \frac{1}{4!} + \cdots$ **M1**
+Calculate partial sum up to $k=4$:
+$1 + 1 + \frac{1}{2} + \frac{1}{6} + \frac{1}{24} = 2 + 0.5 + 0.1667 + 0.0417 = 2.7084 > 2.5$ **A1**
+
+(c)(i)
+Base case: For $n=3$, $2^{3-1} = 4$ and $3! = 6$, so $4 < 6$ is true. **M1**
+Inductive step: Assume $2^{k-1} < k!$ for some $k \geq 3$.
+Then for $n = k+1$:
+$2^{(k+1)-1} = 2^k = 2 \cdot 2^{k-1} < 2 \cdot k!$ (by inductive hypothesis) **M1**
+Since $k \geq 3$, $2 < k+1$, so:
+$2 \cdot k! < (k+1) \cdot k! = (k+1)!$ **M1**
+Thus $2^k < (k+1)!$, completing the induction. **A1**
+
+(c)(ii)
+Using the series from (a) with $x=1$:
+$e = \sum_{k=0}^{\infty} \frac{1}{k!} = 1 + 1 + \frac{1}{2!} + \frac{1}{3!} + \frac{1}{4!} + \cdots$ **M1**
+Split the series:
+$e = 1 + 1 + \frac{1}{2} + \frac{1}{6} + \sum_{k=4}^{\infty} \frac{1}{k!}$ **M1**
+From (c)(i), for $k \geq 4$ (since $n \geq 3$), $2^{k-1} < k! \Rightarrow \frac{1}{k!} < \frac{1}{2^{k-1}}$ 
+So $\sum_{k=4}^{\infty} \frac{1}{k!} < \sum_{k=4}^{\infty} \frac{1}{2^{k-1}} = \frac{1}{2^3} + \frac{1}{2^4} + \frac{1}{2^5} + \cdots$ **M1**
+This is a geometric series with first term $a = \frac{1}{8}$ and ratio $r = \frac{1}{2}$:
+$\sum_{k=4}^{\infty} \frac{1}{2^{k-1}} = \frac{1/8}{1 - 1/2} = \frac{1/8}{1/2} = \frac{1}{4}$ **A1**
+Thus $e < 1 + 1 + \frac{1}{2} + \frac{1}{6} + \frac{1}{4} = 2 + 0.5 + 0.1667 + 0.25 = 2.9167 < 3$ **A1**
+
+Difficulty: 7
+Unit: Taylor Series
+Topics: Differentiate and Integrate Taylor
+Tags: Paper 3
+---
+Question:
+(a) Expand $(1+x)^{-1/2}$ to $x^4$, and state the interval of convergence. [3]
+(b) Hence, find the Maclaurin series of $\arcsin x$ to $x^7$. [5]
+
+Solution:
+(a)
+Using the binomial series expansion:
+$(1+x)^{-1/2} = 1 + \left(-\frac{1}{2}\right)x + \frac{\left(-\frac{1}{2}\right)\left(-\frac{3}{2}\right)}{2!}x^2 + \frac{\left(-\frac{1}{2}\right)\left(-\frac{3}{2}\right)\left(-\frac{5}{2}\right)}{3!}x^3 + \frac{\left(-\frac{1}{2}\right)\left(-\frac{3}{2}\right)\left(-\frac{5}{2}\right)\left(-\frac{7}{2}\right)}{4!}x^4 + \cdots$ **M1**
+Simplifying:
+$= 1 - \frac{1}{2}x + \frac{3}{8}x^2 - \frac{5}{16}x^3 + \frac{35}{128}x^4 + \cdots$ **A1**
+The binomial series converges for $|x| < 1$, so the interval of convergence is $-1 < x < 1$. **A1**
+
+(b)
+The derivative of $\arcsin x$ is:
+$\frac{d}{dx}(\arcsin x) = \frac{1}{\sqrt{1-x^2}} = (1 - x^2)^{-1/2}$ **M1**
+Substitute $x^2$ into the series from (a):
+$(1 - x^2)^{-1/2} = 1 + \frac{1}{2}x^2 + \frac{3}{8}x^4 + \frac{5}{16}x^6 + \frac{35}{128}x^8 + \cdots$ **A1**
+Integrate term-by-term from 0 to $x$:
+$\arcsin x = \int_0^x \left(1 + \frac{1}{2}t^2 + \frac{3}{8}t^4 + \frac{5}{16}t^6 + \cdots\right) dt$ **M1**
+$= \left[ t + \frac{1}{6}t^3 + \frac{3}{40}t^5 + \frac{5}{112}t^7 + \cdots \right]_0^x$ **A1**
+$= x + \frac{1}{6}x^3 + \frac{3}{40}x^5 + \frac{5}{112}x^7 + \cdots$ **A1**
+
+Difficulty: 8
+Unit: Taylor Series
+Topics: Differentiate and Integrate Taylor,Taylor for Composite Functions, Convergence
+Tags: Paper 2
+
