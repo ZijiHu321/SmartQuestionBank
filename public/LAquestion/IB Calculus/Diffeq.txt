@@ -1,0 +1,716 @@
+Question:
+Consider the differential equation $\frac{dy}{dx} = y^3 - x^3$ for which $y = 1$ when $x = 0$. Use Euler's method with a step length of 0.1 to find an approximation for the value of $y$ when $x = 0.4$. [7]
+
+Solution:
+Use of $y \to y + h\frac{dy}{dx}$ (**M1**)
+
+$$
+\begin{array}{cccc}
+x & y & \frac{dy}{dx} & h\frac{dy}{dx} \\
+0.0 & 1.000000000 & 1.000000000 & 0.100000000 \\
+0.1 & 1.100000000 & 1.331000000 & 0.133100000 \\
+0.2 & 1.233100000 & 1.866516337 & 0.186651634 \\
+0.3 & 1.419751634 & 2.834181181 & 0.283418118 \\
+0.4 & 1.703169752 & & \\
+\end{array}
+$$
+
+Note: After the first line, award **A1** for each subsequent $y$ value, provided it is correct to 3sf.
+
+approximate value of $y(0.4) = 1.70$ **A1**
+
+Note: Accept 1.7 or any answers that round to 1.70.
+
+Difficulty: 3
+Unit: Differential Equations
+Topics: Euler's method
+Tags: Paper 2
+---
+
+---
+Question:
+Question:
+Find the general solution of the differential equation $(1 - x^2) \frac{dy}{dx} - x y = 1$ for $|x| < 1$. [7]
+
+Solution:
+rewrite in linear form **M1**
+$\frac{dy}{dx} - \frac{x}{1 - x^2} y = \frac{1}{1 - x^2}$
+
+attempt to find integrating factor **M1**
+$I = e^{\int -\frac{x}{1 - x^2} dx} = e^{\frac{1}{2} \ln (1 - x^2)}$ **A1**
+$= \sqrt{1 - x^2}$ **A1**
+
+multiply by $I$ and attempt to integrate **M1**
+$y \sqrt{1 - x^2} = \int \frac{1}{\sqrt{1 - x^2}} dx$ **A1**
+$y \sqrt{1 - x^2} = \arcsin x + C$ **A1**
+
+general solution:
+$y = \frac{\arcsin x + C}{\sqrt{1 - x^2}}$
+
+Difficulty: 4
+Unit: Differential Equations
+Topics: Integrating Factor
+Tags: Paper 1
+---
+
+Question:
+Consider the first-order differential equation
+$\frac{dy}{dx} - x^3 = 2\sin x$
+Solve the equation given that $y = 0$ when $x = 0$, giving your answer in the form $y = f(x)$.
+
+Solution:
+Rewrite the equation:
+$\frac{dy}{dx} = x^3 + 2\sin x$ **M1**
+
+Integrate both sides with respect to x:
+$y = \int (x^3 + 2\sin x) dx$ **A1**
+$y = \frac{1}{4}x^4 - 2\cos x + C$ **A1**
+
+Apply initial condition $x = 0$, $y = 0$:
+$0 = \frac{1}{4}(0)^4 - 2\cos(0) + C$ **M1**
+$0 = 0 - 2(1) + C$
+$C = 2$ **A1**
+
+Final solution:
+$y = \frac{1}{4}x^4 - 2\cos x + 2$ **A1**
+
+Difficulty: 4
+Unit: Differential Equations
+Topics: Simple DE
+Tags: Paper 1
+
+---
+
+Question:
+A cup of coffee is placed in a room with a constant temperature of 20°C. The coffee cools according to Newton's Law of Cooling, which states that the rate of change of temperature of an object is proportional to the difference between its temperature and the ambient temperature.
+
+Initially, the coffee is at 85°C, and after 5 minutes it has cooled to 70°C.
+
+a) Set up the differential equation for this situation. [2]
+b) Solve the differential equation to find the temperature T of the coffee at time t minutes. [6]
+c) Find how long it will take for the coffee to cool to 40°C. [3]
+d) What temperature will the coffee approach as time becomes very large? [1]
+
+Solution:
+a) Let T be the temperature of the coffee at time t minutes.
+The differential equation is:
+$\frac{dT}{dt} = -k(T - 20)$ **A1 A1**
+where k is a positive constant.
+
+b) Separate variables:
+$\frac{dT}{T - 20} = -k dt$ **M1**
+Integrate both sides:
+$\ln|T - 20| = -kt + C$ **A1**
+Exponentiate:
+$T - 20 = Ae^{-kt}$ where $A = e^C$ **A1**
+Apply initial condition T(0) = 85:
+$85 - 20 = Ae^0 \Rightarrow A = 65$ **M1**
+Use T(5) = 70:
+$70 - 20 = 65e^{-5k}$
+$50 = 65e^{-5k}$
+$e^{-5k} = \frac{10}{13}$ **A1**
+Take natural log:
+$-5k = \ln(\frac{10}{13})$
+$k = -\frac{1}{5}\ln(\frac{10}{13}) = \frac{1}{5}\ln(\frac{13}{10})$ **A1**
+Final solution:
+$T = 20 + 65e^{-kt}$ where $k = \frac{1}{5}\ln(\frac{13}{10})$
+
+c) Set T = 40:
+$40 = 20 + 65e^{-kt}$
+$20 = 65e^{-kt}$
+$e^{-kt} = \frac{4}{13}$ **M1**
+Take natural log:
+$-kt = \ln(\frac{4}{13})$
+$t = -\frac{1}{k}\ln(\frac{4}{13}) = \frac{1}{k}\ln(\frac{13}{4})$ **A1**
+Substitute k:
+$t = 5\frac{\ln(\frac{13}{4})}{\ln(\frac{13}{10})}$ minutes **A1**
+
+d) As $t \rightarrow \infty$, $e^{-kt} \rightarrow 0$, so:
+$T \rightarrow 20°C$ **A1**
+
+Difficulty: 5
+Unit: Differential Equations
+Topics: Simple DE
+Tags: Paper 1
+
+---
+
+Question:
+A curve in the first quadrant has the property that at any point P(x, y) on the curve, the tangent line intersects the x-axis and y-axis at points A and B respectively, such that the sum of the x-intercept and y-intercept of the tangent is always zero.
+
+a) Show that the differential equation governing the curve is
+$x \frac{dy}{dx} - y = 0$. [3]
+
+b) Given that the curve passes through the point (1, 2), solve the differential equation to find the equation of the curve. [4]
+
+Solution:
+a) The equation of the tangent at point (x, y) is:
+$Y - y = \frac{dy}{dx}(X - x)$ **M1**
+
+Find the x-intercept (set Y = 0):
+$0 - y = \frac{dy}{dx}(X_A - x)$
+$X_A = x - \frac{y}{dy/dx}$ **A1**
+
+Find the y-intercept (set X = 0):
+$Y_B - y = \frac{dy}{dx}(0 - x)$
+$Y_B = y - x\frac{dy}{dx}$ **A1**
+
+Given $X_A + Y_B = 0$:
+$x - \frac{y}{dy/dx} + y - x\frac{dy}{dx} = 0$
+Multiply through by $\frac{dy}{dx}$:
+$x\frac{dy}{dx} - y + y\frac{dy}{dx} - x\left(\frac{dy}{dx}\right)^2 = 0$
+This simplifies to $x\frac{dy}{dx} - y = 0$ **A1**
+$\ $
+b) Solve the differential equation:
+$x\frac{dy}{dx} - y = 0$
+$\frac{dy}{dx} = \frac{y}{x}$ **M1**
+Separate variables:
+$\frac{dy}{y} = \frac{dx}{x}$ **A1**
+Integrate:
+$\ln|y| = \ln|x| + C$ **A1**
+Apply initial condition (1, 2):
+$\ln 2 = \ln 1 + C \Rightarrow C = \ln 2$
+Thus, $y = 2x$ **A1**
+
+Difficulty: 5
+Unit: Differential Equations
+Topics: Tangent and Normal, Separable DE
+Tags: Paper 1
+
+---
+
+Question:
+Find the solution to the differential equation
+$(\cos x - \sin x) \frac{dy}{dx} + (\cos x + \sin x) y = \cos x + \sin x$,
+given that $y = -1$ when $x = \frac{\pi}{2}$.
+
+Solution:
+Rewrite the equation in standard form:
+$\frac{dy}{dx} + \frac{\cos x + \sin x}{\cos x - \sin x} y = \frac{\cos x + \sin x}{\cos x - \sin x}$ **M1**
+
+Find the integrating factor:
+$\mu(x) = e^{\int \frac{\cos x + \sin x}{\cos x - \sin x} dx} = e^{-\ln |\cos x - \sin x|} = \frac{1}{\cos x - \sin x}$ **M1A1A1**
+
+Multiply both sides by the integrating factor and integrate:
+$\frac{d}{dx} \left( y \cdot \frac{1}{\cos x - \sin x} \right) = \frac{\cos x + \sin x}{(\cos x - \sin x)^2}$ **M1**
+$\frac{y}{\cos x - \sin x} = \int \frac{\cos x + \sin x}{(\cos x - \sin x)^2} dx = \frac{1}{\cos x - \sin x} + C$ **A1**
+$y = 1 + C (\cos x - \sin x)$
+
+Apply the initial condition $x = \frac{\pi}{2}$, $y = -1$:
+$-1 = 1 + C \left( \cos \frac{\pi}{2} - \sin \frac{\pi}{2} \right) = 1 - C$ **M1**
+$C = 2$ **A1**
+
+Thus, the solution is:
+$y = 1 + 2 (\cos x - \sin x)$ **A1**
+
+Difficulty: 5
+Unit: Differential Equations
+Topics: Integrating Factor
+Tags: Paper 1
+---
+
+Question:
+Consider the differential equation  
+$x^2 \frac{dy}{dx} = y^2 + 2xy + 3x^2$  
+for $x > 0$, with the initial condition $y(1) = 1$.
+
+a) Show that the differential equation is homogeneous. [2]
+b) Using the substitution $y = vx$, solve the differential equation and express your answer in the form $y = f(x)$. [6]
+
+Solution:
+a) Rewrite the equation as:
+$\frac{dy}{dx} = \frac{y^2 + 2xy + 3x^2}{x^2} = \left( \frac{y}{x} \right)^2 + 2\left( \frac{y}{x} \right) + 3$
+Since the right-hand side is a function of $v = \frac{y}{x}$, the equation is homogeneous. **A1 A1**
+
+b) Substitute $y = vx$ and $\frac{dy}{dx} = v + x \frac{dv}{dx}$:
+$v + x \frac{dv}{dx} = v^2 + 2v + 3$
+$x \frac{dv}{dx} = v^2 + v + 3$ **M1**
+Separate variables:
+$\int \frac{dv}{v^2 + v + 3} = \int \frac{dx}{x}$ **A1**
+Complete the square:
+$v^2 + v + 3 = \left( v + \frac{1}{2} \right)^2 + \frac{11}{4}$
+$\int \frac{dv}{\left( v + \frac{1}{2} \right)^2 + \left( \frac{\sqrt{11}}{2} \right)^2} = \int \frac{dx}{x}$ **A1**
+Integrate:
+$\frac{2}{\sqrt{11}} \arctan \left( \frac{2v + 1}{\sqrt{11}} \right) = \ln |x| + C$ **A1**
+Substitute back $v = \frac{y}{x}$:
+$\frac{2}{\sqrt{11}} \arctan \left( \frac{2y/x + 1}{\sqrt{11}} \right) = \ln x + C$
+Apply initial condition $x = 1$, $y = 1$:
+$\frac{2}{\sqrt{11}} \arctan \left( \frac{3}{\sqrt{11}} \right) = C$ **M1 A1**
+Final solution:
+$y = \frac{x}{2} \left( \sqrt{11} \tan \left( \frac{\sqrt{11}}{2} \ln x + \arctan \left( \frac{3}{\sqrt{11}} \right) \right) - 1 \right)$ **A1**
+
+Difficulty: 5
+Unit: Differential Equations
+Topics: Homogeneous DE
+Tags: Paper 1
+
+---
+Question:
+Given that $\frac{dx}{dy} + 2y \tan x = \sin x$, and $y = 0$ when $x = \frac{\pi}{3}$, find the maximum value of $y$. [11]
+
+Solution:
+integrating factor = $e^{\int 2 \tan x dx}$ **M1**
+    = $e^{2 \ln |\sec x|}$ **A1**
+    = $\sec^2 x$ **A1**
+
+it follows that
+$y \sec^2 x = \int \sin x \sec^2 x dx$ **M1**
+    = $\int \sec x \tan x dx$ **A1**
+    = $\sec x + C$ **A1**
+
+substituting $y = 0$ when $x = \frac{\pi}{3}$:
+$0 = \sec \frac{\pi}{3} + C = 2 + C$ **M1**
+$\Rightarrow C = -2$ **A1**
+
+the solution is
+$y = \cos x - 2 \cos^2 x$ **A1**
+
+EITHER
+using a GDC
+maximum value of $y$ is 0.125 **A2**
+
+OR
+$y' = -\sin x + 4 \sin x \cos x = 0$ **M1**
+$\Rightarrow \cos x = \frac{1}{4}$ (or $\sin x = 0$ which leads to a minimum)
+$\Rightarrow y = \frac{1}{8}$ **A1**
+
+Difficulty: 6
+Unit: Differential Equations
+Topics: Integrating Factor
+Tags: Paper 2
+
+---
+Question:
+Solve the differential equation $(x + 1)(x + 2) \frac{dy}{dx} + y = x + 1$, giving your answer in the form $y = f(x)$. [11]
+
+Solution:
+Rewrite the equation in the form:
+$\frac{dy}{dx} + \frac{y}{(x+1)(x+2)} = \frac{1}{x+2}$ **M1**
+
+Integrating factor = $e^{\int \frac{dx}{(x+1)(x+2)}}$ **A1**
+
+Now, $\int \frac{dx}{(x+1)(x+2)} = \int \left( \frac{1}{x+1} - \frac{1}{x+2} \right) dx$ **M1A1**
+
+$= \ln \left| \frac{x+1}{x+2} \right|$ **A1**
+
+So integrating factor = $e^{\ln \left| \frac{x+1}{x+2} \right|} = \frac{x+1}{x+2}$ **A1**
+
+Multiplying by the integrating factor:
+$\frac{x+1}{x+2} \frac{dy}{dx} + \frac{y}{(x+2)^2} = \frac{x+1}{(x+2)^2}$ **M1**
+
+The right side: $\frac{x+1}{(x+2)^2} = \frac{1}{x+2} - \frac{1}{(x+2)^2}$ **A1**
+
+Integrating both sides:
+$\frac{x+1}{x+2} y = \int \left( \frac{1}{x+2} - \frac{1}{(x+2)^2} \right) dx = \ln |x+2| + \frac{1}{x+2} + C$ **A1A1**
+
+Thus, $y = \frac{x+2}{x+1} \left( \ln |x+2| + \frac{1}{x+2} + C \right)$ **A1**
+
+Difficulty: 6
+Unit: Differential Equations
+Topics: Integrating Factor
+Tags: Paper 1
+---
+
+Question:
+Consider the differential equation $\frac{dy}{dx} + y \tan x = 2\cos^4 x$ given that $y = 1$ when $x = 0$.
+
+(a) Solve the differential equation, giving your answer in the form $y = f(x)$. [9]
+
+(b) 
+$\quad$(i) By differentiating both sides of the differential equation, show that $\frac{d^2 y}{dx^2} + y = -10 \sin x \cos^3 x$. [4]
+
+$\quad$(ii) Hence find the first four terms of the Maclaurin series for $y$. [5]
+
+Solution:
+(a) Integrating factor = $e^{\int \tan x  dx}$ **M1**
+$= e^{\ln |\sec x|}$ **A1**
+$= \sec x$ **A1**
+Multiply the differential equation by the integrating factor:
+$\sec x \frac{dy}{dx} + y \sec x \tan x = 2 \cos^4 x \sec x$ **M1**
+$\frac{d}{dx} (y \sec x) = 2 \cos^3 x$ **A1**
+Integrate both sides:
+$y \sec x = 2 \int \cos^3 x  dx$ **A1**
+$= 2 \int \cos x (1 - \sin^2 x)  dx$ **A1**
+$= 2 \left( \sin x - \frac{\sin^3 x}{3} \right) + C$ **A1**
+Apply initial condition $x = 0$, $y = 1$:
+$1 \cdot 1 = 2 \left( 0 - 0 \right) + C$ **M1**
+$C = 1$
+Thus, $y = \cos x \left[ 2 \left( \sin x - \frac{\sin^3 x}{3} \right) + 1 \right]$ **A1**
+$\quad$
+(b) (i) Differentiate the original equation with respect to $x$:
+$\frac{d^2 y}{dx^2} + \frac{dy}{dx} \tan x + y \sec^2 x = -8 \cos^3 x \sin x$ **A1A1**
+From the original equation, $\frac{dy}{dx} = 2 \cos^4 x - y \tan x$. Substitute:
+$\frac{d^2 y}{dx^2} + (2 \cos^4 x - y \tan x) \tan x + y \sec^2 x = -8 \cos^3 x \sin x$ **A1**
+Simplify:
+$\frac{d^2 y}{dx^2} + 2 \cos^4 x \tan x - y \tan^2 x + y \sec^2 x = -8 \cos^3 x \sin x$
+$\frac{d^2 y}{dx^2} + y (\sec^2 x - \tan^2 x) + 2 \cos^4 x \tan x = -8 \cos^3 x \sin x$
+Since $\sec^2 x - \tan^2 x = 1$ and $\tan x = \frac{\sin x}{\cos x}$, so $2 \cos^4 x \tan x = 2 \cos^3 x \sin x$:
+$\frac{d^2 y}{dx^2} + y + 2 \cos^3 x \sin x = -8 \cos^3 x \sin x$
+$\frac{d^2 y}{dx^2} + y = -10 \cos^3 x \sin x$ **A1**
+$\quad$
+(b) (ii) From part (b)(i), at $x = 0$:
+$y(0) = 1$ **A1**
+From the original equation, at $x = 0$: $y'(0) + 1 \cdot 0 = 2 \cdot 1$ so $y'(0) = 2$ **A1**
+From $\frac{d^2 y}{dx^2} + y = -10 \sin x \cos^3 x$, at $x = 0$: $y''(0) + 1 = 0$ so $y''(0) = -1$ **A1**
+Differentiate the equation from (b)(i):
+$\frac{d^3 y}{dx^3} + \frac{dy}{dx} = -10 \cos^4 x + 30 \sin^2 x \cos^2 x$ **M1**
+At $x = 0$: $y'''(0) + y'(0) = -10 \cdot 1 + 0$ so $y'''(0) + 2 = -10$ thus $y'''(0) = -12$ **A1**
+Maclaurin series:
+$y = y(0) + y'(0) x + \frac{y''(0)}{2!} x^2 + \frac{y'''(0)}{3!} x^3 + \cdots$
+$y = 1 + 2x - \frac{1}{2} x^2 - 2 x^3$ **A1**
+
+Difficulty: 6
+Unit: Differential Equations
+Topics: Integrating Factor, Taylor Series from DE
+Tags: Paper 1
+---
+
+Question:
+It is given that $(5x + y) \frac{dy}{dx} = x + 5y$ and that when $x = 0$, $y = 2$.
+
+a. Use Euler's method with step length 0.1 to find an approximate value of $y$ when $x = 0.4$. [5]
+
+b.
+$\quad$i. Show that $(5x + y) \frac{d^2y}{dx^2} = 1 - \left( \frac{dy}{dx} \right)^2$. [3]
+
+$\quad$ii. Show that $(5x + y) \frac{d^3y}{dx^3} = -5 \frac{d^2y}{dx^2} - 3 \left( \frac{dy}{dx} \right) \left( \frac{d^2y}{dx^2} \right)$. [4]
+
+$\quad$iii. Find the Maclaurin expansion for $y$ up to and including the term in $x^3$. [5]
+
+Solution:
+a. Euler's method with step length $h = 0.1$:
+$\frac{dy}{dx} = \frac{x + 5y}{5x + y}$
+
+$$
+\begin{array}{ccccc}
+x & y & \frac{dy}{dx} & h\frac{dy}{dx} & \text{New } y \\
+0.0 & 2.000 & 5.000 & 0.500 & 2.500 \\
+0.1 & 2.500 & 4.200 & 0.420 & 2.920 \\
+0.2 & 2.920 & 3.776 & 0.378 & 3.298 \\
+0.3 & 3.298 & 3.499 & 0.350 & 3.648 \\
+0.4 & 3.648 & & & \\
+\end{array}
+$$
+
+First line of table **M1A1**
+Line 2 **A1**
+Line 3 **A1**
+Hence $y(0.4) \approx 3.65$ **A1**
+$\quad$
+b.i. Differentiate both sides of $(5x + y) \frac{dy}{dx} = x + 5y$:
+$(5 + \frac{dy}{dx}) \frac{dy}{dx} + (5x + y) \frac{d^2y}{dx^2} = 1 + 5 \frac{dy}{dx}$ **M1A1**
+$(5x + y) \frac{d^2y}{dx^2} = 1 + 5 \frac{dy}{dx} - 5 \frac{dy}{dx} - \left( \frac{dy}{dx} \right)^2$
+$(5x + y) \frac{d^2y}{dx^2} = 1 - \left( \frac{dy}{dx} \right)^2$ **A1**
+$\quad$
+b.ii. Differentiate the result from part b.i:
+$(5 + \frac{dy}{dx}) \frac{d^2y}{dx^2} + (5x + y) \frac{d^3y}{dx^3} = -2 \frac{dy}{dx} \frac{d^2y}{dx^2}$ **M1A1A1**
+$(5x + y) \frac{d^3y}{dx^3} = -2 \frac{dy}{dx} \frac{d^2y}{dx^2} - 5 \frac{d^2y}{dx^2} - \frac{dy}{dx} \frac{d^2y}{dx^2}$
+$(5x + y) \frac{d^3y}{dx^3} = -5 \frac{d^2y}{dx^2} - 3 \frac{dy}{dx} \frac{d^2y}{dx^2}$ **A1**
+$\quad$
+b.iii. At $x = 0$, $y = 2$:
+From original equation: $\frac{dy}{dx} = 5$ **A1**
+From b.i: $\frac{d^2y}{dx^2} = -12$ **A1**
+From b.ii: $\frac{d^3y}{dx^3} = 120$ **A1**
+Maclaurin expansion:
+$y = 2 + 5x - 6x^2 + 20x^3$ **M1A1**
+
+Difficulty: 6
+Unit: Differential Equations
+Topics: Euler's method, Taylor Series from DE
+Tags: Paper 1
+---
+
+Question:
+A population of bacteria grows at a rate proportional to the square root of its current population. The differential equation governing this growth is: $\frac{dP}{dt} = k\sqrt{P}$, where $P$ is the population size at time $t$ hours, and $k$ is a positive constant.
+
+a) Solve the differential equation to find the general solution for $P$ in terms of $t$ and the constant of integration $C$. [4]
+
+b) Given that the initial population at $t = 0$ is $P_0 > 0$, find the particular solution. [2]
+
+c) If the population doubles in 4 hours, find the value of $k$ in terms of $P_0$. [3]
+
+d) Using the value of $k$ from part (c), determine the time it will take for the population to triple from its initial size. [3]
+
+Solution:
+a) Separate the variables:
+$\frac{dP}{\sqrt{P}} = k dt$ **M1**
+Integrate both sides:
+$\int P^{-1/2} dP = \int k dt$ **A1**
+$2\sqrt{P} = kt + C$ **A1**
+General solution:
+$P(t) = \frac{1}{4}(kt + C)^2$ **A1**
+$\quad$
+b) Apply initial condition $P(0) = P_0$:
+$P_0 = \frac{1}{4}C^2$ **M1**
+$C = 2\sqrt{P_0}$ (since $C > 0$)
+Particular solution:
+$P(t) = \frac{1}{4}(kt + 2\sqrt{P_0})^2$ **A1**
+$\quad$
+c) Set $P(4) = 2P_0$:
+$2P_0 = \frac{1}{4}(4k + 2\sqrt{P_0})^2$ **M1**
+Solve for $k$:
+$8P_0 = (4k + 2\sqrt{P_0})^2$
+$2\sqrt{2P_0} = 4k + 2\sqrt{P_0}$ **A1**
+$k = \frac{\sqrt{P_0}(\sqrt{2} - 1)}{2}$ **A1**
+$\quad$
+d) Set $P(t) = 3P_0$:
+$3P_0 = \frac{1}{4}(kt + 2\sqrt{P_0})^2$ **M1**
+Substitute $k$:
+$3P_0 = \frac{1}{4}\left(\frac{\sqrt{P_0}(\sqrt{2} - 1)t}{2} + 2\sqrt{P_0}\right)^2$
+Solve for $t$:
+$t = \frac{4(\sqrt{3} - 1)}{\sqrt{2} - 1}$ **A1**
+Rationalize:
+$t = 4(\sqrt{3} - 1)(\sqrt{2} + 1)$ **A1**
+
+Difficulty: 6
+Unit: Differential Equations
+Topics: Separable DE
+Tags: Paper 1
+
+---
+Question:
+Given that $y$ is a function of $x$, the function $z$ is given by $z = \frac{y - 2x}{y + 2x}$, where $x \in \mathbb{R}$, $x \neq 2$, $y + 2x \neq 0$.
+
+a. Show that $\frac{dz}{dx} = \frac{4}{(y + 2x)^2} \left( x \frac{dy}{dx} - y \right)$. [3]
+
+b. Show that the differential equation $f(x) \left( x \frac{dy}{dx} - y \right) = y^2 - 4x^2$ can be written as $f(x) \frac{dz}{dx} = 4z$. [3]
+
+c. Hence show that the solution to the differential equation $(x - 2) \left( x \frac{dy}{dx} - y \right) = y^2 - 4x^2$ given that $x = 3$ when $y = 7$ is $\frac{y - 2x}{y + 2x} = \left( \frac{x - 2}{2} \right)^2$. [7]
+
+Solution:
+a. $z = \frac{y - 2x}{y + 2x}$
+
+$\Rightarrow \frac{dz}{dx} = \frac{(y + 2x) \left( \frac{dy}{dx} - 2 \right) - (y - 2x) \left( \frac{dy}{dx} + 2 \right)}{(y + 2x)^2}$ **M1**
+
+$\Rightarrow \frac{dz}{dx} = \frac{y \frac{dy}{dx} + 2x \frac{dy}{dx} - 2y - 4x - y \frac{dy}{dx} + 2x \frac{dy}{dx} - 2y + 4x}{(y + 2x)^2}$ **A1**
+
+$\Rightarrow \frac{dz}{dx} = \frac{4}{(y + 2x)^2} \left( x \frac{dy}{dx} - y \right)$ **A1**
+
+$\ $
+
+b. $f(x) \left( \frac{(y + 2x)^2}{4} \right) \frac{dz}{dx} = y^2 - 4x^2$ **M1**
+
+$f(x) \frac{dz}{dx} = 4 \frac{(y - 2x)(y + 2x)}{(y + 2x)^2}$ **A1**
+
+$f(x) \frac{dz}{dx} = 4 \frac{(y - 2x)}{(y + 2x)} = 4z$ **A1**
+
+$\ $
+
+c. 
+**METHOD 1**
+
+$f(x) \frac{dz}{dx} = 4z$
+
+$\frac{1}{z} \frac{dz}{dx} = \frac{4}{f(x)}$
+
+$\frac{1}{z} \frac{dz}{dx} = \frac{4}{x-2}$ **M1 A1**
+
+EITHER
+
+$\Rightarrow \ln z = 4 \ln (x - 2) + c$ **A1**
+
+when $y = 7$, $x = 3$ $\Rightarrow z = \frac{1}{13}$ **M1**
+
+$\Rightarrow c = \ln \frac{1}{13}$ **A1**
+
+$\Rightarrow \ln z = 4 \ln (x - 2) + \ln \frac{1}{13}$ **A1**
+
+$\Rightarrow \ln z = \ln (x - 2)^4 - \ln 13$ **A1**
+
+$\Rightarrow \ln z = \ln \left( \frac{x-2}{13^{1/4}} \right)^4$ **A1**
+
+$\Rightarrow z = \left( \frac{x-2}{2} \right)^2$
+
+OR
+
+$\Rightarrow \ln z = 4 \ln (x - 2) + \ln c$ **A1**
+
+$z = c(x - 2)^4$ **M1 A1**
+
+when $y = 7$, $x = 3$ $\Rightarrow z = \frac{1}{13}$ **M1**
+
+$\Rightarrow c = \frac{1}{13}$ **A1**
+
+THEN
+
+$\Rightarrow \frac{y-2x}{y+2x} = \left( \frac{x-2}{2} \right)^2$ **AG**
+
+**METHOD 2**
+
+$f(x) \frac{dz}{dx} = 4z$
+
+$f(x) \frac{dz}{dx} - 4z = 0$
+
+$\frac{dz}{dx} - \frac{4z}{x-2} = 0$ **M1**
+
+integrating factor is $e^{\int \frac{-4}{x-2} dx}$ **A1**
+
+$e^{\int \frac{-4}{x-2} dx} = e^{-4 \ln (x-2)}$
+
+$= \frac{1}{(x-2)^4}$ **A1**
+
+hence $\frac{d}{dx} \left[ \frac{z}{(x-2)^4} \right] = 0$ **M1**
+
+$z = A(x - 2)^4$ **A1**
+
+when $y = 7$, $x = 3$ $\Rightarrow z = \frac{1}{13}$ **M1**
+
+$\Rightarrow A = \frac{1}{13}$ **A1**
+
+$\Rightarrow \frac{y-2x}{y+2x} = \left( \frac{x-2}{2} \right)^2$ **AG**
+
+Difficulty: 7
+Unit: Differential Equations
+Topics: Homogeneous DE
+Tags: Paper 1
+---
+
+Question:
+The curve C with equation $y = f(x)$ satisfies the differential equation $\frac{dy}{dx} = \frac{y}{\ln y}(x + 2), \, y > 1$, and $y = e$ when $x = 2$.
+
+a. Find the equation of the tangent to C at the point $(2, e)$. [3]
+b. Find $f(x)$. [11]
+c. Determine the largest possible domain of $f$. [6]
+d. Show that the equation $f(x) = f'(x)$ has no solution. [4]
+
+Solution:
+a. $\frac{dy}{dx} = \frac{e}{\ln e}(2 + 2) = 4e$ **A1**
+At $(2, e)$ the tangent line is $y - e = 4e(x - 2)$ **M1**
+Hence $y = 4ex - 7e$ **A1**
+$\quad$
+b. $\frac{dy}{dx} = \frac{y}{\ln y}(x + 2) \Rightarrow \frac{\ln y}{y} dy = (x + 2) dx$ **M1**
+$\int \frac{\ln y}{y} dy = \int (x + 2) dx$
+Using substitution $u = \ln y$; $du = \frac{1}{y} dy$ **M1 A1**
+$\Rightarrow \int u du = \frac{1}{2} u^2$ **A1**
+$\Rightarrow \frac{(\ln y)^2}{2} = \frac{x^2}{2} + 2x + C$ **A1 A1**
+At $(2, e)$, $\frac{(\ln e)^2}{2} = 6 + C$ **M1**
+$\Rightarrow C = -\frac{11}{2}$ **A1**
+$\Rightarrow (\ln y)^2 = x^2 + 4x - 11$
+$\ln y = \pm \sqrt{x^2 + 4x - 11} \Rightarrow y = e^{\pm \sqrt{x^2 + 4x - 11}}$ **M1 A1**
+Since $y > 1$, $f(x) = e^{\sqrt{x^2 + 4x - 11}}$ **R1**
+$\quad$
+c. $x^2 + 4x - 11 > 0$ **A1**
+Using the quadratic formula **M1**
+Critical values are $-2 \pm \sqrt{15}$ **A1**
+Using a sign diagram or algebraic solution **M1**
+$x < -2 - \sqrt{15}$; $x > -2 + \sqrt{15}$ **A1 A1**
+$\quad$
+d. $f(x) = f'(x) \Rightarrow f(x) = \frac{f(x)}{\ln f(x)} (x + 2)$ **M1**
+$\Rightarrow \ln (f(x)) = x + 2$ **A1**
+$\Rightarrow (x + 2)^2 = x^2 + 4x - 11$ **A1**
+$\Rightarrow x^2 + 4x + 4 = x^2 + 4x - 11 \Rightarrow 4 = -11$, contradiction **R1**
+
+Difficulty: 7
+Unit: Differential Equations
+Topics: Separable DE
+Tags: Paper 1
+
+---
+Question:
+Consider the differential equation $\frac{dy}{dx} + y \tan x = 2\sec^2 x$, $\quad 0 \leq x < \frac{\pi}{2}$, given that $y = 1$ when $x = 0$.
+
+a.
+$\quad$ i. By considering integration as the reverse of differentiation, show that for $0 \leq x < \frac{\pi}{2}$, $\int \sec x  dx = \ln(\sec x + \tan x) + C$. [3]
+
+$\quad$ ii. Hence, using integration by parts, show that $\int \sec^3 x  dx = \frac{1}{2} (\sec x \tan x + \ln(\sec x + \tan x)) + C$. [5]
+
+b.
+$\quad$ i. Find an integrating factor and hence solve the differential equation, giving your answer in the form $y = f(x)$. [9]
+
+$\quad$ ii. Starting with the differential equation, show that $\frac{d^2 y}{dx^2} + y = 2\sec^2 x \tan x$. [4]
+
+$\quad$ iii. Hence, by using your calculator to draw two appropriate graphs or otherwise, find the $x$-coordinate of the point of inflection on the graph of $y = f(x)$. [4]
+
+Solution:
+a.i. $\frac{d}{dx} (\ln(\sec x + \tan x)) = \frac{\sec x \tan x + \sec^2 x}{\sec x + \tan x}$ **M1**
+$= \sec x \left( \frac{\tan x + \sec x}{\sec x + \tan x} \right) = \sec x$ **A1**
+Therefore, $\int \sec x  dx = \ln(\sec x + \tan x) + C$ **A1**
+$\ $
+a.ii. $\int \sec^3 x  dx = \int \sec x \cdot \sec^2 x  dx$ **M1**
+Let $u = \sec x$, $dv = \sec^2 x  dx$
+Then $du = \sec x \tan x  dx$, $v = \tan x$
+$= \sec x \tan x - \int \sec x \tan^2 x  dx$ **A1**
+$= \sec x \tan x - \int \sec x (\sec^2 x - 1)  dx$ **A1**
+$= \sec x \tan x - \int \sec^3 x  dx + \int \sec x  dx$
+$2\int \sec^3 x  dx = \sec x \tan x + \ln(\sec x + \tan x)$ **A1**
+$\int \sec^3 x  dx = \frac{1}{2} (\sec x \tan x + \ln(\sec x + \tan x)) + C$ **A1**
+$\ $
+b.i. Integrating factor = $e^{\int \tan x  dx}$ **M1**
+$= e^{\ln \sec x}$ **A1**
+$= \sec x$ **A1**
+The differential equation becomes:
+$\frac{d}{dx} (y \sec x) = 2 \sec^3 x$ **A1**
+Integrating both sides:
+$y \sec x = \int 2 \sec^3 x  dx = \sec x \tan x + \ln(\sec x + \tan x) + C$ **A1**
+Using initial condition $x = 0$, $y = 1$:
+$1 \cdot 1 = 1 \cdot 0 + \ln(1 + 0) + C$ **M1**
+$C = 1$ **A1**
+Thus, $y = \cos x (\sec x \tan x + \ln(\sec x + \tan x) + 1)$ **A1**
+$\ $
+b.ii. Differentiating the original equation:
+$\frac{d^2 y}{dx^2} + \frac{dy}{dx} \tan x + y \sec^2 x = 4 \sec^2 x \tan x$ **M1A1**
+From the original equation: $\frac{dy}{dx} = 2\sec^2 x - y \tan x$
+Substituting:
+$\frac{d^2 y}{dx^2} + (2\sec^2 x - y \tan x) \tan x + y \sec^2 x = 4 \sec^2 x \tan x$ **M1**
+$\frac{d^2 y}{dx^2} + y (\sec^2 x - \tan^2 x) = 2 \sec^2 x \tan x$
+Since $\sec^2 x - \tan^2 x = 1$:
+$\frac{d^2 y}{dx^2} + y = 2 \sec^2 x \tan x$ **A1**
+$\ $
+b.iii. At a point of inflection, $\frac{d^2 y}{dx^2} = 0$, so $y = 2 \sec^2 x \tan x$ **M1**
+Find the intersection of:
+$y = \cos x (\sec x \tan x + \ln(\sec x + \tan x) + 1)$
+and
+$y = 2 \sec^2 x \tan x$ **M1**
+Using a calculator to find the intersection:
+$x \approx 0.605$ **A2**
+
+Difficulty: 8
+Unit: Differential Equations
+Topics: Integrating Factor, Trigonometric Integration
+Tags: Paper 2
+---
+Question:
+Consider the first-order differential equation $\frac{dy}{dx} + \frac{y}{2x} = \sin 3x \cos 3x$.
+Solve the equation given that $y = 0$ when $x = \frac{\pi}{2}$, giving your answer in the form $y = f(x)$.
+
+Consider the first-order differential equation
+$\frac{dy}{dx} + \frac{1}{2x} = \sin 3x \cos 3x$
+Solve the equation given that $y = 0$ when $x = \frac{\pi}{2}$, giving your answer in the form $y = f(x)$.
+
+Solution:
+Rewrite the equation:
+$\frac{dy}{dx} = \sin 3x \cos 3x - \frac{1}{2x}$ **M1**
+
+Simplify the trigonometric term:
+$\sin 3x \cos 3x = \frac{1}{2} \sin 6x$ **A1**
+
+Integrate both sides with respect to $x$:
+$y = \int \left( \frac{1}{2} \sin 6x - \frac{1}{2x} \right) dx$ **M1**
+
+Integrate term by term:
+$\int \frac{1}{2} \sin 6x \, dx = -\frac{1}{12} \cos 6x$ **A1**
+$\int -\frac{1}{2x} \, dx = -\frac{1}{2} \ln |x|$ **A1**
+
+So:
+$y = -\frac{1}{12} \cos 6x - \frac{1}{2} \ln |x| + C$ **A1**
+
+Apply initial condition $x = \frac{\pi}{2}$, $y = 0$:
+$0 = -\frac{1}{12} \cos \left(6 \cdot \frac{\pi}{2}\right) - \frac{1}{2} \ln \left| \frac{\pi}{2} \right| + C$ **M1**
+
+Evaluate $\cos(3\pi) = -1$:
+$0 = -\frac{1}{12} (-1) - \frac{1}{2} \ln \left( \frac{\pi}{2} \right) + C$ **A1**
+$0 = \frac{1}{12} - \frac{1}{2} \ln \left( \frac{\pi}{2} \right) + C$
+
+Solve for $C$:
+$C = \frac{1}{2} \ln \left( \frac{\pi}{2} \right) - \frac{1}{12}$ **A1**
+
+Substitute $C$ back:
+$y = -\frac{1}{12} \cos 6x - \frac{1}{2} \ln |x| + \frac{1}{2} \ln \left( \frac{\pi}{2} \right) - \frac{1}{12}$ **A1**
+
+Simplify the expression:
+$y = -\frac{1}{12} (1 + \cos 6x) - \frac{1}{2} \ln \left| \frac{2x}{\pi} \right|$ **A1**
+
+Difficulty: 8
+Unit: Differential Equations
+Topics: Integrating Factor
+Tags: Paper 1
