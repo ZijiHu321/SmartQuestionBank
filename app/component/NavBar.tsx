@@ -19,17 +19,17 @@ function NavBar() {
 
   // Measure nav height and update on resize
   useEffect(() => {
-  const updateNavHeight = () => {
-    if (typeof window !== 'undefined') {
-      const nav = document.querySelector('nav');
-      if (nav) setNavHeight(nav.offsetHeight);
-    }
-  };
+    const updateNavHeight = () => {
+      if (typeof window !== 'undefined') {
+        const nav = document.querySelector('nav');
+        if (nav) setNavHeight(nav.offsetHeight);
+      }
+    };
 
-  updateNavHeight();
-  window.addEventListener('resize', updateNavHeight);
-  return () => window.removeEventListener('resize', updateNavHeight);
-}, []); // Empty dependency array
+    updateNavHeight();
+    window.addEventListener('resize', updateNavHeight);
+    return () => window.removeEventListener('resize', updateNavHeight);
+  }, []); // Empty dependency array
 
   return (
     <>
@@ -59,7 +59,19 @@ function NavBar() {
           }}
         >
           {/* Brand */}
-          <div className="brand">SmartQB</div>
+          <Link
+            href="/"
+            style={{
+              textDecoration: "none",  
+              color: "#333",           
+              fontSize: "2.5vw",       
+              fontWeight: "700",       
+              display: "inline-block"  
+            }}
+          >
+            SmartQB
+          </Link>
+
 
           {/* Mobile Menu Button */}
           <button
@@ -153,14 +165,6 @@ function NavBar() {
         </div>
 
         <style jsx>{`
-          .brand {
-            color: #333;
-            font-size: 2.5vw;
-            font-weight: 700;
-            margin: 0.5rem 0 0.5rem 2rem;
-            margin-bottom: 1rem;
-          }
-
           .mobile-menu-button {
             display: none;
           }
