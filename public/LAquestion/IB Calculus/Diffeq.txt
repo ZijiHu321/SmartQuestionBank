@@ -673,10 +673,6 @@ Question:
 Consider the first-order differential equation $\frac{dy}{dx} + \frac{y}{2x} = \sin 3x \cos 3x$.
 Solve the equation given that $y = 0$ when $x = \frac{\pi}{2}$, giving your answer in the form $y = f(x)$.
 
-Consider the first-order differential equation
-$\frac{dy}{dx} + \frac{1}{2x} = \sin 3x \cos 3x$
-Solve the equation given that $y = 0$ when $x = \frac{\pi}{2}$, giving your answer in the form $y = f(x)$.
-
 Solution:
 Rewrite the equation:
 $\frac{dy}{dx} = \sin 3x \cos 3x - \frac{1}{2x}$ **M1**

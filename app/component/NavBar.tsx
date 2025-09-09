@@ -59,7 +59,9 @@ function NavBar() {
           }}
         >
           {/* Brand */}
-          <div className="brand">SmartQB</div>
+          <Link href="/" style={{ textDecoration: 'none' }}>
+            <div className="brand" style={{ cursor: 'pointer' }}>SmartQB</div>
+          </Link>
 
           {/* Mobile Menu Button */}
           <button
