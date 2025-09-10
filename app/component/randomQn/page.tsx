@@ -10,11 +10,11 @@ interface CourseUnit {
 const COURSE_UNITS: CourseUnit[] = [
   {
     course: 'Cal1',
-    units: ['Limits_and_Continuity', 'Finding_Derivative', 'Properties_of_Curves','Application_of_Derivatives']
+    units: ['Limits_and_Continuity', 'Finding_Derivative_Functions', 'Properties_of_Curves','Application_of_Derivatives']
   },
   {
     course: 'IB Calculus',
-    units: ['Limits', 'Derivative', 'PropertiesOfCurves','ApplicationofDerivatives','Integral','Kinematics','TaylorSeries','DifferentialEquations']
+    units: ['Limits', 'Derivative', 'Curve','ApplicationofDerivatives','Integral','Kinematics','TaylorSeries','DifferentialEquations']
   },
   {
     course: 'IBstatistics',
@@ -52,6 +52,7 @@ export default function RandomQuestion() {
     if (selectedCourse && selectedUnit && selectedQuestionType) {
       const path = getFilePath(selectedCourse, selectedUnit, selectedQuestionType);
       setFilePath(path);
+      console.log(path);
       setIsSubmitted(true);
     }
   };
