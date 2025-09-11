@@ -5,12 +5,18 @@ import { useState } from 'react';
 function IBstatisticsPage() {
   const router = useRouter();
   const [hoveredUnit, setHoveredUnit] = useState<string | null>(null);
+  const [showComingSoon, setShowComingSoon] = useState(false);
+
+  const handleUnitClick = () => {
+    setShowComingSoon(true);
+    setTimeout(() => setShowComingSoon(false), 3000);
+  };
 
   const units = [
-    { title: 'Probability', path: '/unit/IBstatistics/Probability' },
-    { title: 'Statistics', path: '/unit/IBstatistics/Statistics' },
-    { title: 'Discrete Random Variables', path: '/unit/IBstatistics/DiscreteRandomVariables' },
-    { title: 'Continuous Random Variables', path: '/unit/IBstatistics/ContinuousRandomVariables' },
+    { title: 'Probability' },
+    { title: 'Statistics' },
+    { title: 'Discrete Random Variables' },
+    { title: 'Continuous Random Variables'  },
   ];
 
   return (
@@ -59,20 +65,20 @@ function IBstatisticsPage() {
           flexDirection: 'column',
           gap: '15px'
         }}>
-          {units.map((unit) => (
+          {units.map((unit, index) => (
             <div
-              key={unit.path}
-              onClick={() => router.push(unit.path)}
-              onMouseEnter={() => setHoveredUnit(unit.path)}
+              key={unit.title}
+              onClick={handleUnitClick}
+              onMouseEnter={() => setHoveredUnit(unit.title)}
               onMouseLeave={() => setHoveredUnit(null)}
               style={{
-                backgroundColor: hoveredUnit === unit.path ? '#e9ecef' : 'white',
+                backgroundColor: hoveredUnit === unit.title ? '#e9ecef' : 'white',
                 border: '2px solid #dee2e6',
                 borderRadius: '8px',
                 padding: '20px',
                 cursor: 'pointer',
                 transition: 'all 0.3s ease',
-                transform: hoveredUnit === unit.path ? 'translateX(10px)' : 'none',
+                transform: hoveredUnit === unit.title ? 'translateX(10px)' : 'none',
                 boxShadow: '0 2px 4px rgba(0,0,0,0.05)',
                 display: 'flex',
                 alignItems: 'center',
@@ -95,7 +101,7 @@ function IBstatisticsPage() {
                 fontWeight: 'bold',
                 fontSize: '1.2rem'
               }}>
-                {units.indexOf(unit) + 1}
+                {index + 1}
               </div>
               <h2 style={{
                 margin: 0,
@@ -109,6 +115,56 @@ function IBstatisticsPage() {
           ))}
         </div>
       </div>
+
+      {/* Coming Soon Notification */}
+      {showComingSoon && (
+        <div style={{
+          position: 'fixed',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          backgroundColor: '#ffffff',
+          border: '2px solid #007bff',
+          borderRadius: '12px',
+          padding: '30px 40px',
+          boxShadow: '0 10px 25px rgba(0,0,0,0.3)',
+          zIndex: 1000,
+          textAlign: 'center',
+          minWidth: '300px',
+          animation: 'fadeInOut 3s ease-in-out'
+        }}>
+          <div style={{
+            fontSize: '2rem',
+            marginBottom: '10px'
+          }}>
+            🚧
+          </div>
+          <h3 style={{
+            margin: '0 0 10px 0',
+            color: '#007bff',
+            fontSize: '1.3rem',
+            fontWeight: '600'
+          }}>
+            Coming Soon!
+          </h3>
+          <p style={{
+            margin: 0,
+            color: '#666',
+            fontSize: '1rem'
+          }}>
+            This unit is under development
+          </p>
+        </div>
+      )}
+
+      <style jsx>{`
+        @keyframes fadeInOut {
+          0% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+          15% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+          85% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+          100% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+        }
+      `}</style>
     </div>
   );
 }
