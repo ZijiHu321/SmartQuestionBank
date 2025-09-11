@@ -13,7 +13,9 @@ const AboutUs = () => {
 
   useEffect(() => {
     const checkScreenSize = () => {
-      setIsMobile(window.innerWidth <= 768);
+      // Calculate if 3 columns of 180px + gaps + padding would fit
+      const minWidthFor3Columns = (180 * 3) + (32 * 2) + (48 * 2) + (24 * 2); // images + gaps + padding + margin
+      setIsMobile(window.innerWidth < minWidthFor3Columns);
     };
     
     checkScreenSize();
@@ -40,9 +42,9 @@ const AboutUs = () => {
       image: Haren
     },
     {
-      name: "Developer",
-      role: "Content Specialist",
-      bio: "Former teacher dedicated to creating engaging and effective learning materials.",
+      name: "Jinkai Chen",
+      role: "Developer",
+      bio: "Software developer driven by problem solving, with a strong mathematical mindset and a focus on building technically robust solutions.",
       emoji: "",
       image: jinkai
     }
