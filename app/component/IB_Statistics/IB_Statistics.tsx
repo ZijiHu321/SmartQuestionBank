@@ -1,9 +1,7 @@
 'use client';
-import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
 function IBstatisticsPage() {
-  const router = useRouter();
   const [hoveredUnit, setHoveredUnit] = useState<string | null>(null);
   const [showComingSoon, setShowComingSoon] = useState(false);
 

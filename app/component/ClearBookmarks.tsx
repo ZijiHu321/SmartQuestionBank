@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 interface ClearBookmarksProps {
   onClear: () => void; // Required callback to update parent state
@@ -10,16 +10,19 @@ const ClearBookmarks = ({ onClear }: ClearBookmarksProps) => {
   const [showConfirm, setShowConfirm] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [isConfirmHovered, setIsConfirmHovered] = useState(false);
-  const [audio, setAudio] = useState<HTMLAudioElement | null>(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
     // Load audio only after component mounts (client-side)
-    setAudio(new Audio('data:audio/wav;base64,UklGRl9vT19XQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YUAAAAA...'));
-    return () => audio?.pause();
+    audioRef.current = new Audio('data:audio/wav;base64,UklGRl9vT19XQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YUAAAAA...');
+    return () => {
+      audioRef.current?.pause();
+      audioRef.current = null;
+    };
   }, []);
 
   const handleClear = () => {
-    audio?.play().catch(() => { /* Handle audio error silently */ });
+    audioRef.current?.play().catch(() => { /* Handle audio error silently */ });
     setShowConfirm(true);
   };
 
