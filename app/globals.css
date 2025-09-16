@@ -8,7 +8,7 @@
   overflow: auto hidden !important;
 }
 
-.introBox,
+
 .thingsBox {
   margin: 20px auto;       /* vertical 20px, horizontal auto centers it */
   padding: 20px;
@@ -18,8 +18,31 @@
 }
 
 .introBox {
-  background-color: #fef9c3;
+  background: linear-gradient(135deg, #fff7c2, #fef9c3); /* soft gradient */
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  max-width: 900px;
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.6;
 }
+
+.introBox h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #333;
+  border-left: 6px solid #facc15; /* yellow accent bar */
+  padding-left: 12px;
+}
+
+.introBox p {
+  margin: 20px 20px auto;
+  font-size: 1.05rem;
+  color: #444;
+  white-space: pre-line; /* respects your line breaks */
+}
+
 
 .thingsBox {
   background-color: #bbf7d0;
