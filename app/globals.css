@@ -1,9 +1,26 @@
 .katex {
-    font-size: 1.1em !important;
-    line-height: 1.2 !important;
-  }
-  
-  .katex-display {
-    margin: 1em 0 !important;
-    overflow: auto hidden !important;
-  }
+  font-size: 1.1em !important;
+  line-height: 1.2 !important;
+}
+
+.katex-display {
+  margin: 1em 0 !important;
+  overflow: auto hidden !important;
+}
+
+.introBox,
+.thingsBox {
+  margin: 20px auto;       /* vertical 20px, horizontal auto centers it */
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 900px;        /* cap the width on big screens */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.introBox {
+  background-color: #fef9c3;
+}
+
+.thingsBox {
+  background-color: #bbf7d0;
+}
