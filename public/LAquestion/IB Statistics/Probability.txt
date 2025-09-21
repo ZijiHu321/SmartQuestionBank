@@ -72,7 +72,7 @@ Let $A$ be the event the first card drawn is the letter A.
 Let $B$ be the event the second card drawn is the letter B.
 (a) Find $P(A)$. [1]
 (b) Find $P(B|A)$. [2]
-(c) Find $P(A \cap BB = )$. [2]
+(c) Find $P(A \cap B)$. [2]
 
 Solution:
 (a)

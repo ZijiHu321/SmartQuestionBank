@@ -1,0 +1,151 @@
+---
+Question: Suppose that $X$ is a random variable with pmf of the form: $f_X(x) = 0.1x$, for $x$ = 1, 2, 3, 4. Let $Y$ = 3 (mod X). What is $P(Y ≤ 1)$?
+
+Choices:
+- 0.4
+- 0.5
+- 0.6
+- 0.9
+
+Correct: 2
+Difficulty: 4
+Unit: discrete random variable
+Topics: Mod
+---
+
+
+Question: For a discrete random variable $X$, calculate $P(2 ≤ X ≤ 4)$ if $X$ has cumulative distribution function (cdf) given by $F(x) = \frac{2(x^{2}+2)}{9(x+1)}$ for $x$ = 1,2,3,4,5.
+
+Choices:
+- 2/3
+- 16/45
+- 7/15
+- 11/18
+
+Correct: 2
+Difficulty: 5
+Unit: discrete random variable
+Topics: Cumulative Probability
+
+---
+Question: Consider a probability distribution in which the random variable $X$ can only take on the values 0, 1, 2, 3, and 4. Suppose that $P(X = 2) = 0.25$, $P(X = 3) = 0.05$, and $P(X = 4) = 0.05$.
+
+Which of the following must be true?
+
+Choices:
+- $P(X = 0) + P(X = 1) + P(X = 2) = 0.9$
+- $P(X = 0) + P(X = 3) = 0.15$
+- $P(X = 0) = P(X = 2)$
+- $ P(X = 0) < P(X = 2)$
+
+Correct: 0
+Difficulty: 3
+Unit: discrete random variable
+Topics: Cumulative Probability
+
+---
+
+Question: Suppose that the discrete random variable X has a cumulative distribution function (cdf) given by $F(x) = \frac{x^{2}}{25}$ for $x = 1, 2, 3, 4, 5$. Determine $f(x)$, the probability mass function (pmf) of X?
+
+Choices:
+- $\frac{2x-1}{25}$
+- $\frac{2x}{25}$
+- $\frac{x^{2}-1}{25}$
+- $\frac{2x-1}{50}$
+
+Correct: 0
+Difficulty: 4
+Unit: discrete random variable
+Topics: Differentiation, CDF, PMF
+
+
+---
+
+Question: Suppose that the discrete random variable $X$ has a probability mass function given by $f(x) = \frac{k}{x^{2}}$ for $x = 1,2,3$.
+What is Var(X), in terms of $k$?
+
+Choices:
+- $\frac{k(108-121k){36}}$
+- $\frac{7k}{6}$
+- $\frac{k(216-121k){36}}$
+- $\frac{27k}{6}$
+
+Correct: 0
+Difficulty: 6
+Unit: discrete random variable
+Topics: PMF, Variance
+
+---
+
+Question: An insurance company issues an annual policy on a small boat under the following four situations. The replacement cost of $13,000 will be paid out for a total loss. If it is not a total loss, but the damage is at least $8,000, then $5,200 will be paid out. There will be no money paid out if there is damage but it is less than $8,000. Of course, nothing will be paid out if there is no damage. The insurance company estimates the probabilities of the above four situations to be 0.09, 0.18, 0.43, and 0.3, respectively. How much should the insurance company charge annually for this policy if it wants to make a profit of $50 above the expected amount paid out in a year?
+
+Choices:
+- 2156
+- 2695
+- 1886
+- 2056
+
+Correct: 0
+Difficulty: 4
+Unit: discrete random variable
+Topics: Expectation
+
+---
+Question: A fair coin is tossed twice. If the number of heads observed is $x$, then you will win $\$2^{x}$. What are the expected winnings for the game?
+
+Choices:
+- $1
+- $1.75
+- $2.25
+- $2
+
+Correct: 2
+Difficulty: 4
+Unit: discrete random variable
+Topics: Expectation
+
+---
+Question: Suppose that a discrete random variable $X$ has moment generating function given by $M(t) = \frac{0.9e^{t}}{1-0.1e^{t}}$. What is $E(X)$?
+
+Choices:
+- 8/9
+- 9/10
+- 1
+- 10/9
+
+Correct: 3
+Difficulty: 7
+Unit: discrete random variable
+Topics: Moment Generating Function
+---
+
+Question: Suppose the pmf for a discrete random variable is given in the table below:
+![](/questionPic/drv_1.jpg?400x)
+
+Let $g(X) = \sqrt{X}$. What is $E(g(X))$?
+
+Choices:
+- 1.483
+- 1.449
+- 3.464
+- 3.563
+
+Correct: 1
+Difficulty: 5
+Unit: discrete random variable
+Topics: Expectation, Function of DRV
+---
+Question: Suppose that accidents at a busy intersection in a nearby town are assumed to occur randomly according to a Poisson distribution, with a mean of 2.5 each month. For six independent one-month periods, what is the probability that there will be exactly one month with no accidents, exactly two months with one accident, and exactly three months with two or more accidents?
+
+Choices:
+- 0.0300
+- 0.1967
+- 0.0751
+- 0.0013
+
+Correct:
+2
+Difficulty: 9
+Unit: discrete random variable
+Topics: Poisson distribution, Multivariable
+---
