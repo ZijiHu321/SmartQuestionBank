@@ -2,8 +2,7 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import 'katex/dist/katex.min.css';
 import NavBar from './component/NavBar';
-import { ReactNode } from 'react';
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import './globals.css';
 
 

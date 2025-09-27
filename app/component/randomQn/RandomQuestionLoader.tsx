@@ -179,7 +179,7 @@ const RandomQuestionLoader = ({ filePath }: { filePath: string }) => {
         setQuestion(regularQuestions[randomIndex]);
       }
     } catch (err) {
-      setError('Failed to load question');
+      setError('Will be added soon');
       console.error(err);
     } finally {
       setLoading(false);
