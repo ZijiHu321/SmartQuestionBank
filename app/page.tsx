@@ -12,11 +12,7 @@ export default function HomePage() {
         }
     }, [showVideo]);
     return (
-        <main
-        style={{
-            paddingTop: `80px`,
-            transition: "padding-top 0.3s ease-in-out",
-          }}>
+        <main>
             <div className="introBox">
                 <h2>Brief intro to the web</h2>
                 <p>
