@@ -12,7 +12,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <NavBar/>
         <div
           style={{
-            paddingTop: `30px`,
+            paddingTop: `80px`,
             transition: "padding-top 0.3s ease-in-out",
           }}
         >
