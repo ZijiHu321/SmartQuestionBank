@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-function NavBar({ onHeightChange }: { onHeightChange?: (h: number) => void }) {
+function NavBar() {
   const pathname = usePathname();
   const [isNavHidden, setIsNavHidden] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,26 +12,24 @@ function NavBar({ onHeightChange }: { onHeightChange?: (h: number) => void }) {
   const toggleNav = () => setIsNavHidden(!isNavHidden);
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
+  // Close menu on pathname change
   useEffect(() => {
     setIsMenuOpen(false);
   }, [pathname]);
 
-  // Measure nav height
+  // Measure nav height and update on resize
   useEffect(() => {
-    const updateNavHeight = () => {
-      const nav = document.querySelector("nav");
-      if (nav) {
-        const h = nav.offsetHeight;
-        setNavHeight(h);
-        onHeightChange?.(isNavHidden ? 0 : h); // 🔥 notify parent
-      }
-    };
+  const updateNavHeight = () => {
+    if (typeof window !== 'undefined') {
+      const nav = document.querySelector('nav');
+      if (nav) setNavHeight(nav.offsetHeight);
+    }
+  };
 
-    updateNavHeight();
-    window.addEventListener("resize", updateNavHeight);
-    return () => window.removeEventListener("resize", updateNavHeight);
-  }, [isNavHidden, onHeightChange]);
- // Empty dependency array
+  updateNavHeight();
+  window.addEventListener('resize', updateNavHeight);
+  return () => window.removeEventListener('resize', updateNavHeight);
+}, []); // Empty dependency array
 
   return (
     <>
@@ -118,8 +116,8 @@ function NavBar({ onHeightChange }: { onHeightChange?: (h: number) => void }) {
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {path === '/unit' && 'Chapters'}
-                    {path === '/mockexam' && 'MockExam'}
-                    {path === '/link' && 'RandomQuestion'}
+                    {path === '/mockexam' && 'Mock Exam'}
+                    {path === '/link' && 'Random Question'}
                   </Link>
                 </li>
               ))}
@@ -157,6 +155,14 @@ function NavBar({ onHeightChange }: { onHeightChange?: (h: number) => void }) {
         </div>
 
         <style jsx>{`
+          .brand {
+            color: #333;
+            font-size: 2.5vw;
+            font-weight: 700;
+            margin: 0.5rem 0 0.5rem 2rem;
+            margin-bottom: 1rem;
+          }
+
           .mobile-menu-button {
             display: none;
           }
