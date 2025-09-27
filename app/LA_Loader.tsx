@@ -30,7 +30,7 @@ const LALoader = ({ filePath, course }: LALoaderProps) => {
         setQuestions(parsedQuestions);
         setError(null);
       } catch (err) {
-        setError(err instanceof Error ? err.message : 'Failed to load questions');
+        setError(err instanceof Error ? err.message : 'Will be added soon');
       } finally {
         setLoading(false);
       }

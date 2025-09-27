@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-function NavBar() {
+function NavBar({ onHeightChange }: { onHeightChange?: (h: number) => void }) {
   const pathname = usePathname();
   const [isNavHidden, setIsNavHidden] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,24 +12,26 @@ function NavBar() {
   const toggleNav = () => setIsNavHidden(!isNavHidden);
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
-  // Close menu on pathname change
   useEffect(() => {
     setIsMenuOpen(false);
   }, [pathname]);
 
-  // Measure nav height and update on resize
+  // Measure nav height
   useEffect(() => {
-  const updateNavHeight = () => {
-    if (typeof window !== 'undefined') {
-      const nav = document.querySelector('nav');
-      if (nav) setNavHeight(nav.offsetHeight);
-    }
-  };
+    const updateNavHeight = () => {
+      const nav = document.querySelector("nav");
+      if (nav) {
+        const h = nav.offsetHeight;
+        setNavHeight(h);
+        onHeightChange?.(isNavHidden ? 0 : h); // 🔥 notify parent
+      }
+    };
 
-  updateNavHeight();
-  window.addEventListener('resize', updateNavHeight);
-  return () => window.removeEventListener('resize', updateNavHeight);
-}, []); // Empty dependency array
+    updateNavHeight();
+    window.addEventListener("resize", updateNavHeight);
+    return () => window.removeEventListener("resize", updateNavHeight);
+  }, [isNavHidden, onHeightChange]);
+ // Empty dependency array
 
   return (
     <>
@@ -116,8 +118,8 @@ function NavBar() {
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {path === '/unit' && 'Chapters'}
-                    {path === '/mockexam' && 'Mock Exam'}
-                    {path === '/link' && 'Random Question'}
+                    {path === '/mockexam' && 'MockExam'}
+                    {path === '/link' && 'RandomQuestion'}
                   </Link>
                 </li>
               ))}
@@ -155,14 +157,6 @@ function NavBar() {
         </div>
 
         <style jsx>{`
-          .brand {
-            color: #333;
-            font-size: 2.5vw;
-            font-weight: 700;
-            margin: 0.5rem 0 0.5rem 2rem;
-            margin-bottom: 1rem;
-          }
-
           .mobile-menu-button {
             display: none;
           }
