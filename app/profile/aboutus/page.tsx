@@ -9,7 +9,8 @@ import jinkai from '../../../public/Jinkai.jpg';
 const AboutUs = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [showCopied, setShowCopied] = useState(false);
+  const [showEmailCopied, setShowEmailCopied] = useState(false);
+  const [showDiscordCopied, setShowDiscordCopied] = useState(false);
 
   useEffect(() => {
     const checkScreenSize = () => {
@@ -65,12 +66,22 @@ const AboutUs = () => {
   const copyEmail = async () => {
     try {
       await navigator.clipboard.writeText('zacharyhu321@gmail.com');
-      setShowCopied(true);
-      setTimeout(() => setShowCopied(false), 2000);
+      setShowEmailCopied(true);
+      setTimeout(() => setShowEmailCopied(false), 2000);
     } catch (err) {
       console.error('Failed to copy email: ', err);
     }
   };
+
+  const copyDiscord = async () => {
+  try {
+    await navigator.clipboard.writeText('https://discord.gg/VveWhgc7');
+    setShowDiscordCopied(true);
+    setTimeout(() => setShowDiscordCopied(false), 2000);
+  } catch (err) {
+    console.error('Failed to copy Discord link: ', err);
+  }
+};
 
   return (
     <div style={styles.container}>
@@ -201,27 +212,52 @@ const AboutUs = () => {
             Feel free to reach out to us at any time! We would love to hear from you.
           </p>
           
-          <div style={styles.emailContainer}>
-            <div style={styles.emailIcon}>📧</div>
-            <button 
-              onClick={copyEmail}
-              style={styles.emailLink}
-              onMouseOver={(e) => {
-                e.currentTarget.style.transform = 'scale(1.05)';
-                e.currentTarget.style.color = '#ff7b9c';
-              }}
-              onMouseOut={(e) => {
-                e.currentTarget.style.transform = 'scale(1)';
-                e.currentTarget.style.color = '#4a6fa5';
-              }}
-            >
-              zacharyhu321@gmail.com
-            </button>
-            {showCopied && (
-              <div style={styles.copiedNotification}>
-                Copied! ✓
-              </div>
-            )}
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0rem' }}>
+            <div style={styles.emailContainer}>
+              <div style={styles.emailIcon}>🎮</div>
+              <button 
+                onClick={copyDiscord}
+                style={styles.emailLink}
+                onMouseOver={(e) => {
+                  e.currentTarget.style.transform = 'scale(1.05)';
+                  e.currentTarget.style.color = '#ff7b9c';
+                }}
+                onMouseOut={(e) => {
+                  e.currentTarget.style.transform = 'scale(1)';
+                  e.currentTarget.style.color = '#4a6fa5';
+                }}
+              >
+                https://discord.gg/VveWhgc7
+              </button>
+              {showDiscordCopied && (
+                <div style={styles.copiedNotification}>
+                  Copied! ✓
+                </div>
+              )}
+            </div>
+
+            <div style={styles.emailContainer}>
+              <div style={styles.emailIcon}>📧</div>
+              <button 
+                onClick={copyEmail}
+                style={styles.emailLink}
+                onMouseOver={(e) => {
+                  e.currentTarget.style.transform = 'scale(1.05)';
+                  e.currentTarget.style.color = '#ff7b9c';
+                }}
+                onMouseOut={(e) => {
+                  e.currentTarget.style.transform = 'scale(1)';
+                  e.currentTarget.style.color = '#4a6fa5';
+                }}
+              >
+                zacharyhu321@gmail.com
+              </button>
+              {showEmailCopied && (
+                <div style={styles.copiedNotification}>
+                  Copied! ✓
+                </div>
+              )}
+            </div>
           </div>
           
           <p style={styles.responseNote}>
