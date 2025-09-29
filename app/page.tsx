@@ -12,7 +12,7 @@ export default function HomePage() {
         }
     }, [showVideo]);
     return (
-        <main>
+        <main style={{ paddingTop: '8rem' }}>
             <div className="introBox">
                 <h2>Brief intro to the web</h2>
                 <p>
