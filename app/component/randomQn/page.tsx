@@ -14,7 +14,7 @@ const COURSE_UNITS: CourseUnit[] = [
   },
   {
     course: 'IB Calculus',
-    units: ['Limits', 'Derivative', 'Curve','ApplicationofDerivatives','Integral','Kinematics','TaylorSeries','DifferentialEquations']
+    units: ['Limits', 'Derivative', 'Curve','App','Int','Kin','Taylor','Diffeq']
   },
   {
     course: 'IBstatistics',
