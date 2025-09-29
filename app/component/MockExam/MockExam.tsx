@@ -14,26 +14,7 @@ import PdfTable from './Table'
 const MockExam = () => {
   const List= [
   // cal1 course
-  { course: 'cal1', unit: 'Limits and Continuity', examType: 'Unit Test', filename: 'cal1_Limits and Continuity.pdf' },
-  { course: 'cal1', unit: 'Finding Derivative Functions', examType: 'Unit Test', filename: 'cal1_Finding Derivative Functions.pdf' },
-  { course: 'cal1', unit: 'Properties of Curves', examType: 'Unit Test', filename: 'cal1_Properties of Curves.pdf' },
-  { course: 'cal1', unit: 'Application of Derivatives', examType: 'Unit Test', filename: 'cal1_Application of Derivatives.pdf' },
-
-  // ib_cal course
-  { course: 'ib_cal', unit: 'Limits', examType: 'Unit Test', filename: 'ib_cal_Limits.pdf' },
-  { course: 'ib_cal', unit: 'Finding Derivative Functions', examType: 'Unit Test', filename: 'ib_cal_Finding Derivative Functions.pdf' },
-  { course: 'ib_cal', unit: 'Properties of Curves', examType: 'Unit Test', filename: 'ib_cal_Properties of Curves.pdf' },
-  { course: 'ib_cal', unit: 'Application of Derivatives', examType: 'Unit Test', filename: 'ib_cal_Application of Derivatives.pdf' },
-  { course: 'ib_cal', unit: 'Integral', examType: 'Unit Test', filename: 'ib_cal_Integral.pdf' },
-  { course: 'ib_cal', unit: 'Kinematics', examType: 'Unit Test', filename: 'ib_cal_Kinematics.pdf' },
-  { course: 'ib_cal', unit: 'Taylor Series', examType: 'Unit Test', filename: 'ib_cal_Taylor Series.pdf' },
-  { course: 'ib_cal', unit: 'Differential Equations', examType: 'Unit Test', filename: 'ib_cal_Differential Equations.pdf' },
-
-  // ib_stat course
-  { course: 'ib_stat', unit: 'Probability', examType: 'Unit Test', filename: 'ib_stat_Probability.pdf' },
-  { course: 'ib_stat', unit: 'Statistics', examType: 'Unit Test', filename: 'ib_stat_Statistics.pdf' },
-  { course: 'ib_stat', unit: 'Discrete Random Variables', examType: 'Unit Test', filename: 'ib_stat_Discrete Random Variables.pdf' },
-  { course: 'ib_stat', unit: 'Continuous Random Variables', examType: 'Unit Test', filename: 'ib_stat_Continuous Random Variables.pdf' },
+  { course: 'IB math HL', unit: 'Counting', examType: 'Unit Test Paper 1', filename: 'countingP1.pdf' },
 ];
 
 const [search, setSearch] = useState<string>('')
@@ -75,14 +56,14 @@ const [search, setSearch] = useState<string>('')
         flexDirection: 'column',
         alignItems: 'center',
         minHeight: '100vh',
-        padding: '20px'
+        padding: '-10rem'
       }}>
         <div style={{
           width: '100%',
           maxWidth: '1200px',
           display: 'flex',
           flexDirection: 'column',
-          gap: '20px'
+          gap: '-0px'
         }}>
           <SearchItem
             search={search}
