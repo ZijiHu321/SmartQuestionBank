@@ -319,7 +319,7 @@ Difficulty: 5
 Unit: Finding Derivative Functions
 Topics: Trigonometric Identity,the Chain Rule
 ---
-Question: Evaluate $\frac{d^{10}}{dx^{10}} (e^2x) |_{x=0}$?
+Question: Evaluate $\frac{d^{10}}{dx^{10}} (e^{2x}) |_{x=0}$?
 
 Choices:
 - 0
