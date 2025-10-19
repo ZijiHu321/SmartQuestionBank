@@ -107,7 +107,7 @@ Tags: Paper 1
 ---
 Question:
 Consider the function $f(x) = e^{-x} \sin x$.
-(a) Show that $\frac{d}{dx} f(x) = \frac{ -\sqrt{2} \sin (x + \pi /4) }{e^x}$. [5]
+(a) Show that $\frac{d}{dx} f(x) = \frac{ -\sqrt{2} \sin (x - \pi /4) }{e^x}$. [5]
 
 (b) Find all real number $x$ on the interval $[0,2\pi]$ for which $f'(x) \geq 0$. [4]
 
@@ -115,25 +115,21 @@ Solution:
 (a)
 Using product rule:
 $f'(x) = \frac{d}{dx}(e^{-x}) \sin x + e^{-x} \frac{d}{dx}(\sin x)$ **M1**
-$= -e^{-x} \sin x + e^{-x} \cos x$ 
+$= -e^{-x} \sin x + e^{-x} \cos x$
 $= e^{-x} (\cos x - \sin x)$ **A1**
 $\cos x - \sin x = \sqrt{2} \left( \frac{1}{\sqrt{2}} \cos x - \frac{1}{\sqrt{2}} \sin x \right)$ **M1**
 $= \sqrt{2} \sin(\pi/4 - x)$ **A1**
-$= -\sqrt{2} \sin(x + \pi/4)$ 
-
+$= -\sqrt{2} \sin(x - \pi/4)$
 Thus:
-$f'(x) = \frac{ -\sqrt{2} \sin (x + \pi /4) }{e^x}$ **A1**
-
-$\ $
+$f'(x) = \frac{ -\sqrt{2} \sin (x - \pi /4) }{e^x}$ **A1**
 
 (b)
 From part (a), $f'(x) \geq 0$ when:
-$-\sqrt{2} \sin(x + \pi/4) \geq 0$ **M1**
-$\Rightarrow \sin(x + \pi/4) \leq 0$ **M1**
-
-$\Rightarrow x + \pi/4 \in [\pi, 2\pi]$ **M1**
-
-Thus $x \in [3\pi/4, 7\pi/4]$ **A1**
+$-\sqrt{2} \sin(x - \pi/4) \geq 0$ **M1**
+$\Rightarrow \sin(x - \pi/4) \leq 0$ **M1**
+Let $u = x - \pi/4$. For $x \in [0,2\pi]$, $u \in [-\pi/4, 7\pi/4]$.
+$\sin u \leq 0$ for $u \in [-\pi, 0] \cup [\pi, 2\pi]$ (mod $2\pi$). Intersecting with $[-\pi/4, 7\pi/4]$ gives $u \in [-\pi/4, 0] \cup [\pi, 7\pi/4]$ **M1**
+Then $x = u + \pi/4$ gives $x \in [0, \pi/4] \cup [5\pi/4, 2\pi]$ **A1**
 
 
 Difficulty: 7
