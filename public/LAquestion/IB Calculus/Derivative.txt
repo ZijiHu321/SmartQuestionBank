@@ -575,7 +575,7 @@ The function $f: \mathbb{R} \rightarrow \mathbb{R}$ and $g: \mathbb{R} \rightarr
 $$f'(x) = f(x) + g(x)$$
 $$g'(x) = g(x) - f(x)$$
 
-(a) Show that $f''(x) = f'(x) + g'(x)$ and $g''(x) = f'(x) + g'(x)$ for all $x \in \mathbb{R}$. [2]
+(a) Show that $f''(x) = f'(x) + g'(x)$ and $g''(x) = g'(x) - f'(x)$ for all $x \in \mathbb{R}$. [2]
 
 (b) Hence, show that $f''(x) = 2g(x)$ and $g''(x) = -2f(x)$ for all $x \in \mathbb{R}$. [2]
 
