@@ -188,7 +188,7 @@ Determine the concavity and all inflection points for each of the functions belo
 
 (b) $f(x) = \frac{x^3}{x^2 - 4}$;
 
-(c) $f(x) = 2\cot x$, where $x \in [-\pi, \pi]$.
+(c) $f(x) = 2\cot x$, where $x \in (-\pi, \pi)$.
 
 Solution:
 
@@ -578,7 +578,7 @@ Topics: Graphing Functions,Cross Product
 Tags: Paper 2
 ---
 Question:
-Find the equation of the normal to the curve $y = \frac{e^x \cos x \ln (x+e)}{(x^{17}+1)^5} at the point where $x=0$. In your answer give the value of the gradient, of the normal, to three decimal places. [7]
+Find the equation of the normal to the curve $y = \frac{e^x \cos x \ln (x+e)}{(x^{17}+1)^5}$ at the point where $x=0$. In your answer give the value of the gradient, of the normal, to three decimal places. [7]
 
 Solution:
 When $x=0$, $y=1$ **A1**
