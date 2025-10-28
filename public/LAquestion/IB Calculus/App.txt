@@ -199,7 +199,7 @@ Since $A'(h) < 0$ when $h<10.8385...$, and $A'(h) > 0$ when $h>10.8385...$, the 
 Difficulty: 4/10
 Unit: Application of Derivatives
 Topics: Optimization
-Tags: Paper 1
+Tags: Paper 2
 
 ---
 
