@@ -1,0 +1,140 @@
+---
+Question: The median is best described as:
+
+Choices:
+- The value that occurs most often
+- The middle value in an ordered data set
+- The average of all values
+- The difference between the highest and lowest value
+
+Correct: 1
+Difficulty: 1
+Unit: statistics
+Topics: Mean
+
+---
+Question: If you add a constant to every data point, which measure does NOT change?
+
+Choices:
+- Mean
+- Median
+- Standard deviation
+- Range
+
+Correct: 2
+Difficulty: 2
+Unit: statistics
+Topics: Standard deviation, Transformations
+
+---
+Question: Which measure is most affected by extreme outliers?
+
+Choices:
+- Median
+- Mode
+- Mean
+- Interquartile Range
+
+Correct: 2
+Difficulty: 3
+Unit: statistics
+Topics: Outliers, Central Tendency
+
+---
+Question: Which statement about the interquartile range (IQR) is true?
+
+Choices:
+- IQR = Q3 – Q1
+- IQR includes 100% of the data
+- IQR = range/2
+- IQR measures central tendency
+
+Correct: 0
+Difficulty: 2
+Unit: statistics
+Topics: Interquartile Range
+
+---
+Question: The correlation coefficient r measures:
+
+Choices:
+- The slope of the regression line
+- The strength and direction of a linear relationship
+- The proportion of explained variance
+- Whether variables are dependent
+
+Correct: 1
+Difficulty: 2
+Unit: bivariate statistics
+Topics: Correlation
+
+---
+Question: If r = -0.90, which statement is correct?
+
+Choices:
+- Strong negative linear correlation
+- Weak negative linear correlation
+- Strong positive linear correlation
+- Weak positive linear correlation
+
+Correct: 0
+Difficulty: 1
+Unit: bivariate statistics
+Topics: Correlation
+
+---
+Question: In the regression line y = a + bx, the value of b represents:
+
+Choices:
+- The predicted value of y
+- The correlation coefficient
+- The slope
+- The y-intercept
+
+Correct: 2
+Difficulty: 1
+Unit: bivariate statistics
+Topics: Regression
+
+---
+Question: The coefficient of determination $r^{2}$ represents:
+
+Choices:
+- The slope squared
+- The percentage of variation in y explained by x
+- The intercept
+- The standard deviation of residuals
+
+Correct: 1
+Difficulty: 3
+Unit: bivariate statistics
+Topics: Regression
+
+---
+Question: A positive residual means the model:
+
+Choices:
+- Overestimates the actual value
+- Underestimates the actual value
+- Fits perfectly
+- Has no correlation
+
+Correct: 2
+1
+Difficulty: 4
+Unit: bivariate statistics
+Topics: Residuals
+
+---
+Question: A distribution is right-skewed (positively skewed). Which is true?
+
+Choices:
+- Mean < Median
+- Mean = Median
+- Mean > Median
+- Impossible to tell
+
+Correct: 2
+Difficulty: 4
+Unit: statistics
+Topics: Skewness
