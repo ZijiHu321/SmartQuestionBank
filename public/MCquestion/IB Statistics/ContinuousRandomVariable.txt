@@ -1,0 +1,142 @@
+---
+Question: Let a continuous random variable $X$ have PDF: $f(x) = kx(2-x)$ for $0 \le x \le 2$. What is the value of $k$?
+
+Choices:
+- $\frac{3}{4}$
+- $\frac{1}{2}$
+- $\frac{3}{2}$
+- $\frac{1}{4}$
+
+Correct: 0
+Difficulty: 3
+Unit: continuous random variable
+Topics: PDF
+
+
+---
+Question: A continuous random variable $X$ has PDF $f(x)=2x$ for $0\le x\le 1$. What is $P(X<0.5)$?
+
+Choices:
+- $0.25$
+- $0.5$
+- $0.75$
+- $1$
+
+Correct: 1
+Difficulty: 2
+Unit: continuous random variable
+Topics: PDF, probability
+
+---
+Question: A CRV has CDF $F(x)=x$ for $0\le x\le 1$. What is the PDF?
+
+Choices:
+- $0$
+- $1$
+- $x$
+- $x^2$
+
+Correct: 1
+Difficulty: 1
+Unit: continuous random variable
+Topics: CDF, PDF
+
+---
+Question: Which statement is true about PDFs?
+
+Choices:
+- $f(x)$ must be \le 1
+- $f(x)$ must be \ge 0
+- $f(x)$ must be continuous everywhere
+- $f(x)$ must be linear
+
+Correct: 1
+Difficulty: 1
+Unit: continuous random variable
+Topics: PDF properties
+
+---
+Question: Let $X \sim U(2,6)$. What is $E(X)$?
+
+Choices:
+- $2$
+- $3$
+- $4$
+- $5$
+
+Correct: 2
+Difficulty: 1
+Unit: continuous random variable
+Topics: Uniform distribution, expectation
+
+---
+Question: A continuous random variable has CDF $F(x)=1-e^{-x}$ for $x\ge 0$. What is $P(0<X<1)$?
+
+Choices:
+- $e^{-1}$
+- $1 - e^{-1}$
+- $e - 1$
+- $1 - e$
+
+Correct: 1
+Difficulty: 3
+Unit: continuous random variable
+Topics: CDF, probability
+
+
+---
+Question: A machine produces metal rods with lengths $X \sim N(50, 3^2)$. Only rods longer than 55 mm are rejected. What proportion is rejected?
+
+Choices:
+- $0.0478$
+- $0.0668$
+- $0.0228$
+- $0.1587$
+
+Correct: 2
+Difficulty: 3
+Unit: normal distribution
+Topics: Normal distribution, tail probability
+
+---
+Question: Let $X \sim N(\mu, \sigma^2)$. You observe that $P(X<40)=0.10$ and $P(X<60)=0.90$. What is the value of $\sigma$?
+
+Choices:
+- $10$
+- $14.14$
+- $12.25$
+- $8$
+
+Correct: 0
+Difficulty: 5
+Unit: normal distribution
+Topics: Standardization, quantiles
+
+---
+Question: A standardized score is defined as $Z = \frac{X-\mu}{\sigma}$. If $X \sim N(70, 4^2)$, find the value of $x$ such that $P(X > x)=0.05$.
+
+Choices:
+- $76.6$
+- $78.3$
+- $73.3$
+- $70.0$
+
+Correct: 0
+Difficulty: 4
+Unit: normal distribution
+Topics: Z-scores, inverse normal
+
+---
+Question: The time to finish a task is normally distributed with mean $120$ minutes and standard deviation $15$ minutes. The fastest $2.5\%$ of workers receive a bonus. What is the cutoff time?
+
+Choices:
+- $90.3$
+- $95.6$
+- $117.0$
+- $84.3$
+
+Correct: 1
+Difficulty: 3
+Unit: normal distribution
+Topics: Percentiles, inverse normal
+
