@@ -1,0 +1,309 @@
+Question:
+The table below shows data regarding months of experience and weekly salaries of company's employees.
+Round all your answers to three decimal points,
+
+![](/questionPic/stat_1.jpg?400x)
+
+(a) Calculate Pearson's correlation coefficient. [2]
+(b) The regression equation is in the form of $y = mx + a$. Find the values of $m$ and $a$. [2]
+(c) Predict the weekly salary for an employee with 25 months of experience. [2]
+
+Solution:
+(a) 
+Using GDC we get $r = 0.938$ **A2**
+
+$\ $
+(b)
+ Using GDC we get $y = 37.897x + 169.122$ **A2**
+
+$\ $
+(c)
+ We predict the value by replacing x with 25.
+$y = 37.897 \times 25 + 169.122 $ **M1**
+$= 1116.547$ **A1**
+
+Difficulty: 1/10
+Unit: Statistics
+Topics: regression line, Pearson's correlation coefficient
+Tags: Paper 2
+
+---
+Question: Consider two variables describing the height of an athelete and their long jump results.
+Round all your answers to two decimal points.
+
+![](/questionPic/stat_2.jpg?400x)
+(a) Find $\overline{x}$ and $\overline{y}$. [2]
+(b) Teh regression line is in the form $y = mx+a$. Find the values of $m$ and $a$. [2]
+(c) Find the x-intercept and the y-intercept. [2]
+(d) Interpret the value of $m$ in this context. [1]
+
+Solution:
+
+(a)
+$\overline{x} = (171 +165+178+180+181+174+185) / 7 = 176.29$ **A1**
+$\overline{y} = (650+520+590+560+740+630+690) / 7 = 625.71$ **A1**
+$\ $
+(b)
+Using GDC, we get $m= 6.71, a = -557.45$. **A2**
+$\ $
+(c)
+$0 = 6.71x -557.45$, $x =83.08$ **A1**
+y-intercept is just $a = -557.45$. **A1**
+$\ $
+(d)
+With 1cm increase in height, the long jump length increases by 6.71cm, on average. **R1**
+
+Difficulty: 2/10
+Unit: Statistics
+Topics: regression line, mean
+Tags: Paper 2
+
+---
+Question: A random sample of 97 people who own mobile phones was used to collect data on the amount of time they spent per day on their phones. The results are displayed in the table below.
+![](/questionPic/stat_3.jpg?400x)
+Calculate estimates of the mean and standard deviation of the time spent per day on these mobile phones. [4]
+
+Solution:
+Mean = $(2.5 \times 11 + 7.5 \times 20 +15 \times 32 + 25 \times 18 + 35 \times 10 +55 \times 6)/97 = 18.4$ **M1A1**
+Standard Deviation =$ \sqrt{\frac{(2.5-18.4)^{2} \times 11 + (7.5-18.4)^{2} \times 20 + (15-18.4)^{2} \times 32 + (25-18.4)^{2} \times 18 + (35-18.4)^{2} \times 10 + (55-18.4)^{2} \times 6}{97}} = 13.3$ **M1A1**
+
+Difficulty: 4/10
+Unit: Statistics
+Topics: Mean, Standard Deviation
+Tags: Paper 2
+
+---
+Question: A set of paired data $(x,y)$ represents study hours and exam scores.
+The summary statistics are:
+
+$n = 10$  
+$\Sigma x = 42,\ \Sigma y = 670$  
+$\Sigma x^2 = 214,\ \Sigma y^2 = 46250$  
+$\Sigma xy = 2940$
+
+(a) Compute the Pearson correlation coefficient $r$. [3]  
+(b) Interpret the meaning of your result in context. [1]  
+(c) If one data point $(x=8, y=30)$ is found to be an outlier, explain qualitatively how removing it might affect the value of $r$. [2]
+
+Solution:
+
+(a)
+$r = \frac{n\Sigma xy - (\Sigma x)(\Sigma y)}{\sqrt{[n\Sigma x^2 - (\Sigma x)^2][n\Sigma y^2 - (\Sigma y)^2]}}$
+
+$r = \frac{10(2940) - 42(670)}{\sqrt{[10(214) - 42^2][10(46250) - 670^2]}} = 0.82$ **A3**
+$\ $
+
+(b)
+There is a strong positive linear relationship between study hours and exam scores. **R1**
+$\ $
+
+(c)
+The point $(8,30)$ lies far below the trend. Removing it would increase the linearity of the remaining points, so $r$ would increase. **R2**
+
+Difficulty: 5/10  
+Unit: Statistics  
+Topics: correlation  
+Tags: Paper 2
+
+---
+Question: A regression line was calculated from data relating temperature $x$ (°C) and electricity usage $y$ (kWh):
+
+$y = 520 - 18x$
+
+(a) Explain the meaning of the slope in context. [1]  
+(b) Compute the predicted electricity usage when $x = 12$°C. [1]  
+(c) If an actual value at $x = 12^\circ\text{C}$ is $y = 340$, calculate the residual and interpret it. [2]  
+(d) Discuss whether extrapolation would be appropriate at $x = -15^\circ\text{C}$. [2]
+
+Solution:
+
+(a)
+Each increase of $1^\circ\text{C}$ is associated with a decrease of 18 kWh in electricity usage. **R1**
+$\ $
+
+(b)
+$y = 520 - 18(12) = 304$ **A1**
+$\ $
+
+(c)
+Residual $= 340 - 304 = 36$. **A1**  
+The actual usage is 36 kWh higher than predicted. **R1**
+$\ $
+
+(d)
+$-15^\circ\text{C}$ is far outside the observed temperature range. Linear extrapolation may not hold; therefore it is not appropriate. **R2**
+
+Difficulty: 3/10  
+Unit: Statistics  
+Topics: regression, residuals  
+Tags: Paper 2
+---
+
+Question: A researcher measures the pressure $x$ (kPa) and boiling point $y$ (°C) of a chemical. The following summary statistics are known:
+
+$\overline{x} = 70,\ \overline{y} = 92$  
+$s_x = 5.2,\ s_y = 3.4$  
+Correlation $r = 0.88$
+
+(a) Write the equation of the least-squares regression line $y = a + bx$. [2]  
+(b) Interpret the slope in context. [1]  
+(c) Predict the boiling point when $x = 78$. [1]  
+(d) Explain whether the regression line implies a causal relationship. [2]
+
+Solution:
+
+(a)
+$b = r\frac{s_y}{s_x} = 0.88 \times \frac{3.4}{5.2} = 0.58$ **A1**  
+$a = \overline{y} - b\overline{x} = 92 - 0.58(70) = 51.40$ **A1**
+$\ $
+
+(b)
+For every 1 kPa increase in pressure, the boiling point increases by 0.58°C on average. **R1**
+$\ $
+
+(c)
+$y = 51.40 + 0.58(78) = 96.64$ **A1**
+$\ $
+
+(d)
+A regression line indicates association but not causation; the model does not prove that pressure changes cause boiling point changes. **R2**
+
+Difficulty: 4/10  
+Unit: Statistics  
+Topics: interpretation  
+Tags: Paper 2
+---
+
+---
+Question: A dataset records hours of sleep $x$ and concentration score $y$ for 8 students:
+![](/questionPic/stat_4.jpg?400x)
+
+(a) Find $\overline{x}$ and $\overline{y}$. [2]  
+(b) Using GDC, find the regression line $y = mx + a$. [2]  
+(c) Predict the concentration score for a student who sleeps 8 hours. [1]  
+(d) Interpret the meaning of $m$ in this context. [1]
+
+Solution:
+
+(a)
+$\overline{x} = (5+6+7+5+8+6+7+9)/8 = 6.625$ **A1**  
+$\overline{y} = (60+65+72+58+78+66+70+82)/8 = 68.875$ **A1**  
+$\ $
+
+(b)
+Using GDC, $m = 4.86,\ a = 37.50$ **A2**  
+$\ $
+
+(c)
+$y = 4.86(8) + 37.50 = 76.38$ **A1**  
+$\ $
+
+(d)
+Each additional hour of sleep increases the concentration score by 4.86 points on average. **R1**
+
+Difficulty: 3/10  
+Unit: Statistics  
+Topics: regression line, mean, prediction  
+Tags: Paper 2
+---
+
+
+Question: A company’s advertising spend $x$ (thousands $) and sales revenue $y$ (thousands $) follow the regression line:
+
+$y = 200 + 5x$
+
+(a) Explain the meaning of the slope. [1]  
+(b) Predict revenue if advertising spend is $x = 50$. [1]  
+(c) If actual revenue at $x = 50$ is $470$, calculate the residual and interpret it. [2]  
+(d) Explain the meaning of the $y$-intercept. [1]
+
+Solution:
+
+(a)
+For every additional thousand dollars spent on advertising, predicted revenue increases by $5$ thousand dollars. **R1**
+$ \ $
+
+(b)
+$y = 200 + 5(50) = 450$ **A1**
+$\ $
+
+(c)
+Residual $= 470 - 450 = 20$ **A1**  
+Actual revenue is $20$ thousand dollars higher than predicted; the model slightly underestimates revenue. **R1**
+$\ $
+
+(d)
+The $y$-intercept of $200$ means that with zero advertising spend, predicted revenue is $200$ thousand dollars. **R1**
+
+Difficulty: 3/10  
+Unit: Statistics  
+Topics: regression, prediction, residual, intercept  
+Tags: Paper 2
+---
+
+
+Question: A company measures advertising spend $x$ (thousands $) and sales revenue $y$ (thousands $):
+![](/questionPic/stat_5.jpg?400x)
+
+
+(a) Compute $\overline{x}$ and $\overline{y}$. [2]  
+(b) Find the regression line $y = mx + a$. [2]  
+(c) Predict revenue for $x = 6$. [1]  
+(d) Explain the meaning of $y$-intercept. [1]
+
+Solution:
+
+(a)
+$\overline{x} = 3,\ \overline{y} = 28.2$ **A1**  
+$\ $
+
+(b)
+Using GDC, $m = 4,\ a = 16.2$ **A2**  
+$\ $
+
+(c)
+$y = 4(6) + 16.2 = 40.2$ **A1**  
+$\ $
+(d)
+$y$-intercept 16.2 means that with zero advertising spend, the model predicts revenue of 16.2 thousand dollars. **R1**
+
+Difficulty: 3/10  
+Unit: Statistics  
+Topics: regression, prediction, intercept  
+Tags: Paper 2
+---
+
+
+Question: A company’s advertising spend $x$ (thousands $) and sales revenue $y$ (thousands $) follow the regression line:
+
+$y = 200 + 5x$
+
+(a) Explain the meaning of the slope. [1]  
+(b) Predict revenue if advertising spend is $x = 50$. [1]  
+(c) If actual revenue at $x = 50$ is $470$, calculate the residual and interpret it. [2]  
+(d) Explain the meaning of the $y$-intercept. [1]
+
+Solution:
+
+(a)
+For every additional thousand dollars spent on advertising, predicted revenue increases by $5$ thousand dollars. **R1**
+$\ $
+
+(b)
+$y = 200 + 5(50) = 450$ **A1**
+$\ $
+
+(c)
+Residual $= 470 - 450 = 20$ **A1**  
+Actual revenue is $20$ thousand dollars higher than predicted; the model slightly underestimates revenue. **R1**
+$\ $
+
+(d)
+The $y$-intercept of $200$ means that with zero advertising spend, predicted revenue is $200$ thousand dollars. **R1**
+
+Difficulty: 3/10  
+Unit: Statistics  
+Topics: regression, prediction, residual, intercept  
+Tags: Paper 2
+---
+
