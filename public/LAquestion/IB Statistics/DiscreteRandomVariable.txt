@@ -1,0 +1,503 @@
+---
+Question: 
+The discrete random variable X has probability distribution:
+![](/questionPic/drv_1.jpg?400x)
+
+(a) Find the value of $a$. [1]
+(b) Find E$(X)$. [2]
+(c) Find Var$(X)$. [2]
+
+Solution:
+
+(a)
+$a = 1 - \frac{1}{6} - \frac{1}{2} - \frac{3}{10} = \frac{1}{30}$ **A1**
+$\ $
+(b)
+E$(X) = \frac{1}{2} + 2 \times \frac{3}{10} + 3 \times \frac{1}{30}$ **M1**
+$= \frac{6}{5}$ **A1**
+$\ $
+
+(c)
+E$(X^{2}) = \frac{1}{2} + 2^{2} \times \frac{3}{10} + 3^{2} \times \frac{1}{30} =2$ **M1**
+Var$(X) = E(X^{2}) - E(X)^{2} = 2 - \frac{6}{5}^{2}= \frac{14}{25}$ **A1**
+
+Difficulty: 2/10
+Unit: Discrete Random Variable
+Topics: expectation, variance
+Tags: Paper 1
+
+---
+Question:
+The discrete random variable X has the following probability distribution, where p is a constant.
+![](/questionPic/drv_1.jpg?400x)
+
+(a) Find the value of $p$. [2]
+(b) Find E$(x) = \mu$. [2]
+(c) Find $P(X > \mu)$. [2]
+
+Solution:
+
+(a)
+$p + 0.5 -p + 0.25 + 0.125 + p^{3} = 1 $ **M1**
+$p^{3} = 0.125$
+$p = 0.5$ **A1**
+
+$\ $
+(b)
+$\mu = 0 \times 0.5 + 1 \times 0 + 2 \times 0.25 + 3 \times 0.125 + 4 \times 0.125 $ **M1**
+$= \frac{11}{8}$ **A1**
+
+$\ $
+(c)
+$P(X > \mu) = 1- P(X = 1) = 1- 0.5 = 0.5$ **A2**
+
+Difficulty: 2/10
+Unit: Discrete Random Variable
+Topics: expectation, variance
+Tags: Paper 1
+
+---
+Question:
+The UWaterloo STATs Club was able to get a Professor to volunteer for a dunk tank fundraiser. In the “Dunk-a-Professor” fundraiser, a player throws a ball at a target and if the target is hit, the Professor will fall into a tank of ice cold water. Four friends, Ella, Francis, Gary, and Howard have each bought a ball. Ella will throw first, followed by Francis, then Gary, and finally, Howard. It is estimated that each player will successfully hit the target on any throw, with probability 0.2, and each throw is independent.
+
+Note: Where appropriate, please clearly define any random variables, along with their distributions, stating all parameters, and state their probability mass function (pmf).
+
+(a) What is the probability that Gary will be the only one from the group of four players to hit the target, and send the Professor into the water? [2]
+(b) What is the probability that at least one of the above four players will hit the target and send the Professor into the water? [2]
+(c) All four friends have thrown their ball, but were unable to dunk the Professor. However, they are determined to see the Professor get dunked at least once! They ask their friend, Igor, who used to be a pitcher to help out. It is estimated that Igor will be able to hit the target with probability 2/3 on any throw, and each throw is independent. What is the minimum number of balls that Igor would need to buy in order to have at least a 99% chance of hitting the target at least one time? [4]
+
+Solution:
+(a)
+$P = 0.2 \times 0.8^{3} = 0.1024$ **A2**
+
+$\ $
+(b)
+Let $X$ denote the random variable of number of players hit the target.
+$X \sim Bin(4,0.2)$ **R1**
+$P(X \ge 1) = 1 - P(X = 0) = 1- \binom{4}{0} \times 0.2^{0} \times 0.8^{4} = 0.5904$ **A1**
+
+$\ $
+
+(c)
+Let $p$ denote number of trials and $Y$ number of hits.
+Then $Y \sim Bin(p, 2/3)$
+$0.99 \le P(Y \ge 1)$ **R1M1**
+$0.01 \ge P(Y = 0) = \binom{p}{0} \times \frac{2}{3}^{0} \times \frac{1}{3}^{p} = \frac{1}{3}^{p}$
+$p \ge log_{1/3}(0.01) = 4.1918$
+So Igor needs 5 balls. **A2**
+
+Difficulty: 7/10
+Unit: Discrete Random Variable
+Topics: Binomial distribution, Logarithm
+Tags: Paper 2
+
+---
+
+Question:
+
+An archer hits the target with probability 0.25 on any shot, independently. She takes 8 shots.
+(a) What is the probability she hits the target at least 3 times? [3]
+(b) Given that she hit the target at least once, what is the probability she hit it exactly twice? [3]
+
+
+Solution:
+
+(a)
+Let $X$ denote the number of times the archer hits the target.
+$X \sim Bin(8, 0.25)$ **R1**
+
+$P(X \ge 3) = 1 - P(X \le 2) = 1 - [P(X=0) + P(X=1) + P(X=2)]$ **M1**
+
+$= 1 - \left[\binom{8}{0}(0.25)^0(0.75)^8 + \binom{8}{1}(0.25)^1(0.75)^7 + \binom{8}{2}(0.25)^2(0.75)^6\right]$
+
+$= 1 - [0.1001 + 0.2670 + 0.3115] = 0.3214$ **A1**
+
+$\ $
+
+(b)
+$P(X=2 | X \ge 1) = \frac{P(X=2)}{P(X \ge 1)}$ **M1**
+
+$P(X=2) = \binom{8}{2}(0.25)^2(0.75)^6 = 0.3115$
+
+$P(X \ge 1) = 1 - P(X=0) = 1 - 0.1001 = 0.8999$
+
+$P(X=2 | X \ge 1) = \frac{0.3115}{0.8999} = 0.3461$ **A2**
+
+Difficulty: 6/10
+Unit: Discrete Random Variable
+Topics: Binomial distribution, Conditional probability
+Tags: Paper 2
+
+---
+Question:
+A factory produces items that are defective with probability 0.1, independently. An inspector randomly selects 12 items from the production line.
+
+(a) What is the probability that exactly 2 items are defective? [2]
+(b) What is the probability that at most 1 item is defective? [2]
+(c) How many items must the inspector inspect so that the probability of finding at least one defective item is 95% or higher? [4]
+
+
+
+Solution:
+
+(a)
+Let $X$ denote the number of defective items.
+$X \sim Bin(12, 0.1)$ **R1**
+
+$P(X = 2) = \binom{12}{2}(0.1)^2(0.9)^{10} = 0.2301$ **A1**
+
+$\ $
+
+(b)
+$P(X \le 1) = P(X=0) + P(X=1)$
+
+$= \binom{12}{0}(0.1)^0(0.9)^{12} + \binom{12}{1}(0.1)^1(0.9)^{11} = 0.6590$ **A2**
+
+$\ $
+
+(c)
+Let $n$ denote the number of items inspected and $Y$ the number of defective items.
+$Y \sim Bin(n, 0.1)$
+
+$0.95 \le P(Y \ge 1)$ **R1M1**
+
+$0.05 \ge P(Y = 0) = \binom{n}{0}(0.1)^0(0.9)^n = (0.9)^n$
+
+$n \ge \log_{0.9}(0.05) = \frac{\log(0.05)}{\log(0.9)} = 28.43$
+
+So the inspector must inspect 29 items. **A2**
+
+Difficulty: 7/10
+Unit: Discrete Random Variable
+Topics: Binomial distribution, Logarithm
+Tags: Paper 2
+
+---
+Question:
+
+A spam filter correctly catches spam emails with probability 0.85, independently. A user receives 20 spam emails.
+
+(a) What is the probability that the filter catches at least 18 of them? [2]
+(b) What is the probability that it misses at least 2? [3]
+
+
+
+Solution:
+
+(a)
+Let $X$ denote the number of spam emails caught by the filter.
+$X \sim Bin(20, 0.85)$ **R1**
+
+$P(X \ge 18) = P(X=18) + P(X=19) + P(X=20)$
+
+$= \binom{20}{18}(0.85)^{18}(0.15)^2 + \binom{20}{19}(0.85)^{19}(0.15)^1 + \binom{20}{20}(0.85)^{20}(0.15)^0$
+
+$= 0.2293 + 0.1368 + 0.0388 = 0.4049$ **A1**
+
+$\ $
+
+(b)
+Let $Y$ denote the number of spam emails missed.
+$Y \sim Bin(20, 0.15)$ **R1**
+
+$P(Y \ge 2) = 1 - P(Y \le 1) = 1 - [P(Y=0) + P(Y=1)]$ **M1**
+
+$= 1 - \left[\binom{20}{0}(0.15)^0(0.85)^{20} + \binom{20}{1}(0.15)^1(0.85)^{19}\right]$
+
+$= 1 - [0.0388 + 0.1368] = 0.8244$ **A1**
+
+Difficulty: 4/10
+Unit: Discrete Random Variable
+Topics: Binomial distribution
+Tags: Paper 2
+
+---
+Question:
+A basketball player makes each three-point attempt with probability 0.38, independently. In a practice session, he shoots 15 times.
+
+(a) What is the probability that he makes between 4 and 7 shots (inclusive)? [3]
+(b) The coach says the player will take an additional number of shots until the probability of making at least one shot is 90% or greater. What is the minimum number of extra shots required? [4]
+
+
+
+Solution:
+
+(a)
+Let $X$ denote the number of three-point shots made.
+$X \sim Bin(15, 0.38)$ **R1**
+
+$P(4 \le X \le 7) = \sum_{k=4}^{7} \binom{15}{k}(0.38)^k(0.62)^{15-k}$ **M1**
+
+$= 0.1268 + 0.1859 + 0.2066 + 0.1771 = 0.6964$ **A1**
+
+$\ $
+
+(b)
+Let $n$ denote the number of additional shots and $Y$ the number of shots made.
+$Y \sim Bin(n, 0.38)$
+
+$0.90 \le P(Y \ge 1)$ **R1M1**
+
+$0.10 \ge P(Y = 0) = \binom{n}{0}(0.38)^0(0.62)^n = (0.62)^n$
+
+$n \ge \log_{0.62}(0.10) = \frac{\log(0.10)}{\log(0.62)} = 4.817$
+
+So the player needs 5 additional shots. **A2**
+
+Difficulty: 6/10
+Unit: Discrete Random Variable
+Topics: Binomial distribution, Logarithm
+Tags: Paper 2
+
+---
+Question:
+A motion sensor detects an animal entering a zone with probability 0.4 each time the animal passes, independently. The animal passes through the zone 10 times overnight.
+
+(a) What is the probability the sensor detects the animal 5 or more times? [2]
+(b) If the sensor detects the animal at least once, what is the probability it detected the animal exactly 3 times? [3]
+
+
+
+Solution:
+
+(a)
+Let $X$ denote the number of times the sensor detects the animal.
+$X \sim Bin(10, 0.4)$ **R1**
+
+$P(X \ge 5) = 1 - P(X \le 4) = 1 - \sum_{k=0}^{4} \binom{10}{k}(0.4)^k(0.6)^{10-k}$
+
+$= 1 - [0.0060 + 0.0403 + 0.1209 + 0.2150 + 0.2508] = 0.3670$ **A1**
+
+$\ $
+
+(b)
+$P(X=3 | X \ge 1) = \frac{P(X=3)}{P(X \ge 1)}$ **M1**
+
+$P(X=3) = \binom{10}{3}(0.4)^3(0.6)^7 = 0.2150$ **A1**
+
+$P(X \ge 1) = 1 - P(X=0) = 1 - 0.0060 = 0.9940$
+
+$P(X=3 | X \ge 1) = \frac{0.2150}{0.9940} = 0.2163$ **A1**
+
+Difficulty: 7/10
+Unit: Discrete Random Variable
+Topics: Binomial distribution, Conditional probability
+Tags: Paper 2
+
+---
+Question:
+A basketball player makes free throws with probability 0.6, independently. She attempts 10 free throws.
+
+(a) What is the probability she makes exactly 7 free throws? [2]
+(b) What is the probability she makes at least 8 free throws? [2]
+
+Solution:
+
+(a)
+Let $X$ denote the number of free throws made.
+$X \sim Bin(10, 0.6)$ **R1**
+
+$P(X = 7) = \binom{10}{7}(0.6)^7(0.4)^3 = 120 \times 0.0280 \times 0.064 = 0.2150$ **A1**
+
+$\ $
+
+(b)
+$P(X \ge 8) = P(X=8) + P(X=9) + P(X=10)$
+
+$= \binom{10}{8}(0.6)^8(0.4)^2 + \binom{10}{9}(0.6)^9(0.4)^1 + \binom{10}{10}(0.6)^{10}(0.4)^0$
+
+$= 0.1209 + 0.0403 + 0.0060 = 0.1672$ **A2**
+
+Difficulty: 4/10
+Unit: Discrete Random Variable
+Topics: Binomial distribution
+Tags: Paper 2
+
+---
+Question:
+A quality control inspector examines circuit boards. Each board has probability 0.15 of being defective, independently. The inspector checks 8 boards.
+
+(a) What is the probability that exactly 1 board is defective? [2]
+(b) What is the probability that at least 2 boards are defective? [2]
+
+Solution:
+
+(a)
+Let $X$ denote the number of defective boards.
+$X \sim Bin(8, 0.15)$ **R1**
+
+$P(X = 1) = \binom{8}{1}(0.15)^1(0.85)^7 = 8 \times 0.15 \times 0.3206 = 0.3847$ **A1**
+
+$\ $
+
+(b)
+$P(X \ge 2) = 1 - P(X \le 1) = 1 - [P(X=0) + P(X=1)]$
+
+$= 1 - \left[\binom{8}{0}(0.15)^0(0.85)^8 + \binom{8}{1}(0.15)^1(0.85)^7\right]$
+
+$= 1 - [0.2725 + 0.3847] = 1 - 0.6572 = 0.3428$ **A2**
+
+Difficulty: 5/10
+Unit: Discrete Random Variable
+Topics: Binomial distribution
+Tags: Paper 2
+
+---
+Question:
+A fair coin is flipped 6 times independently.
+
+(a) What is the probability of getting exactly 4 heads? [2]
+(b) What is the probability of getting at most 2 heads? [2]
+
+Solution:
+
+(a)
+Let $X$ denote the number of heads obtained.
+$X \sim Bin(6, 0.5)$ **R1**
+
+$P(X = 4) = \binom{6}{4}(0.5)^4(0.5)^2 = 15 \times (0.5)^6 = 15 \times 0.0156 = 0.2344$ **A1**
+
+$\ $
+
+(b)
+$P(X \le 2) = P(X=0) + P(X=1) + P(X=2)$
+
+$= \binom{6}{0}(0.5)^6 + \binom{6}{1}(0.5)^6 + \binom{6}{2}(0.5)^6$
+
+$= (0.5)^6[1 + 6 + 15] = 0.0156 \times 22 = 0.3438$ **A2**
+
+Difficulty: 4/10
+Unit: Discrete Random Variable
+Topics: Binomial distribution
+Tags: Paper 2
+
+---
+Question:
+A player enters a gaming tournament where she wins each match with probability 0.4, independently. She plays 12 matches. Let $X$ denote the number of matches won.
+
+(a) Find the expected number of matches won and the variance. [3]
+(b) Each win earns her $50 and each loss costs her $20. Let $Y$ denote her total earnings. Find $E(Y)$ and $Var(Y)$. [4]
+
+Solution:
+
+(a)
+Let $X$ denote the number of matches won.
+$X \sim Bin(12, 0.4)$ **R1**
+
+$E(X) = np = 12 \times 0.4 = 4.8$ **A1**
+
+$Var(X) = np(1-p) = 12 \times 0.4 \times 0.6 = 2.88$ **A1**
+
+$\ $
+
+(b)
+$Y = 50X - 20(12-X) = 50X - 240 + 20X = 70X - 240$ **M1**
+
+$E(Y) = E(70X - 240) = 70E(X) - 240 = 70(4.8) - 240 = 336 - 240 = 96$ **A1**
+
+$Var(Y) = Var(70X - 240) = 70^2 Var(X) = 4900 \times 2.88 = 14112$ **A2**
+
+Difficulty: 5/10
+Unit: Discrete Random Variable
+Topics: Binomial distribution, Expectation, Variance, Functions of random variables
+Tags: Paper 2
+
+---
+Question:
+A company tests electronic devices. Each device passes inspection with probability 0.75, independently. In a batch of 20 devices, let $X$ denote the number that pass inspection.
+
+(a) State the distribution of $X$ and find $E(X)$ and $Var(X)$. [3]
+(b) The company earns \$80 for each device that passes and loses \$30 for each device that fails. Find the expected total profit. [3]
+
+Solution:
+
+(a)
+Let $X$ denote the number of devices that pass inspection.
+$X \sim Bin(20, 0.75)$ **R1**
+
+$E(X) = np = 20 \times 0.75 = 15$ **A1**
+
+$Var(X) = np(1-p) = 20 \times 0.75 \times 0.25 = 3.75$ **A1**
+
+$\ $
+
+(b)
+Let $Y$ denote the total profit.
+$Y = 80X - 30(20-X) = 80X - 600 + 30X = 110X - 600$ **M1**
+
+$E(Y) = E(110X - 600) = 110E(X) - 600 = 110(15) - 600 = 1650 - 600 = 1050$ **A2**
+
+Difficulty: 6/10
+Unit: Discrete Random Variable
+Topics: Binomial distribution, Expectation, Variance, Functions of random variables
+Tags: Paper 2
+
+---
+Question:
+A researcher conducts a survey where each person responds with probability 0.3, independently. The researcher contacts 25 people. Let $X$ denote the number of responses received.
+
+(a) Find $E(X)$, $Var(X)$, and the standard deviation of $X$. [3]
+(b) If the researcher receives fewer than 5 responses, she earns \$0. If she receives 5 or more responses, she earns \$100 plus \$15 for each response beyond 5. Express her earnings as a function of $X$ and find the probability she earns more than \$100. [4]
+
+Solution:
+
+(a)
+Let $X$ denote the number of responses received.
+$X \sim Bin(25, 0.3)$ **R1**
+
+$E(X) = np = 25 \times 0.3 = 7.5$ **A1**
+
+$Var(X) = np(1-p) = 25 \times 0.3 \times 0.7 = 5.25$
+
+$SD(X) = \sqrt{Var(X)} = \sqrt{5.25} = 2.291$ **A1**
+
+$\ $
+
+(b)
+Earnings: $Y = \begin{cases} 0 & \text{if } X < 5 \\ 100 + 15(X-5) & \text{if } X \ge 5 \end{cases}$ **M1**
+
+For $X \ge 5$: $Y = 100 + 15X - 75 = 15X + 25$
+
+She earns more than \$100 when $X \ge 6$ **M1**
+
+$P(Y > 100) = P(X \ge 6) = 1 - P(X \le 5)$
+
+$= 1 - \sum_{k=0}^{5} \binom{25}{k}(0.3)^k(0.7)^{25-k} = 1 - 0.1935 = 0.8065$ **A2**
+
+Difficulty: 6/10
+Unit: Discrete Random Variable
+Topics: Binomial distribution, Expectation, Variance, Functions of random variables
+Tags: Paper 2
+
+---
+Question:
+A person buys 15 lottery tickets. Each ticket wins with probability 0.2, independently. Let $X$ denote the number of winning tickets.
+
+(a) Find the expected value and variance of $X$. [2]
+(b) Each winning ticket pays \$120 and each losing ticket costs \$10 to purchase. Let $W$ denote the net profit (winnings minus cost). Find $E(W)$ and $Var(W)$. [5]
+
+Solution:
+
+(a)
+Let $X$ denote the number of winning tickets.
+$X \sim Bin(15, 0.2)$ **R1**
+
+$E(X) = np = 15 \times 0.2 = 3$
+
+$Var(X) = np(1-p) = 15 \times 0.2 \times 0.8 = 2.4$ **A1**
+
+$\ $
+
+(b)
+Total cost of tickets = $15 \times 10 = 150$ **M1**
+
+Net profit: $W = 120X - 150$ **M1**
+
+$E(W) = E(120X - 150) = 120E(X) - 150 = 120(3) - 150 = 360 - 150 = 210$ **A1**
+
+$Var(W) = Var(120X - 150) = 120^2 Var(X) = 14400 \times 2.4 = 34560$ **A2**
+
+Difficulty: 6/10
+Unit: Discrete Random Variable
+Topics: Binomial distribution, Expectation, Variance, Functions of random variables
+Tags: Paper 2

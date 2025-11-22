@@ -65,9 +65,9 @@ Question: Suppose that the discrete random variable $X$ has a probability mass f
 What is Var(X), in terms of $k$?
 
 Choices:
-- $\frac{k(108-121k){36}}$
+- $\frac{k(108-121k)}{36}$
 - $\frac{7k}{6}$
-- $\frac{k(216-121k){36}}$
+- $\frac{k(216-121k)}{36}$
 - $\frac{27k}{6}$
 
 Correct: 0
