@@ -1,0 +1,151 @@
+---
+Question: A fair die, with faces numbered 1, 2, 3, 4, 5, and 6, is rolled four times. "Fair" implies that each face is equally likely to turn up each time the die is rolled. After each roll, the number appearing on the upturned face is recorded. Which of the following sets below is a valid sample space for the experiment?
+
+Choices:
+- S = {more than three 4's, fewer than four 4's}
+- S = {more 4's than 3's, fewer 4's than 3's}
+- S = {an even number of 4's, at least one 4}
+- S = {an odd number of 4's, no more than one 4}
+
+Correct: 0
+Difficulty: 2
+Unit: probability
+Topics: Sample space
+---
+
+Question: A committee of size three, with no distinction between the responsibilities of the members, is to be randomly formed from a group of two Undergraduate students and four Graduate students. If there must be at least one Graduate student and at least one Undergraduate student on the committee, how many committees are possible?
+
+Choices:
+- 14
+- 16
+- 18
+- 20
+
+Correct: 1
+Difficulty: 3
+Unit: probability
+Topics: Combination
+
+---
+Question: How many subsets of $S$ = {0,1,2,3,4,5,6,7,8,9} contain at least 2 digits? We consider empty set and $S$ itself as subsets of $S$.
+
+Choices:
+- $2^{10} -2 $
+- $2^{10} - 10$
+- $2^{10} -11 $
+- $2^{10} - 12 $
+
+Correct: 2
+Difficulty: 3
+Unit: probability
+Topics: Set Theory
+---
+
+Question: A survey of 100 specialty cheese outlets indicates the following: 8 have brand A only; 30 have brand A; 7 have brands A and C; 40 have brands B and C but not brand A; 5 have brands A, B, and C. All outlets surveyed have at least one of the brands A, B, and C. Twice as many outlets have brand C only as those that have brand B only.
+How many outlets have brand C but not brand A?
+
+Choices:
+- 20
+- 65
+- 40
+- 60
+
+Correct: 3
+Difficulty: 6
+Unit: probability
+Topics: Set Theory, Principle of Inclusion-Exclusion
+---
+
+Question: Simon and Garfunkel are roommates, and have made a bet. They will take turns tossing a fair die until an even number is tossed. Whoever tosses the first even number will win the bet and won't have to clean the bathrooms for the next year! Simon has elected to go first.
+What is the probability that Simon will win? Is there an advantage to going first?
+
+Choices:
+- 2/3; Yes
+- 3/4; Yes
+- 1/2; No
+- 1/3; No
+
+Correct: 0
+Difficulty: 5
+Unit: probability
+Topics: Geometric Series
+
+---
+
+Question: Three printers, labeled A, B, and C – are running independently of each other. If their probabilities of failure on any given day are $P(A)$ = 0.02, $P(B)$ = 0.03, and $P(C)$ = 0.04, what is the probability that exactly one of them will fail today?
+
+Choices:
+- 0.09
+- 0.1256
+- 0.0559
+- 0.0849
+
+Correct: 3
+Difficulty: 4
+Unit: probability
+Topics: Independence
+
+---
+
+Question: Two events $A$ and $B$ such that $P(A \cap \overline{B}) = 0.2$ and $P(A \cup B) = 0.9$. Calculate $P(\overline{A}| \overline{B})$.
+
+Choices:
+- 3/10
+- 1/3
+- 1/10
+- 2/9
+
+Correct: 1
+Difficulty: 3
+Unit: probability
+Topics: Set Theory
+
+---
+
+Question: Consider the following six-sided dice. The value for each of the 6 faces for each die is given in the table below:
+![](/questionPic/prob_3.jpg?400x)
+For example: Die A has 6 sides. Two of the sides have a 0, and four of the sides have a 4. Each of the 6 sides is equally likely to turn up on any roll.
+Suppose that there are 4 players, each choosing a die. Each player must choose a different die and they will roll it one time. The player who rolls the largest number observed on a single roll will win the game. Player one chooses first, then player two chooses, and so on. For each die, calculate the probability that the largest number observed occurs on that die. State which die / dice yields the highest probability of obtaining the largest number.
+
+Choices:
+- Die C
+- Die A
+- Dice C and D
+- Dice A and D
+
+Correct: 3
+Difficulty: 7
+Unit: probability
+Topics: Probability
+
+---
+
+Question: A fair six-sided die is rolled three times. The number of dots appearing on the upturned face is recorded after each roll. What is the probability that the largest number observed in the three rolls is greater than two?
+
+Choices:
+- 1/8
+- 125/216
+- 26/27
+- 7/8
+
+Correct: 2
+Difficulty: 3
+Unit: probability
+Topics: Probability
+
+---
+
+Question: A fair six-sided die is rolled 3 times. What is the probability that number of different faces showing in the three rolls equals to 2?
+
+Choices:
+- 5/36
+- 5/12
+- 1/36
+- 1/12
+
+Correct: 1
+Difficulty: 5
+Unit: probability
+Topics: Combination
+
+---

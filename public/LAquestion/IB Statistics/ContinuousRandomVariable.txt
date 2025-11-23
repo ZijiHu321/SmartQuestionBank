@@ -1,0 +1,680 @@
+---
+Question:
+Let X be normally distributed with mean 100 cm and standard deviation 5 cm.
+
+(a) Given that $P(X < d) = P(X > 105)$, find the value of $d$. [2]
+(b) Given that $P(X > 105) = 0.16$, find $P(d < X<105)$. [2]
+
+Solution:
+(a)
+By symmetry of normal distrution to the mean, **M**
+$100 - d = 105 - 100$
+$d = 95$ **A1**
+
+$\$
+(b)
+$P(d < X<105) = 1- P(X>105) -P(X < d)$ **M1**
+$= 1 - 0.16 \times 2 = 0.68$ **A1**
+
+Difficulty: 1/10
+Unit: Continuous random variable
+Topics: Normal distribution, mean
+Tags: Paper 1
+
+---
+Question:
+The weights, $W$, of newborn babies in Australia are normally distributed with a mean 3.41 kg and standard deviation 0.57 kg. A newborn baby has a low birth weight if it weighs less than $w$ kg.
+
+(a) Given that 5.3\% of newborn babies have a low birth weight, find $w$. [2]
+(b) A newborn baby has a low birth weight, find the probability that the baby weighs at least 2.15 kg. [2]
+
+Solution:
+(a)
+By GDC we get $z = -1.61643$ **M1**
+$\frac{w - \sigma}{\mu} = z$
+$w = 2.49$ **A1**
+
+$\ $
+(b)
+Let X denote the random variable of newborns' weight.
+
+$P(2.15 < X | X < 2.49) = \frac{P(2.15 < X < 2.49)}{P(X < 2.49)}$ **M1**
+$= 0.039465 / 0.053 =  0.744631 = 0.745$ **A1**
+
+Difficulty: 3/10
+Unit: Continuous random variable
+Topics: Normal distribution
+Tags: Paper 2
+
+
+---
+Question:
+The reaction times, $R$, of drivers are normally distributed with a mean 0.82 s and standard deviation 0.14 s. A driver is classified as slow to react if their reaction time is more than $r$ seconds.
+
+(a) Given that 7.9% of drivers are slow to react, find $r$. [2]
+(b) A driver is slow to react, find the probability that their reaction time is at least 1.10 s. [2]
+
+Solution:
+(a)
+By GDC we get $z = 1.41183$ **M1**
+
+$\dfrac{r - 0.82}{0.14} = z$
+$r = 0.82 + 1.41183(0.14) = 1.018\ \text{(s)}$ **A1**
+
+$\ $
+(b)
+Let $X$ denote the random variable of drivers' reaction times.
+
+We want $P(X \ge 1.10 \mid X \ge 1.018) = \dfrac{P(X \ge 1.10)}{P(X \ge 1.018)}$. **M1**
+$P(X \ge 1.10) = 1 - \Phi\big(\tfrac{1.10-0.82}{0.14}\big)=1-\Phi(2.0)=0.0228$
+$P(X \ge 1.018)=1-\Phi\big(\tfrac{1.018-0.82}{0.14}\big)=1-\Phi(1.41183)=0.0792$
+So the conditional probability $= 0.0228/0.0792 = 0.288$ **A1**
+
+Difficulty: 3/10
+Unit: Continuous random variable
+Topics: Normal distribution
+Tags: Paper 2
+---
+
+
+Question:
+The body temperatures, $T$, of healthy adults are normally distributed with mean $36.7^\circ\text{C}$ and standard deviation $0.32^\circ\text{C}$.
+
+(a) Find the temperature $t$ such that 18% of adults have a temperature above $t$. [2]
+(b) A person is selected at random. Find the probability that their temperature is between $36.4^\circ\text{C}$ and $37.2^\circ\text{C}$. [2]
+(c) Given that a person’s temperature is above $37.2^\circ\text{C}$, find the probability that it is also above $37.5^\circ\text{C}$. [3]
+
+Solution:
+(a)
+By GDC we get $z = \Phi^{-1}(0.82)=0.91537$ **M1**
+$\dfrac{t-36.7}{0.32}=z$
+$t=36.7+0.91537(0.32)=36.993^\circ\text{C}$ **A1**
+
+$\ $
+(b)
+Let $X$ denote the random variable of temperatures.
+
+$P(36.4<X<37.2)=\Phi\Big(\dfrac{37.2-36.7}{0.32}\Big)-\Phi\Big(\dfrac{36.4-36.7}{0.32}\Big)$ **M1**
+$= \Phi(1.5625)-\Phi(-0.9375)=0.823334-0.056670=0.766664\approx 0.767$ **A1**
+
+$\ $
+(c)
+$P(X>37.5\mid X>37.2)=\dfrac{P(X>37.5)}{P(X>37.2)}$ **M1**
+$= \dfrac{1-\Phi(2.5)}{1-\Phi(1.5625)}=\dfrac{0.006210}{0.059072}=0.1051\approx 0.105$ **A1**
+
+Difficulty: 5/10
+Unit: Continuous random variable
+Topics: Normal distribution
+Tags: Paper 2
+---
+
+Question:
+The weights, $W$, of packages are normally distributed with mean $12.4\text{ kg}$ and standard deviation $3.1\text{ kg}$.
+
+(a) The heaviest 4.5% of packages require special handling. Find the minimum weight required for special handling. [2]
+(b) Find the probability that a randomly selected package weighs between $10\text{ kg}$ and $15.5\text{ kg}$. [2]
+(c) A package is known to weigh more than $10\text{ kg}$. Find the probability that it weighs more than $15.5\text{ kg}$. [3]
+
+Solution:
+(a)
+By GDC we get $z = \Phi^{-1}(0.955)=1.69540$ **M1**
+$\dfrac{w-12.4}{3.1}=z$
+$w=12.4+1.69540(3.1)=17.656\text{ kg}$ **A1**
+
+$\ $
+(b)
+Let $X$ denote the random variable of package weights.
+
+$P(10<X<15.5)=\Phi\Big(\dfrac{15.5-12.4}{3.1}\Big)-\Phi\Big(\dfrac{10-12.4}{3.1}\Big)$ **M1**
+$=\Phi(1.0)-\Phi(-0.77419)=0.841345-0.219408=0.621937\approx 0.622$ **A1**
+
+$\ $
+(c)
+$P(X>15.5\mid X>10)=\dfrac{P(X>15.5)}{P(X>10)}$ **M1**
+$=\dfrac{1-\Phi(1.0)}{1-\Phi(-0.77419)}=\dfrac{0.158655}{0.780592}=0.2033\approx 0.203$ **A1**
+
+Difficulty: 5/10
+Unit: Continuous random variable
+Topics: Normal distribution
+Tags: Paper 2
+---
+Question: 
+The lifespans, $L$, of laptop batteries (in hours) are normally distributed with mean $540$ and standard deviation $72$.
+
+(a) Find the 12th percentile of $L$. [2]
+(b) A manufacturer replaces batteries that last less than $480$ hours. What proportion of batteries are replaced? [2]
+(c) A battery is known to have lasted more than $480$ hours. Find the probability that it lasted at least $650$ hours. [3]
+
+Solution:
+(a)
+By GDC we get $z=\Phi^{-1}(0.12)=-1.17499$ **M1**
+$540+(-1.17499)(72)=455.401\text{ hours}$ **A1**
+
+$\ $
+(b)
+Let $X$ denote the random variable of lifespans.
+
+$P(X<480)=\Phi\Big(\dfrac{480-540}{72}\Big)=\Phi(-0.83333)=0.202328\approx 0.2023$ **M1** **A1**
+
+$\ $
+(c)
+$P(X\ge 650\mid X>480)=\dfrac{P(X\ge650)}{P(X>480)}=\dfrac{1-\Phi\big(\tfrac{650-540}{72}\big)}{1-\Phi\big(\tfrac{480-540}{72}\big)}$ M1
+$=\dfrac{1-\Phi(1.52778)}{1-\Phi(-0.83333)}=\dfrac{0.063284}{0.797672}=0.07934\approx 0.0793$ **A1**
+
+Difficulty: 5/10
+Unit: Continuous random variable
+Topics: Normal distribution
+Tags: Paper 2
+
+---
+Question:
+IQ scores, $X$, are normally distributed with mean $100$ and standard deviation $15$.
+
+(a) Find the score $x$ such that 30% of the population scores below $x$. [2]
+(b) Find the probability that a randomly chosen person scores between $105$ and $130$. [2]
+(c) A person scores above $130$. Find the probability that they score above $145$. [3]
+
+Solution:
+(a)
+By GDC we get $z=\Phi^{-1}(0.30)=-0.524401$ **M1**
+$x=100+(-0.524401)(15)=92.134$ **A1**
+
+$\ $
+(b)
+Let $X$ denote the random variable of IQ scores.
+
+$P(105<X<130)=\Phi\Big(\dfrac{130-100}{15}\Big)-\Phi\Big(\dfrac{105-100}{15}\Big)$ **M1**
+$=\Phi(2.0)-\Phi(0.33333)=0.97725-0.630559=0.346691\approx 0.347$ **A1**
+
+$\ $
+(c)
+$P(X>145\mid X>130)=\dfrac{P(X>145)}{P(X>130)}=\dfrac{1-\Phi(3.0)}{1-\Phi(2.0)}$ **M1**
+$=\dfrac{0.001350}{0.022750}=0.05934\approx 0.0593$ **A1**
+
+Difficulty: 5/10
+Unit: Continuous random variable
+Topics: Normal distribution
+Tags: Paper 2
+---
+Question:
+A company produces computer microchips, which have a life expectancy that follows a normal distribution with a mean of $90$ months and a standard deviation of $3.7$ months.
+
+(a) If a microchip is guaranteed for $84$ months find the probability that it will fail before the guarantee ends. [2]
+(b) The probability that a microchip does not fail before the end of the guarantee is required to be $99%$. For how many months should it be guaranteed? [2]
+(c) A rival company produces microchips where the probability that they will fail after $84$ months is $0.88$. Given that the life expectancy also follows a normal distribution with standard deviation $3.7$ months, find the mean. [3]
+
+Solution:
+(a)
+Let $X\sim N(90,,3.7^2)$. We want $P(X<84)$.
+Standardise: $z=\dfrac{84-90}{3.7}=-1.62162$.
+$P(X<84)=\Phi(-1.62162)=0.0525\approx\mathbf{0.0525}$ (≈ 5.25%). **M1** **A1**
+
+$\ $
+(b)
+Require $P(X\ge g)=0.99\Rightarrow P(X<g)=0.01$, so $z=\Phi^{-1}(0.01)=-2.32635$.
+$g=90+(-2.32635)(3.7)=81.3895\ \text{months}\approx\mathbf{81.39\ \text{months}}$ **M1** **A1**
+
+$\ $
+(c)
+Rival: $P(\text{fail after }84)=P(X>84)=0.88\Rightarrow P(X\le84)=0.12$, so $z=\Phi^{-1}(0.12)=-1.17499$.
+If mean is $\mu$, then 
+$\frac{84-\mu}{3.7}= z$
+
+$\mu=88.3475$$
+So $\mu\approx\mathbf{88.35\ \text{months}}$ **M1** **A1**
+
+Difficulty: 6/10
+Unit: Continuous random variable
+Topics: Normal distribution
+Tags: Paper 2
+
+---
+Question:
+The lifespan, $L$, of a certain brand of lightbulbs is normally distributed with mean $820$ hours and standard deviation $65$ hours.
+
+(a) Find the probability that a randomly selected lightbulb lasts less than $750$ hours. [2]
+(b) The company wants at least $97%$ of bulbs to outlast the guarantee period. For how many hours should the bulbs be guaranteed? [2]
+(c) A competitor’s bulbs have mean lifespan $880$ hours. If the probability that one of their bulbs lasts more than $900$ hours is $0.22$, find the standard deviation of the competitor’s bulbs. [3]
+
+Solution:
+(a)
+Let $X\sim N(820,,65^2)$.
+$z=\dfrac{750-820}{65}=-1.07692$.
+$P(X<750)=\Phi(-1.07692)=0.1400\approx\mathbf{0.140}$. **M1** **A1**
+
+$\ $
+(b)
+Require $P(X\ge g)=0.97\Rightarrow P(X<g)=0.03$.
+$z=\Phi^{-1}(0.03)=-1.88079$.
+$g = 820 + (-1.88079)(65)=697.7485\approx\mathbf{698\text{ hours}}$ **M1** **A1**
+
+$\ $
+(c)
+Competitor: $P(X>900)=0.22\Rightarrow P(X\le900)=0.78$.
+$z=\Phi^{-1}(0.78)=0.77219$.
+Let standard deviation be $\sigma$. Then
+$\dfrac{900-880}{\sigma}=0.77219\Rightarrow \sigma=\dfrac{20}{0.77219}=25.900\approx\mathbf{25.90\text{ hours}}$ M1 **A1**
+
+Difficulty: 7/10
+Unit: Continuous random variable
+Topics: Normal distribution
+Tags: Paper 2
+
+---
+Question:
+The time, $T$, taken for a chemical battery to fully discharge follows a normal distribution with mean $42.6$ hours and standard deviation $4.8$ hours.
+
+(a) Find the probability that a battery discharges in less than $36$ hours. [2]
+(b) A manufacturer wants the discharge-time guarantee set so that only $4%$ of batteries fail before the guarantee. Find the guarantee time. [2]
+(c) Another brand has mean discharge time $44.5$ hours. If $P(T>50)=0.12$ for that brand, find the standard deviation. [3]
+
+Solution:
+(a)
+Let $X\sim N(42.6,,4.8^2)$.
+$z=\dfrac{36-42.6}{4.8}=-1.375$.
+$P(X<36)=\Phi(-1.375)=0.0840\approx\mathbf{0.084}$. **M1** **A1**
+
+$\ $
+(b)
+$P(X<g)=0.04\Rightarrow z=\Phi^{-1}(0.04)=-1.75069$.
+$g=42.6 + (-1.75069)(4.8)=34.1967\approx\mathbf{34.20\text{ hours}}$ **M1** **A1**
+
+$\ $
+(c)
+Given for competitor $P(T>50)=0.12\Rightarrow P(T\le50)=0.88$.
+$z=\Phi^{-1}(0.88)=1.17500$.
+Let standard deviation be $\sigma$. Then
+$\dfrac{50-44.5}{\sigma}=1.17500\Rightarrow \sigma=\dfrac{5.5}{1.17500}=4.68085\approx\mathbf{4.681\text{ hours}}$ M1 **A1**
+
+Difficulty: 7/10
+Unit: Continuous random variable
+Topics: Normal distribution
+Tags: Paper 2
+---
+Question:
+A continuous random variable $X$ has the probability density function
+
+$$f(x) = \begin{cases} k \sin x, & 0 \leq x \leq \dfrac{\pi}{2} \\ 0, & \text{otherwise} \end{cases}$$
+
+(a) Find the value of $k$. [2]
+
+(b) Find $E(X)$. [2]
+
+(c) Find the median of $X$. [2]
+
+
+
+Solution:
+
+(a)
+For a valid probability density function:
+$$\int_{-\infty}^{\infty} f(x) \, dx = 1$$
+
+$$\int_0^{\pi/2} k \sin x \, dx = 1$$ **M1**
+
+$$k \left[-\cos x\right]_0^{\pi/2} = 1$$
+
+$$k \left[-\cos\dfrac{\pi}{2} + \cos 0\right] = 1$$
+
+$$k[0 + 1] = 1$$
+
+$$\mathbf{k = 1}$$ **A1**
+
+$\ $
+
+(b)
+$$E(X) = \int_0^{\pi/2} x \sin x \, dx$$ **M1**
+
+Using integration by parts with $u = x$, $dv = \sin x \, dx$:
+
+Then $du = dx$, $v = -\cos x$
+
+$$E(X) = \left[-x\cos x\right]_0^{\pi/2} + \int_0^{\pi/2} \cos x \, dx$$
+
+$$= \left[-\dfrac{\pi}{2} \cdot 0 + 0 \cdot 1\right] + \left[\sin x\right]_0^{\pi/2}$$
+
+$$= 0 + [1 - 0]$$
+
+$$\mathbf{E(X) = 1}$$ **A1**
+
+$\ $
+
+(c)
+The median $m$ satisfies $P(X \leq m) = 0.5$:
+
+$$\int_0^m \sin x \, dx = 0.5$$ **M1**
+
+$$\left[-\cos x\right]_0^m = 0.5$$
+
+$$-\cos m + \cos 0 = 0.5$$
+
+$$-\cos m + 1 = 0.5$$
+
+$$\cos m = 0.5$$
+
+$$m = \dfrac{\pi}{3}$$ **A1**
+
+Difficulty: 5/10  
+Unit: Continuous random variable  
+Topics: Probability density functions, Expected value, Median  
+Tags: Paper 1
+
+---
+Question:
+A continuous random variable $X$ has the probability density function
+
+$$f(x) = \begin{cases} k(1 - x^2), & 0 \leq x \leq 1 \\ 0, & \text{otherwise} \end{cases}$$
+
+(a) Find the value of $k$.
+
+(b) Find $E(X)$.
+
+(c) Find the variance of $X$.
+
+
+Solution:
+
+(a)
+For a valid probability density function:
+$$\int_{-\infty}^{\infty} f(x) \, dx = 1$$
+
+$$\int_0^{1} k(1 - x^2) \, dx = 1$$ **M1**
+
+$$k \left[x - \dfrac{x^3}{3}\right]_0^{1} = 1$$
+
+$$k \left[1 - \dfrac{1}{3} - 0\right] = 1$$
+
+$$k \cdot \dfrac{2}{3} = 1$$
+
+$$\mathbf{k = \dfrac{3}{2}}$$ **A1**
+
+$\ $
+
+(b)
+$$E(X) = \int_0^{1} x \cdot \dfrac{3}{2}(1 - x^2) \, dx$$ **M1**
+
+$$= \dfrac{3}{2} \int_0^{1} (x - x^3) \, dx$$
+
+$$= \dfrac{3}{2} \left[\dfrac{x^2}{2} - \dfrac{x^4}{4}\right]_0^{1}$$
+
+$$= \dfrac{3}{2} \left[\dfrac{1}{2} - \dfrac{1}{4}\right]$$
+
+$$= \dfrac{3}{2} \cdot \dfrac{1}{4} = \mathbf{\dfrac{3}{8}}$$ **A1**
+
+$\ $
+
+(c)
+First find $E(X^2)$:
+$$E(X^2) = \int_0^{1} x^2 \cdot \dfrac{3}{2}(1 - x^2) \, dx$$ **M1**
+
+$$= \dfrac{3}{2} \int_0^{1} (x^2 - x^4) \, dx$$
+
+$$= \dfrac{3}{2} \left[\dfrac{x^3}{3} - \dfrac{x^5}{5}\right]_0^{1}$$
+
+$$= \dfrac{3}{2} \left[\dfrac{1}{3} - \dfrac{1}{5}\right] = \dfrac{3}{2} \cdot \dfrac{2}{15} = \dfrac{1}{5}$$
+
+$$\text{Var}(X) = E(X^2) - [E(X)]^2 = \dfrac{1}{5} - \left(\dfrac{3}{8}\right)^2 = \dfrac{1}{5} - \dfrac{9}{64} = \dfrac{64 - 45}{320} = \mathbf{\dfrac{19}{320}}$$ **A1**
+
+
+
+Difficulty: 6/10  
+Unit: Continuous random variable  
+Topics: Probability density functions, Expected value, Variance  
+Tags: Paper 2
+
+---
+Question:
+A continuous random variable $Y$ has the probability density function
+
+$$f(y) = \begin{cases} \dfrac{3}{8}y^2, & 0 \leq y \leq 2 \\ 0, & \text{otherwise} \end{cases}$$
+
+(a) Verify that $f(y)$ is a valid probability density function. [2]
+
+(b) Find $P(Y > 1)$. [2]
+
+(c) Find the cumulative distribution function $F(y)$ for $0 \leq y \leq 2$. [3]
+
+
+
+Solution:
+
+(a)
+Check that:
+$$\int_{-\infty}^{\infty} f(y) \, dy = 1$$ **M1**
+
+$$\int_0^{2} \dfrac{3}{8}y^2 \, dy = \dfrac{3}{8} \left[\dfrac{y^3}{3}\right]_0^{2} = \dfrac{3}{8} \cdot \dfrac{8}{3} = 1$$
+
+Since the integral equals 1 and $f(y) \geq 0$ for all $y$, it is a valid pdf. **A1**
+
+$\ $
+
+(b)
+$$P(Y > 1) = \int_1^{2} \dfrac{3}{8}y^2 \, dy$$ **M1**
+
+$$= \dfrac{3}{8} \left[\dfrac{y^3}{3}\right]_1^{2}$$
+
+$$= \dfrac{3}{8} \left[\dfrac{8}{3} - \dfrac{1}{3}\right] = \dfrac{3}{8} \cdot \dfrac{7}{3} = \mathbf{\dfrac{7}{8}}$$ **A1**
+
+$\ $
+
+(c)
+For $0 \leq y \leq 2$:
+$$F(y) = \int_0^{y} \dfrac{3}{8}t^2 \, dt$$ **M1**
+
+$$= \dfrac{3}{8} \left[\dfrac{t^3}{3}\right]_0^{y}$$
+
+$$= \dfrac{3}{8} \cdot \dfrac{y^3}{3}$$
+
+$$F(y) = \mathbf{\dfrac{y^3}{8}}$$ for $0 \leq y \leq 2$ **A1**
+
+
+
+Difficulty: 6/10  
+Unit: Continuous random variable  
+Topics: Probability density functions, CDF  
+Tags: Paper 2
+
+---
+Question:
+A market stall sells apples, pears and plums.
+
+The weights of the apples are normally distributed with a mean of 200 grams and a standard deviation of 25 grams.
+
+(a)(i) Given that there are 450 apples on the stall, what is the expected number of apples with a weight of more than 225 grams? [2]
+
+(a)(ii) Given that 70% of the apples weigh less than $m$ grams, find the value of $m$. [3]
+
+(b) The weights of the pears are normally distributed with a mean of $\alpha$ grams and a standard deviation of $\sigma$ grams. Given that 8% of these pears have a weight of more than 270 grams and 15% have a weight less than 250 grams, find $\alpha$ and $\sigma$. [6]
+
+(c) The weights of the plums are normally distributed with a mean of 80 grams and a standard deviation of 4 grams. 5 plums are chosen at random. What is the probability that exactly 3 of them weigh more than 82 grams? [4]
+
+
+
+Solution:
+
+(a)(i)
+Let $X$ be the weight of an apple. Then $X \sim N(200, 25^2)$.
+
+$$z = \dfrac{225 - 200}{25} = 1.00$$ **M1**
+
+$$P(X > 225) = P(Z > 1.00) = 1 - \Phi(1.00) = 1 - 0.8413 = 0.1587$$
+
+Expected number $= 450 \times 0.1587 = 71.415 \approx \mathbf{71 \text{ apples}}$ **A1**
+
+$\ $
+
+(a)(ii)
+Given $P(X < m) = 0.70$, we need to find $m$. **M1**
+
+$$z = \Phi^{-1}(0.70) = 0.5244$$
+
+$$\dfrac{m - 200}{25} = 0.5244$$
+
+$$m = 200 + 25(0.5244) = 200 + 13.11$$
+
+$$m \approx \mathbf{213.1 \text{ grams}}$$ **A1**
+
+$\ $
+
+(b)
+Let $Y$ be the weight of a pear. Then $Y \sim N(\alpha, \sigma^2)$.
+
+Given: $P(Y > 270) = 0.08$ and $P(Y < 250) = 0.15$. **M1**
+
+From $P(Y > 270) = 0.08$:
+$$P(Y \leq 270) = 0.92 \Rightarrow z = \Phi^{-1}(0.92) = 1.4051$$
+
+$$\dfrac{270 - \alpha}{\sigma} = 1.4051 \quad \text{...(1)}$$
+
+From $P(Y < 250) = 0.15$:
+$$z = \Phi^{-1}(0.15) = -1.0364$$
+
+$$\dfrac{250 - \alpha}{\sigma} = -1.0364 \quad \text{...(2)}$$ **M1**
+
+Subtracting equation (2) from equation (1):
+$$\dfrac{270 - 250}{\sigma} = 1.4051 - (-1.0364)$$
+
+$$\dfrac{20}{\sigma} = 2.4415$$
+
+$$\sigma = \dfrac{20}{2.4415} = 8.1916 \approx \mathbf{8.19 \text{ grams}}$$ **A1**
+
+Substituting back into equation (1):
+$$270 - \alpha = 1.4051 \times 8.1916 = 11.509$$
+
+$$\alpha = 270 - 11.509 = 258.491 \approx \mathbf{258.5 \text{ grams}}$$ **A1**
+
+$\ $
+
+(c)
+Let $W$ be the weight of a plum. Then $W \sim N(80, 4^2)$.
+
+First, find $P(W > 82)$: **M1**
+
+$$z = \dfrac{82 - 80}{4} = 0.5$$
+
+$$P(W > 82) = P(Z > 0.5) = 1 - \Phi(0.5) = 1 - 0.6915 = 0.3085$$
+
+Let $X$ be the number of plums (out of 5) that weigh more than 82 grams.
+
+Then $X \sim B(5, 0.3085)$. **M1**
+
+$$P(X = 3) = \binom{5}{3}(0.3085)^3(0.6915)^2$$
+
+$$= 10 \times 0.02936 \times 0.4782$$
+
+$$= \mathbf{0.140}$$ **A1**
+
+
+
+Difficulty: 8/10  
+Unit: Continuous random variable  
+Topics: Normal distribution, Binomial distribution  
+Tags: Paper 2
+
+---
+Question:
+The probability density function of a random variable $X$ is defined as:
+
+$$f(x) = \begin{cases} ax \cos x, & 0 \leq x \leq \dfrac{\pi}{2}, \text{ where } a \in \mathbb{R} \\ 0, & \text{elsewhere} \end{cases}$$
+
+(a) Show that $a = \dfrac{2}{\pi - 2}$. [3]
+
+(b) Find $P\left(X < \dfrac{\pi}{4}\right)$. [3]
+
+(c) Find:
+    (i) the mode of $X$; [2]
+    (ii) the median of $X$. [2]
+
+(d) Find $P\left(X < \dfrac{\pi}{8} \mid X < \dfrac{\pi}{4}\right)$. [3]
+
+Solution:
+
+(a)
+For a valid probability density function:
+$$\int_{-\infty}^{\infty} f(x) \, dx = 1$$
+
+$$\int_0^{\pi/2} ax \cos x \, dx = 1$$ **M1**
+
+Using integration by parts with $u = ax$, $dv = \cos x \, dx$:
+
+Then $du = a \, dx$, $v = \sin x$
+
+$$\int ax \cos x \, dx = ax \sin x - \int a \sin x \, dx = ax \sin x + a \cos x$$
+
+Evaluating from $0$ to $\dfrac{\pi}{2}$:
+
+$$\left[ax \sin x + a \cos x\right]_0^{\pi/2} = \left[a \cdot \dfrac{\pi}{2} \cdot 1 + a \cdot 0\right] - [a \cdot 0 \cdot 0 + a \cdot 1]$$
+
+$$= \dfrac{a\pi}{2} - a = a\left(\dfrac{\pi}{2} - 1\right) = a\left(\dfrac{\pi - 2}{2}\right)$$ **M1**
+
+Setting this equal to 1:
+$$a\left(\dfrac{\pi - 2}{2}\right) = 1$$
+
+$$a = \dfrac{2}{\pi - 2}$$ **A1**
+
+$\ $
+
+(b)
+$$P\left(X < \dfrac{\pi}{4}\right) = \int_0^{\pi/4} \dfrac{2}{\pi - 2} x \cos x \, dx$$ **M1**
+
+Using integration by parts with $u = x$, $dv = \cos x \, dx$:
+
+$$= \dfrac{2}{\pi - 2} \left[x \sin x + \cos x\right]_0^{\pi/4}$$
+
+$$= \dfrac{2}{\pi - 2} \left[\dfrac{\pi}{4} \sin\dfrac{\pi}{4} + \cos\dfrac{\pi}{4} - (0 + 1)\right]$$
+
+$$= \dfrac{2}{\pi - 2} \left[\dfrac{\pi}{4} \cdot \dfrac{\sqrt{2}}{2} + \dfrac{\sqrt{2}}{2} - 1\right]$$
+
+$$= \dfrac{2}{\pi - 2} \left[\dfrac{\pi\sqrt{2}}{8} + \dfrac{\sqrt{2}}{2} - 1\right] \approx \mathbf{0.460}$$ **A1**
+
+$\ $
+
+(c)(i)
+The mode is the value where $f(x)$ is maximum. **M1**
+
+$$f(x) = \dfrac{2}{\pi - 2} x \cos x$$
+
+$$f'(x) = \dfrac{2}{\pi - 2} (\cos x - x \sin x) = 0$$
+
+$$\cos x - x \sin x = 0$$
+
+$$\cos x = x \sin x \Rightarrow \cot x = x$$
+
+Solving numerically: $\mathbf{x \approx 0.860}$ **A1**
+
+$\ $
+
+(c)(ii)
+The median $m$ satisfies $P(X \leq m) = 0.5$: **M1**
+
+$$\int_0^m \dfrac{2}{\pi - 2} x \cos x \, dx = 0.5$$
+
+$$\dfrac{2}{\pi - 2} [m \sin m + \cos m - 1] = 0.5$$
+
+$$m \sin m + \cos m - 1 = \dfrac{\pi - 2}{4}$$
+
+$$m \sin m + \cos m = \dfrac{\pi + 2}{4}$$
+
+Solving numerically: $\mathbf{m \approx 0.826}$ **A1**
+
+$\ $
+
+(d)
+Using conditional probability: **M1**
+
+$$P\left(X < \dfrac{\pi}{8} \mid X < \dfrac{\pi}{4}\right) = \dfrac{P\left(X < \dfrac{\pi}{8}\right)}{P\left(X < \dfrac{\pi}{4}\right)}$$
+
+Calculate $P\left(X < \dfrac{\pi}{8}\right)$:
+
+$$P\left(X < \dfrac{\pi}{8}\right) = \dfrac{2}{\pi - 2} \left[x \sin x + \cos x\right]_0^{\pi/8}$$
+
+$$= \dfrac{2}{\pi - 2} \left[\dfrac{\pi}{8} \sin\dfrac{\pi}{8} + \cos\dfrac{\pi}{8} - 1\right] \approx 0.130$$ **M1**
+
+Therefore:
+$$P\left(X < \dfrac{\pi}{8} \mid X < \dfrac{\pi}{4}\right) = \dfrac{0.130}{0.460} \approx \mathbf{0.283}$$ **A1**
+
+
+Difficulty: 8/10  
+Unit: Continuous random variable  
+Topics: Probability density functions, Mode, Median, Conditional probability  
+Tags: Paper 2
