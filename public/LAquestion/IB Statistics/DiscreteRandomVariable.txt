@@ -376,7 +376,7 @@ Question:
 A player enters a gaming tournament where she wins each match with probability 0.4, independently. She plays 12 matches. Let $X$ denote the number of matches won.
 
 (a) Find the expected number of matches won and the variance. [3]
-(b) Each win earns her $50 and each loss costs her $20. Let $Y$ denote her total earnings. Find $E(Y)$ and $Var(Y)$. [4]
+(b) Each win earns her \$50 and each loss costs her \$20. Let $Y$ denote her total earnings. Find $E(Y)$ and $Var(Y)$. [4]
 
 Solution:
 
