@@ -208,7 +208,7 @@ Tags: Paper 2
 ---
 
 
-Question: A company’s advertising spend $x$ (thousands $) and sales revenue $y$ (thousands $) follow the regression line:
+Question: A company’s advertising spend $x$ (thousands \$) and sales revenue $y$ (thousands \$) follow the regression line:
 
 $y = 200 + 5x$
 
@@ -242,7 +242,7 @@ Tags: Paper 2
 ---
 
 
-Question: A company measures advertising spend $x$ (thousands $) and sales revenue $y$ (thousands $):
+Question: A company measures advertising spend $x$ (thousands \$) and sales revenue $y$ (thousands \$):
 ![](/questionPic/stat_5.jpg?400x)
 
 
@@ -274,7 +274,7 @@ Tags: Paper 2
 ---
 
 
-Question: A company’s advertising spend $x$ (thousands $) and sales revenue $y$ (thousands $) follow the regression line:
+Question: A company’s advertising spend $x$ (thousands \$) and sales revenue $y$ (thousands \$) follow the regression line:
 
 $y = 200 + 5x$
 

@@ -76,16 +76,8 @@ const CourseCard = ({ course, onClick }: { course: Course; onClick: (course: Cou
 };
 
 export default function ShowCourse() {
-  const [showComingSoon, setShowComingSoon] = useState(false);
-
   const handleCourseClick = (course: Course) => {
-    if (course.id === 'IBstat') {
-      setShowComingSoon(true);
-      setTimeout(() => setShowComingSoon(false), 3000);
-    } else {
-      // Navigate to other courses normally
-      window.location.href = course.path;
-    }
+    window.location.href = course.path;
   };
 
   const courses: Course[] = [
@@ -118,54 +110,7 @@ export default function ShowCourse() {
         ))}
       </div>
 
-      {/* Coming Soon Notification */}
-      {showComingSoon && (
-        <div style={{
-          position: 'fixed',
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
-          backgroundColor: '#ffffff',
-          border: '2px solid #007bff',
-          borderRadius: '12px',
-          padding: '30px 40px',
-          boxShadow: '0 10px 25px rgba(0,0,0,0.3)',
-          zIndex: 1000,
-          textAlign: 'center',
-          minWidth: '300px',
-          animation: 'fadeInOut 3s ease-in-out'
-        }}>
-          <div style={{
-            fontSize: '2rem',
-            marginBottom: '10px'
-          }}>
-            🚧
-          </div>
-          <h3 style={{
-            margin: '0 0 10px 0',
-            color: '#007bff',
-            fontSize: '1.3rem',
-            fontWeight: '600'
-          }}>
-            Coming Soon!
-          </h3>
-          <p style={{
-            margin: 0,
-            color: '#666',
-            fontSize: '1rem'
-          }}>
-            IB Statistics reports are under development
-          </p>
-        </div>
-      )}
-
       <style jsx>{`
-        @keyframes fadeInOut {
-          0% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
-          15% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-          85% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-          100% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
-        }
         .stats-container {
           padding: 40px 20px;
           min-height: 100vh;
