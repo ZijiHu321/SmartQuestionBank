@@ -1,29 +1,11 @@
 'use client';
 import { useState, useEffect, useCallback } from 'react';
 import QuestionCard from '@/app/questiontemp';
+import LATemp from '@/app/LA_Temp';
 import { parseLAQuestionFile, LAQuestion } from '@/app/LA_Parser';
 import { parseQuestionFile, Question } from '@/app/questionParser';
 
-// Type definitions for MathJax
-interface MathJaxConfig {
-  tex: {
-    inlineMath: string[][];
-    displayMath: string[][];
-    processEscapes: boolean;
-    processEnvironments: boolean;
-  };
-  options: {
-    skipHtmlTags: string[];
-  };
-}
 
-interface MathJaxWindow extends Window {
-  MathJax?: {
-    typesetPromise?: () => Promise<void>;
-  } & MathJaxConfig;
-}
-
-declare const window: MathJaxWindow;
 
 // Union type for both question types
 type AnyQuestion = Question | LAQuestion;
@@ -35,8 +17,9 @@ const isLAQuestion = (question: AnyQuestion): question is LAQuestion => {
 
 // Extract question type from filepath
 const extractQuestionType = (filePath: string): 'regular' | 'la' => {
-  const pathParts = filePath.split('/');
-  const questionFolder = pathParts.find(part => part.includes('question'));
+  // Split on both forward and back slashes (handles Windows paths), and decode URI components
+  const pathParts = filePath.split(/[\\\/]/).map(part => decodeURIComponent(part));
+  const questionFolder = pathParts.find(part => /question/i.test(part));
   
   if (questionFolder?.toLowerCase().includes('la')) {
     return 'la';
@@ -46,93 +29,28 @@ const extractQuestionType = (filePath: string): 'regular' | 'la' => {
 
 // Extract course from filepath
 const extractCourse = (filePath: string): string => {
-  const pathParts = filePath.split('/');
-  const questionFolderIndex = pathParts.findIndex(part => part.includes('question'));
+  const pathParts = filePath.split(/[\\\/]/).map(part => decodeURIComponent(part));
+  const questionFolderIndex = pathParts.findIndex(part => /question/i.test(part));
   
   if (questionFolderIndex !== -1 && questionFolderIndex + 1 < pathParts.length) {
-    return pathParts[questionFolderIndex + 1];
+    const rawCourse = pathParts[questionFolderIndex + 1];
+    // Normalize some common variants to match the folder names in public/
+    if (rawCourse && rawCourse.toLowerCase().replace(/\s|_/g, '') === 'ibstatistics') {
+      return 'IB Statistics';
+    }
+    return rawCourse;
   }
   return '';
 };
 
 // Extract filename from filepath
 const extractFilename = (filePath: string): string => {
-  const pathParts = filePath.split('/');
+  const pathParts = filePath.split(/[\\\/]/).map(part => decodeURIComponent(part));
   const filename = pathParts[pathParts.length - 1];
   return filename.replace('.txt', '');
 };
 
-// Component to render text with MathJax and bold formatting support
-const MathJaxRenderer = ({ text }: { text: string }) => {
-  const [renderedHTML, setRenderedHTML] = useState<string>('');
-  const [mathJaxReady, setMathJaxReady] = useState(false);
-  
-  useEffect(() => {
-    // Check if MathJax is loaded and ready
-    const checkMathJax = () => {
-      if (typeof window !== 'undefined' && window.MathJax) {
-        setMathJaxReady(true);
-      } else {
-        setTimeout(checkMathJax, 100); // Check again in 100ms
-      }
-    };
-    checkMathJax();
-  }, []);
-  
-  // Function to process bold formatting and line breaks
-  const processFormatting = (text: string): string => {
-    let processed = text;
-    
-    // Convert newlines to <br /> tags
-    processed = processed.replace(/\n/g, '<br />');
-    
-    // Process bold text (**text**)
-    processed = processed.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-    
-    return processed;
-  };
-  
-  useEffect(() => {
-    const renderContent = async () => {
-      try {
-        // Process formatting
-        const processedText = processFormatting(text);
-        
-        // Set the processed text
-        setRenderedHTML(processedText);
-        
-        // If MathJax is ready, process math expressions
-        if (mathJaxReady) {
-          setTimeout(() => {
-            if (window.MathJax && window.MathJax.typesetPromise) {
-              window.MathJax.typesetPromise()
-                .then(() => {
-                  console.log('MathJax rendering complete');
-                })
-                .catch((err: Error) => {
-                  console.error('MathJax rendering error:', err);
-                });
-            }
-          }, 10);
-        }
-        
-      } catch (error) {
-        console.error('Content rendering error:', error);
-        // Fallback to simple processing
-        setRenderedHTML(processFormatting(text));
-      }
-    };
-    
-    renderContent();
-  }, [text, mathJaxReady]);
-  
-  return (
-    <div 
-      dangerouslySetInnerHTML={{ __html: renderedHTML }}
-      className="mathjax-content"
-    />
-  );
-};
+
 
 const RandomQuestionLoader = ({ filePath }: { filePath: string }) => {
   const [question, setQuestion] = useState<AnyQuestion | null>(null);
@@ -192,35 +110,7 @@ const RandomQuestionLoader = ({ filePath }: { filePath: string }) => {
     }
   }, [filePath, loadRandomQuestion]);
 
-  // Load MathJax
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      // Only load MathJax if it's not already loaded
-      if (!window.MathJax) {
-        // Configure MathJax
-        window.MathJax = {
-          tex: {
-            inlineMath: [['$', '$'], ['\\(', '\\)']],
-            displayMath: [['$$', '$$'], ['\\[', '\\]']],
-            processEscapes: true,
-            processEnvironments: true
-          },
-          options: {
-            skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-          }
-        };
 
-        // Load MathJax script
-        const script = document.createElement('script');
-        script.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js';
-        script.async = true;
-        script.onload = () => {
-          console.log('MathJax loaded successfully');
-        };
-        document.head.appendChild(script);
-      }
-    }
-  }, []);
 
   if (loading) return (
     <div className="status-message">
@@ -243,39 +133,17 @@ const RandomQuestionLoader = ({ filePath }: { filePath: string }) => {
   return (
     <div className="question-loader-container">
       {isLAQuestion(question) ? (
-        // Render LA Question
-        <div className="la-question-card">
-          <div className="question-header">
-            <span className="question-type-badge la">Long Answer</span>
-            <div className="question-meta">
-              <span className="difficulty">Difficulty: {question.difficulty}</span>
-              <span className="unit">{question.unit}</span>
-            </div>
-          </div>
-          
-          <div className="question-content">
-            <h3>Question:</h3>
-            <div className="question-text">
-              <MathJaxRenderer text={question.question} />
-            </div>
-          </div>
-          
-          <div className="solution-content">
-            <h3>Solution:</h3>
-            <div className="solution-text">
-              <MathJaxRenderer text={question.solution} />
-            </div>
-          </div>
-          
-          <div className="question-footer">
-            <div className="topics">
-              <strong>Topics:</strong> {question.topics.join(', ')}
-            </div>
-            <div className="tags">
-              <strong>Tags:</strong> {question.tags.join(', ')}
-            </div>
-          </div>
-        </div>
+        // Use LA_Temp for long-answer rendering (uses ReactMarkdown + rehype-mathjax)
+        <LATemp
+          id={question.id}
+          question={question.question}
+          solution={question.solution}
+          difficulty={question.difficulty}
+          tags={question.tags}
+          topics={question.topics}
+          unit={question.unit}
+          course={question.course}
+        />
       ) : (
         // Render Regular Question
         <QuestionCard

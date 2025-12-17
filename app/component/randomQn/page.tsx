@@ -17,14 +17,16 @@ const COURSE_UNITS: CourseUnit[] = [
     units: ['Limits', 'Derivative', 'Curve','App','Int','Kin','Taylor','Diffeq']
   },
   {
-    course: 'IBstatistics',
-    units: ['Probability', 'Statistics', 'DiscreteRandomVariables','ContinuousRandomVariables']
+    // Use the same folder name as in the public assets: "IB Statistics"
+    course: 'IB Statistics',
+    units: ['Probability', 'Statistics', 'DiscreteRandomVariable','ContinuousRandomVariable']
   }
 ];
 
 const getFilePath = (course: string, unit: string, questionType: 'MC' | 'LA'): string => {
   const folderName = questionType === 'MC' ? 'MCquestion' : 'LAquestion';
-  return `${folderName}/${course}/${unit}.txt`;
+  // Encode course and unit in case they contain spaces or special chars
+  return `/${folderName}/${encodeURIComponent(course)}/${encodeURIComponent(unit)}.txt`;
 };
 
 export default function RandomQuestion() {
