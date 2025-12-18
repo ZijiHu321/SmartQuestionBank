@@ -21,6 +21,7 @@ const MockExam = () => {
   { course: 'IB physics HL', unit: 'Thermal Physics', examType: 'Unit Test Paper 2', filename: 'Thermal Physics P2.pdf' },
   { course: 'IB physics HL', unit: 'Thermal Physics', examType: 'Unit Test Paper 2 Answer', filename: 'Thermal Physics P2 (ANS).pdf' },
   { course: 'IB math HL', unit: 'Integral', examType: 'Unit Test Paper 1', filename: 'Integral P1.pdf' },
+  { course: 'IB math HL', unit: 'Integral', examType: 'Unit Test Paper 1 Answer', filename: 'Integral P1 (ANS).pdf' },
 ];
 
 const [search, setSearch] = useState<string>('')
